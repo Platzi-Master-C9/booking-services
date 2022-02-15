@@ -1,0 +1,22 @@
+{
+  "name": "backend-services",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Platzi-Master-C9/backend-services.git"
+  },
+  "author": "C9",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Platzi-Master-C9/backend-services/issues"
+  },
+  "homepage": "https://github.com/Platzi-Master-C9/backend-services#readme",
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
+}
