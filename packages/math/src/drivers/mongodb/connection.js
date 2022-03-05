@@ -10,7 +10,7 @@ Mongoose.Promise = global.Promise;
 const db = Mongoose.createConnection(config.uri, {
 	useNewUrlParser: true,
 	auth: {
-		user: config.user,
+		username: config.user,
 		password: config.pass,
 	}
 });

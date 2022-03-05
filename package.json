@@ -8,7 +8,7 @@
   "main": "src/index.js",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "bootstrap": "yarn install -W && lerna bootstrap"
   },
   "repository": {
     "type": "git",

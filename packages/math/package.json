@@ -5,7 +5,7 @@
   "author": "Booking Backend Team",
   "homepage": "https://github.com/Platzi-Master-C9/backend-services/tree/master/packages/math#readme",
   "license": "ISC",
-  "main": "index.js",
+  "main": "src/index.js",
   "publishConfig": {
     "access": "public"
   },

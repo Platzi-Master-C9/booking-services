@@ -16,7 +16,7 @@ const sumOperation = (model) => function ({ inputA, inputB }) {
 
 	model.create({
 		input: JSON.stringify({ inputA, inputB }),
-		output: JSON.stringify(result),
+		result: JSON.stringify(result),
 		operation: operations.SUM,
 	}).then(() => Logger.debug('[math]: Operation saved successfully'))
 	.catch(err => Logger.error(`[math]: Operation error ${err.message}`));
