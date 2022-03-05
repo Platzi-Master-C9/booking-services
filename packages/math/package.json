@@ -9,6 +9,10 @@
   "publishConfig": {
     "access": "public"
   },
+  "directories": {
+    "src": "src"
+  },
+  "files": ["src"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gh0stl1m/backend-services.git"
