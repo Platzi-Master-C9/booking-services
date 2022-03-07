@@ -1,0 +1,31 @@
+{
+  "name": "@booking-services/math",
+  "version": "1.0.0",
+  "description": "This package contains all the business capabilities for math operations",
+  "author": "Booking Backend Team",
+  "homepage": "https://github.com/Platzi-Master-C9/backend-services/tree/master/packages/math#readme",
+  "license": "ISC",
+  "main": "src/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "directories": {
+    "src": "src"
+  },
+  "files": ["src"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gh0stl1m/backend-services.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/gh0stl1m/backend-services/issues"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "mongoose": "^6.2.4",
+    "winston": "^3.6.0"
+  }
+}

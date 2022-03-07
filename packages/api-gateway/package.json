@@ -1,0 +1,38 @@
+{
+  "name": "@booking-services/api-gateway",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "Santiago Sanchez Taborda <santiago.sanchez.t@gmail.com>",
+  "homepage": "https://github.com/Platzi-Master-C9/backend-services/tree/master/packages/api-gateway#readme",
+  "license": "ISC",
+  "main": "src/index.js",
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gh0stl1m/backend-services.git"
+  },
+  "scripts": {
+    "start:dev": "nodemon src/index.js",
+    "inspect": "node --inspect src/index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/gh0stl1m/backend-services/issues"
+  },
+  "dependencies": {
+    "@booking-services/math": "^1.0.0",
+    "fastify": "^3.27.2",
+    "fastify-autoload": "^3.11.0",
+    "fastify-plugin": "^3.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
