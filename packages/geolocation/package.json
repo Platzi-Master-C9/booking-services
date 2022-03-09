@@ -1,0 +1,26 @@
+{
+  "name": "@booking-services/geolocation",
+  "version": "1.0.0",
+  "description": "This package contains all business rules for geolocation service",
+  "author": "Booking Backend Team",
+  "homepage": "https://github.com/Platzi-Master-C9/backend-services/tree/master/packages/geolocation#readme",
+  "license": "ISC",
+  "main": "src/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "directories": {
+    "src": "src"
+  },
+  "files": ["src"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Edilberto-Vazquez/booking-services.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/Edilberto-Vazquez/booking-services/issues"
+  }
+}
