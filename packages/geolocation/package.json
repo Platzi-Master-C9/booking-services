@@ -17,13 +17,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Edilberto-Vazquez/booking-services.git"
+    "url": "git+https://github.com/Platzi-Master-C9/backend-services.git"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
-    "url": "https://github.com/Edilberto-Vazquez/booking-services/issues"
+    "url": "https://github.com/Platzi-Master-C9/backend-services/issues"
   },
   "dependencies": {
     "@hapi/boom": "^9.1.4",
