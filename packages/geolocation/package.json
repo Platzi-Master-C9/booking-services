@@ -15,12 +15,21 @@
   "files": ["src"],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Edilberto-Vazquez/booking-services.git"
+    "url": "git+https://github.com/Platzi-Master-C9/backend-services.git"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
-    "url": "https://github.com/Edilberto-Vazquez/booking-services/issues"
+    "url": "https://github.com/Platzi-Master-C9/backend-services/issues"
+  },
+  "dependencies": {
+    "@hapi/boom": "^9.1.4",
+    "dotenv": "^16.0.0",
+    "eslint": "^8.10.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "mongodb": "^4.4.1",
+    "prettier": "^2.5.1"
   }
 }
