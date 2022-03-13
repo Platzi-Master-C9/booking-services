@@ -26,10 +26,12 @@
   "dependencies": {
     "@hapi/boom": "^9.1.4",
     "dotenv": "^16.0.0",
+    "mongodb": "^4.4.1"
+  },
+  "devDependencies": {
     "eslint": "^8.10.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "mongodb": "^4.4.1",
     "prettier": "^2.5.1"
   }
 }
