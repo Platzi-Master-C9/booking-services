@@ -1,22 +1,35 @@
 'use strict';
 const boom = require('@hapi/boom');
+const client = require('../drivers/mongodb/connection');
 
 class Place {
-  constructor() {
-    this.places = [
-      { id: 'sdf7s6f4s', lat: 45.46546, lon: -58.15646 },
-      { id: 'asd45qdqs', lat: 86.46546, lon: -34.15646 },
-      { id: 'fs45qqads', lat: 58.46546, lon: -12.15646 },
-      { id: '6a5sd46as', lat: 17.46546, lon: -91.15646 },
-    ];
-  }
+  constructor() {}
 
-  async getPlaces() {
-    try {
-      return this.places;
-    } catch (error) {
-      throw boom.boomify(error, { statusCode: 500 });
+  static async getPlaces(lon, lat) {
+    let places = [];
+    if (!lon && !lat) {
+      throw boom.badRequest(
+        `[geolocation:getPlaces]: latitude and longitude are required`
+      );
     }
+    const db = await client();
+    const results = db.aggregate([
+      {
+        $geoNear: {
+          near: { type: 'Point', coordinates: [lon, lat] },
+          maxDistance: 10000,
+          spherical: true,
+          distanceField: 'calcDistance',
+        },
+      },
+    ]);
+    if (!results) {
+      throw boom.notFound('[geolocation:getPlaces]: No places found');
+    }
+    for await (const doc of results) {
+      places = [...places, doc];
+    }
+    return places;
   }
 }
 
