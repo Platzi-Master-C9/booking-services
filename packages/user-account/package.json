@@ -1,0 +1,27 @@
+{
+  "name": "@booking-services/user-account",
+  "version": "1.0.0",
+  "description": "This package contains the structure of squad user account ",
+  "author": "Squad User Account C9 ",
+  "homepage": "https://github.com/Platzi-Master-C9/backend-services/tree/main/packages/user-account#readme",
+  "license": "ISC",
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PFranciscoRojas/booking-services.git"
+  },
+  "scripts": {
+    "start:dev": "nodemon src/index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/PFranciscoRojas/booking-services/issues"
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.3"
+  }
+}
