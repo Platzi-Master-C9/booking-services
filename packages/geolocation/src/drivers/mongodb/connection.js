@@ -9,6 +9,14 @@ const name = dbOptions.name;
 const collection = dbOptions.collection;
 const client = new MongoClient(uri);
 
+/**
+ * @description return the connection with the db
+ * @returns returns the collection to query
+ * @example
+ * const collection = await connect()
+ * const places = collection.find()
+ */
+
 async function connect() {
   try {
     await client.connect();
