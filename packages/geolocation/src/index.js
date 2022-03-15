@@ -1,13 +1,13 @@
 'use strict';
 
-/**
- * @description Export all features and business rules from the package
- */
-
+// Services
 const welcome = require('./utils/welcomePackage');
-const { Place } = require('./useCases/index');
+const { getPlaces } = require('./useCases');
+
+// Domains
+const { geoNearQuery } = require('./domains');
 
 module.exports = {
   geolocationWelcome: welcome,
-  Place: Place,
+  getPlaces: getPlaces(geoNearQuery),
 };
