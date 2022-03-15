@@ -9,13 +9,7 @@ const name = dbOptions.name;
 const collection = dbOptions.collection;
 const client = new MongoClient(uri);
 
-/**
- * @description return the connection with the db
- * @returns returns the collection to query
- * @example
- * const collection = await connect()
- * const places = collection.find()
- */
+//create the connection with the db
 
 async function connect() {
   try {
@@ -28,6 +22,8 @@ async function connect() {
     Logger.error({
       message: `[geolocation:mongodb]: Could not connect to database ${error}`,
     });
+    client.close();
+    process.exit(1);
   }
 }
 
