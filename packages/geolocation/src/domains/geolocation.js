@@ -1,6 +1,6 @@
 const connection = require('../drivers/mongodb/connection');
 
-const geoNearQuery = async (lon, lat, maxDistance) => {
+const geoNearQuery = async (lon, lat, maxDistance = 1000) => {
   const collection = await connection();
   return collection.aggregate([
     {
