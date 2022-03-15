@@ -14,7 +14,8 @@
     "url": "git+https://github.com/PFranciscoRojas/booking-services.git"
   },
   "scripts": {
-    "start:dev": "nodemon src/index.js"
+    "start:dev": "nodemon src/index.js",
+    "lint:fix": "eslint --fix ./*.js"
   },
   "bugs": {
     "url": "https://github.com/PFranciscoRojas/booking-services/issues"
@@ -23,5 +24,12 @@
     "express": "^4.17.3",
     "nodemon": "^2.0.15",
     "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.2.0"
   }
 }
