@@ -3,20 +3,13 @@
 const { format, createLogger, transports } = require('winston');
 const { combine, timestamp, printf } = format;
 
-/**
- * @description Create a custom message for logger
- */
+// Create a custom message for logger
 const myFormat = printf(({ message, timestamp }) => {
   return `${timestamp} ${message}`;
 });
 
-/**
- * @description Create the logger
- * @param {Object} message recibe message as object { message }
- * @returns string with the timestamp and the message
- * @example
- * Logger.info({message: '[geolocation:mongodb]: Connection succesfully to server'});
- */
+// Create the logger
+
 const logger = createLogger({
   format: combine(timestamp(), myFormat),
   transports: [new transports.Console()],
