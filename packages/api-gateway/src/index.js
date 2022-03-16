@@ -7,4 +7,4 @@ const welcomeGeolocation = require("@booking-services/geolocation")
 welcomeGeolocation.geolocationWelcome()
 
 HttpServer.start()
-	.catch(err => console.error('Somethin went wrong running server', err));
+	.catch(err => console.error('Something was wrong when the server was running', err));
