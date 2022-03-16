@@ -18,7 +18,9 @@
     "url": "git+https://github.com/Platzi-Master-C9/backend-services.git"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "bugs": {
     "url": "https://github.com/Platzi-Master-C9/backend-services/issues"
