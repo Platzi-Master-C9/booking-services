@@ -1,1 +1,5 @@
 node_modules
+yarn-error.log
+lerna-debug.log
+yarn.lock
+__tests__/
