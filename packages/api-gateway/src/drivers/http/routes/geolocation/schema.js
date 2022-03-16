@@ -1,12 +1,13 @@
-'use strict';
+"use strict";
 
 module.exports = {
-	params: {
-		type: 'object',
-		properties: {
-			lon: { type: 'number' },
-			lat: { type: 'number' },
-		},
-		required: ['lon', 'lat']
-	}
-}
+  querystring: {
+    type: "object",
+    properties: {
+      lon: { type: "number" },
+      lat: { type: "number" },
+      radius: { type: "number" },
+    },
+    required: ["lon", "lat", "radius"],
+  },
+};
