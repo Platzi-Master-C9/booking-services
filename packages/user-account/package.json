@@ -1,0 +1,37 @@
+{
+  "name": "@booking-services/user-account",
+  "version": "1.0.0",
+  "description": "This package contains the structure of squad user account ",
+  "author": "Squad User Account C9 ",
+  "homepage": "https://github.com/Platzi-Master-C9/backend-services/tree/main/packages/user-account#readme",
+  "license": "ISC",
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PFranciscoRojas/booking-services.git"
+  },
+  "scripts": {
+    "start:dev": "nodemon src/index.js",
+    "lint:fix": "eslint --fix ./*.js",
+    "test":"jest"
+  },
+  "bugs": {
+    "url": "https://github.com/PFranciscoRojas/booking-services/issues"
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "jest": "^27.5.1"
+  }
+}
