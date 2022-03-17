@@ -1,4 +1,3 @@
 const pool = require('../drivers/postgresql/connection')
 
-
-pool.query("Select * from Users where...")
+pool.query('Select * from Users where...')

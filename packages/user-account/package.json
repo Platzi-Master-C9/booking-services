@@ -15,7 +15,8 @@
   },
   "scripts": {
     "start:dev": "nodemon src/index.js",
-    "lint:fix": "eslint --fix ./*.js"
+    "lint:fix": "eslint --fix ./*.js",
+    "test":"jest"
   },
   "bugs": {
     "url": "https://github.com/PFranciscoRojas/booking-services/issues"
@@ -30,6 +31,7 @@
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.2.0"
+    "eslint-plugin-promise": "^5.2.0",
+    "jest": "^27.5.1"
   }
 }
