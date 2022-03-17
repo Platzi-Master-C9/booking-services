@@ -13,10 +13,7 @@
   "files": [
     "lib"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Platzi-Master-C9/backend-services.git"
-  },
+  "repository": "git+https://github.com/Platzi-Master-C9/backend-services.git",
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
