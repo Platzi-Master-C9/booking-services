@@ -20,7 +20,8 @@
     "url": "git+https://github.com/Platzi-Master-C9/backend-services.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "start:sync-db": "node src/drivers/mongodb/populate.js"
   },
   "bugs": {
     "url": "https://github.com/Platzi-Master-C9/backend-services/issues"
@@ -32,6 +33,7 @@
     "winston": "^3.6.0"
   },
   "devDependencies": {
+    "@faker-js/faker": "^6.0.0",
     "eslint": "^8.10.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
