@@ -1,9 +1,11 @@
-'use strict';
+"use strict";
 
-const mathAdapters = require('./math/handlers');
-const statusAdapters = require('./status/handlers');
+//const mathAdapters = require("./math/handlers");
+const geolocationAdapters = require("./geolocation/handlers");
+const statusAdapters = require("./status/handlers");
 
 module.exports = {
-	mathAdapters,
-	statusAdapters,
-}
+  //mathAdapters,
+  geolocationAdapters,
+  statusAdapters,
+};
