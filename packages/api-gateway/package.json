@@ -29,6 +29,7 @@
   "dependencies": {
     "@booking-services/geolocation": "^1.0.0",
     "@booking-services/math": "^1.0.0",
+    "@booking-services/places": "^1.0.0",
     "fastify": "^3.27.2",
     "fastify-autoload": "^3.11.0",
     "fastify-plugin": "^3.0.1"
