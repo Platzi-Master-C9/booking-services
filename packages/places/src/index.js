@@ -1,5 +1,5 @@
-const hi = () => {
-    console.log('Hi, Masters');
+const hi = (input) => {
+    console.log(input);
 };
 
 module.exports = hi;
