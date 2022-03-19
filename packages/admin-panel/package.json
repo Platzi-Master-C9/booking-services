@@ -1,0 +1,22 @@
+{
+  "name": "@booking-services/admin-panel",
+  "version": "1.0.0",
+  "description": "this package contains all business capabilities for admin panel",
+  "author": "Admin Panel Team",
+  "homepage": "https://github.com/Platzi-Master-C9/backend-services/tree/master/packages/admin-panel#readme",
+  "license": "ISC",
+  "main": "src/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacorreamed/booking-services.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/jacorreamed/booking-services/issues"
+  }
+}
