@@ -1,7 +1,7 @@
 'use strict'
 
-const adminPanel = require('./admin_panel');
+const firstCase = require('./firstCase');
 
 module.exports = {
-    adminPanel
+    firstCase
 }
