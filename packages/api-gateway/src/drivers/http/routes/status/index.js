@@ -1,8 +1,19 @@
 'use strict';
 
+// Internal dependencies
 const { statusAdapters } = require('../../adapters');
+const { serveStatusSchema } = require('./schema');
 
-module.exports = async function status(fastify) {
+/** @type {import('fastify').FastifyPluginCallback} */
+function status(fastify, _, done) {
 
-	await fastify.get('/', statusAdapters.liveness);
+	// Register routes
+	fastify.get('/', {
+		schema: serveStatusSchema,
+		handler: statusAdapters.liveness,
+	});
+
+	done();
 }
+
+module.exports = status;
