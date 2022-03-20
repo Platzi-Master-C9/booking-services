@@ -12,7 +12,6 @@
         "ecmaVersion": "latest"
     },
     "rules": {
-        "eol-last": "off",
         "arrow-body-style": "off",
         "linebreak-style": "off",
         "indent": ["error", 4],

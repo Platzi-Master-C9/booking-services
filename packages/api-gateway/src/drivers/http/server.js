@@ -8,7 +8,7 @@ async function start() {
 
 	const fastify = Fastify({ logger: true });
 
-	fastify.register(Autoload, { dir: path.join(__dirname, 'routes/places')});
+	fastify.register(Autoload, { dir: path.join(__dirname, 'routes')});
 	fastify.register(Autoload, { dir: path.join(__dirname, 'plugins')});
 
 	try {
