@@ -1,8 +1,6 @@
-'use strict'
-
 // Services
-const adminPanelService = require('./useCases')
+const adminPanelService = require('./useCases');
 
 module.exports = {
-    sayHello: adminPanelService.firstCase.sayHello
-}
+  sayHello: adminPanelService.firstCase.sayHello,
+};

@@ -1,9 +1,4 @@
-'use strict'
-
-const sayHello = ()=>{
-    return "done!!"
-}
+const sayHello = () => 'done!!';
 module.exports = {
-    sayHello
-}
-
+  sayHello,
+};
