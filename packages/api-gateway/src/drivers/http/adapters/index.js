@@ -1,7 +1,9 @@
 'use strict';
 
-const places = require('./places/handlers');
+const mathAdapters = require('./math/handlers');
+const placesAdapters = require('./places/handlers');
 
 module.exports = {
-	places,
+	mathAdapters,
+	placesAdapters,
 }
