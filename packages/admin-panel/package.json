@@ -6,6 +6,12 @@
   "homepage": "https://github.com/Platzi-Master-C9/backend-services/tree/master/packages/admin-panel#readme",
   "license": "ISC",
   "main": "src/index.js",
+  "directories": {
+    "src":"src"
+  },
+  "files": [
+    "src"
+  ],
   "publishConfig": {
     "access": "public"
   },

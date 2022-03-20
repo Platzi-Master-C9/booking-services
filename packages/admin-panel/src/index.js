@@ -4,5 +4,5 @@
 const adminPanelService = require('./useCases')
 
 module.exports = {
-    sayHello: adminPanelService.sayHello
+    sayHello: adminPanelService.firstCase.sayHello
 }
