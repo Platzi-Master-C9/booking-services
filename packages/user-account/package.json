@@ -1,8 +1,8 @@
 {
-  "name": "user-account",
+  "name": "@booking-services/user-account",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,6 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "@hapi/boom": "^9.1.4",
-    "joy": "^0.1.1"
+    "dotenv": "^16.0.0",
+    "joi": "^17.6.0",
+    "pg": "^8.7.3"
   }
 }

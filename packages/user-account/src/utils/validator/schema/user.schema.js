@@ -1,6 +1,6 @@
 const Joi = require('joi');
 
-const now = Date().now();
+const now = Date.now();
 const cutOfDate = new Date(now - (1000 * 60 * 60 * 24 * 365 * 18)); // 18 years
 
 const id = Joi.number().integer();
