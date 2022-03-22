@@ -9,16 +9,18 @@ async function createUser(req, reply) {
     gender,
     phoneNumber } = req.body;
 
-	req.log.info('[http-server]: Creating user with: ', { email,
-    firstName,
-    secondName,
-    firstSurname,
-    secondSurname,
-    birthDate,
-    gender,
-    phoneNumber });
+	req.log.info('[http-server]: Creating user with: ', { 
+        email,
+        firstName,
+        secondName,
+        firstSurname,
+        secondSurname,
+        birthDate,
+        gender,
+        phoneNumber });
 
-	const result = await this.userServices.createUser({ email,
+	const result = await this.userServices.createUser({ 
+        email,
         firstName,
         secondName,
         firstSurname,

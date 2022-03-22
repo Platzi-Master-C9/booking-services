@@ -4,5 +4,5 @@ const { createUserServices } = require('./useCases');
 // Domains
 
 module.exports = {
-	createUser: createUserServices
+	createUser: createUserServices,
 }

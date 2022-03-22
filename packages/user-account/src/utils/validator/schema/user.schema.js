@@ -10,8 +10,8 @@ const secondName = Joi.string().max(50);
 const firstSurname = Joi.string().max(50);
 const secondSurname = Joi.string().max(50);
 const birthDate = Joi.date().max(cutOfDate);
-const gander = Joi.string().valid('male', 'famale', 'not difined');
-const phoneNumber = Joi.string().length(10).pattern(/^[0-9]+$/);
+const gender = Joi.string().valid('male', 'famale', 'not difined');
+const phoneNumber = Joi.number().min(10)
 const avatar = Joi.string().uri();
 
 
@@ -22,7 +22,7 @@ const createUserSchema = Joi.object({
     firstSurname: firstSurname.required(),
     secondSurname: secondSurname,
     birthDate: birthDate.required(),
-    gander: gander.required(),
+    gender: gender.required(),
     phoneNumber: phoneNumber.required(),
 });
 
