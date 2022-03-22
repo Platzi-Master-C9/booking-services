@@ -5,8 +5,8 @@ const BookingModel = require('./booking');
 const UserModel = require('./user');
 
 module.exports = {
-	PlaceModel,
-    BookingModel,
-    UserModel
+  PlaceModel,
+  BookingModel,
+  UserModel
 }
 
