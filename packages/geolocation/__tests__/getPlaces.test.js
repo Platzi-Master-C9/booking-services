@@ -2,7 +2,7 @@ const boom = require('@hapi/boom');
 const { getPlaces } = require('../src/index');
 
 test('should return an array of places, given a longitude and latitude and maxDistance', async () => {
-  const places = await getPlaces(90, 180, 1000000);
+  const places = await getPlaces(-70, 40, 1000000);
   expect(places).toEqual(
     expect.arrayContaining([
       expect.objectContaining({
