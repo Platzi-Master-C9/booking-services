@@ -10,11 +10,11 @@ const getPlaces = (geoNearQuery) => {
       );
     }
     const results = await geoNearQuery(lon, lat, maxDistance);
-    if (!results) {
-      throw boom.notFound('[geolocation:getPlaces]: No places found');
-    }
     for await (const doc of results) {
       places = [...places, doc];
+    }
+    if (!places.length) {
+      throw boom.notFound('[geolocation:getPlaces]: No places found', places);
     }
     return places;
   };
