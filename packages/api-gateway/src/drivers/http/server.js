@@ -1,25 +1,26 @@
-'use strict';
+"use strict";
 
-const Fastify = require('fastify');
-const Autoload = require('fastify-autoload');
-const path = require('path');
+const Fastify = require("fastify");
+const Autoload = require("fastify-autoload");
+const path = require("path");
+
+const app = Fastify({ logger: true });
+
+app.register(Autoload, { dir: path.join(__dirname, "routes") });
+app.register(Autoload, { dir: path.join(__dirname, "plugins") });
 
 async function start() {
-
-	const fastify = Fastify({ logger: true });
-
-	fastify.register(Autoload, { dir: path.join(__dirname, 'routes')});
-	fastify.register(Autoload, { dir: path.join(__dirname, 'plugins')});
-
-	try {
-		await fastify.listen(process.env.SERVER_PORT || 3000, '0.0.0.0');
-		
-	} catch (error) {
-		fastify.log.error(`[http-server]: Error with message ${error.message} has happened`);
-		process.exit(1);
-	}
+  try {
+    await app.listen(process.env.SERVER_PORT || 3000, "0.0.0.0");
+  } catch (error) {
+    app.log.error(
+      `[http-server]: Error with message ${error.message} has happened`
+    );
+    process.exit(1);
+  }
 }
 
 module.exports = {
-	start
-}
+  app,
+  start,
+};

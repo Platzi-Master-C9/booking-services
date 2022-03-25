@@ -21,7 +21,9 @@
   },
   "scripts": {
     "start:dev": "nodemon src/index.js",
-    "inspect": "node --inspect src/index.js"
+    "inspect": "node --inspect src/index.js",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "bugs": {
     "url": "https://github.com/gh0stl1m/backend-services/issues"
@@ -34,6 +36,7 @@
     "fastify-plugin": "^3.0.1"
   },
   "devDependencies": {
+    "jest": "^27.5.1",
     "nodemon": "^2.0.15"
   }
 }
