@@ -1,0 +1,36 @@
+{
+    "name": "@booking-services/notifications",
+    "version": "0.0.1",
+    "description": "Notifications module to send email and push notifications",
+    "keywords": [
+      "notifications"
+    ],
+    "author": "azanez <dasl.672004@gmail.com>",
+    "homepage": "https://github.com/Platzi-Master-C9/backend-services/tree/main/packages/notifications#readme",
+    "license": "ISC",
+    "main": "src/index.js",
+    "directories": {
+      "src": "src"
+    },
+    "files": [
+      "src"
+    ],
+    "publishConfig": {
+      "access": "public"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Platzi-Master-C9/booking-services.git"
+    },
+    "scripts": {
+      "start:dev": "nodemon src/index.js",
+      "test": "echo \"Error: run tests from root\" && exit 1"
+    },
+    "bugs": {
+      "url": "https://github.com/Platzi-Master-C9/booking-services/issues"
+    },
+    "dependencies": {
+      "fastify-autoload": "^3.11.0",
+      "nodemon": "^2.0.15"
+    }
+  }
