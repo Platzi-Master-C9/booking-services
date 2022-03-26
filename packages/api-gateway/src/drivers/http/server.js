@@ -4,12 +4,13 @@ const Fastify = require('fastify');
 const Autoload = require('fastify-autoload');
 const path = require('path');
 
+const fastify = Fastify({ logger: true });
+
+fastify.register(Autoload, { dir: path.join(__dirname, 'routes')});
+fastify.register(Autoload, { dir: path.join(__dirname, 'plugins')});
+
 async function start() {
 
-	const fastify = Fastify({ logger: true });
-
-	fastify.register(Autoload, { dir: path.join(__dirname, 'routes')});
-	fastify.register(Autoload, { dir: path.join(__dirname, 'plugins')});
 
 	try {
 		await fastify.listen(process.env.SERVER_PORT || 3000, '0.0.0.0');
@@ -21,5 +22,6 @@ async function start() {
 }
 
 module.exports = {
-	start
+	start,
+	fastify
 }

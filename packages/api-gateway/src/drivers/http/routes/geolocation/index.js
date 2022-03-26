@@ -1,10 +1,18 @@
 "use strict";
 
 const { geolocationAdapters } = require("../../adapters");
-const schema = require("./schema");
+const { getPlacesSchema } = require("./schema");
 
 async function geolocationRouter(fastify) {
-  await fastify.get("/places", { schema }, geolocationAdapters.getPlaces);  
+  await fastify.get(
+    "/places",
+    {
+      schema: {
+        querystring: getPlacesSchema,
+      },
+    },
+    geolocationAdapters.getPlaces
+  );
 }
 
 module.exports = geolocationRouter;
