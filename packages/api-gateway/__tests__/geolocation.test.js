@@ -3,7 +3,7 @@ const { fastify } = require("../src/drivers/http/server");
 describe("geolocation/places endpoint", () => {
   const api = fastify;
 
-  test("Given latitude, longitude and radius when a user select a mark in a map, then return status code 200 and an array with near places objects from the mark", async () => {
+  test("Given latitude, longitude and radius when a user select a mark in a map, then return status code 200 and an array with near places details from database", async () => {
     const places = await api.inject({
       method: "GET",
       url: "geolocation/places",
