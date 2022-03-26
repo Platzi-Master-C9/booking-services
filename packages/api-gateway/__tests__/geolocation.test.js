@@ -1,7 +1,7 @@
-const { app } = require("../src/drivers/http/server");
+const { fastify } = require("../src/drivers/http/server");
 
 describe("geolocation/address endpoint", () => {
-  const api = app;
+  const api = fastify;
 
   test("Given latitude and longitude when a user select a mark in a map, then return status code 200 and an object with the address", async () => {
     const address = await api.inject({
