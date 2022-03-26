@@ -10,13 +10,16 @@ async function getAddress(req, reply) {
   try {
     const { lon, lat } = req.query;
 
-    req.log.info("[http-server]: Getting places: ", { lon, lat });
+    req.log.info("[http-server]: Getting address with reverse geocoding: ", { lon, lat });
 
     //const places = await this.geolocationServices.getAddress( lon, lat );
     const address = {
       address: {
-        placeName: "New loft Parque",
-        placeAddress: "1600 Amphitheatre Parkway, Mountain View, CA",
+        country: "Botswana",
+        state: "North Carolina",
+        city: "South Ray",
+        postcode: "29084",
+        streetAddress: "018 Maximillian Mission",
       },
     };
 
