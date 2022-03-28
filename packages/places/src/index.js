@@ -1,5 +1,9 @@
-const hi = (input) => {
-    console.log(input);
-};
+const models = require('./domains/index');
 
-module.exports = hi;
+const {
+    dbWriter
+} = require('./useCases/index');
+
+module.exports = {
+    postPlace: dbWriter(models.Place)
+};

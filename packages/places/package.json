@@ -29,6 +29,8 @@
   },
   "dependencies": {
     "dotenv": "^16.0.0",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.17.0",
     "winston": "^3.6.0"
   }
 }
