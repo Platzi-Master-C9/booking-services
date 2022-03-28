@@ -16,7 +16,7 @@ describe("geolocation/address endpoint", () => {
         address: expect.objectContaining({
           country: expect.any(String),
           city: expect.any(String),
-          postcode: expect.any(String),
+          zipCode: expect.any(String),
           streetAddress: expect.any(String),
         }),
       })
@@ -31,5 +31,4 @@ describe("geolocation/address endpoint", () => {
 
     expect(address.statusCode).toEqual(400);
   });
-
 });

@@ -7,7 +7,7 @@ async function geolocationRouter(fastify) {
   await fastify.get(
     "/address",
     {
-      schema: { getAddressSchema },
+      schema: getAddressSchema,
     },
     geolocationAdapters.getAddress
   );
