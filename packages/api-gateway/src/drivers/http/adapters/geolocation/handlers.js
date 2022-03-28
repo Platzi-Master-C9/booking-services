@@ -1,3 +1,6 @@
+"use strict";
+const { faker } = require("@faker-js/faker");
+
 function errorHandler(error, reply) {
   if (error.isBoom) {
     return reply.send(error.output.payload);
@@ -10,16 +13,19 @@ async function getAddress(req, reply) {
   try {
     const { lon, lat } = req.query;
 
-    req.log.info("[http-server]: Getting address with reverse geocoding: ", { lon, lat });
+    req.log.info("[http-server]: Getting address with reverse geocoding: ", {
+      lon,
+      lat,
+    });
 
-    //const places = await this.geolocationServices.getAddress( lon, lat );
+    //const address = await this.geocolocationServices.getAddress(lat, lon);
     const address = {
       address: {
-        country: "Botswana",
-        state: "North Carolina",
-        city: "South Ray",
-        postcode: "29084",
-        streetAddress: "018 Maximillian Mission",
+        country: faker.address.country(),
+        state: faker.address.state(),
+        city: faker.address.city(),
+        zipCode: faker.address.zipCode(),
+        streetAddress: faker.address.streetAddress(),
       },
     };
 
