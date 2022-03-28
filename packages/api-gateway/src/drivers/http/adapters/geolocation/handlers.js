@@ -20,8 +20,8 @@ async function getPlaces(req, reply) {
       {
         placeId: faker.datatype.uuid(),
         placeName: faker.address.secondaryAddress(),
-        lat: faker.address.latitude(),
-        lon: faker.address.longitude(),
+        lat: parseFloat(faker.address.latitude()),
+        lon: parseFloat(faker.address.longitude()),
       },
       {
         placeId: faker.datatype.uuid(),
