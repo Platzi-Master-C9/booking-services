@@ -21,6 +21,7 @@
     "url": "git+https://github.com/JackoDev/booking-services.git"
   },
   "scripts": {
+    "start": "node src/search-engine.js",
     "tests": "jest"
   },
   "bugs": {
@@ -33,6 +34,8 @@
     "jest": "~27.5.1"
   },
   "dependencies": {
-    "jest": "~27.5.1"
+    "fastify": "^3.27.4",
+    "jest": "~27.5.1",
+    "mongoose": "^6.2.9"
   }
 }
