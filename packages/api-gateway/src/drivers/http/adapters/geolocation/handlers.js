@@ -1,5 +1,5 @@
 "use strict";
-const { faker } = require("@faker-js/faker");
+const geolocationServices = require("../../../../../mocks/geolocationServices.mock");
 
 function errorHandler(error, reply) {
   if (error.isBoom) {
@@ -15,27 +15,8 @@ async function getPlaces(req, reply) {
 
     req.log.info("[http-server]: Getting places: ", { lon, lat, radius });
 
-    //const places = await this.geolocationServices.getPlaces({ lon, lat });
-    const places = [
-      {
-        placeId: faker.datatype.uuid(),
-        placeName: faker.address.secondaryAddress(),
-        lat: parseFloat(faker.address.latitude()),
-        lon: parseFloat(faker.address.longitude()),
-      },
-      {
-        placeId: faker.datatype.uuid(),
-        placeName: faker.address.secondaryAddress(),
-        lat: faker.address.latitude(),
-        lon: faker.address.longitude(),
-      },
-      {
-        placeId: faker.datatype.uuid(),
-        placeName: faker.address.secondaryAddress(),
-        lat: faker.address.latitude(),
-        lon: faker.address.longitude(),
-      },
-    ];
+    //const places = await this.geolocationServices.getPlaces( lon, lat, radius );
+    const places = await geolocationServices.mockGetPlaces(lat, lon, radius);
 
     return reply
       .code(200)
