@@ -1,0 +1,26 @@
+{
+  "name": "@booking-services/auth",
+  "version": "0.0.1",
+  "description": "This package contains all business rules for authentication service",
+  "author": "Authentication Backend Team",
+  "homepage": "https://github.com/Platzi-Master-C9/backend-services/tree/master/packages/auth#readme",
+  "license": "ISC",
+  "main": "src/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "directories": {
+    "src": "src"
+  },
+  "files": ["src"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iam-oov/booking-services.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/iam-oov/booking-services/issues"
+  }
+}
