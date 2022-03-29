@@ -1,9 +1,12 @@
 const {user_squad} = require('../../../../userCases/userSquad');
+const {message_squad} = require('../../../../userCases/messageSquad');
 const {userStatus} = require('../../../../utils/constants');
 
 
-const changeUserStatus = (userId, status,message) => {
-  
+const changeUserStatus = (userId, status,reason) => {
+
+  //TODO: validation to avoid going back to the previous status
+
   //verify if status is valid
   if(userStatus.indexOf(status) === -1){
     throw new Error('Invalid status');
@@ -22,6 +25,9 @@ const changeUserStatus = (userId, status,message) => {
 
   //change user status
   user.status   = status;
-  user.message  = message;
 
+}
+
+module.exports = {
+  changeUserStatus,
 }
