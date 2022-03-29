@@ -1,5 +1,5 @@
 "use strict";
-const { faker } = require("@faker-js/faker");
+const geolocationServices = require("../../../../../mocks/geolocationServices.mock");
 
 function errorHandler(error, reply) {
   if (error.isBoom) {
@@ -19,15 +19,7 @@ async function getAddress(req, reply) {
     });
 
     //const address = await this.geocolocationServices.getAddress(lat, lon);
-    const address = {
-      address: {
-        country: faker.address.country(),
-        state: faker.address.state(),
-        city: faker.address.city(),
-        zipCode: faker.address.zipCode(),
-        streetAddress: faker.address.streetAddress(),
-      },
-    };
+    const address = await geolocationServices.mockGetAddress(lat, lon);
 
     return reply
       .code(200)
