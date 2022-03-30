@@ -21,7 +21,8 @@
   },
   "scripts": {
     "start:dev": "nodemon src/index.js",
-    "inspect": "node --inspect src/index.js"
+    "inspect": "node --inspect src/index.js",
+    "test": "jest"
   },
   "bugs": {
     "url": "https://github.com/gh0stl1m/backend-services/issues"
