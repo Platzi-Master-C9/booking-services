@@ -27,7 +27,7 @@ test('given a longitude, latitude and maxDistance, when no place was found, then
   getPlaces(-70, 40, 0).catch((error) =>
     expect(error).toEqual(
       expect.objectContaining(
-        boom.notFound('[geolocation]: No places found', [])
+        boom.notFound('[geolocation:getPlaces]: No places found', [])
       )
     )
   );
@@ -38,7 +38,7 @@ test('given a longitude, latitude, when lon and lat is undifined or null, then r
     expect(error).toEqual(
       expect.objectContaining(
         boom.badRequest(
-          `[geolocation]: latitude and longitude are required`
+          `[geolocation:getPlaces]: latitude and longitude are required`
         )
       )
     )
