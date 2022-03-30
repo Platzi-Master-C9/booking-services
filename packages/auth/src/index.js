@@ -10,5 +10,5 @@ const { greetingServices } = require('./useCases');
 // ...
 
 module.exports = {
-  runGreeting: greetingServices.getGreeting({text: texts.greetings}),
+  getGreeting: greetingServices.getGreeting({text: texts.greetings}),
 }

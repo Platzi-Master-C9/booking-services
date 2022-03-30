@@ -1,5 +1,5 @@
 const getGreeting = ({ text }) => {
-    return `${text} 🎉👋🎉`
+    return `${text}`
 }
 
 module.exports = {
