@@ -1,6 +1,6 @@
-const {user_squad} = require('../../../../userCases/userSquad');
+const {userSquad} = require('../../../../userCases/userSquad');
 const {message_squad} = require('../../../../userCases/messageSquad');
-const {userStatus} = require('../../../../utils/constants');
+const {userStatus,readableStatus} = require('../../../../utils/constants');
 
 
 const changeUserStatus = (userId, status,reason) => {
@@ -25,6 +25,11 @@ const changeUserStatus = (userId, status,reason) => {
 
   //change user status
   user.status   = status;
+
+  //send message to user
+  message_squad.sendMessage(userId,`El Estado de cuenta ha cambiado a ${readableStatus[status]}: ${reason}`);
+
+  
 
 }
 

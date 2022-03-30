@@ -5,6 +5,14 @@ const userStatus = {
   BANNED: 'banned',
 }
 
+const readableStatus = {
+  VERIFIED: 'Verificado',
+  ACTIVE:   'Activo',
+  DELETE:   'Eliminado',
+  BANNED:   'Baneado',
+}
+
 module.exports = {
   userStatus,
+  readableStatus,
 }
