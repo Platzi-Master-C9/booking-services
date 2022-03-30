@@ -8,7 +8,7 @@ function errorHandler(error, reply) {
   return reply.code(500).send({ error: error.message, stack: error.stack });
 }
 
-async function sayHello(req, reply) {
+async function createPlace(req, reply) {
   try {
     const result = await this.geolocationServices.createPlace(req.body);
     return reply
@@ -21,5 +21,5 @@ async function sayHello(req, reply) {
 }
 
 module.exports = {
-  sayHello,
+  createPlace,
 };

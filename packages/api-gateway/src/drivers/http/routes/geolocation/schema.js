@@ -1,4 +1,4 @@
-const getPlaceSchema = {
+const createPlaceSchema = {
   type: "object",
   properties: {
     lon: { type: "number" },
@@ -9,9 +9,17 @@ const getPlaceSchema = {
     zipcode: { type: "string" },
     streetAddress: { type: "string" },
   },
-  required: [lon, lat, country, state, city, zipcode, streetAddress],
+  required: [
+    "lon",
+    "lat",
+    "country",
+    "state",
+    "city",
+    "zipcode",
+    "streetAddress",
+  ],
 };
 
 module.exports = {
-  getPlaceSchema: getPlaceSchema,
+  createPlaceSchema,
 };

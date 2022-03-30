@@ -1,10 +1,14 @@
 "use strict";
 
 const { geolocationAdapters } = require("../../adapters");
-const { getPlaceSchema } = require("./schema");
+const { createPlaceSchema } = require("./schema");
 
-async function mathRouter(fastify) {
-  await fastify.post("/place", { getPlaceSchema }, geolocationAdapters.createPlace);
+async function geolocationRouter(fastify) {
+  await fastify.post(
+    "/place",
+    { schema: { body: createPlaceSchema } },
+    geolocationAdapters.createPlace
+  );
 }
 
-module.exports = mathRouter;
+module.exports = geolocationRouter;
