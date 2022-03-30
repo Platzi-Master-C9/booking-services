@@ -1,7 +1,5 @@
-const getGreeting = ({ text }) => {
-    return `${text}`
-}
+const getGreeting = ({ text }) => `${text}`;
 
 module.exports = {
-    getGreeting
-}
+  getGreeting,
+};

@@ -1,7 +1,5 @@
-'use strict'
-
 // Constants
-const { texts } = require('./utils/constants')
+const { texts } = require('./utils/constants');
 
 // Services
 const { greetingServices } = require('./useCases');
@@ -10,5 +8,5 @@ const { greetingServices } = require('./useCases');
 // ...
 
 module.exports = {
-  getGreeting: greetingServices.getGreeting({text: texts.greetings}),
-}
+  getGreeting: greetingServices.getGreeting({ text: texts.greetings }),
+};
