@@ -8,7 +8,7 @@ const authEndpointsStatusSchema = {
     200: {
       type: 'object',
       properties: {
-        status: {
+        result: {
           type: 'string',
           description: 'The status of the auth endpoints',
         },

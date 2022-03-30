@@ -8,7 +8,7 @@ const { authAdapters } = require('../../adapters');
 function status(fastify, _, done) {
   // Register routes
   fastify.get('/', {
-    // schema: authEndpointsStatusSchema,
+    schema: authEndpointsStatusSchema,
     handler: authAdapters.getGreeting,
   });
 
