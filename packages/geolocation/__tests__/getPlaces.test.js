@@ -1,7 +1,7 @@
 const boom = require('@hapi/boom');
 const { getPlaces } = require('../src/index');
 
-test('should return an array of places, given a longitude and latitude and maxDistance', async () => {
+test('given a longitude, latitude and maxDistance, when a list of places in a radius is required, then return an array of places', async () => {
   const places = await getPlaces(-70, 40, 1000000);
   expect(places).toEqual(
     expect.arrayContaining([
@@ -23,22 +23,22 @@ test('should return an array of places, given a longitude and latitude and maxDi
   );
 });
 
-test('should return a object of type boom with 404 if any array was found', () => {
+test('given a longitude, latitude and maxDistance, when no place was found, then return a object of type boom with 404', () => {
   getPlaces(-70, 40, 0).catch((error) =>
     expect(error).toEqual(
       expect.objectContaining(
-        boom.notFound('[geolocation:getPlaces]: No places found', [])
+        boom.notFound('[geolocation]: No places found', [])
       )
     )
   );
 });
 
-test('should return an object of type boom with 400 if lon and lat are not supplied', () => {
+test('given a longitude, latitude, when lon and lat is undifined or null, then return an object of type boom with 400', () => {
   getPlaces().catch((error) =>
     expect(error).toEqual(
       expect.objectContaining(
         boom.badRequest(
-          `[geolocation:getPlaces]: latitude and longitude are required`
+          `[geolocation]: latitude and longitude are required`
         )
       )
     )
