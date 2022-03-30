@@ -1,0 +1,11 @@
+{
+  "name": "user-account",
+  "version": "1.0.0",
+  "description": "This package contains all business rules for User account",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "pg": "^8.7.3"
+  }
+}
