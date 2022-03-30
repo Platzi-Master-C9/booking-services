@@ -1,13 +1,16 @@
 const fastify = require('fastify');
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
 
 function searchEngine() {
   // TODO
 }
 
-// initialized Fastify App PENDING HIDE CONNECTION DATA
+dotenv.config();
+// initialized Fastify App
 const app = fastify();
-const mongoURI = 'mongodb+srv://jackodev:SashaDev2023$@first-step.z7r13.mongodb.net/searchEngineDB?retryWrites=true&w=majority';
+
+const mongoURI = process.env.CONNECT_DB;
 
 // connected fastify to mongoose
 try {
