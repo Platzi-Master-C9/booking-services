@@ -35,12 +35,3 @@ const getUserSchema = Joi.object({
 });
 
 module.exports = { createUserSchema, updateUserSchema, getUserSchema }
-
-// "email": "varchar(200) NOT NULL UNIQUE",
-// "firstName": "varchar(50) NOT NULL",
-// "secondName": "varchar(50)",
-// "firstSurname": "varchar(50) NOT NULL",
-// "seconsName": "varchar(50)",
-// "birthDate": "date NOT NULL", //verification of legal age
-// "gender": "enum('male', 'famele', 'not difined') NOT NULL",
-// "phoneNumber": "varchar() NOT NULL"
