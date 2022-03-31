@@ -1,4 +1,6 @@
-module.exports = {
+const createUserSchema = {
+      description: 'Create a new user',
+      tags: ['User'],
 	body: {
 		type: 'object',
 		properties: {
@@ -13,4 +15,8 @@ module.exports = {
 		},
 		required: ['email', 'firstName', 'firstSurname', 'birthDate', 'gender']
 	}
+};
+
+module.exports = {
+      createUserSchema
 }
