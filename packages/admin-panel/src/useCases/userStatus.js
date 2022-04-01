@@ -29,7 +29,7 @@ const changeUserStatus = (userId, status,reason) => {
   //send message to user
   message_squad.sendMessage(userId,`El Estado de cuenta ha cambiado a ${readableStatus[status]}: ${reason}`);
 
-  
+  return user;
 
 }
 
