@@ -29,6 +29,7 @@
     "url": "https://github.com/gh0stl1m/backend-services/issues"
   },
   "dependencies": {
+    "@booking-services/admin-panel": "^1.0.0",
     "@booking-services/geolocation": "^1.0.0",
     "@booking-services/math": "^1.0.0",
     "fastify": "^3.27.2",
