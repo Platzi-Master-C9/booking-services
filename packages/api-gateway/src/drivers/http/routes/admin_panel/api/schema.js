@@ -24,6 +24,12 @@ const changeUSerStatusSchema = {
 				result: { type: 'number' },
 			},
 		},
+    400: {
+      type: 'object',
+      properties: {
+        message: { type: 'string' },
+      },
+    },
 	},
 };
 
