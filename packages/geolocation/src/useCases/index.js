@@ -1,7 +1,7 @@
 'use strict';
 
-const Place = require('./place');
+const { reverseGeocoding } = require('./place');
 
 module.exports = {
-  Place,
+  reverseGeocoding,
 };

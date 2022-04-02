@@ -1,8 +1,11 @@
 'use strict';
 
-const welcome = require('./utils/welcomePackage');
-const { Place } = require('./useCases/index');
+// Services
+const { reverseGeocoding } = require('./useCases');
+
+// Domains
+const { reverseGeocodingQuery } = require('./domains');
 
 module.exports = {
-    geolocationWelcome: welcome,
-}
+  reverseGeocoding: reverseGeocoding(reverseGeocodingQuery),
+};
