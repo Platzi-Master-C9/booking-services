@@ -17,7 +17,8 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "precommit": "yarn lint && yarn test"
   },
   "bugs": {
     "url": "https://github.com/Platzi-Master-C9/backend-services/issues"
