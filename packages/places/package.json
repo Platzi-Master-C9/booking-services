@@ -1,0 +1,36 @@
+{
+  "name": "@booking-services/places",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "license": "ISC",
+  "author": "Backend Places squad",
+  "description": "This package manages the backend of places in the booking system",
+  "publishConfig": {
+    "access": "public"
+  },
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "devDependencies": {
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "jest": "^27.5.1"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.17.0",
+    "winston": "^3.6.0"
+  }
+}

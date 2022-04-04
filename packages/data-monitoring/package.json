@@ -1,0 +1,26 @@
+{
+  "name": "@booking-services/data-monitoring",
+  "version": "1.0.0",
+  "description": "This package contains all business rules for data monitoring service",
+  "author": "Data Monitoring Team",
+  "homepage": "https://github.com/Platzi-Master-C9/backend-services/tree/main/packages/data-monitoring#readme",
+  "license": "ISC",
+  "main": "src/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/YaelRmz/booking-services/issues"
+  },
+  "dependencies": {
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.6.0"
+  }
+}
