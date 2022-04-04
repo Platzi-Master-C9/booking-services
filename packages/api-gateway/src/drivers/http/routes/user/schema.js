@@ -1,6 +1,6 @@
 const createUserSchema = {
       description: 'Create a new user',
-      tags: ['User'],
+      tags: ['Users'],
 	body: {
 		type: 'object',
 		properties: {
