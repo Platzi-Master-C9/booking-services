@@ -1,6 +1,7 @@
-const { faker } = require("@faker-js/faker");
+const { faker } = require('@faker-js/faker');
 
-function mockGetAddress(lat, lon) {
+// eslint-disable-next-line no-unused-vars
+function mockGetAddress(_lat, _lon) {
   const address = {
     address: {
       country: faker.address.country(),
