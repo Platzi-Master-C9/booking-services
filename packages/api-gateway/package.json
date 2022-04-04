@@ -23,7 +23,9 @@
     "start:dev": "nodemon src/index.js",
     "inspect": "node --inspect src/index.js",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "bugs": {
     "url": "https://github.com/gh0stl1m/backend-services/issues"
@@ -40,6 +42,9 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^6.0.0",
+    "eslint": "^8.12.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.2",
     "jest": "^27.5.1",
     "nodemon": "^2.0.15"
   }
