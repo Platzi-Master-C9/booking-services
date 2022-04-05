@@ -4,11 +4,12 @@
 const Fastify = require("fastify");
 const Autoload = require("fastify-autoload");
 const Swagger = require("fastify-swagger");
+const FastifyAuth0 = require("fastify-auth0-verify");
 const path = require("path");
 
 // Internal dependencies
 const { version } = require("../../../package.json");
-const configAuth = require('../../../config/auth0');
+const configAuth = require("../../../config/auth0");
 
 const fastify = Fastify({ logger: true });
 
