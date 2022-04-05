@@ -2,7 +2,7 @@
 
 // Internal dependencies
 const { authEndpointsStatusSchema } = require('./schema');
-const { authAdapters } = require('../../adapters');
+const { authAdapters } = require('../../../adapters');
 
 /** @type {import('fastify').FastifyPluginCallback} */
 function status(fastify, _, done) {
