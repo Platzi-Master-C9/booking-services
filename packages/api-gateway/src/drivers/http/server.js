@@ -8,6 +8,7 @@ const path = require("path");
 
 // Internal dependencies
 const { version } = require("../../../package.json");
+const configAuth = require('../../../config/auth0');
 
 const fastify = Fastify({ logger: true });
 
@@ -53,6 +54,11 @@ const swaggerOptions = {
 
 // Swagger needs to be loaded before the routes
 fastify.register(Swagger, swaggerOptions);
+
+fastify.register(FastifyAuth0, {
+  domain: configAuth.domain,
+  audience: configAuth.audience
+});
 
 fastify.register(Autoload, { dir: path.join(__dirname, "routes") });
 fastify.register(Autoload, { dir: path.join(__dirname, "plugins") });
