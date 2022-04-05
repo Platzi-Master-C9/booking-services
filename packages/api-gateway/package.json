@@ -21,7 +21,9 @@
   },
   "scripts": {
     "start:dev": "nodemon src/index.js",
-    "inspect": "node --inspect src/index.js"
+    "inspect": "node --inspect src/index.js",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "bugs": {
     "url": "https://github.com/gh0stl1m/backend-services/issues"
@@ -31,12 +33,15 @@
     "@booking-services/auth": "^0.0.1",
     "@booking-services/geolocation": "^1.0.0",
     "@booking-services/math": "^1.0.0",
+    "@booking-services/places": "^1.0.0",
     "fastify": "^3.27.2",
     "fastify-autoload": "^3.11.0",
     "fastify-plugin": "^3.0.1",
     "fastify-swagger": "^5.0.0"
   },
   "devDependencies": {
+    "@faker-js/faker": "^6.0.0",
+    "jest": "^27.5.1",
     "nodemon": "^2.0.15"
   }
 }
