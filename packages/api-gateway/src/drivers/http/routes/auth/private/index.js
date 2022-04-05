@@ -4,13 +4,14 @@
 const { authAdapters } = require('../../../adapters');
 
 /** @type {import('fastify').FastifyPluginCallback} */
-function status(fastify, _, done) {
+function main(fastify, _, done) {
   // Register routes
   fastify.get('/', {
     handler: authAdapters.private,
+    preValidation: fastify.authenticate
   });
 
   done();
 }
 
-module.exports = status;
+module.exports = main;

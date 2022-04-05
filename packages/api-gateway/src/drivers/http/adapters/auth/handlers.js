@@ -9,7 +9,6 @@ async function getGreeting(req, reply) {
 }
 
 async function private(req, reply) {
-  await req.jwtVerify();
   const result = req.user;
 
   return reply.code(200)
