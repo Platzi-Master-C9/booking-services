@@ -23,6 +23,18 @@ const Users = [
   }
 ];
 
+const getUser = function(userId){
+  let idx = Users.findIndex(user => user.id === userId);
+  if(idx === -1)
+  return false;
+  return Users[idx];
+}
+
+const sendMessage = function(userId,message){
+  console.log(`Sending message: ${message} to user: ${userId}`);
+}
+
 module.exports = {
-  Users
+  getUser,
+  sendMessage
 }

@@ -16,9 +16,10 @@ async function changeUserStatus(req, reply) {
       req.body.status,
       req.body.reason
     );
+
     return reply.code(200)
       .header('Content-Type', 'application/json; chartset:utf-8')
-      .send({ ...result });
+      .send(result);
 
   }catch(e) {
     return reply.code(400).send({

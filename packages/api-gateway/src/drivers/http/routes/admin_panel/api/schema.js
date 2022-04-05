@@ -19,12 +19,15 @@ const changeUSerStatusSchema = {
   },
 	response: {
 		200: {
-			type: 'object',
-			properties: {
-				status: { type: 'string' },
-			},
+			type: 'string',
 		},
-    400: {
+    '4xx': {
+      type: 'object',
+      properties: {
+        message: { type: 'string' },
+      },
+    },
+    '5xx': {
       type: 'object',
       properties: {
         message: { type: 'string' },

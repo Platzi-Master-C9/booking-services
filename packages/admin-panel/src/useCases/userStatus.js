@@ -1,5 +1,6 @@
 //const {userSquad} = require('../../../../userCases/userSquad');
 //const {message_squad} = require('../../../../userCases/messageSquad');
+const othersSquad = require('../utils/fake_data');
 const {userStatus,readableStatus} = require('../utils/constants');
 
 
@@ -13,14 +14,8 @@ const changeUserStatus = (userId, status,reason) => {
   }
 
   //verify if user exists
-  //const user = userSquad.getUser(userId);
-  user = {
-    status: "",
-  }
+  const user = othersSquad.getUser(userId);
 
-  message_squad = {
-    sendMessage:function(user_id,message){}
-  }
   if(!user){
     throw new Error('User does not exist');
   }
@@ -34,9 +29,9 @@ const changeUserStatus = (userId, status,reason) => {
   user.status   = status;
 
   //send message to user
-  message_squad.sendMessage(userId,`El Estado de cuenta ha cambiado a ${readableStatus[status]}: ${reason}`);
+  othersSquad.sendMessage(userId,`El Estado de cuenta ha cambiado a ${readableStatus[status]}: ${reason}`);
 
-  return user;
+  return "ok";
 
 }
 
