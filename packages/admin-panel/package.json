@@ -28,6 +28,7 @@
     "url": "https://github.com/jacorreamed/booking-services/issues"
   },
   "devDependencies": {
+    "@faker-js/faker": "^6.1.2",
     "eslint": "^8.11.0",
     "jest": "^27.5.1"
   }

@@ -1,7 +1,7 @@
 'use strict';
-
+//TODO_JAIRO: schema doesn't work propertly
 const changeUSerStatusSchema = {
-	description: 'change user status',
+	description: 'change user status: Given a status and a reason, change the status of a user and send a notification to the user',
 	tags: ['AdminPanel'],
 	body: {
 		type: 'object',
@@ -21,7 +21,7 @@ const changeUSerStatusSchema = {
 		200: {
 			type: 'object',
 			properties: {
-				result: { type: 'number' },
+				status: { type: 'string' },
 			},
 		},
     400: {

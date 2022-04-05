@@ -11,17 +11,14 @@ async function changeUserStatus(req, reply) {
 
   //TODO: this is not the place for try/catch
   try {
-    console.log(req)
-
     const result = await this.adminPanelService.changeUserStatus(
-      req.params.id,
-      req.params.status,
-      req.params.reason
+      req.params.user_id,
+      req.body.status,
+      req.body.reason
     );
-
     return reply.code(200)
       .header('Content-Type', 'application/json; chartset:utf-8')
-      .send({ result });
+      .send({ ...result });
 
   }catch(e) {
     return reply.code(400).send({

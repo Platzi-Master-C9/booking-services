@@ -1,6 +1,6 @@
-const {userSquad} = require('../../../../userCases/userSquad');
-const {message_squad} = require('../../../../userCases/messageSquad');
-const {userStatus,readableStatus} = require('../../../../utils/constants');
+//const {userSquad} = require('../../../../userCases/userSquad');
+//const {message_squad} = require('../../../../userCases/messageSquad');
+const {userStatus,readableStatus} = require('../utils/constants');
 
 
 const changeUserStatus = (userId, status,reason) => {
@@ -8,12 +8,19 @@ const changeUserStatus = (userId, status,reason) => {
   //TODO: validation to avoid going back to the previous status
 
   //verify if status is valid
-  if(userStatus.indexOf(status) === -1){
+  if(typeof userStatus[status] == "undefined"){
     throw new Error('Invalid status');
   }
 
   //verify if user exists
-  const user = userSquad.getUser(userId);
+  //const user = userSquad.getUser(userId);
+  user = {
+    status: "",
+  }
+
+  message_squad = {
+    sendMessage:function(user_id,message){}
+  }
   if(!user){
     throw new Error('User does not exist');
   }
