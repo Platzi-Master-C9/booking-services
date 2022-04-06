@@ -1,22 +1,54 @@
 'use strict';
 const boom = require('@hapi/boom');
+const client = require('../drivers/mongodb/connection');
 
 class Place {
-  constructor() {
-    this.places = [
-      { id: 'sdf7s6f4s', lat: 45.46546, lon: -58.15646 },
-      { id: 'asd45qdqs', lat: 86.46546, lon: -34.15646 },
-      { id: 'fs45qqads', lat: 58.46546, lon: -12.15646 },
-      { id: '6a5sd46as', lat: 17.46546, lon: -91.15646 },
-    ];
-  }
+  constructor() {}
 
-  async getPlaces() {
-    try {
-      return this.places;
-    } catch (error) {
-      throw boom.boomify(error, { statusCode: 500 });
+  /**
+   * @desc Get all places on a sphere based on longitude and latitude
+   * @param {number} longitude
+   * @param {number} latitude
+   * @returns {Array} Array of places
+   * @example
+   * getPlaces(47.165465, -70.16546)
+   * // => return an array  with the places
+   * [
+   *   {
+   *     location: {type: 'Point', coordinates: [-73.9667, 40.78]},
+   *     country: 'French Guiana',
+   *     state: 'Mississippi',
+   *     city: 'Earlinehaven',
+   *     postcode: '44506-8590',
+   *     streetAddress: '591 Wiza Rest'
+   *   }
+   * ]
+   */
+  static async getPlaces(lon, lat) {
+    let places = [];
+    if (!lon && !lat) {
+      throw boom.badRequest(
+        `[geolocation:getPlaces]: latitude and longitude are required`
+      );
     }
+    const db = await client();
+    const results = db.aggregate([
+      {
+        $geoNear: {
+          near: { type: 'Point', coordinates: [lon, lat] },
+          maxDistance: 10000,
+          spherical: true,
+          distanceField: 'calcDistance',
+        },
+      },
+    ]);
+    if (!results) {
+      throw boom.notFound('[geolocation:getPlaces]: No places found');
+    }
+    for await (const doc of results) {
+      places = [...places, doc];
+    }
+    return places;
   }
 }
 
