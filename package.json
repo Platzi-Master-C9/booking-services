@@ -22,5 +22,8 @@
   "homepage": "https://github.com/Platzi-Master-C9/backend-services#readme",
   "devDependencies": {
     "lerna": "^3.22.1"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0"
   }
 }
