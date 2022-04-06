@@ -20,11 +20,6 @@ const changeUserStatus = (userId, status,reason) => {
     throw new Error('User does not exist');
   }
 
-  //verify if user is already in the status
-  if(user.status === status){
-    throw new Error('User is already in the status');
-  }
-
   //change user status
   user.status   = status;
 

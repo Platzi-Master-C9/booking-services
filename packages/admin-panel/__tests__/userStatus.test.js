@@ -1,10 +1,10 @@
-const { changeUserStatus } = require('../src/userStatus');
+const { userStatus } = require('../src/useCases');
 
 // test example
 describe('Given an request for changing user status',()=>{
 
   test('When executing firstCase.sayHello()"', () => {
-    expect(changeUserStatus.sayHello()).toBe('done!!');
+    expect(userStatus(userId, status,reason)).toBe('done!!');
   });
 
 })
