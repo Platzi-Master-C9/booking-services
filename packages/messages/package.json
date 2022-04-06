@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "messaging-system",
+=======
+  "name": "messages",
+>>>>>>> 771663cc01559718ee045ceae7981e63ead9399d
   "version": "0.0.0",
   "description": "This package contains all business rules for messaging system",
   "author": "Hector Esau Macias Javier <hecttoressau@gmail.com>",
