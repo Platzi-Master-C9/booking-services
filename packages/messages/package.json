@@ -1,5 +1,5 @@
 {
-  "name": "message",
+  "name": "messages",
   "version": "0.0.0",
   "description": "This package contains all business rules for messaging system",
   "author": "Hector Esau Macias Javier <hecttoressau@gmail.com>",
