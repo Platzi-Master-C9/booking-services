@@ -1,5 +1,3 @@
-const { faker } = require('@faker-js/faker');
-
 const Users = [
   {
     id: 1,
@@ -9,7 +7,7 @@ const Users = [
     second_surname: 'Gonzales',
     id_type_user: '3',
     email: 'jhon@gmail.com',
-    status: 'active'
+    status: 'active',
   },
   {
     id: 2,
@@ -19,22 +17,21 @@ const Users = [
     second_surname: 'sosa',
     id_type_user: '3',
     email: 'esteban@gmail.com',
-    status: 'active'
-  }
+    status: 'active',
+  },
 ];
 
-const getUser = function(userId){
-  let idx = Users.findIndex(user => user.id === userId);
-  if(idx === -1)
-  return false;
+const getUser = function (userId) {
+  const idx = Users.findIndex((user) => user.id === userId);
+  if (idx === -1) { return false; }
   return Users[idx];
-}
+};
 
-const sendMessage = function(userId,message){
+const sendMessage = function (userId, message) {
   console.log(`Sending message: ${message} to user: ${userId}`);
-}
+};
 
 module.exports = {
   getUser,
-  sendMessage
-}
+  sendMessage,
+};
