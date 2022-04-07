@@ -16,11 +16,11 @@ describe('Given an request for changing user status',()=>{
   });
 
   test('When calling  userStatus.changeUserStatus() with invalid status"', () => {
-    expect(() => userStatus.changeUserStatus(10, "THIS_STATUS_DOES_NOT_EXIST","'cause I'm mean")).toThrow(Error);
+    expect(() => userStatus.changeUserStatus(1, "THIS_STATUS_DOES_NOT_EXIST","'cause I'm mean")).toThrow(Error);
   });
 
   test('When calling  userStatus.changeUserStatus() with invalid reason data type"', () => {
-    expect(() => userStatus.changeUserStatus(10, "BANNED",1)).toThrow(Error);
+    expect(() => userStatus.changeUserStatus(1, "BANNED",1)).toThrow(Error);
   });
 
 })
