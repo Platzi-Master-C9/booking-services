@@ -20,6 +20,10 @@ const changeUserStatus = (userId, status,reason) => {
     throw new Error('User does not exist');
   }
 
+  if(typeof reason != "string"){
+    throw new Error('Reason must be a string');
+  }
+
   //change user status
   user.status   = status;
 
