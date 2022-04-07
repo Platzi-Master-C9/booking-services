@@ -1,11 +1,9 @@
-'use strict'
-
 async function liveness() {
-	return {
-		status: 'Server Running'
-	}
+  return {
+    status: 'Server Running',
+  };
 }
 
 module.exports = {
-	liveness
-}
+  liveness,
+};
