@@ -3404,11 +3404,7 @@ eslint@^8.10.0, eslint@^8.11.0, eslint@^8.2.0:
     text-table "^0.2.0"
     v8-compile-cache "^2.0.3"
 
-<<<<<<< HEAD
-eslint@~8.12.0:
-=======
 eslint@^8.12.0, eslint@~8.12.0:
->>>>>>> cf458a0 (chore(api-gateway): add eslint configuration)
   version "8.12.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.12.0.tgz#c7a5bd1cfa09079aae64c9076c07eada66a46e8e"
   integrity sha512-it1oBL9alZg1S8UycLm5YDMAkIhtH6FtAzuZs6YvoGVldWjbS08BkAdb/ymP9LlAyq8koANu32U7Ib/w+UNh8Q==
