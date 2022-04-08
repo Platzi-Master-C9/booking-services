@@ -54,6 +54,47 @@ async function createUser(req, reply) {
   }
 }
 
+async function validateUser(req, reply) {
+  const {
+    email,
+    firstName,
+    secondName,
+    firstSurname,
+    secondSurname,
+    birthDate,
+    gender,
+    phoneNumber,
+  } = req.body;
+
+  req.log.info("[http-server]: Creating user with: ", {
+    email,
+    firstName,
+    secondName,
+    firstSurname,
+    secondSurname,
+    birthDate,
+    gender,
+    phoneNumber,
+  });
+
+  const result = await this.userServices.validateUser({
+    email,
+    firstName,
+    secondName,
+    firstSurname,
+    secondSurname,
+    birthDate,
+    gender,
+    phoneNumber,
+  });
+
+  return reply
+    .code(200)
+    .header("Content-Type", "application/json; chartset:utf-8")
+    .send({ result });
+}
+
 module.exports = {
   createUser,
+  validateUser
 };

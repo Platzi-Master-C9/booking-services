@@ -8,7 +8,7 @@ function createUser(model) {
     return boom.badRequest(data);
   }
   return data;
-}
+};
 
 function validateUser (model) {
   const data = validatorHandler(validateUserSchema, model);
