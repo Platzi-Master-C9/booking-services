@@ -1,5 +1,3 @@
-// const {userSquad} = require('../../../../userCases/userSquad');
-// const {message_squad} = require('../../../../userCases/messageSquad');
 const othersSquad = require('../utils/fake_data');
 const { userStatus, readableStatus } = require('../utils/constants');
 

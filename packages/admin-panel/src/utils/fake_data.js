@@ -1,35 +1,38 @@
+const { faker } = require('@faker-js/faker');
+
 const Users = [
   {
     id: 1,
-    first_name: 'John',
-    second_name: 'albeiro',
-    first_surname: 'Doe',
-    second_surname: 'Gonzales',
+    first_name: faker.name.firstName('female'),
+    second_name: faker.name.middleName('female'),
+    first_surname: faker.name.lastName(),
+    second_surname: faker.name.lastName(),
     id_type_user: '3',
-    email: 'jhon@gmail.com',
+    email: faker.internet.email(),
     status: 'active',
   },
   {
     id: 2,
-    first_name: 'esteban',
-    second_name: 'felipe',
-    first_surname: 'perez',
-    second_surname: 'sosa',
+    first_name: faker.name.firstName('male'),
+    second_name: faker.name.middleName('male'),
+    first_surname: faker.name.lastName(),
+    second_surname: faker.name.lastName(),
     id_type_user: '3',
-    email: 'esteban@gmail.com',
+    email: faker.internet.email(),
     status: 'active',
   },
 ];
 
-const getUser = function (userId) {
+function getUser(userId) {
   const idx = Users.findIndex((user) => user.id === userId);
   if (idx === -1) { return false; }
   return Users[idx];
-};
+}
 
-const sendMessage = function (userId, message) {
+function sendMessage(userId, message) {
+  // eslint-disable-next-line no-console
   console.log(`Sending message: ${message} to user: ${userId}`);
-};
+}
 
 module.exports = {
   getUser,
