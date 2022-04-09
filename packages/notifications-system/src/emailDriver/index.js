@@ -1,6 +1,5 @@
 const nodemailer = require("nodemailer");
 
-// async..await is not allowed in global scope, must use a wrapper
 async function main() {
   // create reusable transporter object using the Gmail SMTP transport
   const transporter = nodemailer.createTransport({
