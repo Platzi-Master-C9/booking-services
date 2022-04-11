@@ -10,7 +10,7 @@ async function createUser(req, reply) {
     phoneNumber,
   } = req.body;
 
-  req.log.info("[http-server]: Creating user with: ", {
+  req.log.info('[http-server]: Creating user with: ', {
     email,
     firstName,
     secondName,
@@ -34,7 +34,7 @@ async function createUser(req, reply) {
 
   return reply
     .code(200)
-    .header("Content-Type", "application/json; chartset:utf-8")
+    .header('Content-Type', 'application/json; chartset:utf-8')
     .send({ result });
 }
 
