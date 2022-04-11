@@ -1,0 +1,31 @@
+{
+  "name": "notification-system",
+  "version": "0.0.0",
+  "description": "This package contains all business rules for notifications system",
+  "author": "Christian López <chrom13@gmail.com>",
+  "homepage": "https://github.com/Platzi-Master-C9/backend-services/tree/master/packages/message#readme",
+  "license": "ISC",
+  "main": "src/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": "git+https://github.com/Platzi-Master-C9/backend-services.git",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "bugs": {
+    "url": "https://github.com/Platzi-Master-C9/backend-services/issues"
+  },
+  "devDependencies": {
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "jest": "^27.5.1"
+  }
+}

@@ -1,5 +1,6 @@
-const { faker } = require("@faker-js/faker");
+const { faker } = require('@faker-js/faker');
 
+// eslint-disable-next-line no-unused-vars
 function mockGetPlaces(lat, lon) {
   const places = [
     {
@@ -24,4 +25,19 @@ function mockGetPlaces(lat, lon) {
   return places;
 }
 
-module.exports = { mockGetPlaces };
+// eslint-disable-next-line no-unused-vars
+function mockGetAddress(_lat, _lon) {
+  const address = {
+    address: {
+      country: faker.address.country(),
+      state: faker.address.state(),
+      city: faker.address.city(),
+      zipCode: faker.address.zipCode(),
+      streetAddress: faker.address.streetAddress(),
+    },
+  };
+
+  return address;
+}
+
+module.exports = { mockGetPlaces, mockGetAddress };
