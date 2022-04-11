@@ -16,10 +16,10 @@ describe('Given a client that wants to save a new place', () => {
     test('Then the server must send a 200 status code', async () => {
       const response = await fastify.inject({
         method: 'POST',
-        url: 'places/create',
+        url: 'places',
         body: newPlaceInfo,
       });
-      expect(response.statusCode).toBe(200);
+      expect(response.statusCode).toBe(201);
     });
   });
 
@@ -28,7 +28,7 @@ describe('Given a client that wants to save a new place', () => {
     test('Then the server must send a 400 status code', async () => {
       const response = await fastify.inject({
         method: 'POST',
-        url: 'places/create',
+        url: 'places',
         body: {
           place_name: newPlaceInfo.place_name,
         },
