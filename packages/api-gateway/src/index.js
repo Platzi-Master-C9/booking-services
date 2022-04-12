@@ -1,7 +1,5 @@
-"use strict";
+// Internal dependencies
+const HttpServer = require('./drivers/http/server');
 
-const HttpServer = require("./drivers/http/server");
-
-HttpServer.start().catch((err) =>
-  console.error("Somethin went wrong running server", err)
-);
+// eslint-disable-next-line no-console
+HttpServer.start().catch((err) => console.error('Somethin went wrong running server', err));

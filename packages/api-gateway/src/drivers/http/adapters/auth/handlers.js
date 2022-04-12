@@ -1,6 +1,4 @@
-
 async function getGreeting(req, reply) {
-  
   const result = await this.authService.getGreeting;
 
   return reply.code(200)
@@ -9,5 +7,5 @@ async function getGreeting(req, reply) {
 }
 
 module.exports = {
-  getGreeting
-}
+  getGreeting,
+};
