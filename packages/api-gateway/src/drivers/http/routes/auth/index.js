@@ -1,5 +1,3 @@
-'use strict';
-
 // Internal dependencies
 const { authEndpointsStatusSchema } = require('./schema');
 const { authAdapters } = require('../../adapters');
