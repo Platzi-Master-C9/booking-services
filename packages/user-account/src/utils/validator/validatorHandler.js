@@ -4,6 +4,6 @@ function validatorHandler(schema, property) {
     return error;
   }
   return property;
-};
+}
 
 module.exports = validatorHandler;

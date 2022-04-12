@@ -11,27 +11,27 @@ const firstSurname = Joi.string().max(50);
 const secondSurname = Joi.string().max(50);
 const birthDate = Joi.date().max(cutOfDate);
 const gender = Joi.string().valid('male', 'famale', 'not difined');
-const phoneNumber = Joi.number().min(10)
+const phoneNumber = Joi.number().min(10);
 const avatar = Joi.string().uri();
 
-
 const createUserSchema = Joi.object({
-    email: email.required(),
-    firstName: firstName.required(),
-    secondName: secondName,
-    firstSurname: firstSurname.required(),
-    secondSurname: secondSurname,
-    birthDate: birthDate.required(),
-    gender: gender.required(),
-    phoneNumber: phoneNumber.required(),
+  email: email.required(),
+  firstName: firstName.required(),
+  secondName,
+  firstSurname: firstSurname.required(),
+  secondSurname,
+  birthDate: birthDate.required(),
+  gender: gender.required(),
+  phoneNumber: phoneNumber.required(),
 });
 
 const updateUserSchema = Joi.object({
-  email: email,
+  email,
+  avatar,
 });
 
 const getUserSchema = Joi.object({
   id: id.required(),
 });
 
-module.exports = { createUserSchema, updateUserSchema, getUserSchema }
+module.exports = { createUserSchema, updateUserSchema, getUserSchema };

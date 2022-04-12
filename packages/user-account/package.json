@@ -4,7 +4,9 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +19,9 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^6.0.0",
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
     "jest": "^27.5.1"
   }
 }
