@@ -1,7 +1,7 @@
 // TODO_JAIRO: schema doesn't work propertly
 const changeUSerStatusSchema = {
   description: 'change user status: Given a status and a reason, change the status of a user and send a notification to the user',
-  tags: ['Admininistration panel'],
+  tags: ['Administration panel'],
   body: {
     type: 'object',
     properties: {
@@ -21,7 +21,7 @@ const changeUSerStatusSchema = {
       type: 'object',
       properties: {
         result: { type: 'string' },
-      }
+      },
     },
     '4xx': {
       type: 'object',
