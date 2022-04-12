@@ -1,5 +1,6 @@
 'use strict';
 const boom = require('@hapi/boom');
+const client = require('../drivers/mongodb/connection');
 
 const getPlaces = (geoNearQuery) => {
   return async function (lon, lat, maxDistance) {

@@ -8,7 +8,6 @@ const uri = `mongodb://${config.user}:${config.pass}@${config.uri}`;
 const name = dbOptions.name;
 const collection = dbOptions.collection;
 const client = new MongoClient(uri);
-
 //create the connection with the db
 
 async function connect() {

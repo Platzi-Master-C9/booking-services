@@ -9,7 +9,6 @@ const myFormat = printf(({ message, timestamp }) => {
 });
 
 // Create the logger
-
 const logger = createLogger({
   format: combine(timestamp(), myFormat),
   transports: [new transports.Console()],

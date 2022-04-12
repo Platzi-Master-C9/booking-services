@@ -1,5 +1,5 @@
 {
-  "name": "message",
+  "name": "messages",
   "version": "0.0.0",
   "description": "This package contains all business rules for messaging system",
   "author": "Hector Esau Macias Javier <hecttoressau@gmail.com>",
@@ -17,7 +17,8 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "precommit": "yarn lint && yarn test"
   },
   "bugs": {
     "url": "https://github.com/Platzi-Master-C9/backend-services/issues"

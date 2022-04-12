@@ -21,21 +21,22 @@
   },
   "scripts": {
     "test": "jest"
+    "start:sync-db": "node src/drivers/mongodb/populate.js"
   },
   "bugs": {
     "url": "https://github.com/Platzi-Master-C9/backend-services/issues"
   },
   "dependencies": {
     "@hapi/boom": "^9.1.4",
-    "dotenv": "^16.0.0",
     "mongodb": "^4.4.1",
     "winston": "^3.6.0"
   },
   "devDependencies": {
+    "jest": "^27.5.1",
+    "@faker-js/faker": "^6.0.0",
     "eslint": "^8.10.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "jest": "^27.5.1",
     "prettier": "^2.5.1"
   }
 }
