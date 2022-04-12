@@ -24,16 +24,16 @@ const typesOfIdentificationSchema = {
 
 class typesOfIdentification extends Model {
   static associate(models) {
-    this.hasMany(models.Users , {
-      as: 'Users',
-      foreignKey: 'TypeOfIdentificationId'
+    this.hasMany(models.users , {
+      as: 'users',
+      foreignKey: 'typeOfIdentificationId'
     });
   }
   static config(sequelize) {
     return{
       sequelize,
       tableName: TYPES_OF_ID_TABLE,
-      modelName: 'Types of identification',
+      modelName: 'types_of_identification',
       timestamps: false
     }
   }
