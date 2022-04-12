@@ -8,7 +8,8 @@
   "main": "src/index.js",
   "private": true,
   "scripts": {
-    "bootstrap": "yarn install -W && lerna bootstrap"
+    "bootstrap": "yarn install -W && lerna bootstrap",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,9 @@
   },
   "homepage": "https://github.com/Platzi-Master-C9/backend-services#readme",
   "devDependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
+    "husky": "^7.0.0",
     "lerna": "^3.22.1"
   },
   "dependencies": {

@@ -29,6 +29,10 @@ const Place = database.define('Place', {
     rating: {
         type: DECIMAL(2, 1)
     },
+    type: {
+        type: STRING(20),
+        allowNull: false
+    },
     is_active
 
 }, { tableName: 'places' });

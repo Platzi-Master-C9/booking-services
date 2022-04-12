@@ -1,0 +1,11 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Get staged files
+fileList=$(git diff --diff-filter=d --cached --name-only)
+
+messagesPackageFiles=$(echo "$fileList" | grep -E 'packages\/messages\/.+$' || echo '')
+if [ ${#messagesPackageFiles} -gt 0 ]; then
+  # Run pre-commit actions only if there are changes in the messages package.
+  cd packages/messages && yarn precommit
+fi
