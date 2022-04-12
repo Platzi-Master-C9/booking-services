@@ -40,4 +40,13 @@ function mockGetAddress(_lat, _lon) {
   return address;
 }
 
-module.exports = { mockGetPlaces, mockGetAddress };
+// eslint-disable-next-line no-unused-vars
+function mockDeleteGeolocationPlace(placeId) {
+  const place = {
+    id: faker.datatype.uuid(),
+  };
+
+  return place;
+}
+
+module.exports = { mockGetPlaces, mockGetAddress, mockDeleteGeolocationPlace };

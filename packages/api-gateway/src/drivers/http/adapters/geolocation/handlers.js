@@ -47,7 +47,28 @@ async function getAddress(req, reply) {
   }
 }
 
+async function deleteGeolocationPlace(req, reply) {
+  try {
+    const { placeId } = req.query;
+
+    req.log.info('[http-server]: Deleting place in Geolocation database: ', {
+      placeId,
+    });
+
+    // const address = await this.geocolocationServices.deleteGeolocationPlace(placeId);
+    const place = await geolocationServices.mockDeleteGeolocationPlace(placeId);
+
+    return reply
+      .code(200)
+      .header('Content-Type', 'application/json; chartset:utf-8')
+      .send({ placeId: place.id, message: 'geolocation place deleted successfully' });
+  } catch (error) {
+    return errorHandler(error, reply);
+  }
+}
+
 module.exports = {
   getPlaces,
   getAddress,
+  deleteGeolocationPlace,
 };
