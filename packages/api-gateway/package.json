@@ -37,7 +37,9 @@
     "@booking-services/math": "^1.0.0",
     "@booking-services/places": "^1.0.0",
     "@faker-js/faker": "^6.1.1",
+    "dotenv": "^16.0.0",
     "fastify": "^3.27.2",
+    "fastify-auth0-verify": "^0.7.3",
     "fastify-autoload": "^3.11.0",
     "fastify-plugin": "^3.0.1",
     "fastify-swagger": "^5.0.0"
