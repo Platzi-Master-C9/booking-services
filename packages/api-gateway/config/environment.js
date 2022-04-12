@@ -11,10 +11,12 @@ switch (process.env.NODE_ENV) {
   case supportedEnvs.PRODUCTION: {
     environment = '';
     path = `/src/${filename}`;
+    break;
   }
   default: {
     environment = 'DEV_';
     path = `${join(__dirname, '../../..')}/${filename}`;
+    break;
   }
 }
 

@@ -1,8 +1,4 @@
 async function getGreeting(req, reply) {
-<<<<<<< HEAD
-=======
-
->>>>>>> 99b7a1e4f7bfcb4e8fc930921d7022907b27cd1c
   const result = await this.authService.getGreeting;
 
   return reply.code(200)
@@ -10,7 +6,7 @@ async function getGreeting(req, reply) {
     .send({ result });
 }
 
-async function private(req, reply) {
+async function getPrivate(req, reply) {
   const result = req.user;
 
   return reply.code(200)
@@ -20,9 +16,5 @@ async function private(req, reply) {
 
 module.exports = {
   getGreeting,
-<<<<<<< HEAD
+  getPrivate,
 };
-=======
-  private,
-}
->>>>>>> 99b7a1e4f7bfcb4e8fc930921d7022907b27cd1c
