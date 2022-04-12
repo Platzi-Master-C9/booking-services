@@ -1,6 +1,31 @@
 const { faker } = require('@faker-js/faker');
 
 // eslint-disable-next-line no-unused-vars
+function mockGetPlaces(lat, lon) {
+  const places = [
+    {
+      placeId: faker.datatype.uuid(),
+      placeName: faker.address.secondaryAddress(),
+      lat: parseFloat(faker.address.latitude()),
+      lon: parseFloat(faker.address.longitude()),
+    },
+    {
+      placeId: faker.datatype.uuid(),
+      placeName: faker.address.secondaryAddress(),
+      lat: faker.address.latitude(),
+      lon: faker.address.longitude(),
+    },
+    {
+      placeId: faker.datatype.uuid(),
+      placeName: faker.address.secondaryAddress(),
+      lat: faker.address.latitude(),
+      lon: faker.address.longitude(),
+    },
+  ];
+  return places;
+}
+
+// eslint-disable-next-line no-unused-vars
 function mockGetAddress(_lat, _lon) {
   const address = {
     address: {
@@ -15,4 +40,4 @@ function mockGetAddress(_lat, _lon) {
   return address;
 }
 
-module.exports = { mockGetAddress };
+module.exports = { mockGetPlaces, mockGetAddress };
