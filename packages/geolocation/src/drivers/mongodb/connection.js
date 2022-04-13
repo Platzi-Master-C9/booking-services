@@ -5,8 +5,7 @@ const { dbOptions } = require('../../utils/constants');
 const Logger = require('../../utils/logger');
 
 const uri = `mongodb://${config.user}:${config.pass}@${config.uri}`;
-const name = dbOptions.name;
-const collection = dbOptions.collection;
+const { name, collection } = dbOptions;
 const client = new MongoClient(uri);
 
 /**
