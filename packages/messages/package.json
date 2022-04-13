@@ -32,8 +32,8 @@
     "jest": "^27.5.1"
   },
   "dependencies": {
-    "winston": "^3.6.0",
     "dotenv": "^16.0.0",
-    "mongoose": "^6.2.10"
+    "mongoose": "^6.2.10",
+    "winston": "^3.7.2"
   }
 }
