@@ -1,6 +1,6 @@
 {
-  "name": "messages",
-  "version": "0.0.0",
+  "name": "@booking-services/messaging",
+  "version": "1.0.0",
   "description": "This package contains all business rules for messaging system",
   "author": "Hector Esau Macias Javier <hecttoressau@gmail.com>",
   "homepage": "https://github.com/Platzi-Master-C9/backend-services/tree/master/packages/message#readme",
@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "dotenv": "^16.0.0",
-    "mongoose": "^6.2.10"
+    "mongoose": "^6.2.10",
+    "winston": "^3.7.2"
   }
 }
