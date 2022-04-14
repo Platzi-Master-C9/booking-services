@@ -2,10 +2,23 @@ const geolocationServices = require('../../../../../mocks/geolocationServices.mo
 
 function errorHandler(error, reply) {
   if (error.isBoom) {
-    return reply.send(error.output.payload);
+    return reply.code(error.output.statusCode).send(error.output.payload);
   }
 
   return reply.code(500).send({ error: error.message, stack: error.stack });
+}
+
+async function updatePlace(req, reply) {
+  try {
+    const { id, address } = req.query;
+    const placeId = await this.geolocationServices.updatePlace(id, address);
+    return reply
+      .code(200)
+      .header('Content-Type', 'application/json; chartset:utf-8')
+      .send({ id: placeId });
+  } catch (error) {
+    return errorHandler(error, reply);
+  }
 }
 
 async function getPlaces(req, reply) {
@@ -48,6 +61,7 @@ async function getAddress(req, reply) {
 }
 
 module.exports = {
+  updatePlace,
   getPlaces,
   getAddress,
 };

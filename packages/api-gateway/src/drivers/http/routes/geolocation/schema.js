@@ -1,3 +1,17 @@
+const updatePlaceSchema = {
+  description: 'update place from geolocation DB: Given an Id, update the place with Id in the geolocation DB',
+  tags: ['Geolocation'],
+  security: [{ Bearer: [] }],
+  querystring: {
+    type: 'object',
+    properties: {
+      id: { type: 'string', description: 'place Id' },
+      address: { type: 'string', description: 'addres to update' },
+    },
+    required: ['id', 'address'],
+  },
+};
+
 const getPlacesSchema = {
   description:
     'Given latitude, longitude and radius when a user select a mark in a map, then return an array with near places details from database.',
@@ -37,6 +51,7 @@ const getAddressSchema = {
 };
 
 module.exports = {
+  updatePlaceSchema,
   getPlacesSchema,
   getAddressSchema,
 };
