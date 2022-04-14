@@ -6,7 +6,7 @@ const updatePlace = (updatePlaceQuery) => async (id, streetAddress) => {
     throw boom.notFound('[geolocation:getPlaces]: No place found with id: ', id);
   }
   if (!results.modifiedCount) {
-    throw boom.notFound('[geolocation:getPlaces]: Cannot update the place with id: ', id);
+    throw boom.internal('[geolocation:getPlaces]: Cannot update the place with id: ', id);
   }
   return id;
 };
