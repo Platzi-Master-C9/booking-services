@@ -20,7 +20,8 @@
     "url": "git+https://github.com/gh0stl1m/backend-services.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "jest:init": "jest --init",
+    "test": "jest"
   },
   "bugs": {
     "url": "https://github.com/gh0stl1m/backend-services/issues"
@@ -28,5 +29,9 @@
   "dependencies": {
     "mongoose": "^6.2.4",
     "winston": "^3.6.0"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1",
+    "jest-mongoose-mock": "^1.2.0"
   }
 }
