@@ -1,4 +1,4 @@
-const { fastify } = require('../src/drivers/http/server');
+const { fastify } = require('../../src/drivers/http/server');
 
 describe('geolocation/places endpoint', () => {
   const api = fastify;
