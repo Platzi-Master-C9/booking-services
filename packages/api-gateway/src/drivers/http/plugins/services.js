@@ -1,17 +1,21 @@
-const MathServices = require('@booking-services/math');
+// External dependencies
+const PluginLoader = require('fastify-plugin');
 const GeolocationServices = require('@booking-services/geolocation');
+const MathServices = require('@booking-services/math');
 const AdminPanelService = require('@booking-services/admin-panel');
 const AuthServices = require('@booking-services/auth');
 const placesServices = require('@booking-services/places');
-
-const PluginLoader = require('fastify-plugin');
+const MessageServices = require('@booking-services/messages');
 
 async function services(fastify) {
-  await fastify.decorate('mathServices', MathServices);
-  await fastify.decorate('geolocationServices', GeolocationServices);
-  await fastify.decorate('adminPanelService', AdminPanelService);
-  await fastify.decorate('authService', AuthServices);
-  await fastify.decorate('placesService', placesServices);
+  await Promise.all([
+    fastify.decorate('mathServices', MathServices),
+    fastify.decorate('adminPanelService', AdminPanelService),
+    fastify.decorate('messageServices', MessageServices),
+    fastify.decorate('placesService', placesServices),
+    fastify.decorate('geolocationServices', GeolocationServices),
+    fastify.decorate('authService', AuthServices)
+  ]);
 }
 
 module.exports = PluginLoader(services);

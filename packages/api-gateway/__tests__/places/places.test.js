@@ -7,9 +7,6 @@ const newPlaceInfo = {
   type: 'casa',
 };
 
-// At least in my pc it lasts almost 15s
-jest.setTimeout(15000);
-
 describe('Given a client that wants to save a new place', () => {
   // the succesful
   describe('When it does the post petition with the required data', () => {
