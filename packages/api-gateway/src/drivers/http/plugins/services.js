@@ -14,7 +14,7 @@ async function services(fastify) {
     fastify.decorate('messageServices', MessageServices),
     fastify.decorate('placesService', placesServices),
     fastify.decorate('geolocationServices', GeolocationServices),
-    fastify.decorate('authService', AuthServices)
+    fastify.decorate('authService', AuthServices),
   ]);
 }
 
