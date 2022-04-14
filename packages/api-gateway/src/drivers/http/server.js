@@ -9,7 +9,13 @@ const path = require('path');
 const { version } = require('../../../package.json');
 const configAuth = require('../../../config/auth0');
 
-const fastify = Fastify({ logger: true });
+// Setup
+const isTestEnv = process.env.NODE_ENV === 'test';
+
+const fastify = Fastify({
+  // Disable logs in test environment
+  logger: !isTestEnv,
+});
 
 /** @type {import('fastify-swagger').SwaggerOptions} */
 const swaggerOptions = {
@@ -34,10 +40,7 @@ const swaggerOptions = {
       { name: 'Notifications', description: 'Notification endpoints' },
       { name: 'Messages', description: 'Messages endpoints' },
       { name: 'Places', description: 'Places endpoints' },
-      {
-        name: 'Admininistration panel',
-        description: 'Admininistration panel endpoints',
-      },
+      { name: 'Admininistration panel', description: 'Admininistration panel endpoints' },
     ],
     components: {
       securitySchemes: {
@@ -51,8 +54,11 @@ const swaggerOptions = {
   exposeRoute: true,
 };
 
-// Swagger needs to be loaded before the routes
-fastify.register(Swagger, swaggerOptions);
+// Avoid loading swagger when running tests
+if (!isTestEnv) {
+  // Swagger needs to be loaded before the routes
+  fastify.register(Swagger, swaggerOptions);
+}
 
 fastify.register(FastifyAuth0, {
   domain: configAuth.domain,
