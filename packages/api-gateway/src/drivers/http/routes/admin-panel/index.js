@@ -1,9 +1,9 @@
 const { adminPanelAdapters } = require('../../adapters');
-const {changeUSerStatusSchema,userListSchema} = require('./schema');
+const {default_schema, changeUSerStatusSchema,userListSchema} = require('./schema');
 
 async function adminPanelRouter(fastify) {
-  await fastify.get('/', adminPanelAdapters.sayHello);
-  await fastify.patch('/user-status/:user_id', { changeUSerStatusSchema }, adminPanelAdapters.changeUserStatus);
-  await fastify.get('/users', { userListSchema }, adminPanelAdapters.getUsers);
+  await fastify.get('/', {schema:default_schema}, adminPanelAdapters.sayHello);
+  await fastify.patch('/user-status/:user_id', { schema:changeUSerStatusSchema }, adminPanelAdapters.changeUserStatus);
+  await fastify.get('/users', { schema:userListSchema }, adminPanelAdapters.getUsers);
 }
 module.exports = adminPanelRouter;

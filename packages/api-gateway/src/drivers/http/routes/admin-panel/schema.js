@@ -1,4 +1,9 @@
 // TODO_JAIRO: schema doesn't work propertly
+const default_schema = {
+  description: 'Index Route',
+  tags: ['Administration panel'],
+}
+
 const changeUSerStatusSchema = {
   description: 'change user status: Given a status and a reason, change the status of a user and send a notification to the user',
   tags: ['Administration panel'],
@@ -85,6 +90,7 @@ const userListSchema = {
 
 
 module.exports = {
+  default_schema,
   changeUSerStatusSchema,
   userListSchema
 };

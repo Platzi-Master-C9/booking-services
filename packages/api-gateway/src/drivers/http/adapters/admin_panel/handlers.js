@@ -1,9 +1,11 @@
+
 async function sayHello(req, reply) {
   const result = await this.adminPanelService.sayHello();
   return reply.code(200)
     .header('Content-Type', 'application/json; chartset:utf-8')
     .send({ result });
 }
+
 async function changeUserStatus(req, reply) {
   // TODO: this is not the place for try/catch
   try {
@@ -21,7 +23,18 @@ async function changeUserStatus(req, reply) {
     });
   }
 }
+
+async function getUsers(req, reply) {
+
+  const result = await this.adminPanelService.getUsers();
+
+  return reply.code(200)
+  .header('Content-Type', 'application/json; chartset:utf-8')
+  .send({ result });
+}
+
 module.exports = {
   sayHello,
   changeUserStatus,
+  getUsers,
 };
