@@ -36,7 +36,7 @@ const getAddressSchema = {
   },
 };
 
-const deleteGeolocationPlaceSchema = {
+const deletePlaceSchema = {
   description:
     'Given a placeId when a user delte a place, then delete the geolocation place in geolocation db.',
   tags: ['Geolocation'],
@@ -53,5 +53,5 @@ const deleteGeolocationPlaceSchema = {
 module.exports = {
   getPlacesSchema,
   getAddressSchema,
-  deleteGeolocationPlaceSchema,
+  deletePlaceSchema,
 };

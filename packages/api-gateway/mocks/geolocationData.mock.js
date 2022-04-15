@@ -1,7 +1,7 @@
 const { faker } = require('@faker-js/faker');
 
 // eslint-disable-next-line no-unused-vars
-function mockGetPlaces(lat, lon) {
+function mockPlaces() {
   const places = [
     {
       placeId: faker.datatype.uuid(),
@@ -26,7 +26,7 @@ function mockGetPlaces(lat, lon) {
 }
 
 // eslint-disable-next-line no-unused-vars
-function mockGetAddress(_lat, _lon) {
+function mockAddress() {
   const address = {
     address: {
       country: faker.address.country(),
@@ -36,17 +36,16 @@ function mockGetAddress(_lat, _lon) {
       streetAddress: faker.address.streetAddress(),
     },
   };
-
   return address;
 }
 
 // eslint-disable-next-line no-unused-vars
-function mockDeleteGeolocationPlace(placeId) {
+function mockDeletePlace(id) {
   const place = {
-    id: faker.datatype.uuid(),
+    id,
   };
 
   return place;
 }
 
-module.exports = { mockGetPlaces, mockGetAddress, mockDeleteGeolocationPlace };
+module.exports = { mockPlaces, mockAddress, mockDeletePlace };

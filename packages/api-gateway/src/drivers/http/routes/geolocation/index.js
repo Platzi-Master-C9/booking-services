@@ -1,5 +1,5 @@
 const { geolocationAdapters } = require('../../adapters');
-const { getPlacesSchema, getAddressSchema, deleteGeolocationPlaceSchema } = require('./schema');
+const { getPlacesSchema, getAddressSchema, deletePlaceSchema } = require('./schema');
 
 async function geolocationRouter(fastify) {
   await fastify.get(
@@ -21,9 +21,9 @@ async function geolocationRouter(fastify) {
   await fastify.delete(
     '/place',
     {
-      schema: deleteGeolocationPlaceSchema,
+      schema: deletePlaceSchema,
     },
-    geolocationAdapters.deleteGeolocationPlace,
+    geolocationAdapters.deletePlace,
   );
 }
 
