@@ -15,6 +15,7 @@ const changeUSerStatusSchema = {
     properties: {
       user_id: { type: 'number' },
     },
+    required: ['user_id'],
   },
   response: {
     200: {
@@ -37,4 +38,53 @@ const changeUSerStatusSchema = {
     },
   },
 };
-module.exports = changeUSerStatusSchema;
+
+const userListSchema = {
+  description: 'Get a list of users',
+  tags: ['Administration panel'],
+  querystring: {
+    type: 'object',
+    properties: {
+      status: { type: 'string' },
+      search: { type: 'string' },
+    }
+  },
+  response: {
+    200: {
+      type: 'object',
+      properties: {
+        result: {
+          type: 'array',
+          items: {
+            type: 'object',
+            properties : {
+              id: { type: 'number' },
+              full_name: { type: 'string' },
+              url_image: { type: 'string' },
+              date_of_register: { type: 'string' },
+              status: { type: 'string' },
+            }
+          }
+        },
+      }
+    },
+    '4xx': {
+      type: 'object',
+      properties: {
+        message: { type: 'string' },
+      },
+    },
+    '5xx': {
+      type: 'object',
+      properties: {
+        message: { type: 'string' },
+      },
+    },
+  }
+}
+
+
+module.exports = {
+  changeUSerStatusSchema,
+  userListSchema
+};
