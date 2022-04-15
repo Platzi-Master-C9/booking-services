@@ -27,10 +27,13 @@ db.once('disconnected', () => Logger.debug('[mongodb]: Client was disconnected')
 
 process.on('SIGINT', function () {
 	db.close(function() {
-		Logger.info('[mongodb]: Connection was forced to be disconencted');
+		Logger.info('[mongodb]: Connection was forced to be disconnected');
 
 		process.exit(1);
 	});
 });
 
-module.exports = db;
+//module.exports = db;
+module.exports = {
+  model: function (name, schema) {}
+}

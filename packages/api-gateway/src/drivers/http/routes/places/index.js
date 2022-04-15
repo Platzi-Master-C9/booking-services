@@ -1,8 +1,8 @@
 const { placesAdapters } = require('../../adapters');
-const schema = require('./schema');
+const { postSchema } = require('./schema');
 
 async function placesRoute(fastify) {
-  await fastify.post('/', { schema }, placesAdapters.places);
+  await fastify.post('/', { schema: postSchema }, placesAdapters.postPlace);
 }
 
 module.exports = placesRoute;
