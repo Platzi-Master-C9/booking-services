@@ -51,7 +51,7 @@ const userListSchema = {
     type: 'object',
     properties: {
       status: { type: 'string' },
-      search: { type: 'string' },
+      full_name: { type: 'string' },
     }
   },
   response: {

@@ -26,7 +26,10 @@ async function changeUserStatus(req, reply) {
 
 async function getUsers(req, reply) {
 
-  const result = await this.adminPanelService.getUsers();
+  const result = await this.adminPanelService.getUsers(
+    req.querystring.status,
+    req.querystring.full_name,
+  );
 
   return reply.code(200)
   .header('Content-Type', 'application/json; chartset:utf-8')
