@@ -17,18 +17,27 @@ const client = new MongoClient(uri);
  * const places = collection.find()
  */
 
-async function connect() {
+async function connect(method, options) {
   try {
     await client.connect();
     Logger.info({
       message: '[geolocation:mongodb]: Connection succesfully to server',
     });
-    return client.db(name).collection(collection);
+    // eslint-disable-next-line
+    results = await client
+      .db(name)
+      .collection(collection)
+      [method](...options);
   } catch (error) {
     Logger.error({
       message: `[geolocation:mongodb]: Could not connect to database ${error}`,
     });
+  } finally {
+    client.close();
   }
+
+  // eslint-disable-next-line
+  return results;
 }
 
 module.exports = connect;
