@@ -6,7 +6,7 @@ const adminPanelAdapters = require('./admin_panel/handlers');
 const notificationsAdapters = require('./notifications/handlers');
 const placesAdapters = require('./places/handlers');
 const messageAdapters = require('./messages/handlers');
-const userAdapter = require("./users/handlers");
+const userAdapter = require('./users/handlers');
 
 module.exports = {
   mathAdapters,
