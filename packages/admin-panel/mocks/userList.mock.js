@@ -3,34 +3,38 @@ const { faker } = require('@faker-js/faker');
 const userList = [
   {
     id: faker.datatype.uuid(),
-    full_name: faker.name.findName(),
-    url_image: faker.image.avatar(),
-    date_of_register: faker.date.future(),
-    status: "ACTIVE",
+    fullName: faker.name.findName(),
+    urlImage: faker.image.avatar(),
+    dateOfRegister: faker.date.future(),
+    status: 'ACTIVE',
+    profile:2,
   },
   {
     id: faker.datatype.uuid(),
-    full_name: faker.name.findName(),
-    url_image: faker.image.avatar(),
-    date_of_register: faker.date.future(),
-    status: "ACTIVE",
+    fullName: faker.name.findName(),
+    urlImage: faker.image.avatar(),
+    dateOfRegister: faker.date.future(),
+    status: 'ACTIVE',
+    profile:1,
   },
   {
     id: faker.datatype.uuid(),
-    full_name: faker.name.findName(),
-    url_image: faker.image.avatar(),
-    date_of_register: faker.date.future(),
-    status: "ACTIVE",
+    fullName: faker.name.findName(),
+    urlImage: faker.image.avatar(),
+    dateOfRegister: faker.date.future(),
+    status: 'ACTIVE',
+    profile:1,
   },
   {
     id: faker.datatype.uuid(),
-    full_name: faker.name.findName(),
-    url_image: faker.image.avatar(),
-    date_of_register: faker.date.future(),
-    status: "ACTIVE",
-  }
-]
+    fullName: faker.name.findName(),
+    urlImage: faker.image.avatar(),
+    dateOfRegister: faker.date.future(),
+    status: 'ACTIVE',
+    profile:1,
+  },
+];
 
 module.exports = {
-  userList
-}
+  userList,
+};

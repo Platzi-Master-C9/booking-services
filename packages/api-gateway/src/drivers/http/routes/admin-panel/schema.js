@@ -51,7 +51,7 @@ const userListSchema = {
     type: 'object',
     properties: {
       status: { type: 'string' },
-      full_name: { type: 'string' },
+      fullName: { type: 'string' },
     }
   },
   response: {
@@ -63,10 +63,10 @@ const userListSchema = {
           items: {
             type: 'object',
             properties : {
-              id: { type: 'number' },
-              full_name: { type: 'string' },
-              url_image: { type: 'string' },
-              date_of_register: { type: 'string' },
+              id: { type: 'string' },
+              fullName: { type: 'string' },
+              urlImage: { type: 'string' },
+              dateOfRegister: { type: 'string' },
               status: { type: 'string' },
             }
           }
