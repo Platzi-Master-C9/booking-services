@@ -5,13 +5,13 @@
   "author": "Booking Squad",
   "homepage": "https://github.com/Platzi-Master-C9/backend-services/tree/main/packages/booking#readme",
   "license": "ISC",
-  "main": "index.js",
+  "main": "src/index.js",
   "directories": {
-    "lib": "lib",
+    "src": "src",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "src"
   ],
   "publishConfig": {
     "access": "public"
