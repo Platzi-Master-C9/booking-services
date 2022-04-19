@@ -33,6 +33,7 @@
     "jest": "~27.5.1"
   },
   "dependencies": {
+    "@booking-services/shared": "^0.0.0",
     "jest": "~27.5.1"
   }
 }

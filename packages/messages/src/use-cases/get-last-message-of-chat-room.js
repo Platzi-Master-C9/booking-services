@@ -1,5 +1,5 @@
 // Internal dependencies
-const logger = require('../utils/logger');
+const logger = require('@booking-services/shared/src/utils/logger');
 
 /**
  * @param {import('mongoose').Model} messageModel Message model

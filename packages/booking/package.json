@@ -21,11 +21,14 @@
     "url": "git+https://github.com/artiko00/booking-services.git"
   },
   "scripts": {
-    "start":"node src/index.js",
+    "start": "node src/index.js",
     "lint:fix": "eslint . --fix",
     "test": "jest"
   },
   "bugs": {
     "url": "https://github.com/artiko00/booking-services/issues"
+  },
+  "dependencies": {
+    "@booking-services/shared": "^0.0.0"
   }
 }
