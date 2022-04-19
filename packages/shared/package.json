@@ -1,5 +1,5 @@
 {
-  "name": "@booking-system/shared",
+  "name": "@booking-services/shared",
   "version": "0.0.0",
   "description": "Some code that we could share with other teams",
   "author": "Hector Esau Macias Javier <hecttoressau@gmail.com>",
