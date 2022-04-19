@@ -1,7 +1,7 @@
 'use strict';
 
 const { operations } = require('../utils/constants');
-const Logger = require('../utils/logger');
+const Logger = require('@booking-services/shared/src/utils/logger');
 
 const sumOperation = (model) => function ({ inputA, inputB }) {
 	if (isNaN(inputA) || isNaN(inputB)) {

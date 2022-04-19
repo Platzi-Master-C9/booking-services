@@ -5,7 +5,8 @@
 // const config = require('../../../config/mongodb');
 // const Logger = require('../../utils/logger');
 
-// Mongoose.Promise = global.Promise;
+const config = require('../../../config/mongodb');
+const Logger = require('@booking-services/shared/src/utils/logger');
 
 // const db = Mongoose.createConnection(config.uri, {
 // 	useNewUrlParser: true,
