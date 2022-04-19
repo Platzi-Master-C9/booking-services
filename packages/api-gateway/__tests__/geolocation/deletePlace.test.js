@@ -1,28 +1,16 @@
-const Fastify = require('fastify');
-const Autoload = require('fastify-autoload');
-const pluginLoader = require('fastify-plugin');
 const boom = require('@hapi/boom');
 const { faker } = require('@faker-js/faker');
-const getApiGatewayDirectory = require('../../src/utils/getApiGatewayDirectory');
+const { mockBuildApp } = require('../../mocks/geolocation.mock');
 
 describe('[DELETE] geolocation/place endpoint then return id and status code 200', () => {
-  // mock deletePlace method
-  const deletePlace = () => async (id) => id;
-  const GeolocationServices = {
-    deletePlace: deletePlace(),
-  };
-
-  async function services(fastify) {
-    await fastify.decorate('geolocationServices', GeolocationServices);
-  }
-
-  // load fastify and update function
-  const fastify = Fastify({ logger: true });
-  fastify.register(Autoload, { dir: getApiGatewayDirectory() });
-  fastify.register(pluginLoader(services));
-
   test('Given an id when a user wants to delete a place, then return status code 200 and the id of the deleted place in geolocation databse', async () => {
-    const placeDeleted = await fastify.inject({
+    const deletePlace = () => async (id) => id;
+    const GeolocationServices = {
+      deletePlace: deletePlace(),
+    };
+    const app = mockBuildApp(GeolocationServices);
+
+    const placeDeleted = await app.inject({
       method: 'DELETE',
       url: 'geolocation/place',
       query: {
@@ -32,12 +20,10 @@ describe('[DELETE] geolocation/place endpoint then return id and status code 200
 
     expect(placeDeleted.statusCode).toEqual(200);
     expect(JSON.parse(placeDeleted.body)).toEqual(
-
       expect.objectContaining({
         message: expect.any(String),
         placeId: expect.any(String),
       }),
-
     );
   }, 10000);
 });
@@ -48,18 +34,10 @@ describe('[DELETE] geolocation/place endpoint then return status code 400', () =
   const GeolocationServices = {
     deletePlace: deletePlace(),
   };
-
-  async function services(fastify) {
-    await fastify.decorate('geolocationServices', GeolocationServices);
-  }
-
-  // load fastify and update function
-  const fastify = Fastify({ logger: true });
-  fastify.register(Autoload, { dir: getApiGatewayDirectory() });
-  fastify.register(pluginLoader(services));
+  const app = mockBuildApp(GeolocationServices);
 
   test('Given null id when a user select a place to delete, then return status code 400 ', async () => {
-    const place = await fastify.inject({
+    const place = await app.inject({
       method: 'DELETE',
       url: 'geolocation/place',
     });
@@ -76,19 +54,11 @@ describe('[DELETE] geolocation/place endpoint then return status code 404', () =
   const GeolocationServices = {
     deletePlace: deletePlace(),
   };
-
-  async function services(fastify) {
-    await fastify.decorate('geolocationServices', GeolocationServices);
-  }
-
-  // load fastify and update function
-  const fastify = Fastify({ logger: true });
-  fastify.register(Autoload, { dir: getApiGatewayDirectory() });
-  fastify.register(pluginLoader(services));
+  const app = mockBuildApp(GeolocationServices);
 
   // run the test
   test('Given a wrong id when a user select a place to delete, then return status code 404 for any place, not found', async () => {
-    const place = await fastify.inject({
+    const place = await app.inject({
       method: 'DELETE',
       url: 'geolocation/place',
       query: {
@@ -113,19 +83,11 @@ describe('[GET] geolocation/place endpoint then return status code 500 for serve
   const GeolocationServices = {
     deletePlace: deletePlace(),
   };
-
-  async function services(fastify) {
-    await fastify.decorate('geolocationServices', GeolocationServices);
-  }
-
-  // load fastify and update function
-  const fastify = Fastify({ logger: true });
-  fastify.register(Autoload, { dir: getApiGatewayDirectory() });
-  fastify.register(pluginLoader(services));
+  const app = mockBuildApp(GeolocationServices);
 
   // run the test
   test('Given an id when a user select a place to delete, then return status code 500 for internal server error', async () => {
-    const place = await fastify.inject({
+    const place = await app.inject({
       method: 'DELETE',
       url: 'geolocation/place',
       query: {

@@ -1,30 +1,18 @@
-const Fastify = require('fastify');
-const Autoload = require('fastify-autoload');
-const pluginLoader = require('fastify-plugin');
 const boom = require('@hapi/boom');
 const { faker } = require('@faker-js/faker');
-const getApiGatewayDirectory = require('../../src/utils/getApiGatewayDirectory');
-const geolocationData = require('../../mocks/geolocationData.mock');
+const { mockBuildApp, mockAddress } = require('../../mocks/geolocation.mock');
 
 describe('[GET] geolocation/address endpoint then return address and status code 200', () => {
   // mock getAddress method
   // eslint-disable-next-line no-unused-vars
-  const getAddress = () => async (lat, lon) => geolocationData.mockAddress();
+  const getAddress = () => async (lat, lon) => mockAddress();
   const GeolocationServices = {
     getAddress: getAddress(),
   };
-
-  async function services(fastify) {
-    await fastify.decorate('geolocationServices', GeolocationServices);
-  }
-
-  // load fastify and update function
-  const fastify = Fastify({ logger: true });
-  fastify.register(Autoload, { dir: getApiGatewayDirectory() });
-  fastify.register(pluginLoader(services));
+  const app = mockBuildApp(GeolocationServices);
 
   test('Given latitude, longitude when a user select a mark in the map, then return status code 200 and an address', async () => {
-    const address = await fastify.inject({
+    const address = await app.inject({
       method: 'GET',
       url: 'geolocation/address',
       query: {
@@ -53,18 +41,10 @@ describe('[GET] geolocation/address endpoint then return status code 400', () =>
   const GeolocationServices = {
     getAddress: getAddress(),
   };
-
-  async function services(fastify) {
-    await fastify.decorate('geolocationServices', GeolocationServices);
-  }
-
-  // load fastify and update function
-  const fastify = Fastify({ logger: true });
-  fastify.register(Autoload, { dir: getApiGatewayDirectory() });
-  fastify.register(pluginLoader(services));
+  const app = mockBuildApp(GeolocationServices);
 
   test('Given wrong or null latitude, longitude when a user select a mark in a map, then return status code 400 ', async () => {
-    const places = await fastify.inject({
+    const places = await app.inject({
       method: 'GET',
       url: 'geolocation/address',
     });
@@ -81,19 +61,11 @@ describe('[GET] geolocation/address endpoint then return status code 404', () =>
   const GeolocationServices = {
     getAddress: getAddress(),
   };
-
-  async function services(fastify) {
-    await fastify.decorate('geolocationServices', GeolocationServices);
-  }
-
-  // load fastify and update function
-  const fastify = Fastify({ logger: true });
-  fastify.register(Autoload, { dir: getApiGatewayDirectory() });
-  fastify.register(pluginLoader(services));
+  const app = mockBuildApp(GeolocationServices);
 
   // run the test
   test('Given latitude, longitude when a user select a mark in a map, then return status code 404 for any address, not found', async () => {
-    const address = await fastify.inject({
+    const address = await app.inject({
       method: 'GET',
       url: 'geolocation/address',
       query: {
@@ -119,19 +91,11 @@ describe('[GET] geolocation/address endpoint then return status code 500 for ser
   const GeolocationServices = {
     getAddress: getAddress(),
   };
-
-  async function services(fastify) {
-    await fastify.decorate('geolocationServices', GeolocationServices);
-  }
-
-  // load fastify and update function
-  const fastify = Fastify({ logger: true });
-  fastify.register(Autoload, { dir: getApiGatewayDirectory() });
-  fastify.register(pluginLoader(services));
+  const app = mockBuildApp(GeolocationServices);
 
   // run the test
   test('Given latitude, longitude and radius when a user select a mark in a map, then return status code 500 for internal server error', async () => {
-    const address = await fastify.inject({
+    const address = await app.inject({
       method: 'GET',
       url: 'geolocation/address',
       query: {

@@ -1,30 +1,18 @@
-const Fastify = require('fastify');
-const Autoload = require('fastify-autoload');
-const pluginLoader = require('fastify-plugin');
 const boom = require('@hapi/boom');
 const { faker } = require('@faker-js/faker');
-const getApiGatewayDirectory = require('../../src/utils/getApiGatewayDirectory');
-const geolocationData = require('../../mocks/geolocationData.mock');
+const { mockPlaces, mockBuildApp } = require('../../mocks/geolocation.mock');
 
 describe('[GET] geolocation/places endpoint then return places and status code 200', () => {
   // mock getPlaces method
   // eslint-disable-next-line no-unused-vars
-  const getPlaces = () => async (lat, lon, radius) => geolocationData.mockPlaces();
+  const getPlaces = () => async (lat, lon, radius) => mockPlaces();
   const GeolocationServices = {
     getPlaces: getPlaces(),
   };
-
-  async function services(fastify) {
-    await fastify.decorate('geolocationServices', GeolocationServices);
-  }
-
-  // load fastify and update function
-  const fastify = Fastify({ logger: true });
-  fastify.register(Autoload, { dir: getApiGatewayDirectory() });
-  fastify.register(pluginLoader(services));
+  const app = mockBuildApp(GeolocationServices);
 
   test('Given latitude, longitude and radius when a user select a mark in a map, then return status code 200 and an array with near places details from database', async () => {
-    const places = await fastify.inject({
+    const places = await app.inject({
       method: 'GET',
       url: 'geolocation/places',
       query: {
@@ -54,18 +42,10 @@ describe('[GET] geolocation/places endpoint then return status code 400', () => 
   const GeolocationServices = {
     getPlaces: getPlaces(),
   };
-
-  async function services(fastify) {
-    await fastify.decorate('geolocationServices', GeolocationServices);
-  }
-
-  // load fastify and update function
-  const fastify = Fastify({ logger: true });
-  fastify.register(Autoload, { dir: getApiGatewayDirectory() });
-  fastify.register(pluginLoader(services));
+  const app = mockBuildApp(GeolocationServices);
 
   test('Given wrong or null latitude, longitude or radius when a user select a mark in a map, then return status code 400 ', async () => {
-    const places = await fastify.inject({
+    const places = await app.inject({
       method: 'GET',
       url: 'geolocation/places',
     });
@@ -82,19 +62,11 @@ describe('[GET] geolocation/places endpoint then return status code 404', () => 
   const GeolocationServices = {
     getPlaces: getPlaces(),
   };
-
-  async function services(fastify) {
-    await fastify.decorate('geolocationServices', GeolocationServices);
-  }
-
-  // load fastify and update function
-  const fastify = Fastify({ logger: true });
-  fastify.register(Autoload, { dir: getApiGatewayDirectory() });
-  fastify.register(pluginLoader(services));
+  const app = mockBuildApp(GeolocationServices);
 
   // run the test
   test('Given latitude, longitude and radius when a user select a mark in a map, then return status code 404 for any places, not found', async () => {
-    const places = await fastify.inject({
+    const places = await app.inject({
       method: 'GET',
       url: 'geolocation/places',
       query: {
@@ -121,19 +93,11 @@ describe('[GET] geolocation/places endpoint then return status code 500 for serv
   const GeolocationServices = {
     getPlaces: getPlaces(),
   };
-
-  async function services(fastify) {
-    await fastify.decorate('geolocationServices', GeolocationServices);
-  }
-
-  // load fastify and update function
-  const fastify = Fastify({ logger: true });
-  fastify.register(Autoload, { dir: getApiGatewayDirectory() });
-  fastify.register(pluginLoader(services));
+  const app = mockBuildApp(GeolocationServices);
 
   // run the test
   test('Given latitude, longitude and radius when a user select a mark in a map, then return status code 500 for internal server error', async () => {
-    const places = await fastify.inject({
+    const places = await app.inject({
       method: 'GET',
       url: 'geolocation/places',
       query: {
