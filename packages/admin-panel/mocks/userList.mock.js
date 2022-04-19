@@ -7,7 +7,7 @@ const userList = [
     urlImage: faker.image.avatar(),
     dateOfRegister: faker.date.future(),
     status: 'ACTIVE',
-    profile:2,
+    profile: 2,
   },
   {
     id: faker.datatype.uuid(),
@@ -15,7 +15,7 @@ const userList = [
     urlImage: faker.image.avatar(),
     dateOfRegister: faker.date.future(),
     status: 'ACTIVE',
-    profile:1,
+    profile: 1,
   },
   {
     id: faker.datatype.uuid(),
@@ -23,7 +23,7 @@ const userList = [
     urlImage: faker.image.avatar(),
     dateOfRegister: faker.date.future(),
     status: 'ACTIVE',
-    profile:1,
+    profile: 1,
   },
   {
     id: faker.datatype.uuid(),
@@ -31,7 +31,7 @@ const userList = [
     urlImage: faker.image.avatar(),
     dateOfRegister: faker.date.future(),
     status: 'ACTIVE',
-    profile:1,
+    profile: 1,
   },
 ];
 
