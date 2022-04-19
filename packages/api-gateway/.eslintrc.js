@@ -10,6 +10,7 @@ module.exports = {
     ecmaVersion: 'latest',
   },
   rules: {
+    'no-underscore-dangle': 'off',
     'no-plusplus': 'off',
     'comma-dangle': ['error', 'always-multiline'],
     semi: ['error', 'always'],
