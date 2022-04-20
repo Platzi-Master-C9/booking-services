@@ -1,6 +1,6 @@
 {
   "name": "@booking-services/shared",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Some code that we could share with other teams",
   "author": "Hector Esau Macias Javier <hecttoressau@gmail.com>",
   "homepage": "https://github.com/Platzi-Master-C9/backend-services/tree/master/packages/shared#readme",
@@ -18,7 +18,9 @@
     "url": "git+https://github.com/Platzi-Master-C9/booking-services.git"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "bugs": {
     "url": "https://github.com/Platzi-Master-C9/booking-services/issues"
