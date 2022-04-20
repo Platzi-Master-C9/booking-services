@@ -12,5 +12,13 @@ const pool = new Pool({connectionString: URI});
 
 setupModels(sequelize);
 
- 
-module.exports = pool;
+module.exports = {
+  development: {
+    url: URI,
+    dialect:'postgres',
+  },
+  production:{
+    url: URI ,
+    dialect:'postgres',
+  }
+}
