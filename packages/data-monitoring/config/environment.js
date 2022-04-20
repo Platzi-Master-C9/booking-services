@@ -3,22 +3,9 @@ const { join } = require('path');
 
 const { supportedEnvs } = require('../src/utils/constants');
 
-let environment;
-let path;
+let environment = '';
 const filename = '.env'
-
-switch(process.env.NODE_ENV) {
-	case supportedEnvs.PRODUCTION: {
-		environment = '';
-		path = `/src/${filename}`;
-    break;
-	}
-	default: {
-		environment = 'DEV_'
-		path = `${join(__dirname, '../')}/${filename}`
-	}
-
-}
+let path = `/src/${filename}`;
 
 dotenv.config({ path });
 
