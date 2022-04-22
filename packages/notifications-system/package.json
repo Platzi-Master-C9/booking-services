@@ -29,6 +29,6 @@
     "jest": "^27.5.1"
   },
   "dependencies": {
-    "@booking-services/shared": "^0.0.0"
+    "@booking-services/shared": "^0.0.1"
   }
 }

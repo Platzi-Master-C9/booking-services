@@ -1,5 +1,5 @@
 // Internal dependencies
-const logger = require('@booking-services/shared/src/utils/logger');
+const { Logger } = require('@booking-services/shared');
 
 /**
  * @param {import('mongoose').Model} messageModel Message model
@@ -7,12 +7,12 @@ const logger = require('@booking-services/shared/src/utils/logger');
  */
 const getLastMessageOfChatRoom = (messageModel) => async ({ chatId }) => {
   if (!messageModel) {
-    logger.error('[messages]: Message Model dependency has not been injected.');
+    Logger.error('[messages]: Message Model dependency has not been injected.');
     throw new Error('Message Model is required');
   }
 
   if (typeof chatId !== 'string' || !chatId) {
-    logger.error('[messages]: Chat Room ID has not been provided.');
+    Logger.error('[messages]: Chat Room ID has not been provided.');
     throw new Error('Chat room ID is required');
   }
 
@@ -41,7 +41,7 @@ const getLastMessageOfChatRoom = (messageModel) => async ({ chatId }) => {
   };
 
   let message;
-  logger.info(`[messages]: Getting last message of chat room #${chatId}`);
+  Logger.info(`[messages]: Getting last message of chat room #${chatId}`);
 
   try {
     message = await messageModel.findOne(
@@ -50,7 +50,7 @@ const getLastMessageOfChatRoom = (messageModel) => async ({ chatId }) => {
       queryOptions,
     );
   } catch (error) {
-    logger.error(`[messages]: Error fetching last message of chat room #${chatId}`, error);
+    Logger.error(`[messages]: Error fetching last message of chat room #${chatId}`, error);
   }
 
   return message || null;

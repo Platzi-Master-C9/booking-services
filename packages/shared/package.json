@@ -5,13 +5,13 @@
   "author": "Hector Esau Macias Javier <hecttoressau@gmail.com>",
   "homepage": "https://github.com/Platzi-Master-C9/backend-services/tree/master/packages/shared#readme",
   "license": "ISC",
-  "main": "lib/shared.js",
+  "main": "src/index.js",
   "directories": {
-    "lib": "lib",
+    "lib": "src",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "src"
   ],
   "repository": {
     "type": "git",

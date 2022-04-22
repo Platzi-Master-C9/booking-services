@@ -1,4 +1,4 @@
-const Logger = require('@booking-services/shared/src/utils/logger');
+const { Logger } = require('@booking-services/shared');
 
 const dbWritter = (Model) => async (newRowInfo) => {
     let data;

@@ -29,6 +29,6 @@
     "url": "https://github.com/artiko00/booking-services/issues"
   },
   "dependencies": {
-    "@booking-services/shared": "^0.0.0"
+    "@booking-services/shared": "^0.0.1"
   }
 }
