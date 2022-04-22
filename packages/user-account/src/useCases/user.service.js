@@ -5,7 +5,7 @@ const { createUserSchema, validateUserSchema } = require('../utils/validator/sch
 function createUser(model) {
   const data = validatorHandler(createUserSchema, model);
   if (data !== model) {
-    return boom.badRequest(data);
+    return boom.badData(data);
   }
   return data;
 }
@@ -13,7 +13,7 @@ function createUser(model) {
 function validateUser(model) {
   const data = validatorHandler(validateUserSchema, model);
   if (data !== model) {
-    return boom.badRequest(data).details;
+    return boom.badData(data);
   }
   return data;
 }

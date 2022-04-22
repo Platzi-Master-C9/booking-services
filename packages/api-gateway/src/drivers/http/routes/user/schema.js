@@ -39,7 +39,7 @@ const validateUserSchema = {
       firstName: { type: 'string' },
       secondName: { type: 'string' },
       firstSurname: { type: 'string' },
-      secondName: { type: 'string' },
+      secondSurame: { type: 'string' },
       birthDate: { type: 'string' },
       nationality: { type: 'string' },
       dniId: { type: 'string' },
@@ -59,7 +59,7 @@ const validateUserSchema = {
     },
     required: [
       'firstName',
-      'firstSruname',
+      'firstSurname',
       'birthDate',
       'nationality',
       'dniId',

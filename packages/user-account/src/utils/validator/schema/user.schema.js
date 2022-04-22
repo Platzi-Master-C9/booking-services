@@ -19,7 +19,7 @@ const city = Joi.string().max(50);
 const state = Joi.string().max(50);
 const address = Joi.string().max(50);
 const zip = Joi.string().max(20);
-const nationality = Joi.string().regex(iso3166Alpha3).messages({ 'string.regex': 'has to be iso 3166 alpha-3 format' });
+const nationality = Joi.string().length(3).regex(iso3166Alpha3).message({ 'string.pattern.base': 'has to be iso 3166 alpha-3 format' });
 const dniId = Joi.string().max(20);
 const dniImg = Joi.string().uri();
 
@@ -43,6 +43,7 @@ const createUserSchema = Joi.object({
 });
 
 const validateUserSchema = Joi.object({
+  userId: id.required(),
   firstName: firstName.required(),
   secondName,
   firstSurname: firstSurname.required(),
