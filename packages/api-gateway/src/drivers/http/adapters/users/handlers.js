@@ -19,7 +19,7 @@ async function createUser(req, reply) {
       phoneNumber,
     } = req.body;
 
-    req.log.info("[http-server]: Creating user with: ", {
+    req.log.info('[http-server]: Creating user with: ', {
       email,
       firstName,
       secondName,
@@ -42,12 +42,12 @@ async function createUser(req, reply) {
     });
 
     if (result.isBoom === true) {
-      return errorHandler(result, reply)
+      return errorHandler(result, reply);
     }
 
     return reply
       .code(200)
-      .header("Content-Type", "application/json; chartset:utf-8")
+      .header('Content-Type', 'application/json; chartset:utf-8')
       .send({ result });
   } catch (error) {
     return errorHandler(error, reply);
@@ -66,7 +66,7 @@ async function validateUser(req, reply) {
     phoneNumber,
   } = req.body;
 
-  req.log.info("[http-server]: Creating user with: ", {
+  req.log.info('[http-server]: Creating user with: ', {
     email,
     firstName,
     secondName,
@@ -90,11 +90,11 @@ async function validateUser(req, reply) {
 
   return reply
     .code(200)
-    .header("Content-Type", "application/json; chartset:utf-8")
+    .header('Content-Type', 'application/json; chartset:utf-8')
     .send({ result });
 }
 
 module.exports = {
   createUser,
-  validateUser
+  validateUser,
 };
