@@ -2,7 +2,7 @@ const Joi = require("joi");
 
 const now = Date.now();
 const cutOfDate = new Date(now - 1000 * 60 * 60 * 24 * 365 * 18); // 18 years
-const iso_3166_alpha_3 = /^(A(BW|FG|GO|IA|L(A|B)|N(D|T)|R(E|G|M)|SM|T(A|F|G)|U(S|T)|ZE)|B(DI|E(L|N)|FA|G(D|R)|H(R|S)|IH|L(M|R|Z)|MU|OL|R(A|B|N)|TN|VT|WA)|C(A(F|N)|CK|H(E|L|N)|IV|MR|O(D|G|K|L|M)|PV|RI|UB|XR|Y(M|P)|ZE)|D(EU|JI|MA|NK|OM|ZA)|E(CU|GY|RI|S(H|P|T)|TH)|F(IN|JI|LK|R(A|O)|SM)|G(AB|BR|EO|GY|HA|I(B|N)|LP|MB|NQ|NB|R(C|D|L)|TM|U(F|M|Y))|H(KG|MD|ND|RV|TI|UN)|I(DN|MN|ND|OT|R(L|N|Q)|S(L|R)|TA)|J(AM|EY|OR|PN)|K(AZ|EN|GZ|HM|IR|NA|OR|WT)|L(AO|B(N|R|Y)|CA|IE|KA|SO|TU|UX|VA)|M(A(C|F|R)|CO|D(A|G|V)|EX|HL|KD|L(I|T)|MR|N(E|G|P)|OZ|RT|SR|TQ|US|WI|Y(S|T))|N(AM|CL|ER|FK|GA|I(C|U)|LD|OR|PL|RU|ZL)|OMN|P(A(K|N)|CN|ER|HL|LW|NG|OL|R(I|K|T|Y)|SE|YF)|QAT|R(EU|OU|US|WA)|S(AU|DN|EN|G(P|S)|HN|JM|L(B|E|V)|MR|OM|PM|RB|TP|UR|V(K|N)|W(E|Z)|Y(C|R))|T(C(A|D)|GO|HA|JK|K(L|M)|LS|ON|TO|U(N|R|V)|WN|ZA)|U(EN|GA|KR|MI|RY|SA|ZB)|V(AT|CT|GB|IR|NM|UT)|W(LF|SM)|YEM|Z(AF|MB|WE))$/
+const iso_3166_alpha_3 = /^(A(BW|FG|GO|IA|L[AB]|ND|R[EGM]|SM|T[AFG]|U[ST]|ZE)|B(DI|E[LNS]|FA|G[DR]|H[RS]|IH|L[MRZ]|MU|OL|R[ABN]|TN|VT|WA)|C(A[FN]|CK|H[ELN]|IV|MR|O[DGKLM]|PV|RI|U[BW]|XR|Y[MP]|ZE)|D(EU|JI|MA|NK|OM|ZA)|E(CU|GY|RI|S[HPT]|TH)|F(IN|JI|LK|R[AO]|SM)|G(AB|BR|EO|GY|HA|I[BN]|LP|MB|N[BQ]|R[CDL]|TM|U[FMY])|H(KG|MD|ND|RV|TI|UN)|I(DN|MN|ND|OT|R[LNQ]|S[LR]|TA)|J(AM|EY|OR|PN)|K(AZ|EN|GZ|HM|IR|NA|OR|WT)|L(AO|B[NRY]|CA|IE|KA|SO|TU|UX|VA)|M(A[CFR]|CO|D[AGV]|EX|HL|KD|L[IT]|MR|N[EGP]|OZ|RT|SR|TQ|US|WI|Y[ST])|N(AM|CL|ER|FK|GA|I[CU]|LD|OR|PL|RU|ZL)|OMN|P(A[KN]|CN|ER|HL|LW|NG|OL|R[IKTY]|SE|YF)|QAT|R(EU|OU|US|WA)|S(AU|DN|EN|G[PS]|HN|JM|L[BEV]|MR|OM|PM|RB|SD|TP|UR|V[KN]|W[EZ]|XM|Y[CR])|T(C[AD]|GO|HA|JK|K[LM]|LS|ON|TO|U[NRV]|WN|ZA)|U(GA|KR|MI|RY|SA|ZB)|V(AT|CT|EN|GB|IR|NM|UT)|W(LF|SM)|YEM|Z(AF|MB|WE))$/
 
 const id = Joi.number().integer();
 const email = Joi.string().email();
@@ -11,7 +11,7 @@ const secondName = Joi.string().max(50);
 const firstSurname = Joi.string().max(50);
 const secondSurname = Joi.string().max(50);
 const birthDate = Joi.date().max(cutOfDate).message({ 'date.max': `Age at birth must be of legal age` });
-const gender = Joi.string().valid('male', 'famale', 'not difined');
+const gender = Joi.string().valid("Male", "Female", "Not difined");
 const phoneNumber = Joi.number().min(10);
 const passport = Joi.string().max(50)
 const avatar = Joi.string().uri();
