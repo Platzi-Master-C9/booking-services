@@ -41,4 +41,4 @@ class genders extends Model {
   }
 }
 
-module.exports = { genders, gendersSchema, GENDERS_TABLES}
+module.exports = { genders, gendersSchema, GENDERS_TABLE}

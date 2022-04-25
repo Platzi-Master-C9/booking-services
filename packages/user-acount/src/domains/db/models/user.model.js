@@ -1,11 +1,11 @@
 const {Model, DataTypes, Sequelize } = require('sequelize');
 
 const { TYPES_OF_ID_TABLE } = require('./types_of_id.models');
-const { GENDERS_TABLES } = require('./genders.models');
+const {  GENDERS_TABLE} = require('./genders.models');
 const { ADDRESS_TABLE} = require('./address.models');
 const { EMERGENCY_CONTACTS_TABLE } = require('./emergency_contacts.models');
 const { CURRENCIES_TABLE } = require('./currencies.models');
-const { USER_TYPES_TABLES } = require('./user_types.models');
+const { USER_TYPES_TABLE } = require('./user_types.models');
 
 const USERS_TABLE = 'users';
 
@@ -59,7 +59,7 @@ const usersSchema = {
     allowNull: false,
     type: DataTypes.INTEGER,
     references:{
-      model: GENDERS_TABLES,
+      model: GENDERS_TABLE,
       key: 'id'
   },
   onUpdate: 'CASCADE',
@@ -81,7 +81,7 @@ const usersSchema = {
     allowNull: false,
     type: DataTypes.INTEGER,
     references:{
-      model: GENDERS_TABLE,
+      model: ADDRESS_TABLE,
       key: 'id'
     },
     onUpdate: 'CASCADE',
@@ -126,7 +126,7 @@ const usersSchema = {
     onDelete: 'SET NULL'    
   },
   userTypeId:{
-    field: 'currency_id',
+    field: 'user_type_id',
     allowNull: false,
     type: DataTypes.INTEGER,
     references:{
@@ -149,9 +149,9 @@ class users extends Model {
     this.belongsTo(models.typesOfIdentification,{as: 'types_of_identification'});
     this.belongsTo(models.genders, {as: 'genders'});
     this.belongsTo(models.address, {as: 'address'});
-    this.belongsTo(models.emergencyContactId, {as: 'emergency_contact_id'});
-    this.belongsTo(models.currencyId, {as: 'currency_id'});
-    this.belongsTo(models.userTypeId, {as: 'user_type_id'});
+    this.belongsTo(models.emergencyContact, {as: 'emergency_contact_id'});
+    this.belongsTo(models.currencies, {as: 'currency_id'});
+    this.belongsTo(models.userTypes, {as: 'user_type_id'});
     this.hasMany(models.userFavoritePlaces, {
       as: 'user_favorite_places',
       foreignKey: 'userId'

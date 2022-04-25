@@ -1,6 +1,4 @@
 const {Model, DataTypes, Sequelize } = require('sequelize');
-const { EMERGENCY_CONTACTS_TABLE } = require('./emergency_contacts.models');
-
 const{ USERS_TABLE } = require('./user.model')
 
 const CURRENCIES_TABLE = 'currencies';
@@ -25,7 +23,7 @@ const currenciesSchema = {
   }
 }
 
-class emergencyContactId extends Model {
+class currencies extends Model {
   static associate(models){
     this.hasMany(models.users,{
       as: 'users',
