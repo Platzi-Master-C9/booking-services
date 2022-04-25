@@ -1,31 +1,38 @@
 {
-  "name": "message",
-  "version": "0.0.0",
+  "name": "@booking-services/messages",
+  "version": "1.0.0",
   "description": "This package contains all business rules for messaging system",
   "author": "Hector Esau Macias Javier <hecttoressau@gmail.com>",
   "homepage": "https://github.com/Platzi-Master-C9/backend-services/tree/master/packages/message#readme",
   "license": "ISC",
   "main": "src/index.js",
   "directories": {
-    "lib": "lib",
+    "src": "src",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "src",
+    "__tests__"
   ],
   "repository": "git+https://github.com/Platzi-Master-C9/backend-services.git",
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "precommit": "yarn lint && yarn test"
   },
   "bugs": {
     "url": "https://github.com/Platzi-Master-C9/backend-services/issues"
   },
   "devDependencies": {
+    "@faker-js/faker": "^6.0.0",
     "eslint": "^8.2.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.2",
     "jest": "^27.5.1"
+  },
+  "dependencies": {
+    "mongoose": "^6.2.7",
+    "winston": "^3.6.0"
   }
 }

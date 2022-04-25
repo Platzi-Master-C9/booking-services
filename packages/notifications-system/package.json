@@ -1,5 +1,5 @@
 {
-  "name": "message",
+  "name": "notification-system",
   "version": "0.0.0",
   "description": "This package contains all business rules for notifications system",
   "author": "Christian López <chrom13@gmail.com>",
