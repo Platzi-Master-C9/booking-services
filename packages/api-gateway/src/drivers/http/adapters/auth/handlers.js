@@ -6,6 +6,15 @@ async function getGreeting(req, reply) {
     .send({ result });
 }
 
+async function getPrivate(req, reply) {
+  const result = req.user;
+
+  return reply.code(200)
+    .header('Content-Type', 'application/json; chartset:utf-8')
+    .send({ result });
+}
+
 module.exports = {
   getGreeting,
+  getPrivate,
 };

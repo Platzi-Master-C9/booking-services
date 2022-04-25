@@ -20,7 +20,7 @@
     "url": "git+https://github.com/iam-oov/booking-services.git"
   },
   "scripts": {
-    "lint": "eslint --fix --ext .js ."
+    "lint:fix": "eslint --fix --ext .js ."
   },
   "bugs": {
     "url": "https://github.com/iam-oov/booking-services/issues"

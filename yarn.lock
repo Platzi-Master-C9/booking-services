@@ -573,7 +573,7 @@
 
 "@hapi/hoek@9.x.x":
   version "9.2.1"
-  resolved "https://registry.yarnpkg.com/@hapi/hoek/-/hoek-9.2.1.tgz#9551142a1980503752536b5050fd99f4a7f13b17"
+  resolved "https://registry.npmjs.org/@hapi/hoek/-/hoek-9.2.1.tgz"
   integrity sha512-gfta+H8aziZsm8pZa0vj04KO6biEiisppNgA1kbJvFrrWu9Vm7eaUEy76DIxsuTaWvti5fkJVhllWc6ZTE+Mdw==
 
 "@humanwhocodes/config-array@^0.9.2":
@@ -1828,7 +1828,7 @@
 
 JSONStream@^1.0.4, JSONStream@^1.3.4, JSONStream@^1.3.5:
   version "1.3.5"
-  resolved "https://registry.yarnpkg.com/JSONStream/-/JSONStream-1.3.5.tgz#3208c1f08d3a4d99261ab64f92302bc15e111ca0"
+  resolved "https://registry.npmjs.org/JSONStream/-/JSONStream-1.3.5.tgz"
   integrity sha512-E+iruNOY8VV9s4JEbe1aNEm6MiszPRr/UfcHMz0TQh1BXSxHK+ASV1R6W4HpjBhSeS+54PIsAMCBmwD06LLsqQ==
   dependencies:
     jsonparse "^1.2.0"
@@ -3336,7 +3336,7 @@ deepmerge@^4.2.2:
 
 defaults@^1.0.3:
   version "1.0.3"
-  resolved "https://registry.yarnpkg.com/defaults/-/defaults-1.0.3.tgz#c656051e9817d9ff08ed881477f3fe4019f3ef7d"
+  resolved "https://registry.npmjs.org/defaults/-/defaults-1.0.3.tgz"
   integrity sha1-xlYFHpgX2f8I7YgUd/P+QBnz730=
   dependencies:
     clone "^1.0.2"
@@ -4097,7 +4097,7 @@ fastfall@^1.5.0:
   dependencies:
     reusify "^1.0.0"
 
-fastify-auth0-verify@^0.7.0:
+fastify-auth0-verify@^0.7.0, fastify-auth0-verify@^0.7.3:
   version "0.7.3"
   resolved "https://registry.yarnpkg.com/fastify-auth0-verify/-/fastify-auth0-verify-0.7.3.tgz#7cc4b14198e0f384ba0e7a5777629aeb5f2df2fa"
   integrity sha512-zNz3JtAJDn427rqhZD3YA9Ij14lF+vP9DlQvrvspZnSW8MrT1QJE30EQx5VJjnW/uLMHbhYrJJvK6H/CgMJREA==
@@ -4118,9 +4118,9 @@ fastify-autoload@^3.11.0:
     semver "^7.3.5"
 
 fastify-cookie@^5.3.1:
-  version "5.6.0"
-  resolved "https://registry.yarnpkg.com/fastify-cookie/-/fastify-cookie-5.6.0.tgz#90f098779438524e7ac6624c00ff5787b865d313"
-  integrity sha512-zmZhw1CugavEZjFToMDz6FTawXw9QQ6bJ1vhhalMLYTbhog8C42+1jIWENKjV6PkiERdDRhXahj9MiYSVNynDw==
+  version "5.6.1"
+  resolved "https://registry.yarnpkg.com/fastify-cookie/-/fastify-cookie-5.6.1.tgz#885a15bd7cf459158a6df12a898075cf5e2a3733"
+  integrity sha512-qKFxDOLkrXn2TkxlO/+cK0tWYCTSrJDmuwty6Zl7kD5FtALwcjUHPFzOdR1Gxupb5oWhvbpSHBMx2XS+t9fbQQ==
   dependencies:
     cookie-signature "^1.1.0"
     fastify-plugin "^3.0.1"
@@ -6226,7 +6226,7 @@ jsonfile@^6.0.1:
 
 jsonparse@^1.2.0:
   version "1.3.1"
-  resolved "https://registry.yarnpkg.com/jsonparse/-/jsonparse-1.3.1.tgz#3f4dae4a91fac315f71062f8521cc239f1366280"
+  resolved "https://registry.npmjs.org/jsonparse/-/jsonparse-1.3.1.tgz"
   integrity sha1-P02uSpH6wxX3EGL4UhzCOfE2YoA=
 
 jsprim@^1.2.2:
@@ -6246,21 +6246,21 @@ kareem@2.3.5:
 
 keyv@^3.0.0:
   version "3.1.0"
-  resolved "https://registry.yarnpkg.com/keyv/-/keyv-3.1.0.tgz#ecc228486f69991e49e9476485a5be1e8fc5c4d9"
+  resolved "https://registry.npmjs.org/keyv/-/keyv-3.1.0.tgz"
   integrity sha512-9ykJ/46SN/9KPM/sichzQ7OvXyGDYKGTaDlKMGCAlg2UK8KRy4jb0d8sFc+0Tt0YYnThq8X2RZgCg74RPxgcVA==
   dependencies:
     json-buffer "3.0.0"
 
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
-  resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"
+  resolved "https://registry.npmjs.org/kind-of/-/kind-of-3.2.2.tgz"
   integrity sha1-MeohpzS6ubuw8yRm2JOupR5KPGQ=
   dependencies:
     is-buffer "^1.1.5"
 
 kind-of@^4.0.0:
   version "4.0.0"
-  resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-4.0.0.tgz#20813df3d712928b207378691a45066fae72dd57"
+  resolved "https://registry.npmjs.org/kind-of/-/kind-of-4.0.0.tgz"
   integrity sha1-IIE989cSkosgc3hpGkUGb65y3Vc=
   dependencies:
     is-buffer "^1.1.5"
@@ -7057,9 +7057,9 @@ mkdirp@^0.5.1, mkdirp@^0.5.5, mkdirp@~0.5.0:
     minimist "^1.2.6"
 
 mnemonist@^0.39.0:
-  version "0.39.0"
-  resolved "https://registry.yarnpkg.com/mnemonist/-/mnemonist-0.39.0.tgz#4c83dd22e8d9d05dfb721ff66a905fec4c460041"
-  integrity sha512-7v08Ldk1lnlywnIShqfKYN7EW4WKLUnkoWApdmR47N1xA2xmEtWERfEvyRCepbuFCETG5OnfaGQpp/p4Bus6ZQ==
+  version "0.39.1"
+  resolved "https://registry.yarnpkg.com/mnemonist/-/mnemonist-0.39.1.tgz#0915e617810d1e717b2e8477a01e6c52e5fd2997"
+  integrity sha512-bY13FSvcbKLj+FaJcR2+xFZ3m2R1+BrLpavAh0BMyGSq0iPowbvYllwitlkvVyEowEYSulCMzxDaju9bC4+cow==
   dependencies:
     obliterator "^2.0.1"
 
@@ -7704,9 +7704,9 @@ object.values@^1.1.5:
     es-abstract "^1.19.1"
 
 obliterator@^2.0.1:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/obliterator/-/obliterator-2.0.2.tgz#25f50dc92e1181371b9d8209d11890f1a3c2fc21"
-  integrity sha512-g0TrA7SbUggROhDPK8cEu/qpItwH2LSKcNl4tlfBNT54XY+nOsqrs0Q68h1V9b3HOSpIWv15jb1lax2hAggdIg==
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/obliterator/-/obliterator-2.0.3.tgz#17a7840d562c7c61eb399f4905f0e4d3b22d1d3f"
+  integrity sha512-qN5lHhArxl/789Bp3XCpssAYy7cvOdRzxzflmGEJaiipAT2b/USr1XvKjYyssPOwQ/3KjV1e8Ed9po9rie6E6A==
 
 octokit-pagination-methods@^1.1.0:
   version "1.1.0"
@@ -7890,7 +7890,7 @@ p-map@^2.1.0:
 
 p-pipe@^1.2.0:
   version "1.2.0"
-  resolved "https://registry.yarnpkg.com/p-pipe/-/p-pipe-1.2.0.tgz#4b1a11399a11520a67790ee5a0c1d5881d6befe9"
+  resolved "https://registry.npmjs.org/p-pipe/-/p-pipe-1.2.0.tgz"
   integrity sha1-SxoROZoRUgpneQ7loMHViB1r7+k=
 
 p-queue@^4.0.0:
