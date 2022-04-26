@@ -2,7 +2,7 @@ const { faker } = require('@faker-js/faker');
 
 const userList = [
   {
-    id: faker.datatype.uuid(),
+    id: 1,
     fullName: faker.name.findName(),
     urlImage: faker.image.avatar(),
     dateOfRegister: faker.date.future(),
@@ -10,7 +10,7 @@ const userList = [
     profile: 2,
   },
   {
-    id: faker.datatype.uuid(),
+    id: 2,
     fullName: faker.name.findName(),
     urlImage: faker.image.avatar(),
     dateOfRegister: faker.date.future(),
@@ -18,7 +18,7 @@ const userList = [
     profile: 1,
   },
   {
-    id: faker.datatype.uuid(),
+    id: 3,
     fullName: faker.name.findName(),
     urlImage: faker.image.avatar(),
     dateOfRegister: faker.date.future(),
@@ -26,7 +26,7 @@ const userList = [
     profile: 1,
   },
   {
-    id: faker.datatype.uuid(),
+    id: 4,
     fullName: faker.name.findName(),
     urlImage: faker.image.avatar(),
     dateOfRegister: faker.date.future(),
