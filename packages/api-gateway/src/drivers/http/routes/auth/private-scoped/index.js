@@ -7,7 +7,7 @@ function status(fastify, _, done) {
   // Register routes
   fastify.get('/', {
     schema: authEndpointsStatusSchema,
-    handler: authAdapters.getGreeting,
+    handler: authAdapters.getPrivateScoped,
   });
 
   done();
