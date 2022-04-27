@@ -7,6 +7,7 @@ const authAdapters = require('./auth/handlers');
 const notificationsAdapters = require('./notifications/handlers');
 const placesAdapters = require('./places/handlers');
 const messageAdapters = require('./messages/handlers');
+const userAdapter = require('./users/handlers');
 
 module.exports = {
   mathAdapters,
@@ -17,4 +18,5 @@ module.exports = {
   notificationsAdapters,
   placesAdapters,
   messageAdapters,
+  userAdapter,
 };

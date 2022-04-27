@@ -1,0 +1,31 @@
+{
+  "name": "@booking-services/booking",
+  "version": "1.0.0",
+  "description": "This package contains all bussiness logic from booking squad",
+  "author": "Booking Squad",
+  "homepage": "https://github.com/Platzi-Master-C9/backend-services/tree/main/packages/booking#readme",
+  "license": "ISC",
+  "main": "src/index.js",
+  "directories": {
+    "src": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artiko00/booking-services.git"
+  },
+  "scripts": {
+    "start":"node src/index.js",
+    "lint:fix": "eslint . --fix",
+    "test": "jest"
+  },
+  "bugs": {
+    "url": "https://github.com/artiko00/booking-services/issues"
+  }
+}
