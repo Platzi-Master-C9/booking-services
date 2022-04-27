@@ -1,4 +1,3 @@
-
 async function sayHello(req, reply) {
   const result = await this.adminPanelService.sayHello();
   return reply.code(200)
@@ -31,8 +30,8 @@ async function getUsers(req, reply) {
   );
 
   return reply.code(200)
-  .header('Content-Type', 'application/json; chartset:utf-8')
-  .send({ result });
+    .header('Content-Type', 'application/json; chartset:utf-8')
+    .send({ result });
 }
 
 module.exports = {

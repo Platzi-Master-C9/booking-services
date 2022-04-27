@@ -8,6 +8,9 @@ function status(fastify, _, done) {
   fastify.get('/', {
     schema: authEndpointsStatusSchema,
     handler: authAdapters.getPrivateScoped,
+    preValidation: fastify.authenticate,
+    preHandler: fastify.hasPermissions(['create:roles', 'delete:roles']),
+    // preHandler: fastify.hasRole(['admin', 'tester']),
   });
 
   done();
