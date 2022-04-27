@@ -1,15 +1,18 @@
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 
+const prefix = require("../../../config/environment");
+
 async function main() {
+
   // create reusable transporter object using the Gmail SMTP transport
   const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 587,
     secure: false, // true for 465, false for other ports
     auth: {
-      user: process.env.DEV_EMAIL_ACCOUNT, // email of the account that will send the emails
-      pass: process.env.DEV_EMAIL_PASS, // password of the account
+      user: process.env[`${prefix}EMAIL_ACCOUNT`], // email of the account that will send the emails
+      pass: process.env[`${prefix}EMAIL_PASS`], // password of the account
     },
   });
 
