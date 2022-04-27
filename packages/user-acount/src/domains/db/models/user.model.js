@@ -16,18 +16,6 @@ const usersSchema = {
     primaryKey: true,
     type: DataTypes.INTEGER
   },
-  typeOfIdentificationId:{
-    //unsure if auto_increment should be added
-    field: 'type_of_identification_id',
-    allowNull: false,
-    type: DataTypes.INTEGER,
-    references:{
-      model: TYPES_OF_ID_TABLE,
-      key: 'id'
-    },
-    onUpdate: 'CASCADE',
-    onDelete: 'SET NULL'
-  },
   firstName:{
     allowNull: false,
     type: DataTypes.STRING,
@@ -45,13 +33,55 @@ const usersSchema = {
   },
   secondSurname:{
     allowNull:true,
-    type: DataTypes.STR, 
+    type: DataTypes.STRING, 
     field: 'second_surname'
   },
   dateOfBirth:{
     allowNull: false,
     type: DataTypes.STRING,
     field: 'date_of_birth'
+  },
+  email:{
+    allowNull: false,
+    type: DataTypes.STRING,
+    unique: true
+  },
+  telephoneNumber:{
+    allowNull:false,
+    type: DataTypes.STRING,
+    field: 'telephone_number'
+  },
+  passport:{
+    allowNull: false,
+    type: DataTypes.STRING
+  },
+  isVerified:{
+    allowNull: false, //Does it have to be null: false?
+    type: DataTypes.BOOLEAN,
+    field: 'id_verified'
+  },
+  urlImage:{
+    allowNull:true,
+    type: DataTypes.TEXT,
+    field: 'url_image'
+  },
+  createdAt:{
+    allowNull: false,
+    type: DataTypes.DATE,
+    field: 'created_at',
+    defaultValue: Sequelize.NOW
+  },
+  typesOfIdentificationId:{
+    //unsure if auto_increment should be added
+    field: 'types_of_identification_id',
+    allowNull: false,
+    type: DataTypes.INTEGER,
+    references:{
+      model: TYPES_OF_ID_TABLE,
+      key: 'id'
+    },
+    onUpdate: 'CASCADE',
+    onDelete: 'SET NULL'
   },
   genderId:{
     //unsure if auto_increment should be added
@@ -62,18 +92,8 @@ const usersSchema = {
       model: GENDERS_TABLE,
       key: 'id'
   },
-  onUpdate: 'CASCADE',
-  onDelete: 'SET NULL'
-},
-  email:{
-    allowNull: false,
-    type: DataTypes.STRING,
-    unique: true
-  },
-  telephoneNumber:{
-    allowNull:false,
-    type: DataTypes.STRING,
-    field: 'telephone_number'
+    onUpdate: 'CASCADE',
+    onDelete: 'SET NULL'
   },
   addressId:{
     //unsure if auto_increment should be added
@@ -99,20 +119,6 @@ const usersSchema = {
     onUpdate: 'CASCADE',
     onDelete: 'SET NULL'    
   },
-  passport:{
-    allowNull: false,
-    type: DataTypes.STRING
-  },
-  isVerified:{
-    allowNull: false, //Does it have to be null: false?
-    type: DataTypes.BOOLEAN,
-    field: 'id_verified'
-  },
-  urlImage:{
-    allowNull:true,
-    type: DataTypes.TEXT,
-    field: 'url_image'
-  },
   currencyId:{
     //unsure if auto_increment should be added
     field: 'currency_id',
@@ -135,18 +141,12 @@ const usersSchema = {
     },
     onUpdate: 'CASCADE',
     onDelete: 'SET NULL'    
-  },
-  createdAt:{
-    allowNull: false,
-    type: DataTypes.DATE,
-    field: 'created_at',
-    defaultValue: Sequelize.NOW
   }
 }
 
 class users extends Model {
   static associate(models){
-    this.belongsTo(models.typesOfIdentification,{as: 'types_of_identification'});
+    this.belongsTo(models.typesOfIdentificationId,{as: 'types_of_identification_id'});
     this.belongsTo(models.genders, {as: 'genders'});
     this.belongsTo(models.address, {as: 'address'});
     this.belongsTo(models.emergencyContact, {as: 'emergency_contact_id'});

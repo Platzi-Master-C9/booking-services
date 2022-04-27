@@ -1,6 +1,6 @@
 const {Model, DataTypes, Sequelize} = require('sequelize');
 
-const TYPES_OF_ID_TABLE = 'Types of identification';
+const TYPES_OF_ID_TABLE = 'types_of_identification';
 
 const typesOfIdentificationSchema = {
   id:{

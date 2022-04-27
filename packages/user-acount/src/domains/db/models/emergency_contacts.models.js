@@ -3,7 +3,7 @@ const { COUNTRIES_TABLE } = require('./countries.models');
 
 const { } = require('./user.model')
 
-const EMERGENCY_CONTACTS_TABLE = 'Emergency contacts'
+const EMERGENCY_CONTACTS_TABLE = 'emergency_contacts'
 
 const emergencyContactsSchema = {
   id:{
@@ -29,7 +29,7 @@ const emergencyContactsSchema = {
   }
 }
 
-class emergencyContactId extends Model {
+class emergencyContacts extends Model {
   static associate(models){
     this.hasOne(models.users, {
       as:'users',
