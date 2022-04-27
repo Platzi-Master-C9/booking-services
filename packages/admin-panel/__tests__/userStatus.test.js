@@ -1,7 +1,7 @@
 const { userStatus } = require('../src/useCases');
 
 // test example
-describe('Given an request for changing user status', () => {
+describe('Given an request get user detail', () => {
   test('When calling  userStatus.changeUserStatus() with valid user_id, status and reason"', () => {
     expect(userStatus.changeUserStatus(1, 'BANNED', "'cause I'm mean")).toBe('ok');
   });
