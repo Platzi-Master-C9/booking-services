@@ -3,7 +3,6 @@ const PluginLoader = require('fastify-plugin');
 const GeolocationServices = require('@booking-services/geolocation');
 const MathServices = require('@booking-services/math');
 const AdminPanelService = require('@booking-services/admin-panel');
-const AuthServices = require('@booking-services/auth');
 const placesServices = require('@booking-services/places');
 const MessageServices = require('@booking-services/messages');
 
