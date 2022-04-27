@@ -1,6 +1,6 @@
 // Internal dependencies
 const { messageAdapters } = require('../../adapters');
-const { listChatRoomsSchema } = require('./schema');
+const { listChatRoomsSchema, listChatMessagesSchema } = require('./schema');
 
 /** @type {import('fastify').FastifyPluginCallback} */
 function chatRouter(fastify, _options, done) {
@@ -8,6 +8,11 @@ function chatRouter(fastify, _options, done) {
   fastify.get('/', {
     schema: listChatRoomsSchema,
     handler: messageAdapters.listUserChatRooms,
+  });
+
+  fastify.get('/:chatId/messages', {
+    schema: listChatMessagesSchema,
+    handler: messageAdapters.listChatMessages,
   });
 
   done();

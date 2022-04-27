@@ -2,10 +2,12 @@
 const Fastify = require('fastify');
 const Autoload = require('fastify-autoload');
 const Swagger = require('fastify-swagger');
+const FastifyAuth0 = require('fastify-auth0-verify');
 const path = require('path');
 
 // Internal dependencies
 const { version } = require('../../../package.json');
+const configAuth = require('../../../config/auth0');
 
 // Setup
 const isTestEnv = process.env.NODE_ENV === 'test';
@@ -38,7 +40,8 @@ const swaggerOptions = {
       { name: 'Notifications', description: 'Notification endpoints' },
       { name: 'Messages', description: 'Messages endpoints' },
       { name: 'Places', description: 'Places endpoints' },
-      { name: 'Admininistration panel', description: 'Admininistration panel endpoints' },
+      { name: 'Administration panel', description: 'Administration panel endpoints' },
+      { name: 'Auth', description: 'Auth endpoints' },
     ],
     components: {
       securitySchemes: {
@@ -57,6 +60,11 @@ if (!isTestEnv) {
   // Swagger needs to be loaded before the routes
   fastify.register(Swagger, swaggerOptions);
 }
+
+fastify.register(FastifyAuth0, {
+  domain: configAuth.domain,
+  audience: configAuth.audience,
+});
 
 fastify.register(Autoload, { dir: path.join(__dirname, 'routes') });
 fastify.register(Autoload, { dir: path.join(__dirname, 'plugins') });
