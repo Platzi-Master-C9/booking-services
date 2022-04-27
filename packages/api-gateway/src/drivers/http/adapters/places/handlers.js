@@ -1,8 +1,8 @@
 async function postPlace(req, reply) {
   const {
     place_name: placeName,
-    pricePerNightUsd: price_per_night_usd,
-    hostId: host_id,
+    price_per_night_usd: pricePerNightUsd,
+    host_id: hostId,
     type,
   } = req.body;
 
@@ -10,14 +10,14 @@ async function postPlace(req, reply) {
 
   await this.placesService.postPlace({
     place_name: placeName,
-    pricePerNightUsd: price_per_night_usd,
-    hostId: host_id,
+    price_per_night_usd: pricePerNightUsd,
+    host_id: hostId,
     type,
   });
 
   return reply.code(201)
     .header('Content-Type', 'application/json; chartset:utf-8')
-    .send({ msg: `${place_name} has been saved correctly.` });
+    .send({ msg: `${placeName} has been saved correctly.` });
 }
 
 module.exports = {
