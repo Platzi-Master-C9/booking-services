@@ -9,8 +9,8 @@ function status(fastify, _, done) {
     schema: authEndpointsStatusSchema,
     handler: authAdapters.getPrivateScoped,
     preValidation: fastify.authenticate,
-    preHandler: fastify.hasPermissions(['create:roles', 'delete:roles']),
-    // preHandler: fastify.hasRole(['admin', 'tester']),
+    // eslint-disable-next-line no-undef
+    preHandler: [fastify.hasPermissions(['create:roles', 'delete:roles']), fastify.hasRole(['admin', 'tester'], ignore = true)],
   });
 
   done();

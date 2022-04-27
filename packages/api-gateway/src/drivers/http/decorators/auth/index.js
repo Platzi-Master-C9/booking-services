@@ -7,14 +7,15 @@ const hasPermissions = (permissions) => (req, reply, done) => {
     }
   }
 
-  return reply.code(401).send({
-    success: false,
+  return reply.code(403).send({
     message: 'permission denied',
     statusCode: 403,
   });
 };
 
-const hasRole = (roles) => (req, reply, done) => {
+const hasRole = (roles, ignore = false) => (req, reply, done) => {
+  if (ignore) return done();
+
   const userPermissions = req.user.permissions;
   for (let i = 0; i < userPermissions.length; i++) {
     const userPermission = userPermissions[i];
@@ -24,7 +25,6 @@ const hasRole = (roles) => (req, reply, done) => {
   }
 
   return reply.code(401).send({
-    success: false,
     message: 'unauthorized',
     statusCode: 401,
   });
