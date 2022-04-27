@@ -6,6 +6,7 @@ const FastifyAuth0 = require('fastify-auth0-verify');
 const path = require('path');
 
 // Internal dependencies
+const authDecorators = require('./decorators/auth');
 const { version } = require('../../../package.json');
 const configAuth = require('../../../config/auth0');
 
@@ -66,37 +67,9 @@ fastify.register(FastifyAuth0, {
   audience: configAuth.audience,
 });
 
-fastify.decorate('hasPermissions', (permissions) => (req, reply, done) => {
-  const userPermissions = req.user.permissions;
-  for (let i = 0; i < userPermissions.length; i++) {
-    const userPermission = userPermissions[i];
-    if (permissions.includes(userPermission)) {
-      return done();
-    }
-  }
-
-  return reply.code(401).send({
-    success: false,
-    message: 'not authorized - permissions',
-    statusCode: 401,
-  });
-});
-
-fastify.decorate('hasRole', (roles) => (req, reply, done) => {
-  const userPermissions = req.user.permissions;
-  for (let i = 0; i < userPermissions.length; i++) {
-    const userPermission = userPermissions[i];
-    if (roles.includes(userPermission)) {
-      return done();
-    }
-  }
-
-  return reply.code(401).send({
-    success: false,
-    message: 'not authorized - role',
-    statusCode: 401,
-  });
-});
+// Decorators for authorization
+fastify.decorate('hasPermissions', authDecorators.hasPermissions);
+fastify.decorate('hasRole', authDecorators.hasRole);
 
 fastify.register(Autoload, { dir: path.join(__dirname, 'routes') });
 fastify.register(Autoload, { dir: path.join(__dirname, 'plugins') });
