@@ -1,15 +1,15 @@
 'use strict';
 
-const {usersSchema, USERS_TABLE} = require('./../src/drivers/postgres/models/user.model');
-const {userFavoritePlacesSchema,USER_FAVORITE_PLACES_TABLE} = require('./../src/drivers/postgres/models/user_favorite_places.models');
-const {typesOfIdentificationSchema, TYPES_OF_ID_TABLE} = require('./../src/drivers/postgres/models/types_of_id.models');
-const {gendersSchema, GENDERS_TABLES} = require('./../src/drivers/postgres/models/genders.models');
-const {addressSchema, ADDRESS_TABLE} = require('./../src/drivers/postgres/models/address.models');
-const {citiesSchema, CITIES_TABLE} = require('./../src/drivers/postgres/models/cities.models');
-const {countriesSchema, COUNTRIES_TABLE} = require('./../src/drivers/postgres/models/countries.models');
-const {emergencyContactsSchema, EMERGENCY_CONTACTS_TABLE} = require('./../src/drivers/postgres/models/emergency_contacts.models');
-const {currenciesSchema, CURRENCIES_TABLE} = require('./../src/drivers/postgres/models/currencies.models');
-const {userTypesSchema, USER_TYPES_TABLE} = require('./../src/drivers/postgres/models/user_types.models');
+const {usersSchema, USERS_TABLE} = require('./../models/user.model');
+const {userFavoritePlacesSchema,USER_FAVORITE_PLACES_TABLE} = require('./../models/user_favorite_places.models');
+const {typesOfIdentificationSchema, TYPES_OF_ID_TABLE} = require('./../models/types_of_id.models');
+const {gendersSchema, GENDERS_TABLES} = require('./../models/genders.models');
+const {addressSchema, ADDRESS_TABLE} = require('./../models/address.models');
+const {citiesSchema, CITIES_TABLE} = require('./../models/cities.models');
+const {countriesSchema, COUNTRIES_TABLE} = require('./../models/countries.models');
+const {emergencyContactsSchema, EMERGENCY_CONTACTS_TABLE} = require('./../models/emergency_contacts.models');
+const {currenciesSchema, CURRENCIES_TABLE} = require('./../models/currencies.models');
+const {userTypesSchema, USER_TYPES_TABLE} = require('./../models/user_types.models');
 
 module.exports = {
   async up (queryInterface) {
