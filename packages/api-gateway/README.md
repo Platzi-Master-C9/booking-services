@@ -39,10 +39,11 @@ TODO: Add testing instructions
 ### Add a new endpoint
 Since we are using swagger to document the API, we recomment you to create a schema for each route and add the following properties to the schema:
 
-1- `description`: A brief description of the endpoint.
-2- `tags`: Tags are used to group endpoints in the documentation. You can choose between the following tags: `Math`, `Status`, `Search Engine`, `Geolocation`, `Booking`, `Core`, `Users`, `Notifications`, `Messages`, `Places`, `Admininistration panel`.
+1. **description**: A brief description of the endpoint.
 
-3- `security`: Security is used to specify the authentication method. You can skip this property if you don't need authentication.
+2. **tags**: Tags are used to group endpoints in the documentation. You can choose between the following tags: `Math`, `Status`, `Search Engine`, `Geolocation`, `Booking`, `Core`, `Users`, `Notifications`, `Messages`, `Places`, `Admininistration panel`.
+
+3. **security**: Security is used to specify the authentication method. You can skip this property if you don't need authentication.
 
 Example:
 ```js

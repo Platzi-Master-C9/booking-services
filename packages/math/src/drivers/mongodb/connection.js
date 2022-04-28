@@ -1,6 +1,6 @@
 'use strict';
-
-const Mongoose = require('mongoose');
+//this code is braking the app
+// const Mongoose = require('mongoose');
 
 // const config = require('../../../config/mongodb');
 // const Logger = require('../../utils/logger');
@@ -32,8 +32,6 @@ const Mongoose = require('mongoose');
 // 		process.exit(1);
 // 	});
 // });
-
-//TODO: since we don't have a mongose database, this code is crashing the server
 
 //module.exports = db;
 module.exports = {
