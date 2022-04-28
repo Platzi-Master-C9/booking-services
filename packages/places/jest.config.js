@@ -6,4 +6,7 @@ module.exports = {
     setupFiles: [
         '<rootDir>/__tests__/setupTest.js',
     ],
+    testMatch: [
+        '**/__tests__/**/*.test.[jt]s?(x)',
+    ],
 };

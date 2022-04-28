@@ -20,6 +20,25 @@ async function postPlace(req, reply) {
     .send({ msg: `${placeName} has been saved correctly.` });
 }
 
+async function getPlaces(req, reply) {
+  req.log.info('[http-server]: reading places');
+
+  let places;
+  try {
+    places = await this.placesService.getPlaces();
+  } catch (error) {
+    return reply.code(500).send({
+      message: 'Could not get places',
+    });
+  }
+
+  return reply.code(200).send({
+    total: places.length,
+    places,
+  });
+}
+
 module.exports = {
   postPlace,
+  getPlaces,
 };
