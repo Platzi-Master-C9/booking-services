@@ -19,16 +19,7 @@ const fastify = Fastify({
 });
 
 fastify.register(require('fastify-cors'), {
-  origin: (origin, cb) => {
-    const { hostname } = new URL(origin);
-    if (hostname === 'localhost') {
-      //  Request from localhost will pass
-      cb(null, true);
-      return;
-    }
-    // Generate an error on other origins, disabling access
-    cb(new Error('Not allowed'));
-  },
+  origin: true
 });
 
 /** @type {import('fastify-swagger').SwaggerOptions} */
