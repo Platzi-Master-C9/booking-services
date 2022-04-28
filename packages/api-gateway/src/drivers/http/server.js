@@ -18,6 +18,19 @@ const fastify = Fastify({
   logger: !isTestEnv,
 });
 
+fastify.register(require('fastify-cors'), {
+  origin: (origin, cb) => {
+    const { hostname } = new URL(origin);
+    if (hostname === 'localhost') {
+      //  Request from localhost will pass
+      cb(null, true);
+      return;
+    }
+    // Generate an error on other origins, disabling access
+    cb(new Error('Not allowed'));
+  },
+});
+
 /** @type {import('fastify-swagger').SwaggerOptions} */
 const swaggerOptions = {
   routePrefix: '/docs',
@@ -76,7 +89,7 @@ fastify.register(Autoload, { dir: path.join(__dirname, 'plugins') });
 
 async function start() {
   try {
-    await fastify.listen(process.env.SERVER_PORT || 3000, '0.0.0.0');
+    await fastify.listen(process.env.SERVER_PORT || 3001, '0.0.0.0');
   } catch (error) {
     fastify.log.error(
       `[http-server]: Error with message ${error.message} has happened`,

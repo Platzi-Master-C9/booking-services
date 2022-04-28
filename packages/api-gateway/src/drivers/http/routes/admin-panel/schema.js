@@ -2,7 +2,7 @@
 const default_schema = {
   description: 'Index Route',
   tags: ['Administration panel'],
-}
+};
 
 const changeUSerStatusSchema = {
   description: 'change user status: Given a status and a reason, change the status of a user and send a notification to the user',
@@ -52,7 +52,7 @@ const userListSchema = {
     properties: {
       status: { type: 'string' },
       fullName: { type: 'string' },
-    }
+    },
   },
   response: {
     200: {
@@ -62,16 +62,16 @@ const userListSchema = {
           type: 'array',
           items: {
             type: 'object',
-            properties : {
+            properties: {
               id: { type: 'string' },
               fullName: { type: 'string' },
               urlImage: { type: 'string' },
               dateOfRegister: { type: 'string' },
               status: { type: 'string' },
-            }
-          }
+            },
+          },
         },
-      }
+      },
     },
     '4xx': {
       type: 'object',
@@ -85,8 +85,8 @@ const userListSchema = {
         message: { type: 'string' },
       },
     },
-  }
-}
+  },
+};
 
 const userDetailSchema = {
   description: 'Get a user detail',
@@ -104,13 +104,13 @@ const userDetailSchema = {
       properties: {
         result: {
           type: 'object',
-          properties : {
+          properties: {
             id: { type: 'string' },
             fullName: { type: 'string' },
             urlImage: { type: 'string' },
             dateOfRegister: { type: 'string' },
             status: { type: 'string' },
-          }
+          },
         },
       },
     },
@@ -127,7 +127,7 @@ const userDetailSchema = {
       },
     },
   },
-}
+};
 
 module.exports = {
   default_schema,
