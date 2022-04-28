@@ -38,7 +38,8 @@ const swaggerOptions = {
       { name: 'Notifications', description: 'Notification endpoints' },
       { name: 'Messages', description: 'Messages endpoints' },
       { name: 'Places', description: 'Places endpoints' },
-      { name: 'Admininistration panel', description: 'Admininistration panel endpoints' },
+      { name: 'Administration panel', description: 'Administration panel endpoints' },
+      { name: 'Auth', description: 'Auth endpoints' },
     ],
     components: {
       securitySchemes: {
