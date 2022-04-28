@@ -1,7 +1,6 @@
 const geolocationServices = require('../../../../../mocks/geolocationServices.mock');
 
 function errorHandler(error, reply) {
-  console.log(error);
   if (error.isBoom) {
     return reply.code(error.output.payload.statusCode).send(error.output.payload);
   }
