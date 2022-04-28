@@ -44,6 +44,28 @@ async function listUserChatRooms(req, reply) {
   return reply.code(200).send(paginatedResult);
 }
 
+/**
+ * List the mesages of a user chat room.
+ * @type {import('fastify').RouteHandler}
+ */
+async function listChatMessages(req, reply) {
+  const { chatId } = req.params;
+  const { page } = req.query;
+
+  // TODO: Add use case to validate if chat exists and belongs to the user.
+
+  req.log.info('[http-server]: Listing chat messages.');
+  const { pages, messages } = await this.messageServices.listChatMessages({
+    chatId,
+    page,
+  });
+
+  const paginatedResult = makePagination(page, pages, messages);
+
+  return reply.code(200).send(paginatedResult);
+}
+
 module.exports = {
   listUserChatRooms,
+  listChatMessages,
 };
