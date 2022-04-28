@@ -20,7 +20,7 @@
     "url": "git+https://github.com/Platzi-Master-C9/backend-services.git"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
     "start:sync-db": "node src/drivers/mongodb/populate.js"
   },
   "bugs": {

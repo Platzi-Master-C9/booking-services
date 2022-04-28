@@ -1,5 +1,3 @@
-'use strict';
-
 // Constants to set the environment
 const supportedEnvs = {
   PRODUCTION: 'production',
@@ -8,8 +6,8 @@ const supportedEnvs = {
 
 // Options and settings for the DB
 const dbOptions = {
-  name: 'geolocation',
-  collection: 'places',
+  dbName: 'geolocation',
+  collectionName: 'places',
 };
 
 module.exports = {

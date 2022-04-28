@@ -1,29 +1,28 @@
 const { MongoClient } = require('mongodb');
+const boom = require('@hapi/boom');
 
-const config = require('../../../config/mongodb');
+const { user, pass, uri } = require('../../../config/mongodb');
 const { dbOptions } = require('../../utils/constants');
-const Logger = require('../../utils/logger');
 
-const uri = `mongodb://${config.user}:${config.pass}@${config.uri}`;
-const name = dbOptions.name;
-const collection = dbOptions.collection;
-const client = new MongoClient(uri);
-//create the connection with the db
+const URL = `mongodb://${user}:${pass}@${uri}`;
+const { dbName, collectionName } = dbOptions;
+const client = new MongoClient(URL);
+let results;
 
-async function connect() {
+async function connect(method, options) {
   try {
     await client.connect();
-    Logger.info({
-      message: '[geolocation:mongodb]: Connection succesfully to server',
-    });
-    return client.db(name).collection(collection);
+    const collection = client.db(dbName).collection(collectionName);
+    results = await collection[method](...options);
+    if (method === 'find') {
+      results = await results.toArray();
+    }
   } catch (error) {
-    Logger.error({
-      message: `[geolocation:mongodb]: Could not connect to database ${error}`,
-    });
+    throw boom.notFound('[geolocation:DB-Connection]: something happened when the request/connection to the DB was made: ', error);
+  } finally {
     client.close();
-    process.exit(1);
   }
+  return results;
 }
 
 module.exports = connect;

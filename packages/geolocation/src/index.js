@@ -1,5 +1,3 @@
-'use strict';
-
 // Services
 const { getPlaces } = require('./useCases');
 

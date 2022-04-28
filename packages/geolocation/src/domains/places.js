@@ -1,8 +1,6 @@
-const geoNearQuery =
-  (connection) =>
-  async (lon, lat, maxDistance = 1000) => {
-    const collection = await connection();
-    return collection.find({
+const geoNearQuery = (connection) => async (lon, lat, maxDistance = 1000) => {
+  const options = [
+    {
       location: {
         $near: {
           $geometry: {
@@ -12,8 +10,12 @@ const geoNearQuery =
           $maxDistance: maxDistance,
         },
       },
-    });
-  };
+      deleted_at: { $eq: null },
+    },
+  ];
+  const results = await connection('find', options);
+  return results;
+};
 
 module.exports = {
   geoNearQuery,
