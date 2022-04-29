@@ -1,160 +1,162 @@
-const {Model, DataTypes, Sequelize } = require('sequelize');
+const { Model, DataTypes, Sequelize } = require("sequelize");
 
-const { TYPES_OF_ID_TABLE } = require('./types_of_id.models');
-const {  GENDERS_TABLE} = require('./genders.models');
-const { ADDRESS_TABLE} = require('./address.models');
-const { EMERGENCY_CONTACTS_TABLE } = require('./emergency_contacts.models');
-const { CURRENCIES_TABLE } = require('./currencies.models');
-const { USER_TYPES_TABLE } = require('./user_types.models');
+const { TYPES_OF_ID_TABLE } = require("./types_of_id.models");
+const { GENDERS_TABLE } = require("./genders.models");
+const { ADDRESS_TABLE } = require("./address.models");
+const { EMERGENCY_CONTACTS_TABLE } = require("./emergency_contacts.models");
+const { CURRENCIES_TABLE } = require("./currencies.models");
+const { USER_TYPES_TABLE } = require("./user_types.models");
 
-const USERS_TABLE = 'users';
+const USERS_TABLE = "users";
 
 const usersSchema = {
   id: {
     allowNull: false,
     autoIncrement: true,
     primaryKey: true,
-    type: DataTypes.INTEGER
+    type: DataTypes.INTEGER,
   },
-  firstName:{
+  firstName: {
     allowNull: false,
     type: DataTypes.STRING,
-    field: 'first_name'
+    field: "first_name",
   },
-  secondName:{
-    allowNull:true,
+  secondName: {
+    allowNull: true,
     type: DataTypes.STRING,
-    field: 'second_name'
+    field: "second_name",
   },
-  firstSurname:{
-    allowNull:false,
-    type: DataTypes.STRING,
-    field: 'first_surname'
-  },
-  secondSurname:{
-    allowNull:true,
-    type: DataTypes.STRING, 
-    field: 'second_surname'
-  },
-  dateOfBirth:{
+  firstSurname: {
     allowNull: false,
     type: DataTypes.STRING,
-    field: 'date_of_birth'
+    field: "first_surname",
   },
-  email:{
+  secondSurname: {
+    allowNull: true,
+    type: DataTypes.STRING,
+    field: "second_surname",
+  },
+  dateOfBirth: {
     allowNull: false,
     type: DataTypes.STRING,
-    unique: true
+    field: "date_of_birth",
   },
-  telephoneNumber:{
-    allowNull:false,
-    type: DataTypes.STRING,
-    field: 'telephone_number'
-  },
-  passport:{
+  email: {
     allowNull: false,
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
+    unique: true,
   },
-  isVerified:{
+  telephoneNumber: {
+    allowNull: false,
+    type: DataTypes.STRING,
+    field: "telephone_number",
+  },
+  passport: {
+    allowNull: false,
+    type: DataTypes.STRING,
+  },
+  isVerified: {
     allowNull: false, //Does it have to be null: false?
     type: DataTypes.BOOLEAN,
-    field: 'id_verified'
+    field: "id_verified",
   },
-  urlImage:{
-    allowNull:true,
+  urlImage: {
+    allowNull: true,
     type: DataTypes.TEXT,
-    field: 'url_image'
+    field: "url_image",
   },
-  createdAt:{
+  createdAt: {
     allowNull: false,
     type: DataTypes.DATE,
-    field: 'created_at',
-    defaultValue: Sequelize.NOW
+    field: "created_at",
+    defaultValue: Sequelize.NOW,
   },
-  typesOfIdentificationId:{
+  typesOfIdentificationId: {
     //unsure if auto_increment should be added
-    field: 'types_of_identification_id',
+    field: "types_of_identification_id",
     allowNull: false,
     type: DataTypes.INTEGER,
-    references:{
+    references: {
       model: TYPES_OF_ID_TABLE,
-      key: 'id'
+      key: "id",
     },
-    onUpdate: 'CASCADE',
-    onDelete: 'SET NULL'
+    onUpdate: "CASCADE",
+    onDelete: "SET NULL",
   },
-  genderId:{
+  genderId: {
     //unsure if auto_increment should be added
-    field: 'gender_id',
+    field: "gender_id",
     allowNull: false,
     type: DataTypes.INTEGER,
-    references:{
+    references: {
       model: GENDERS_TABLE,
-      key: 'id'
+      key: "id",
+    },
+    onUpdate: "CASCADE",
+    onDelete: "SET NULL",
   },
-    onUpdate: 'CASCADE',
-    onDelete: 'SET NULL'
-  },
-  addressId:{
+  addressId: {
     //unsure if auto_increment should be added
-    field: 'address_id',
+    field: "address_id",
     allowNull: false,
     type: DataTypes.INTEGER,
-    references:{
+    references: {
       model: ADDRESS_TABLE,
-      key: 'id'
+      key: "id",
     },
-    onUpdate: 'CASCADE',
-    onDelete: 'SET NULL'  
+    onUpdate: "CASCADE",
+    onDelete: "SET NULL",
   },
-  emergencyContactId:{
+  emergencyContactId: {
     //unsure if auto_increment should be added
-    field: 'emergency_contact_id',
+    field: "emergency_contact_id",
     allowNull: false,
     type: DataTypes.INTEGER,
-    references:{
+    references: {
       model: EMERGENCY_CONTACTS_TABLE,
-      key: 'id'
+      key: "id",
     },
-    onUpdate: 'CASCADE',
-    onDelete: 'SET NULL'    
+    onUpdate: "CASCADE",
+    onDelete: "SET NULL",
   },
-  currencyId:{
+  currencyId: {
     //unsure if auto_increment should be added
-    field: 'currency_id',
+    field: "currency_id",
     allowNull: false,
     type: DataTypes.INTEGER,
-    references:{
+    references: {
       model: CURRENCIES_TABLE,
-      key: 'id'
+      key: "id",
     },
-    onUpdate: 'CASCADE',
-    onDelete: 'SET NULL'    
+    onUpdate: "CASCADE",
+    onDelete: "SET NULL",
   },
-  userTypeId:{
-    field: 'user_type_id',
+  userTypeId: {
+    field: "user_type_id",
     allowNull: false,
     type: DataTypes.INTEGER,
-    references:{
-      model:USER_TYPES_TABLE,
-      key: 'id'
+    references: {
+      model: USER_TYPES_TABLE,
+      key: "id",
     },
-    onUpdate: 'CASCADE',
-    onDelete: 'SET NULL'    
-  }
-}
+    onUpdate: "CASCADE",
+    onDelete: "SET NULL",
+  },
+};
 
 class users extends Model {
-  static associate(models){
-    this.belongsTo(models.typesOfIdentificationId,{as: 'types_of_identification_id'});
-    this.belongsTo(models.genders, {as: 'genders'});
-    this.belongsTo(models.address, {as: 'address'});
-    this.belongsTo(models.emergencyContact, {as: 'emergency_contact_id'});
-    this.belongsTo(models.currencies, {as: 'currency_id'});
-    this.belongsTo(models.userTypes, {as: 'user_type_id'});
+  static associate(models) {
+    this.belongsTo(models.typesOfIdentification, {
+      as: "types_of_identification_id",
+    });
+    this.belongsTo(models.genders, { as: "genders" });
+    this.belongsTo(models.address, { as: "address" });
+    this.belongsTo(models.emergencyContact, { as: "emergency_contact_id" });
+    this.belongsTo(models.currencies, { as: "currency_id" });
+    this.belongsTo(models.userTypes, { as: "user_type_id" });
     this.hasMany(models.userFavoritePlaces, {
-      as: 'user_favorite_places',
-      foreignKey: 'userId'
+      as: "user_favorite_places",
+      foreignKey: "userId",
     });
   }
 
@@ -162,10 +164,10 @@ class users extends Model {
     return {
       sequelize,
       tableName: USERS_TABLE,
-      modelName: 'users',
-      timestamps: false
-    }
+      modelName: "users",
+      timestamps: false,
+    };
   }
 }
 
-module.exports = { USERS_TABLE, usersSchema, users}
+module.exports = { USERS_TABLE, usersSchema, users };
