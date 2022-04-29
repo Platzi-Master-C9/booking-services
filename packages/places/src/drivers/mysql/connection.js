@@ -1,6 +1,6 @@
 const { Sequelize } = require('sequelize');
 
-const Logger = require('../../utils/logger');
+const { Logger } = require('@booking-services/shared');
 
 const {
     db, user, pass, host
