@@ -47,7 +47,7 @@ async function deletePlace(req, reply) {
   } catch (error) {
     return reply.code(404)
       .send({
-        message: 'Unexisting id',
+        message: 'Incorrect id',
       });
   }
 
