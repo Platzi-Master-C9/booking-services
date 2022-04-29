@@ -21,6 +21,7 @@
         "import/no-unresolved": [
             2, 
             { "caseSensitive": false }
-         ]
+        ],
+        "no-plusplus": "off"
     }
 }
