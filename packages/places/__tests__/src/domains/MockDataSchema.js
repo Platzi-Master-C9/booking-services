@@ -41,7 +41,14 @@ const PlaceModelMock = {
             ...newRowInfo
         };
         return savedData;
-    })
+    }),
+    update: jest.fn((newInfo, query) => {
+        const { where: { id } } = query;
+        if(typeof id !== 'number' || id >= 1000){
+            return [0];
+        }
+        return [0];
+    }),
 };
 
 module.exports = {
