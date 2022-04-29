@@ -1,4 +1,4 @@
-const Logger = require('../../utils/logger');
+const { Logger } = require('@booking-services/shared');
 
 const getPlaces = (model) => async () => {
     let data;
