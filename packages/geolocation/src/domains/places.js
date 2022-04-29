@@ -12,6 +12,7 @@ const geoNearQuery = (connection) => async (lon, lat, maxDistance = 1000) => {
       },
       deleted_at: { $eq: null },
     },
+    { projection: { created_at: 0, updated_at: 0, deleted_at: 0 } },
   ];
   const results = await connection('find', options);
   return results;

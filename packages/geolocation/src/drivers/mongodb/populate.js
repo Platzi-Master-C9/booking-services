@@ -6,11 +6,9 @@ const Logger = require('../../utils/logger');
 const { placesSchema, populate } = require('../../utils/syncDatabase');
 
 const uri = `mongodb://${config.user}:${config.pass}@${config.uri}`;
-const name = dbOptions.name;
-const collection = dbOptions.collection;
+const name = dbOptions.dbName;
+const collection = dbOptions.collectionName;
 const client = new MongoClient(uri);
-
-//create the connection with the db
 
 async function connect() {
   try {
