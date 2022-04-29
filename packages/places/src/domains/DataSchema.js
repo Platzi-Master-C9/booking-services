@@ -107,6 +107,10 @@ const Book = database.define('Book', {
 }, { tableName: 'books' });
 
 const fkGenerator = (Model) => {
+    Place.hasMany(Model, {
+        foreignKey: 'place_id',
+        as: Model.tableName
+    });
     Model.belongsTo(Place, {
         foreignKey: 'place_id',
         onDelete: 'CASCADE',
