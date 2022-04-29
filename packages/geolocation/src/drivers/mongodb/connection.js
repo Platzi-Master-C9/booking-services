@@ -3,6 +3,7 @@ const boom = require('@hapi/boom');
 
 const { user, pass, uri } = require('../../../config/mongodb');
 const { dbOptions } = require('../../utils/constants');
+const { Logger } = require('@booking-services/shared');
 
 const URL = `mongodb://${user}:${pass}@${uri}`;
 const { name, collection } = dbOptions;

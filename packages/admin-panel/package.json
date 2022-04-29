@@ -28,6 +28,7 @@
     "url": "https://github.com/jacorreamed/booking-services/issues"
   },
   "dependencies": {
+    "@booking-services/shared": "^0.0.1",
     "@faker-js/faker": "^6.1.2"
   },
   "devDependencies": {
