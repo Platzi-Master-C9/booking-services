@@ -1,14 +1,14 @@
-const Logger = require('../../utils/logger');
+const { Logger } = require('@booking-services/shared');
 
 const dbDeleter = (Model) => async (id) => {
     try {
         const data = await Model.update({
-            is_active: false
+            is_active: false,
         }, {
             where: {
                 id,
-                is_active: true
-            }
+                is_active: true,
+            },
         });
         if (data[0] === 0) {
             throw new Error();

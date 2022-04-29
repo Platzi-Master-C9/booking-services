@@ -1,11 +1,11 @@
-const Logger = require('../../utils/logger');
+const { Logger } = require('@booking-services/shared');
 
 const getPlaces = (model) => async () => {
     let data;
     try {
         data = await model.findAll({
             attributes: {
-                exclude: ['createdAt', 'updatedAt', 'is_active']
+                exclude: ['createdAt', 'updatedAt', 'is_active'],
             },
             include: ['perks', 'spaces', 'images', 'rules'],
         });

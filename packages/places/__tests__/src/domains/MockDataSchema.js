@@ -13,18 +13,18 @@ const PlaceModelMock = {
                 host_id: faker.datatype.number({ min: 1, max: 100 }),
                 rating: null,
                 perks: [{
-                    perk: faker.lorem.sentence(4)
+                    perk: faker.lorem.sentence(4),
                 }],
                 spaces: [{
-                    space: faker.lorem.word(6)
+                    space: faker.lorem.word(6),
                 }],
                 images: [{
-                    url: faker.image.city()
+                    url: faker.image.city(),
                 }],
                 rules: [{
-                    rule: faker.lorem.sentence(5)
+                    rule: faker.lorem.sentence(5),
                 }],
-                toJSON: jest.fn()
+                toJSON: jest.fn(),
             });
         }
         return places;
@@ -38,19 +38,19 @@ const PlaceModelMock = {
             id: faker.datatype.number({ min: 1, max: 100 }),
             is_active: true,
             rating: null,
-            ...newRowInfo
+            ...newRowInfo,
         };
         return savedData;
     }),
     update: jest.fn((newInfo, query) => {
         const { where: { id } } = query;
-        if(typeof id !== 'number' || id >= 1000){
+        if (typeof id !== 'number' || id >= 1000) {
             return [0];
         }
-        return [0];
+        return [1];
     }),
 };
 
 module.exports = {
-    PlaceModelMock
+    PlaceModelMock,
 };
