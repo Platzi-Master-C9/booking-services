@@ -33,7 +33,7 @@ class typesOfIdentification extends Model {
     return{
       sequelize,
       tableName: TYPES_OF_ID_TABLE,
-      modelName: 'types_of_identification',
+      modelName: 'typesOfIdentification',
       timestamps: false
     }
   }
