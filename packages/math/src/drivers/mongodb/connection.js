@@ -3,7 +3,7 @@
 // const Mongoose = require('mongoose');
 
 // const config = require('../../../config/mongodb');
-// const Logger = require('../../utils/logger');
+// const { Logger } = require('@booking-services/shared');
 
 const config = require('../../../config/mongodb');
 const { Logger } = require('@booking-services/shared');
