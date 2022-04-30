@@ -37,3 +37,10 @@ jest.mock('winston', () => ({
     uncolorize: jest.fn(),
   },
 }));
+
+jest.mock('@booking-services/places', () => ({
+  postPlace: jest.fn(),
+  getPlaces: jest.fn(() => []),
+}));
+
+jest.mock('@booking-services/messages');
