@@ -1,8 +1,9 @@
 // Services
-const { createUserServices } = require('./useCases');
+const { userService } = require('./useCases');
 
 // Domains
 
 module.exports = {
-  createUser: createUserServices,
+  createUser: userService.createUser,
+  validateUser: userService.validateUser,
 };
