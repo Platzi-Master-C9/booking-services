@@ -41,6 +41,12 @@ jest.mock('winston', () => ({
 jest.mock('@booking-services/places', () => ({
   postPlace: jest.fn(),
   getPlaces: jest.fn(() => []),
+  deletePlace: jest.fn((id) => {
+    if (typeof id !== 'number' || id >= 1000) {
+        throw new Error();
+    }
+    return;
+}),
 }));
 
 jest.mock('@booking-services/messages');

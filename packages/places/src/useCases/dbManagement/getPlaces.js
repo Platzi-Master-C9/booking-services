@@ -5,7 +5,7 @@ const getPlaces = (model) => async () => {
     try {
         data = await model.findAll({
             attributes: {
-                exclude: ['createdAt', 'updatedAt', 'is_active']
+                exclude: ['createdAt', 'updatedAt', 'is_active'],
             },
             include: ['perks', 'spaces', 'images', 'rules'],
         });
