@@ -9,6 +9,7 @@ const path = require('path');
 const authDecorators = require('./decorators/auth');
 const { version } = require('../../../package.json');
 const configAuth = require('../../../config/auth0');
+const configCORS = require('../../../config/cors');
 
 // Setup
 const isTestEnv = process.env.NODE_ENV === 'test';
@@ -18,8 +19,8 @@ const fastify = Fastify({
   logger: !isTestEnv,
 });
 
-fastify.register(require('fastify-cors'), {
-  origin: true
+fastify.register(require('@fastify/cors'), {
+  origin: configCORS.domain,
 });
 
 /** @type {import('fastify-swagger').SwaggerOptions} */

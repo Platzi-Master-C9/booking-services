@@ -1,5 +1,5 @@
 // TODO_JAIRO: schema doesn't work propertly
-const default_schema = {
+const defaultSchema = {
   description: 'Index Route',
   tags: ['Administration panel'],
 };
@@ -130,7 +130,7 @@ const userDetailSchema = {
 };
 
 module.exports = {
-  default_schema,
+  defaultSchema,
   changeUSerStatusSchema,
   userListSchema,
   userDetailSchema,
