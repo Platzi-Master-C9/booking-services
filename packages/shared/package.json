@@ -1,0 +1,37 @@
+{
+  "name": "@booking-services/shared",
+  "version": "0.0.1",
+  "description": "Some code that we could share with other teams",
+  "author": "Hector Esau Macias Javier <hecttoressau@gmail.com>",
+  "homepage": "https://github.com/Platzi-Master-C9/backend-services/tree/master/packages/shared#readme",
+  "license": "ISC",
+  "main": "src/index.js",
+  "directories": {
+    "lib": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Platzi-Master-C9/booking-services.git"
+  },
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "bugs": {
+    "url": "https://github.com/Platzi-Master-C9/booking-services/issues"
+  },
+  "devDependencies": {
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "jest": "^27.5.1"
+  },
+  "dependencies": {
+    "winston": "^3.7.2"
+  }
+}

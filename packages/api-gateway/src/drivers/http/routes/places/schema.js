@@ -1,6 +1,6 @@
 /** @type {import('fastify').RouteOptions['schema']} */
 
-const postSchema = {
+const postPlaceSchema = {
   description: 'This is the route to use for creating a new place',
   tags: ['Places'],
   body: {
@@ -18,8 +18,59 @@ const postSchema = {
       'type',
     ],
   },
+  response: {
+    201: {
+      type: 'object',
+      properties: {
+        message: { type: 'string' },
+      },
+    },
+  },
+};
+
+const getPlacesSchema = {
+  description: 'Route for getting all the places',
+  tags: ['Places'],
+  response: {
+    200: {
+      description: 'Successful response',
+      type: 'object',
+      properties: {
+        total: { type: 'number' },
+        places: { type: 'array' },
+      },
+    },
+  },
+};
+
+const deletePlaceSchema = {
+  description: 'This is the route to use for deleting a place',
+  tags: ['Places'],
+  params: {
+    type: 'object',
+    properties: {
+      id: { type: 'number' },
+    },
+    required: ['id'],
+  },
+  response: {
+    200: {
+      type: 'object',
+      properties: {
+        message: { type: 'string' },
+      },
+    },
+    404: {
+      type: 'object',
+      properties: {
+        message: { type: 'string' },
+      },
+    },
+  },
 };
 
 module.exports = {
-  postSchema,
+  postPlaceSchema,
+  getPlacesSchema,
+  deletePlaceSchema,
 };

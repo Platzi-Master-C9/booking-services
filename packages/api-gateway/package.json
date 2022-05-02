@@ -38,6 +38,7 @@
     "@booking-services/math": "^1.0.0",
     "@booking-services/messages": "^1.0.0",
     "@booking-services/places": "^1.0.0",
+    "@booking-services/shared": "^0.0.1",
     "@booking-services/user-account": "^1.0.0",
     "@faker-js/faker": "^6.1.1",
     "dotenv": "^16.0.0",
