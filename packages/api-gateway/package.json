@@ -27,7 +27,8 @@
     "test": "jest --runInBand",
     "test:watch": "jest --watch",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "precommit": "yarn lint && yarn test"
   },
   "bugs": {
     "url": "https://github.com/gh0stl1m/backend-services/issues"
