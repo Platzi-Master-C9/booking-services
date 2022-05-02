@@ -1,12 +1,12 @@
 {
-  "name": "@booking-services/webSockets",
+  "name": "@booking-services/web-sockets",
   "version": "0.0.1",
   "description": "Configuration to our communication using websockets",
   "keywords": [
     "websockets"
   ],
   "author": "Hector Esau Macias Javier <hecttoressau@gmail.com>",
-  "homepage": "https://github.com/Platzi-Master-C9/backend-services/tree/main/packages/webSockets#readme",
+  "homepage": "https://github.com/Platzi-Master-C9/backend-services/tree/main/packages/web-sockets#readme",
   "license": "ISC",
   "main": "src/index.js",
   "directories": {
@@ -32,6 +32,7 @@
     "eslint-plugin-import": "^2.25.2"
   },
   "dependencies": {
-    "jest": "^28.0.3"
+    "jest": "^28.0.3",
+    "socket.io": "^4.5.0"
   }
 }
