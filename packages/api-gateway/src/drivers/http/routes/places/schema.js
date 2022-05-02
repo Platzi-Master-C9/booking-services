@@ -18,6 +18,14 @@ const postPlaceSchema = {
       'type',
     ],
   },
+  response: {
+    201: {
+      type: 'object',
+      properties: {
+        message: { type: 'string' },
+      },
+    },
+  },
 };
 
 const getPlacesSchema = {
@@ -35,7 +43,34 @@ const getPlacesSchema = {
   },
 };
 
+const deletePlaceSchema = {
+  description: 'This is the route to use for deleting a place',
+  tags: ['Places'],
+  params: {
+    type: 'object',
+    properties: {
+      id: { type: 'number' },
+    },
+    required: ['id'],
+  },
+  response: {
+    200: {
+      type: 'object',
+      properties: {
+        message: { type: 'string' },
+      },
+    },
+    404: {
+      type: 'object',
+      properties: {
+        message: { type: 'string' },
+      },
+    },
+  },
+};
+
 module.exports = {
   postPlaceSchema,
   getPlacesSchema,
+  deletePlaceSchema,
 };

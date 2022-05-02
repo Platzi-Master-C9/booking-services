@@ -1,5 +1,5 @@
 // Internal dependencies
-const logger = require('../utils/logger');
+const { Logger } = require('@booking-services/shared');
 
 /**
  * Returns the list of messages of a chat room.
@@ -15,14 +15,14 @@ const logger = require('../utils/logger');
  */
 const listChatMessages = (MessageModel) => {
   if (!MessageModel) {
-    logger.error('[messages]: Message Model dependency has not been injected.');
+    Logger.error('[messages]: Message Model dependency has not been injected.');
     throw new Error('Message Model is required');
   }
 
   return async ({ chatId, page }) => {
     // Validate chat id
     if (typeof chatId !== 'string' || !chatId) {
-      logger.error('[messages]: Chat Room ID has not been provided.');
+      Logger.error('[messages]: Chat Room ID has not been provided.');
       throw new Error('Chat room ID is required');
     }
 
@@ -30,7 +30,7 @@ const listChatMessages = (MessageModel) => {
     if (!Number.isInteger(page) || page < 1) {
       const errorMessage = 'Page must be a positive integer greater than 0';
 
-      logger.error(`[messages]: ${errorMessage}`);
+      Logger.error(`[messages]: ${errorMessage}`);
       throw new Error(errorMessage);
     }
     // Query
@@ -61,7 +61,7 @@ const listChatMessages = (MessageModel) => {
 
     let pages = 0;
     let messages = [];
-    logger.info(`[messages]: Getting messages of chat room #${chatId}`);
+    Logger.info(`[messages]: Getting messages of chat room #${chatId}`);
     try {
       // find with pagination
       const [count, response] = await Promise.all([
@@ -78,7 +78,7 @@ const listChatMessages = (MessageModel) => {
         messages = response;
       }
     } catch (error) {
-      logger.error(`[messages]: Error fetching messages of chat room #${chatId}`, error);
+      Logger.error(`[messages]: Error fetching messages of chat room #${chatId}`, error);
     }
 
     return {
