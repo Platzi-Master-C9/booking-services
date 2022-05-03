@@ -8,6 +8,7 @@ const FakeChatModel = {
   findOne: () => ChatRoomFixture[0],
   findById: () => ChatRoomFixture[0],
   countDocuments: () => ChatRoomFixture.length,
+  exists: () => true,
 };
 
 const FakeMessageModel = {
@@ -15,6 +16,7 @@ const FakeMessageModel = {
   findOne: () => MessagesFixture[0],
   findById: () => MessagesFixture[0],
   countDocuments: () => MessagesFixture.length,
+  exists: () => true,
 };
 
 module.exports = {
