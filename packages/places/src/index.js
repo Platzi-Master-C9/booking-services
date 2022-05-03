@@ -1,9 +1,13 @@
 const models = require('./domains/index');
 
 const {
-    dbWriter
+    dbWriter,
+    getPlaces,
+    dbDeleter,
 } = require('./useCases/index');
 
 module.exports = {
-    postPlace: dbWriter(models.Place)
+    postPlace: dbWriter(models.Place),
+    getPlaces: getPlaces(models.Place),
+    deletePlace: dbDeleter(models.Place),
 };
