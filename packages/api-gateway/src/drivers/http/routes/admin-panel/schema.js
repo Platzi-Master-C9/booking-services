@@ -88,7 +88,6 @@ const userListSchema = {
   },
 };
 
-
 const userDetailSchema = {
   description: 'Get a user detail',
   tags: ['Administration panel'],
@@ -131,7 +130,7 @@ const userDetailSchema = {
 };
 
 const adminIDSchema = {
-description: 'Query admin info: given id, get admin data',
+  description: 'Query admin info: given id, get admin data',
   tags: ['Administration panel'],
   params: {
     type: 'object',
@@ -145,13 +144,13 @@ description: 'Query admin info: given id, get admin data',
       type: 'object',
       properties: {
         result: {
-            type: 'object',
-            properties : {
-              id: { type: 'number' },
-              fullName: { type: 'string' },
-              urlImage: { type: 'string' },
-              profile: { type: 'number' },
-            },
+          type: 'object',
+          properties: {
+            id: { type: 'number' },
+            fullName: { type: 'string' },
+            urlImage: { type: 'string' },
+            profile: { type: 'number' },
+          },
         },
       },
     },
