@@ -2,8 +2,7 @@ const { MongoClient } = require('mongodb');
 
 const config = require('../../../config/mongodb');
 const { dbOptions } = require('../../utils/constants');
-const Logger = require('../../utils/logger');
-const { Logger } = require('../../utils/looger');
+const { Logger } = require('@booking-services/shared');
 const { placesSchema, populate } = require('../../utils/syncDatabase');
 
 const uri = `mongodb://${config.user}:${config.pass}@${config.uri}`;
