@@ -1,13 +1,30 @@
 // External dependencies
 const { faker } = require('@faker-js/faker');
+const { listChatMessages } = require('@booking-services/messages');
 
 // Internal dependencies
 const { fastify } = require('../../../../../../src/drivers/http/server');
 
+// Mocks
+const customerID = faker.datatype.uuid();
+const hostID = faker.datatype.uuid();
+
+const mockListChatMessages = [
+  {
+    _id: faker.datatype.uuid(),
+    bookingId: faker.datatype.uuid(),
+    hostId: hostID,
+    customerId: customerID,
+    createdAt: faker.datatype.datetime(),
+    updatedAt: faker.datatype.datetime(),
+    deletedAt: null,
+  },
+];
+
 describe('GET /chats/{chatId}/messages', () => {
   describe('given an authenticated user and a valid chatId', () => {
     // TODO: Change this once we have authentication ready
-    const bearerToken = faker.datatype.uuid();
+    const bearerToken = customerID;
     const chatId = 1;
 
     const headers = {
@@ -19,6 +36,8 @@ describe('GET /chats/{chatId}/messages', () => {
       let responseJson;
 
       beforeAll(async () => {
+        listChatMessages.mockReturnValue(mockListChatMessages);
+
         response = await fastify.inject({
           method: 'GET',
           url: `/chats/${chatId}/messages`,
