@@ -1,4 +1,3 @@
-
 async function sayHello(req, reply) {
   const result = await this.adminPanelService.sayHello();
   return reply.code(200)
@@ -31,18 +30,16 @@ async function getUsers(req, reply) {
   );
 
   return reply.code(200)
-  .header('Content-Type', 'application/json; chartset:utf-8')
-  .send({ result });
+    .header('Content-Type', 'application/json; chartset:utf-8')
+    .send({ result });
 }
 
 async function getUserDetail(req, reply) {
-
-  try{
+  try {
     const result = await this.adminPanelService.getUserDetail(req.params.user_id);
     return reply.code(200)
-    .header('Content-Type', 'application/json; chartset:utf-8')
-    .send({ result });
-
+      .header('Content-Type', 'application/json; chartset:utf-8')
+      .send({ result });
   } catch (e) {
     return reply.code(404).send({
       message: e.message,
