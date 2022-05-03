@@ -2,6 +2,7 @@ const Fastify = require('fastify');
 const Autoload = require('fastify-autoload');
 const pluginLoader = require('fastify-plugin');
 const boom = require('@hapi/boom');
+const { faker } = require('@faker-js/faker');
 const getApiGatewayDirectory = require('../../src/utils/getApiGateweyDirectory');
 
 describe('Create a place then return id and status code 200', () => {
@@ -34,14 +35,14 @@ describe('Create a place then return id and status code 200', () => {
       method: 'POST',
       url: 'geolocation/place',
       body: {
-        location: [-157.4423, -72.974],
-        country: 'Saint Lucia',
-        state: 'Colorado',
-        city: 'North Adonisside',
-        zipcode: '18489-4272',
-        streetAddress: '17010 Lamar Lake',
-        placeDBId: '483bbd21-ca8f-4be6-ae51-0d291408d165',
-        price: 478.17,
+        location: [parseInt(faker.address.longitude(), 10), parseInt(faker.address.latitude(), 10)],
+        country: faker.address.country(),
+        state: faker.address.state(),
+        city: faker.address.city(),
+        zipcode: faker.address.zipCode(),
+        street_address: faker.address.direction(),
+        place_db_id: faker.datatype.uuid(),
+        price: parseInt(faker.commerce.price(), 10),
       },
     });
 
@@ -84,14 +85,14 @@ describe('Create a place failed then return status code 500', () => {
       method: 'POST',
       url: 'geolocation/place',
       body: {
-        location: [-157.4423, -72.974],
-        country: 'Saint Lucia',
-        state: 'Colorado',
-        city: 'North Adonisside',
-        zipcode: '18489-4272',
-        streetAddress: '17010 Lamar Lake',
-        placeDBId: '483bbd21-ca8f-4be6-ae51-0d291408d165',
-        price: 478.17,
+        location: [parseInt(faker.address.longitude(), 10), parseInt(faker.address.latitude(), 10)],
+        country: faker.address.country(),
+        state: faker.address.state(),
+        city: faker.address.city(),
+        zipcode: faker.address.zipCode(),
+        street_address: faker.address.direction(),
+        place_db_id: faker.datatype.uuid(),
+        price: parseInt(faker.commerce.price(), 10),
       },
     });
 
