@@ -62,6 +62,18 @@ async function getAdminId(req, reply) {
     });
   }
 }
+async function listPlaces(req, reply) {
+
+  const result = await this.adminPanelService.listPlaces(
+    req.query.status,
+    req.query.placeName,
+    req.query.hostName
+  );
+
+  return reply.code(200)
+    .header('Content-Type', 'application/json; chartset:utf-8')
+    .send({ result });
+}
 
 module.exports = {
   sayHello,
@@ -69,4 +81,5 @@ module.exports = {
   getUsers,
   getUserDetail,
   getAdminId,
+  listPlaces,
 };

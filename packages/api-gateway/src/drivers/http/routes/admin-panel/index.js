@@ -5,6 +5,7 @@ const {
   userListSchema,
   userDetailSchema,
   adminIDSchema,
+  placesListSchema,
 } = require('./schema');
 
 async function adminPanelRouter(fastify) {
@@ -13,5 +14,6 @@ async function adminPanelRouter(fastify) {
   await fastify.get('/users', { schema: userListSchema }, adminPanelAdapters.getUsers);
   await fastify.get('/users/:user_id', { schema: userDetailSchema }, adminPanelAdapters.getUserDetail);
   await fastify.get('/admins/:admin_id', { schema: adminIDSchema }, adminPanelAdapters.getAdminId);
+  await fastify.get('/places', { schema: placesListSchema }, adminPanelAdapters.listPlaces);
 }
 module.exports = adminPanelRouter;

@@ -7,4 +7,5 @@ module.exports = {
   getUsers: adminPanelService.userList.getUsers,
   getUserDetail: adminPanelService.userDetail.getUserDetail,
   getAdminId: adminPanelService.adminId.getAdminId,
+  listPlaces: adminPanelService.places.listPlaces,
 };
