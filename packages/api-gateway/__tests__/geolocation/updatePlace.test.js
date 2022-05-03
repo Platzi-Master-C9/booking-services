@@ -2,6 +2,7 @@ const Fastify = require('fastify');
 const Autoload = require('fastify-autoload');
 const pluginLoader = require('fastify-plugin');
 const boom = require('@hapi/boom');
+const { faker } = require('@faker-js/faker');
 const getApiGatewayDirectory = require('../../src/utils/getApiGatewayDirectory');
 
 describe('Update a place then return id and status code 200', () => {
@@ -24,7 +25,7 @@ describe('Update a place then return id and status code 200', () => {
     const placeUpdated = await fastify.inject({
       method: 'PATCH',
       url: 'geolocation/place',
-      query: { id: 'a56sd46as8d4a6s4d', address: '408 new york' },
+      query: { id: faker.datatype.uuid(), address: faker.address.direction() },
     });
 
     expect(placeUpdated.statusCode).toEqual(200);
@@ -58,7 +59,7 @@ describe('Update a place failed then return status code 404', () => {
     const placeUpdated = await fastify.inject({
       method: 'PATCH',
       url: 'geolocation/place',
-      query: { id: 'a56sd46as8d4a6s4d', address: '408 new york' },
+      query: { id: faker.datatype.uuid(), address: faker.address.direction() },
     });
     expect(JSON.parse(placeUpdated.body)).toEqual(
       expect.objectContaining({
@@ -92,7 +93,7 @@ describe('Update a place failed then return status code 500', () => {
     const placeUpdated = await fastify.inject({
       method: 'PATCH',
       url: 'geolocation/place',
-      query: { id: 'a56sd46as8d4a6s4d', address: '408 new york' },
+      query: { id: faker.datatype.uuid(), address: faker.address.direction() },
     });
     expect(JSON.parse(placeUpdated.body)).toEqual(
       expect.objectContaining({
