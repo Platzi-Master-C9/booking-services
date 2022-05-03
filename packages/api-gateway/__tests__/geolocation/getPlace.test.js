@@ -2,22 +2,20 @@ const Fastify = require('fastify');
 const Autoload = require('fastify-autoload');
 const pluginLoader = require('fastify-plugin');
 const boom = require('@hapi/boom');
+const { faker } = require('@faker-js/faker');
 const getApiGatewayDirectory = require('../../src/utils/getApiGatewayDirectory');
 
 describe('Get a place then return a object and status code 200', () => {
   // mock update place
   const getPlace = () => async (id) => ({
     id,
-    location: [-17.78, 78.878],
-    country: 'Saint Lucia',
-    state: 'Colorado',
-    city: 'North Adonisside',
-    zipcode: '18489-4272',
-    street_address: '17010 Lamar Lake',
-    place_db_id: '483bbd21-ca8f-4be6-ae51-0d291408d165',
-    created_at: '2022-04-27T07:24:51.097Z',
-    updated_at: '2022-04-27T23:47:07.252Z',
-    deleted_at: '2022-04-27T23:47:07.252Z',
+    location: [parseInt(faker.address.longitude(), 10), parseInt(faker.address.latitude(), 10)],
+    country: faker.address.country(),
+    state: faker.address.state(),
+    city: faker.address.city(),
+    zipcode: faker.address.zipCode(),
+    street_address: faker.address.direction(),
+    place_db_id: faker.datatype.uuid(),
   });
   const GeolocationServices = {
     getPlace: getPlace(),
@@ -36,7 +34,7 @@ describe('Get a place then return a object and status code 200', () => {
     const placeUpdated = await fastify.inject({
       method: 'GET',
       url: 'geolocation/place',
-      query: { id: 'a56sd46as8d4a6s4d' },
+      query: { id: faker.datatype.uuid() },
     });
 
     expect(placeUpdated.statusCode).toEqual(200);
@@ -79,7 +77,7 @@ describe('Gat a place failed then return status code 404', () => {
     const placeUpdated = await fastify.inject({
       method: 'GET',
       url: 'geolocation/place',
-      query: { id: 'a56sd46as8d4a6s4d' },
+      query: { id: faker.datatype.uuid() },
     });
     expect(placeUpdated.statusCode).toEqual(404);
     expect(JSON.parse(placeUpdated.body)).toEqual(
@@ -113,7 +111,7 @@ describe('Get a place failed then return status code 500', () => {
     const placeUpdated = await fastify.inject({
       method: 'GET',
       url: 'geolocation/place',
-      query: { id: 'a56sd46as8d4a6s4d' },
+      query: { id: faker.datatype.uuid() },
     });
     expect(JSON.parse(placeUpdated.body)).toEqual(
       expect.objectContaining({
