@@ -1,14 +1,14 @@
 const { Sequelize } = require('sequelize');
 
-const Logger = require('../../utils/logger');
+const { Logger } = require('@booking-services/shared');
 
 const {
-    db, user, pass, host
+    db, user, pass, host,
 } = require('../../../config/dbcredentials');
 
 const sequelize = new Sequelize(db, user, pass, {
     host,
-    dialect: 'mysql'
+    dialect: 'mysql',
 });
 
 sequelize.afterConnect(() => {
