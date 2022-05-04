@@ -1,5 +1,5 @@
 const { faker } = require('@faker-js/faker');
-const { createUser, validateUser } = require('../src/index');
+const { createUser, validateUser, updateUser } = require('../src/index');
 
 const userFake = {
   email: faker.internet.email(),
@@ -13,6 +13,31 @@ const userFake = {
 };
 const validateFake = {
   userId: faker.datatype.number(),
+  firstName: faker.name.firstName(),
+  secondName: faker.name.firstName(),
+  firstSurname: faker.name.lastName(),
+  secondSurname: faker.name.lastName(),
+  birthDate: faker.date.between('1900-01-01', '2000-01-01'),
+  nationality: faker.address.countryCode('alpha-3'),
+  dniId: faker.phone.phoneNumber('########'),
+  dniFrontImg: faker.image.avatar(),
+  dniBackImg: faker.image.abstract(),
+  gender: faker.name.gender(true),
+  phoneNumber: faker.phone.phoneNumber('##########'),
+  emergencyNumber: faker.phone.phoneNumber('##########'),
+  passport: faker.phone.phoneNumber('########'),
+  address: {
+    country: faker.address.countryCode('alpha-3'),
+    city: faker.address.city(),
+    state: faker.address.state(),
+    address: faker.address.streetAddress(),
+    zip: faker.address.zipCode(),
+  },
+};
+const updateFake = {
+  userId: faker.datatype.number(),
+  email: faker.internet.email(),
+  avatar: faker.image.avatar(),
   firstName: faker.name.firstName(),
   secondName: faker.name.firstName(),
   firstSurname: faker.name.lastName(),
@@ -143,6 +168,49 @@ describe('Prove use of the validate user service', () => {
     ];
     for (let i = 0; i < string.length; i += 1) {
       validatorFormatStringHandler(validateUser, string[i], validateFake);
+    }
+  });
+});
+describe('Prove use of the update user service', () => {
+  test('should working properly validate user', () => {
+    expect(updateUser(updateFake)).toBe(updateFake);
+  });
+  test('data cannot be empty', () => {
+    const string = [
+      'email',
+      'avatar',
+      'firstName',
+      'secondName',
+      'firstSurname',
+      'secondSurname',
+      'nationality',
+      'dniId',
+      'dniBackImg',
+      'phoneNumber',
+      'emergencyNumber',
+      'passport',
+    ];
+    for (let i = 0; i < string.length; i += 1) {
+      validatorEmptyStringHandler(updateUser, string[i], updateFake);
+    }
+  });
+  test('data required', () => {
+    const string = ['userId'];
+    for (let i = 0; i < string.length; i += 1) {
+      validatorRequireHandler(updateUser, string[i], updateFake);
+    }
+  });
+  test('should data with correct format', () => {
+    const string = [
+      'userId',
+      'birthDate',
+      'nationality',
+      'dniBackImg',
+      'dniFrontImg',
+      'gender',
+    ];
+    for (let i = 0; i < string.length; i += 1) {
+      validatorFormatStringHandler(updateUser, string[i], updateFake);
     }
   });
 });

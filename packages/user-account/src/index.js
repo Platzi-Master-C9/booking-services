@@ -6,4 +6,5 @@ const { userService } = require('./useCases');
 module.exports = {
   createUser: userService.createUser,
   validateUser: userService.validateUser,
+  updateUser: userService.updateUser,
 };
