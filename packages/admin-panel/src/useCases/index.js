@@ -3,6 +3,7 @@ const userStatus = require('./userStatus');
 const userList = require('./userList');
 const userDetail = require('./userDetail');
 const adminId = require('./adminId');
+const places = require('./places');
 
 module.exports = {
   firstCase,
@@ -10,4 +11,5 @@ module.exports = {
   userList,
   userDetail,
   adminId,
+  places,
 };
