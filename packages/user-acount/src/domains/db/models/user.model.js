@@ -1,7 +1,6 @@
 const { Model, DataTypes, Sequelize } = require("sequelize");
 
 const { TYPES_OF_ID_TABLE } = require("./typesOfId.models");
-const { GENDERS_TABLE } = require("./genders.models");
 const { ADDRESS_TABLE } = require("./address.models");
 const { EMERGENCY_CONTACTS_TABLE } = require("./emergencyContacts.models");
 const { CURRENCIES_TABLE } = require("./currencies.models");
@@ -55,6 +54,10 @@ const usersSchema = {
     allowNull: false,
     type: DataTypes.STRING,
   },
+  gender: {
+    allowNull: false,
+    type: DataTypes.ENUM('Male', 'Female', 'Non-binary')
+  },
   isVerified: {
     allowNull: false, //Does it have to be null: false?
     type: DataTypes.BOOLEAN,
@@ -78,18 +81,6 @@ const usersSchema = {
     type: DataTypes.INTEGER,
     references: {
       model: TYPES_OF_ID_TABLE,
-      key: "id",
-    },
-    onUpdate: "CASCADE",
-    onDelete: "SET NULL",
-  },
-  genderId: {
-    //unsure if auto_increment should be added
-    field: "gender_id",
-    allowNull: false,
-    type: DataTypes.INTEGER,
-    references: {
-      model: GENDERS_TABLE,
       key: "id",
     },
     onUpdate: "CASCADE",
@@ -149,7 +140,6 @@ class users extends Model {
     this.belongsTo(models.typesOfIdentification, {
       as: "types_of_identification_id",
     });
-    this.belongsTo(models.genders, { as: "genders" });
     this.belongsTo(models.address, { as: "address" });
     this.belongsTo(models.emergencyContact, { as: "emergency_contact_id" });
     this.belongsTo(models.currencies, { as: "currency_id" });
