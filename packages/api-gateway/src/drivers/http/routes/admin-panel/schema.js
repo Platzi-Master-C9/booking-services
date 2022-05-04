@@ -129,9 +129,50 @@ const userDetailSchema = {
   },
 };
 
+const adminIDSchema = {
+  description: 'Query admin info: given id, get admin data',
+  tags: ['Administration panel'],
+  params: {
+    type: 'object',
+    properties: {
+      admin_id: { type: 'number' },
+    },
+    required: ['admin_id'],
+  },
+  response: {
+    200: {
+      type: 'object',
+      properties: {
+        result: {
+          type: 'object',
+          properties: {
+            id: { type: 'number' },
+            fullName: { type: 'string' },
+            urlImage: { type: 'string' },
+            profile: { type: 'number' },
+          },
+        },
+      },
+    },
+    '4xx': {
+      type: 'object',
+      properties: {
+        message: { type: 'string' },
+      },
+    },
+    '5xx': {
+      type: 'object',
+      properties: {
+        message: { type: 'string' },
+      },
+    },
+  },
+};
+
 module.exports = {
   defaultSchema,
   changeUSerStatusSchema,
   userListSchema,
   userDetailSchema,
+  adminIDSchema,
 };
