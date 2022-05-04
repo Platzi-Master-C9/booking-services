@@ -34,7 +34,6 @@ function sendMessage(userId, message) {
   console.log(`Sending message: ${message} to user: ${userId}`);
 }
 
-
 const Admins = [
   {
     id: 1,
