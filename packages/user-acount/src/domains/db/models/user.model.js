@@ -1,11 +1,11 @@
 const { Model, DataTypes, Sequelize } = require("sequelize");
 
-const { TYPES_OF_ID_TABLE } = require("./types_of_id.models");
+const { TYPES_OF_ID_TABLE } = require("./typesOfId.models");
 const { GENDERS_TABLE } = require("./genders.models");
 const { ADDRESS_TABLE } = require("./address.models");
-const { EMERGENCY_CONTACTS_TABLE } = require("./emergency_contacts.models");
+const { EMERGENCY_CONTACTS_TABLE } = require("./emergencyContacts.models");
 const { CURRENCIES_TABLE } = require("./currencies.models");
-const { USER_TYPES_TABLE } = require("./user_types.models");
+const { USER_TYPES_TABLE } = require("./userTypes.models");
 
 const USERS_TABLE = "users";
 
