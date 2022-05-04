@@ -4,7 +4,7 @@ const { TYPES_OF_ID_TABLE } = require("./typesOfId.models");
 const { ADDRESS_TABLE } = require("./address.models");
 const { EMERGENCY_CONTACTS_TABLE } = require("./emergencyContacts.models");
 const { CURRENCIES_TABLE } = require("./currencies.models");
-const { USER_TYPES_TABLE } = require("./userTypes.models");
+
 
 const USERS_TABLE = "users";
 
@@ -57,6 +57,12 @@ const usersSchema = {
   gender: {
     allowNull: false,
     type: DataTypes.ENUM('Male', 'Female', 'Non-binary')
+  },
+  userType: {
+    allowNull: false,
+    defaultValue: "Non-host",
+    type: DataTypes.ENUM('Host', ('Non-host')),
+    field: 'user_type'
   },
   isVerified: {
     allowNull: false, //Does it have to be null: false?
@@ -121,18 +127,7 @@ const usersSchema = {
     },
     onUpdate: "CASCADE",
     onDelete: "SET NULL",
-  },
-  userTypeId: {
-    field: "user_type_id",
-    allowNull: false,
-    type: DataTypes.INTEGER,
-    references: {
-      model: USER_TYPES_TABLE,
-      key: "id",
-    },
-    onUpdate: "CASCADE",
-    onDelete: "SET NULL",
-  },
+  }
 };
 
 class users extends Model {
@@ -143,7 +138,6 @@ class users extends Model {
     this.belongsTo(models.address, { as: "address" });
     this.belongsTo(models.emergencyContact, { as: "emergency_contact_id" });
     this.belongsTo(models.currencies, { as: "currency_id" });
-    this.belongsTo(models.userTypes, { as: "user_type_id" });
     this.hasMany(models.userFavoritePlaces, {
       as: "user_favorite_places",
       foreignKey: "userId",
