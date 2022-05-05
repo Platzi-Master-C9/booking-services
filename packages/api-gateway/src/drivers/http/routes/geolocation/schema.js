@@ -86,9 +86,24 @@ const getAddressSchema = {
   },
 };
 
+const getPlaceSchema = {
+  description:
+    'Given an id, when is required, then return the place stored in the DB.',
+  tags: ['Geolocation'],
+  security: [{ Bearer: [] }],
+  querystring: {
+    type: 'object',
+    properties: {
+      id: { type: 'string', description: 'place id' },
+    },
+    required: ['id'],
+  },
+};
+
 module.exports = {
   updatePlaceSchema,
   createPlaceSchema,
   getPlacesSchema,
   getAddressSchema,
+  getPlaceSchema,
 };
