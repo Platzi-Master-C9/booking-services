@@ -46,14 +46,47 @@ module.exports = {
         type: DataTypes.STRING,
         field: "telephone_number",
       },
+      nationality:{
+        allowNull: false,
+        type: DataTypes.STRING(3)
+      },
+      DNI:{
+        allowNull: false,
+        type: DataTypes.STRING,
+        field: "DNI"  
+      },
+      frontImageDNI:{
+        allowNull: true,
+        type: DataTypes.TEXT,
+        field: "front_image_DNI"
+      },
+      backImageDNI:{
+        allowNull: true,
+        type: DataTypes.TEXT,
+        field: "back_image_DNI"
+      },
       passport: {
         allowNull: false,
         type: DataTypes.STRING,
       },
+      gender: {
+        allowNull: false,
+        type: DataTypes.ENUM('Male', 'Female', 'Non-binary')
+      },
+      userType: {
+        allowNull: false,
+        defaultValue: "Non-host",
+        type: DataTypes.ENUM('Host','Non-host'),
+        field: 'user_type'
+      },
       isVerified: {
-        allowNull: false, //Does it have to be null: false?
         type: DataTypes.BOOLEAN,
-        field: "id_verified",
+        field: "is_verified",
+        defaultValue: false
+      },
+      status:{
+        type: DataTypes.ENUM('active','deactivated', 'deleted', 'banned'),
+        defaultValue: "active"
       },
       urlImage: {
         allowNull: true,
