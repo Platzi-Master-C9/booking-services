@@ -1,8 +1,11 @@
-jest.mock('@booking-services/shared/src/utils/logger', () => ({
-  info: jest.fn(),
-  error: jest.fn(),
-  warn: jest.fn(),
-  debug: jest.fn(),
+jest.mock('@booking-services/shared', () => ({
+  __esModule: true,
+  Logger: {
+    info: jest.fn(),
+    error: jest.fn(),
+    warn: jest.fn(),
+    debug: jest.fn(),
+  },
 }));
 
 const setMockModelData = (mockModel, data = {}) => {
@@ -32,6 +35,7 @@ const makeMockModel = (defaultData = []) => {
     findOne: jest.fn(),
     findById: jest.fn(),
     countDocuments: jest.fn(),
+    exists: jest.fn(() => false),
   };
 
   return setMockModelData(mockModel, defaultData);
