@@ -20,7 +20,7 @@
     "url": "git+https://github.com/Platzi-Master-C9/backend-services.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1",
+    "test": "jest",
     "start:sync-db": "node src/drivers/mongodb/populate.js"
   },
   "bugs": {
@@ -37,6 +37,7 @@
     "eslint": "^8.10.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.5.1",
     "prettier": "^2.5.1"
   }
 }
