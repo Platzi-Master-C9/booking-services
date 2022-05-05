@@ -94,8 +94,22 @@ async function getAddress(req, reply) {
   }
 }
 
+async function updatePlace(req, reply) {
+  try {
+    const { id, address } = req.query;
+    const placeId = await this.geolocationServices.updatePlace(id, address);
+    return reply
+      .code(200)
+      .header('Content-Type', 'application/json; chartset:utf-8')
+      .send({ id: placeId });
+  } catch (error) {
+    return errorHandler(error, reply);
+  }
+}
+
 module.exports = {
   createPlace,
   getPlaces,
   getAddress,
+  updatePlace,
 };
