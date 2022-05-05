@@ -46,4 +46,4 @@ class emergencyContacts extends Model {
   }
 }
 
-module.exports = { EMERGENCY_CONTACTS_TABLE, emergencyContactsSchema, emergencyContactId}
+module.exports = { EMERGENCY_CONTACTS_TABLE, emergencyContactsSchema, emergencyContacts}

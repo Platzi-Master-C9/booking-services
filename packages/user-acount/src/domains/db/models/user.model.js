@@ -1,6 +1,5 @@
 const { Model, DataTypes, Sequelize } = require("sequelize");
 
-const { TYPES_OF_ID_TABLE } = require("./typesOfId.models");
 const { ADDRESS_TABLE } = require("./address.models");
 const { EMERGENCY_CONTACTS_TABLE } = require("./emergencyContacts.models");
 const { CURRENCIES_TABLE } = require("./currencies.models");
@@ -50,6 +49,25 @@ const usersSchema = {
     type: DataTypes.STRING,
     field: "telephone_number",
   },
+  nationality:{
+    allowNull: false,
+    type: DataTypes.STRING(3)
+  },
+  DNI:{
+    allowNull: false,
+    type: DataTypes.STRING,
+    field: "DNI"  
+  },
+  frontImageDNI:{
+    allowNull: true,
+    type: DataTypes.TEXT,
+    field: "front_image_DNI"
+  },
+  backImageDNI:{
+    allowNull: true,
+    type: DataTypes.TEXT,
+    field: "back_image_DNI"
+  },
   passport: {
     allowNull: false,
     type: DataTypes.STRING,
@@ -61,13 +79,17 @@ const usersSchema = {
   userType: {
     allowNull: false,
     defaultValue: "Non-host",
-    type: DataTypes.ENUM('Host', ('Non-host')),
+    type: DataTypes.ENUM('Host','Non-host'),
     field: 'user_type'
   },
   isVerified: {
-    allowNull: false, //Does it have to be null: false?
     type: DataTypes.BOOLEAN,
-    field: "id_verified",
+    field: "is_verified",
+    defaultValue: false
+  },
+  status:{
+    type: DataTypes.ENUM('active','deactivated', 'deleted', 'banned'),
+    defaultValue: "active"
   },
   urlImage: {
     allowNull: true,
@@ -79,18 +101,6 @@ const usersSchema = {
     type: DataTypes.DATE,
     field: "created_at",
     defaultValue: Sequelize.NOW,
-  },
-  typesOfIdentificationId: {
-    //unsure if auto_increment should be added
-    field: "types_of_identification_id",
-    allowNull: false,
-    type: DataTypes.INTEGER,
-    references: {
-      model: TYPES_OF_ID_TABLE,
-      key: "id",
-    },
-    onUpdate: "CASCADE",
-    onDelete: "SET NULL",
   },
   addressId: {
     //unsure if auto_increment should be added
@@ -104,8 +114,7 @@ const usersSchema = {
     onUpdate: "CASCADE",
     onDelete: "SET NULL",
   },
-  emergencyContactId: {
-    //unsure if auto_increment should be added
+  emergencyContactsId: {
     field: "emergency_contact_id",
     allowNull: false,
     type: DataTypes.INTEGER,
@@ -117,7 +126,6 @@ const usersSchema = {
     onDelete: "SET NULL",
   },
   currencyId: {
-    //unsure if auto_increment should be added
     field: "currency_id",
     allowNull: false,
     type: DataTypes.INTEGER,
@@ -128,16 +136,13 @@ const usersSchema = {
     onUpdate: "CASCADE",
     onDelete: "SET NULL",
   }
-};
+}
 
 class users extends Model {
   static associate(models) {
-    this.belongsTo(models.typesOfIdentification, {
-      as: "types_of_identification_id",
-    });
     this.belongsTo(models.address, { as: "address" });
-    this.belongsTo(models.emergencyContact, { as: "emergency_contact_id" });
-    this.belongsTo(models.currencies, { as: "currency_id" });
+    this.belongsTo(models.emergencyContacts, { as: "emergency_contacts" });
+    this.belongsTo(models.currencies, { as: "currencies" });
     this.hasMany(models.userFavoritePlaces, {
       as: "user_favorite_places",
       foreignKey: "userId",
