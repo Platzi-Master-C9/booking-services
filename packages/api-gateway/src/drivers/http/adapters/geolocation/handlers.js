@@ -8,6 +8,53 @@ function errorHandler(error, reply) {
   return reply.code(500).send({ error: error.message, stack: error.stack });
 }
 
+async function createPlace(req, reply) {
+  try {
+    const {
+      location,
+      country,
+      state,
+      city,
+      zipcode,
+      streetAddress,
+      placeDBId,
+      price,
+    } = req.body;
+
+    req.log.info(
+      '[http-server]: Creating place: ',
+      {
+        location,
+        country,
+        state,
+        city,
+        zipcode,
+        streetAddress,
+        placeDBId,
+        price,
+      },
+    );
+
+    const placeId = await this.geolocationServices.createPlace(
+      location,
+      country,
+      state,
+      city,
+      zipcode,
+      streetAddress,
+      placeDBId,
+      price,
+    );
+
+    return reply
+      .code(200)
+      .header('Content-Type', 'application/json; chartset:utf-8')
+      .send({ id: placeId });
+  } catch (error) {
+    return errorHandler(error, reply);
+  }
+}
+
 async function getPlace(req, reply) {
   try {
     const { id } = req.query;
@@ -66,6 +113,7 @@ async function getAddress(req, reply) {
 
 module.exports = {
   getPlace,
+  createPlace,
   getPlaces,
   getAddress,
 };
