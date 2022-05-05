@@ -1,5 +1,5 @@
 // Internal dependencies
-const logger = require('../utils/logger');
+const { Logger } = require('@booking-services/shared');
 
 /**
  * @param {import('mongoose').Model} chatModel Chat model
@@ -18,7 +18,7 @@ const listUserChats = (chatModel) => async ({
   if (!Object.prototype.hasOwnProperty.call(user, '_id')) {
     const errorMessage = 'User does not contain the property "_id"';
 
-    logger.error(`[messages]: ${errorMessage}`);
+    Logger.error(`[messages]: ${errorMessage}`);
     throw new Error(errorMessage);
   }
 
@@ -26,11 +26,11 @@ const listUserChats = (chatModel) => async ({
   if (!Number.isInteger(page) || page < 1) {
     const errorMessage = 'Page must be a positive integer greater than 0';
 
-    logger.error(`[messages]: ${errorMessage}`);
+    Logger.error(`[messages]: ${errorMessage}`);
     throw new Error(errorMessage);
   }
 
-  logger.info(`[messages]: Listing chats for user ${user._id}`);
+  Logger.info(`[messages]: Listing chats for user ${user._id}`);
 
   let chats = [];
   let pages = 0;
@@ -72,7 +72,7 @@ const listUserChats = (chatModel) => async ({
       chats = response;
     }
   } catch (error) {
-    logger.error('[messages]: Error listing chats', error);
+    Logger.error('[messages]: Error listing chats', error);
   }
 
   return {

@@ -1,4 +1,3 @@
-
 async function sayHello(req, reply) {
   const result = await this.adminPanelService.sayHello();
   return reply.code(200)
@@ -31,18 +30,16 @@ async function getUsers(req, reply) {
   );
 
   return reply.code(200)
-  .header('Content-Type', 'application/json; chartset:utf-8')
-  .send({ result });
+    .header('Content-Type', 'application/json; chartset:utf-8')
+    .send({ result });
 }
 
 async function getUserDetail(req, reply) {
-
-  try{
+  try {
     const result = await this.adminPanelService.getUserDetail(req.params.user_id);
     return reply.code(200)
-    .header('Content-Type', 'application/json; chartset:utf-8')
-    .send({ result });
-
+      .header('Content-Type', 'application/json; chartset:utf-8')
+      .send({ result });
   } catch (e) {
     return reply.code(404).send({
       message: e.message,
@@ -50,9 +47,39 @@ async function getUserDetail(req, reply) {
   }
 }
 
+async function getAdminId(req, reply) {
+  // TODO: this is not the place for try/catch
+  try {
+    const result = await this.adminPanelService.getAdminId(
+      req.params.admin_id,
+    );
+    return reply.code(200)
+      .header('Content-Type', 'application/json; chartset:utf-8')
+      .send({ result });
+  } catch (e) {
+    return reply.code(400).send({
+      message: e.message,
+    });
+  }
+}
+async function listPlaces(req, reply) {
+
+  const result = await this.adminPanelService.listPlaces(
+    req.query.status,
+    req.query.placeName,
+    req.query.hostName
+  );
+
+  return reply.code(200)
+    .header('Content-Type', 'application/json; chartset:utf-8')
+    .send({ result });
+}
+
 module.exports = {
   sayHello,
   changeUserStatus,
   getUsers,
   getUserDetail,
+  getAdminId,
+  listPlaces,
 };

@@ -3,9 +3,10 @@
 // const Mongoose = require('mongoose');
 
 // const config = require('../../../config/mongodb');
-// const Logger = require('../../utils/logger');
+// const { Logger } = require('@booking-services/shared');
 
-// Mongoose.Promise = global.Promise;
+const config = require('../../../config/mongodb');
+const { Logger } = require('@booking-services/shared');
 
 // const db = Mongoose.createConnection(config.uri, {
 // 	useNewUrlParser: true,
