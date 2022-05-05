@@ -1,3 +1,17 @@
+const updatePlaceSchema = {
+  description: 'update place from geolocation DB: Given an Id, update the place with Id in the geolocation DB',
+  tags: ['Geolocation'],
+  security: [{ Bearer: [] }],
+  querystring: {
+    type: 'object',
+    properties: {
+      id: { type: 'string', description: 'place Id' },
+      address: { type: 'string', description: 'addres to update' },
+    },
+    required: ['id', 'address'],
+  },
+};
+
 const createPlaceSchema = {
   description:
     'Create a place for geolocation services',
@@ -87,6 +101,7 @@ const getPlaceSchema = {
 };
 
 module.exports = {
+  updatePlaceSchema,
   createPlaceSchema,
   getPlacesSchema,
   getAddressSchema,

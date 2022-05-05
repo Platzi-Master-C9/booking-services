@@ -1,5 +1,6 @@
 const { geolocationAdapters } = require('../../adapters');
-const { createPlaceSchema, getPlacesSchema, getAddressSchema, getPlaceSchema } = require('./schema');
+
+const { createPlaceSchema, getPlacesSchema, getAddressSchema updatePlaceSchema, getPlaceSchema } = require('./schema');
 
 async function geolocationRouter(fastify) {
   await fastify.post(
@@ -32,6 +33,14 @@ async function geolocationRouter(fastify) {
       schema: getAddressSchema,
     },
     geolocationAdapters.getAddress,
+  );
+  
+  await fastify.patch(
+    '/place',
+    {
+      schema: updatePlaceSchema,
+    },
+    geolocationAdapters.updatePlace,
   );
 }
 
