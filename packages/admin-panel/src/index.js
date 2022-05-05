@@ -1,6 +1,9 @@
 // Services
 const adminPanelService = require('./useCases');
 
+// aquí importamos el servicio que queremos usar
+const listPlacesMock = require('../mocks/placesList.mock');
+
 module.exports = {
   sayHello: adminPanelService.firstCase.sayHello,
   changeUserStatus: adminPanelService.userStatus.changeUserStatus,
@@ -8,4 +11,5 @@ module.exports = {
   getUserDetail: adminPanelService.userDetail.getUserDetail,
   getAdminId: adminPanelService.adminId.getAdminId,
   getAdmins: adminPanelService.adminList.getAdmins,
+  listPlaces: adminPanelService.places.listPlaces(listPlacesMock),
 };

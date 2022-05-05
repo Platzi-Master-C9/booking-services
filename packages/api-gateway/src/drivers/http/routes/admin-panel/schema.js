@@ -169,6 +169,7 @@ const adminIDSchema = {
   },
 };
 
+
 const adminListSchema = {
   description: 'Query admin list data',
   tags: ['Administration panel'],
@@ -212,6 +213,57 @@ const adminListSchema = {
   },
 };
 
+const placesListSchema = {
+  description: 'Get a list of places',
+  tags: ['Administration panel'],
+  querystring: {
+    type: 'object',
+    properties: {
+      status: { type: 'string' },
+      placeName: { type: 'string' },
+      hostName: { type: 'string' },
+    },
+  },
+  response: {
+    200: {
+      type: 'object',
+      properties: {
+        result: {
+          type: 'object',
+          properties: {
+            id: { type: 'number' },
+            fullName: { type: 'string' },
+            urlImage: { type: 'string' },
+            profile: { type: 'number' },
+          },
+          type: 'array',
+          items: {
+            type: 'object',
+            properties: {
+              id: { type: 'string' },
+              placeName: { type: 'string' },
+              hostName: { type: 'string' },
+              status: { type: 'string' },
+            },
+          },
+        },
+      },
+    },
+    '4xx': {
+      type: 'object',
+      properties: {
+        message: { type: 'string' },
+      },
+    },
+    '5xx': {
+      type: 'object',
+      properties: {
+        message: { type: 'string' },
+      },
+    },
+  },
+};
+
 module.exports = {
   defaultSchema,
   changeUSerStatusSchema,
@@ -219,4 +271,5 @@ module.exports = {
   userDetailSchema,
   adminIDSchema,
   adminListSchema,
+  placesListSchema,
 };
