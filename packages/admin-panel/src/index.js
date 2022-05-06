@@ -13,9 +13,6 @@ module.exports = {
   getAdminId: adminPanelService.adminId.getAdminId,
   getAdmins: adminPanelService.adminList.getAdmins,
   listPlaces: adminPanelService.places.listPlaces(listPlacesMock),
-<<<<<<< HEAD
   editUserInfo: adminPanelService.userEdit.editUserInfo,
-=======
   listBookings: adminPanelService.bookings.listBookings(bookingsMock),
->>>>>>> db33665 (feat(admin-panel): booking list)
 };
