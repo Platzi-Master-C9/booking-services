@@ -264,6 +264,67 @@ const placesListSchema = {
   },
 };
 
+const editUserSchema = {
+  description: 'edit user information: Giving a user id the administrator can edit the following fields, first name, second name, first surname, second surname, email, phone or url',
+  tags: ['Administration panel'],
+  body: {
+    type: 'object',
+    properties: {
+      first_name: { type: 'string' },
+      second_name: { type: 'string' },
+      first_surname: { type: 'string' },
+      second_surname: { type: 'string' },
+      email: { type: 'string' },
+      phone: { type: 'string' },
+      url_image: { type: 'string' },
+    },
+  },
+  params: {
+    type: 'object',
+    properties: {
+      user_id: { type: 'number' },
+    },
+  },
+  response: {
+    // 200: {
+    //   type: 'object',
+    //   properties: {
+    //     result: {
+    //       type: 'object',
+    //       properties: {
+    //         user_id: { type: 'number' },
+    //         first_name: { type: 'string' },
+    //         second_name: { type: 'string' },
+    //         first_surname: { type: 'string' },
+    //         second_surname: { type: 'string' },
+    //         email: { type: 'string' },
+    //         phone: { type: 'string' },
+    //         url_image: { type: 'string' },
+    //       },
+    //     },
+    //   },
+    // },
+    200: {
+      type: 'object',
+      properties: {
+        result: { type: 'string' },
+      },
+    },
+    '4xx': {
+      type: 'object',
+      properties: {
+        message: { type: 'string' },
+      },
+    },
+    '5xx': {
+      type: 'object',
+      properties: {
+        message: { type: 'string' },
+      },
+    },
+  },
+};
+
 module.exports = {
   defaultSchema,
   changeUSerStatusSchema,
@@ -272,4 +333,5 @@ module.exports = {
   adminIDSchema,
   adminListSchema,
   placesListSchema,
+  editUserSchema,
 };
