@@ -1,5 +1,5 @@
 // Services
-const { getPlaces, updatePlaces } = require('./useCases');
+const { getPlaces, updatePlace } = require('./useCases');
 
 // Domains
 const { geoNearQuery, updatePlaceQuery } = require('./domains');
