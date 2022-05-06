@@ -1,0 +1,27 @@
+{
+  "name": "@booking-services/user-account",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/boom": "^9.1.4",
+    "dotenv": "^16.0.0",
+    "joi": "^17.6.0",
+    "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^6.0.0",
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "jest": "^27.5.1"
+  }
+}

@@ -1,13 +1,9 @@
-'use strict';
+// Services
+const { updatePlace } = require('./useCases');
 
-/**
- * @description Export all features and business rules from the package
- */
-
-const welcome = require('./utils/welcomePackage');
-const { Place } = require('./useCases/index');
+// Domains
+const { updatePlaceQuery } = require('./domains');
 
 module.exports = {
-  geolocationWelcome: welcome,
-  Place: Place,
+  updatePlace: updatePlace(updatePlaceQuery),
 };

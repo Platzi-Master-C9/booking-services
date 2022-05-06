@@ -7,10 +7,12 @@
   "license": "ISC",
   "main": "src/index.js",
   "directories": {
-    "src": "src"
+    "src": "src",
+    "test": "__tests__"
   },
   "files": [
-    "src"
+    "src",
+    "__tests__"
   ],
   "publishConfig": {
     "access": "public"
@@ -22,7 +24,7 @@
   "scripts": {
     "start:dev": "nodemon src/index.js",
     "inspect": "node --inspect src/index.js",
-    "test": "jest",
+    "test": "jest --runInBand",
     "test:watch": "jest --watch",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
@@ -34,7 +36,10 @@
     "@booking-services/admin-panel": "^1.0.0",
     "@booking-services/geolocation": "^1.0.0",
     "@booking-services/math": "^1.0.0",
+    "@booking-services/messages": "^1.0.0",
     "@booking-services/places": "^1.0.0",
+    "@booking-services/shared": "^0.0.1",
+    "@booking-services/user-account": "^1.0.0",
     "@faker-js/faker": "^6.1.1",
     "fastify": "^3.27.2",
     "fastify-autoload": "^3.11.0",
@@ -42,10 +47,12 @@
     "fastify-swagger": "^5.0.0"
   },
   "devDependencies": {
+    "@hapi/boom": "^9.1.4",
     "eslint": "^8.12.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.2",
     "jest": "^27.5.1",
+    "jest-mongoose-mock": "^1.2.0",
     "nodemon": "^2.0.15"
   }
 }

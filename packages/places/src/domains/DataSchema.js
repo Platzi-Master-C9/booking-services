@@ -3,110 +3,118 @@ const { DataTypes } = require('sequelize');
 const database = require('../drivers/mysql/connection');
 
 const {
-    STRING, SMALLINT, BOOLEAN, INTEGER, DECIMAL, DATE
+    STRING, SMALLINT, BOOLEAN, INTEGER, DECIMAL, DATE,
 } = DataTypes;
 
 const is_active = {
     type: BOOLEAN,
     allowNull: false,
-    defaultValue: true
+    defaultValue: true,
 };
 
 const Place = database.define('Place', {
 
     place_name: {
         type: STRING(150),
-        allowNull: false
+        allowNull: false,
     },
     price_per_night_usd: {
         type: SMALLINT,
-        allowNull: false
+        allowNull: false,
     },
     host_id: {
         type: INTEGER,
-        allowNull: false
+        allowNull: false,
     },
     rating: {
-        type: DECIMAL(2, 1)
+        type: DECIMAL(2, 1),
     },
-    is_active
+    type: {
+        type: STRING(20),
+        allowNull: false,
+    },
+    is_active,
 
 }, { tableName: 'places' });
 
 const Image = database.define('Image', {
     url: {
         type: STRING(300),
-        allowNull: false
+        allowNull: false,
     },
     place_id: {
         type: INTEGER,
-        allowNull: false
+        allowNull: false,
     },
-    is_active
+    is_active,
 }, { tableName: 'images' });
 
 const Perk = database.define('Perk', {
     perk: {
         type: STRING(50),
-        allowNull: false
+        allowNull: false,
     },
     place_id: {
         type: INTEGER,
-        allowNull: false
+        allowNull: false,
     },
-    is_active
+    is_active,
 
 }, { tableName: 'perks' });
 
 const Space = database.define('Space', {
     space: {
         type: STRING(50),
-        allowNull: false
+        allowNull: false,
     },
     place_id: {
         type: INTEGER,
-        allowNull: false
+        allowNull: false,
     },
-    is_active
+    is_active,
 }, { tableName: 'spaces' });
 
 const Rule = database.define('Rule', {
     rule: {
         type: STRING(200),
-        allowNull: false
+        allowNull: false,
     },
     place_id: {
         type: INTEGER,
-        allowNull: false
+        allowNull: false,
     },
-    is_active
+    is_active,
 }, { tableName: 'rules' });
 
 const Book = database.define('Book', {
     user_id: {
         type: INTEGER,
-        allowNull: false
+        allowNull: false,
     },
     in_date: {
         type: DATE,
-        allowNull: false
+        allowNull: false,
     },
     out_date: {
         type: DATE,
-        allowNull: false
+        allowNull: false,
     },
     place_id: {
         type: INTEGER,
-        allowNull: false
+        allowNull: false,
     },
-    is_active
+    is_active,
 }, { tableName: 'books' });
 
 const fkGenerator = (Model) => {
+    Place.hasMany(Model, {
+        foreignKey: 'place_id',
+        as: Model.tableName,
+    });
     Model.belongsTo(Place, {
         foreignKey: 'place_id',
         onDelete: 'CASCADE',
-        onUpdate: 'CASCADE'
+        onUpdate: 'CASCADE',
     });
 };
 
@@ -126,6 +134,6 @@ module.exports = {
     Perk,
     Space,
     Book,
-    Rule
+    Rule,
 
 };

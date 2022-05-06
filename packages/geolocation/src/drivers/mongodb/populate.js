@@ -2,15 +2,14 @@ const { MongoClient } = require('mongodb');
 
 const config = require('../../../config/mongodb');
 const { dbOptions } = require('../../utils/constants');
-const Logger = require('../../utils/logger');
+const { Logger } = require('@booking-services/shared');
 const { placesSchema, populate } = require('../../utils/syncDatabase');
 
 const uri = `mongodb://${config.user}:${config.pass}@${config.uri}`;
-const name = dbOptions.name;
-const collection = dbOptions.collection;
+const { name, collection } = dbOptions;
 const client = new MongoClient(uri);
 
-//create the connection with the db
+// create the connection with the db
 
 async function connect() {
   try {
