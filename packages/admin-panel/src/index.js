@@ -12,4 +12,5 @@ module.exports = {
   getAdminId: adminPanelService.adminId.getAdminId,
   getAdmins: adminPanelService.adminList.getAdmins,
   listPlaces: adminPanelService.places.listPlaces(listPlacesMock),
+  editUserInfo: adminPanelService.userEdit.editUserInfo,
 };

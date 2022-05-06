@@ -67,6 +67,7 @@ async function getAdmins(req, reply) {
   const result = await this.adminPanelService.getAdmins(
     req.query.profile,
     req.query.full_name,
+    );
   return reply.code(200)
     .header('Content-Type', 'application/json; chartset:utf-8')
     .send({ result });
@@ -84,6 +85,28 @@ async function listPlaces(req, reply) {
     .send({ result });
 }
 
+async function editUserInfo(req, reply) {
+  try {
+    const result = await this.adminPanelService.editUserInfo(
+      req.params.user_id,
+      req.body.first_name,
+      req.body.second_name,
+      req.body.first_surname,
+      req.body.second_surname,
+      req.body.email,
+      req.body.phone,
+      req.body.url_image,
+    );
+    return reply.code(200)
+      .header('Content-Type', 'application/json; chartset:utf-8')
+      .send({ result });
+  } catch (e) {
+    return reply.code(400).send({
+      message: e.message,
+    });
+  }
+}
+
 module.exports = {
   sayHello,
   changeUserStatus,
@@ -92,4 +115,5 @@ module.exports = {
   getAdminId,
   getAdmins,
   listPlaces,
+  editUserInfo,
 };
