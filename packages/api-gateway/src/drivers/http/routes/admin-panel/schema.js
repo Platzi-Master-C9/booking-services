@@ -170,6 +170,49 @@ const adminIDSchema = {
 };
 
 
+const adminListSchema = {
+  description: 'Query admin list data',
+  tags: ['Administration panel'],
+  querystring: {
+    type: 'object',
+    properties: {
+      profile: { type: 'number' },
+      fullName: { type: 'string' },
+    },
+  },
+  response: {
+    200: {
+      type: 'object',
+      properties: {
+        result: {
+          type: 'array',
+          items: {
+            type: 'object',
+            properties: {
+              id: { type: 'number' },
+              fullName: { type: 'string' },
+              urlImage: { type: 'string' },
+              profile: { type: 'number' },
+            },
+          },
+        },
+      },
+    },
+    '4xx': {
+      type: 'object',
+      properties: {
+        message: { type: 'string' },
+      },
+    },
+    '5xx': {
+      type: 'object',
+      properties: {
+        message: { type: 'string' },
+      },
+    },
+  },
+};
+
 const placesListSchema = {
   description: 'Get a list of places',
   tags: ['Administration panel'],
@@ -227,5 +270,6 @@ module.exports = {
   userListSchema,
   userDetailSchema,
   adminIDSchema,
+  adminListSchema,
   placesListSchema,
 };

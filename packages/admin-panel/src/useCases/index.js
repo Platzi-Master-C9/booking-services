@@ -3,6 +3,7 @@ const userStatus = require('./userStatus');
 const userList = require('./userList');
 const userDetail = require('./userDetail');
 const adminId = require('./adminId');
+const adminList = require('./adminList');
 const places = require('./places');
 
 module.exports = {
@@ -11,5 +12,6 @@ module.exports = {
   userList,
   userDetail,
   adminId,
+  adminList,
   places,
 };
