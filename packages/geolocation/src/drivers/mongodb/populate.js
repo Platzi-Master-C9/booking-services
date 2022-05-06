@@ -6,8 +6,7 @@ const { Logger } = require('@booking-services/shared');
 const { placesSchema, populate } = require('../../utils/syncDatabase');
 
 const uri = `mongodb://${config.user}:${config.pass}@${config.uri}`;
-const name = dbOptions.dbName;
-const collection = dbOptions.collectionName;
+const { dbName, collectionName } = dbOptions;
 const client = new MongoClient(uri);
 
 async function connect() {
@@ -19,12 +18,12 @@ async function connect() {
     Logger.info({
       message: '[geolocation:mongodb]: Creating collection',
     });
-    await connection.db(name).createCollection(collection, placesSchema);
+    await connection.db(dbName).createCollection(collectionName, placesSchema);
     Logger.info({
       message: '[geolocation:mongodb]: Populating database',
     });
     const data = populate();
-    await connection.db(name).collection(collection).insertMany(data);
+    await connection.db(dbName).collection(collectionName).insertMany(data);
     Logger.info({
       message: '[geolocation:mongodb]: Populating database done',
     });
