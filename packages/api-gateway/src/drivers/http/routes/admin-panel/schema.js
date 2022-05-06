@@ -229,13 +229,6 @@ const placesListSchema = {
       type: 'object',
       properties: {
         result: {
-          type: 'object',
-          properties: {
-            id: { type: 'number' },
-            fullName: { type: 'string' },
-            urlImage: { type: 'string' },
-            profile: { type: 'number' },
-          },
           type: 'array',
           items: {
             type: 'object',
@@ -325,6 +318,54 @@ const editUserSchema = {
   },
 };
 
+const bookingListSchema = {
+  description: 'Get a list of bookings',
+  tags: ['Administration panel'],
+  querystring: {
+    type: 'object',
+    properties: {
+      dateOfBook: { type: 'string' },
+      status: { type: 'string' },
+      place: { type: 'string' },
+      userName: { type: 'string' },
+    },
+  },
+  response: {
+    200: {
+      type: 'object',
+      properties: {
+        result: {
+          type: 'array',
+          items: {
+            type: 'object',
+            properties: {
+              id: { type: 'string' },
+              dateOfBook: { type: 'string' },
+              placeName: { type: 'string' },
+              userName: { type: 'string' },
+              status: { type: 'string' },
+              fromDate: { type: 'string' },
+              endDate: { type: 'string' },
+            },
+          },
+        },
+      },
+    },
+    '4xx': {
+      type: 'object',
+      properties: {
+        message: { type: 'string' },
+      },
+    },
+    '5xx': {
+      type: 'object',
+      properties: {
+        message: { type: 'string' },
+      },
+    },
+  },
+}
+
 module.exports = {
   defaultSchema,
   changeUSerStatusSchema,
@@ -334,4 +375,5 @@ module.exports = {
   adminListSchema,
   placesListSchema,
   editUserSchema,
+  bookingListSchema,
 };

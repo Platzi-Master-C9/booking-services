@@ -34,7 +34,7 @@ async function geolocationRouter(fastify) {
     },
     geolocationAdapters.getAddress,
   );
-  
+
   await fastify.patch(
     '/place',
     {
