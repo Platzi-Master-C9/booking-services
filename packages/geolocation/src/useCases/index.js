@@ -1,7 +1,5 @@
-'use strict';
-
-const Place = require('./place');
+const { updatePlace } = require('./places');
 
 module.exports = {
-  Place,
+  updatePlace,
 };

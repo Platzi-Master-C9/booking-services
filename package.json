@@ -22,12 +22,13 @@
   },
   "homepage": "https://github.com/Platzi-Master-C9/backend-services#readme",
   "devDependencies": {
-    "@commitlint/cli": "^16.2.3",
-    "@commitlint/config-conventional": "^16.2.1",
-    "husky": "^7.0.0",
+    "@commitlint/cli": "^16.2.4",
+    "@commitlint/config-conventional": "^16.2.4",
+    "husky": "^7.0.4",
     "lerna": "^3.22.1"
   },
   "dependencies": {
-    "dotenv": "^16.0.0"
+    "dotenv": "^16.0.0",
+    "yarn": "^1.22.17"
   }
 }
