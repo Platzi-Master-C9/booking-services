@@ -1,3 +1,5 @@
+const { ObjectId } = require('mongodb');
+
 const geoNearQuery = (connection) => async (lon, lat, maxDistance = 1000) => {
   const options = [
     {
@@ -18,6 +20,16 @@ const geoNearQuery = (connection) => async (lon, lat, maxDistance = 1000) => {
   return results;
 };
 
+const updatePlaceQuery = (connection) => async (id, newValues) => {
+  const options = [
+    { _id: ObjectId(id) },
+    { $set: newValues, $currentDate: { updated_at: true } },
+  ];
+  const results = await connection('updateOne', options);
+  return results;
+};
+
 module.exports = {
   geoNearQuery,
+  updatePlaceQuery,
 };

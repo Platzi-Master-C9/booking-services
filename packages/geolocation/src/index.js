@@ -1,9 +1,10 @@
 // Services
-const { getPlaces } = require('./useCases');
+const { getPlaces, updatePlaces } = require('./useCases');
 
 // Domains
-const { geoNearQuery } = require('./domains');
+const { geoNearQuery, updatePlaceQuery } = require('./domains');
 
 module.exports = {
   getPlaces: getPlaces(geoNearQuery),
+  updatePlace: updatePlace(updatePlaceQuery),
 };
