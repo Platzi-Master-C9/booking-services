@@ -58,6 +58,10 @@ const placesSchema = {
           bsonType: 'string',
           description: 'place addres, must be a string and is required',
         },
+        price: {
+          bsonType: 'double',
+          description: 'place price',
+        },
         place_db_id: {
           bsonType: 'string',
           description:
