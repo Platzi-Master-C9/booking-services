@@ -17,5 +17,5 @@ module.exports = {
   adminList,
   places,
   userEdit,
-  bookings
+  bookings,
 };

@@ -1,5 +1,4 @@
 const listBookings = (bookings) => (dateOfBook, status, placeName, userName) => {
-
   let listBookingsMock = bookings;
 
   if (dateOfBook) {
@@ -11,7 +10,10 @@ const listBookings = (bookings) => (dateOfBook, status, placeName, userName) => 
   }
 
   if (placeName) {
-    listBookingsMock = listBookingsMock.filter((booking) => booking.placeName.search(placeName) >= 0);
+    listBookingsMock = listBookingsMock
+      .filter(
+        (booking) => booking.placeName.search(placeName) >= 0,
+      );
   }
 
   if (userName) {
