@@ -44,6 +44,40 @@ async function listUserChatRooms(req, reply) {
   return reply.code(200).send(paginatedResult);
 }
 
+/**
+ * List the mesages of a user chat room.
+ * @type {import('fastify').RouteHandler}
+ */
+async function listChatMessages(req, reply) {
+  const { chatId } = req.params;
+  const { page } = req.query;
+
+  // TODO: Replace this when bearer token is implemented.
+  const user = { _id: '1' };
+
+  req.log.info(`[http-server]: validating chat ${chatId} against user ${user._id}`);
+  const chatIsRelatedToUser = await this.messageServices.isChatRelatedToUser({
+    chatId,
+    userId: user._id,
+  });
+
+  if (!chatIsRelatedToUser) {
+    req.log.info(`[http-server]: Chat ${chatId} is not related to user ${user._id}.`);
+    return reply.callNotFound();
+  }
+
+  req.log.info('[http-server]: Listing chat messages.');
+  const { pages, messages } = await this.messageServices.listChatMessages({
+    chatId,
+    page,
+  });
+
+  const paginatedResult = makePagination(page, pages, messages);
+
+  return reply.code(200).send(paginatedResult);
+}
+
 module.exports = {
   listUserChatRooms,
+  listChatMessages,
 };

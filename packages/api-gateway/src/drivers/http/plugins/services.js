@@ -5,6 +5,7 @@ const MathServices = require('@booking-services/math');
 const AdminPanelService = require('@booking-services/admin-panel');
 const placesServices = require('@booking-services/places');
 const MessageServices = require('@booking-services/messages');
+const UserServices = require('@booking-services/user-account');
 
 async function services(fastify) {
   await Promise.all([
@@ -13,6 +14,7 @@ async function services(fastify) {
     fastify.decorate('messageServices', MessageServices),
     fastify.decorate('placesService', placesServices),
     fastify.decorate('geolocationServices', GeolocationServices),
+    fastify.decorate('userServices', UserServices),
   ]);
 }
 
