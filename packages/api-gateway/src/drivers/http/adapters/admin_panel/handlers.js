@@ -107,6 +107,20 @@ async function editUserInfo(req, reply) {
   }
 }
 
+async function listBookings(req, reply) {
+
+  const result = await this.adminPanelService.listBookings(
+    req.query.dateOfBook,
+    req.query.status,
+    req.query.placeName,
+    req.query.userName
+  );
+
+  return reply.code(200)
+    .header('Content-Type', 'application/json; chartset:utf-8')
+    .send({ result });
+}
+
 module.exports = {
   sayHello,
   changeUserStatus,
@@ -116,4 +130,5 @@ module.exports = {
   getAdmins,
   listPlaces,
   editUserInfo,
+  listBookings,
 };
