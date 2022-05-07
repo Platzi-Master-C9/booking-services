@@ -1,7 +1,11 @@
 const { faker } = require('@faker-js/faker');
+const Fastify = require('fastify');
+const Autoload = require('fastify-autoload');
+const pluginLoader = require('fastify-plugin');
+const getApiGatewayDirectory = require('../src/utils/getApiGatewayDirectory');
 
 // eslint-disable-next-line no-unused-vars
-function mockGetPlaces(lat, lon) {
+function mockPlaces() {
   const places = [
     {
       placeId: faker.datatype.uuid(),
@@ -26,7 +30,7 @@ function mockGetPlaces(lat, lon) {
 }
 
 // eslint-disable-next-line no-unused-vars
-function mockGetAddress(_lat, _lon) {
+function mockAddress() {
   const address = {
     address: {
       country: faker.address.country(),
@@ -36,8 +40,31 @@ function mockGetAddress(_lat, _lon) {
       streetAddress: faker.address.streetAddress(),
     },
   };
-
   return address;
 }
 
-module.exports = { mockGetPlaces, mockGetAddress };
+// eslint-disable-next-line no-unused-vars
+function mockDeletePlace(id) {
+  const place = {
+    id,
+  };
+
+  return place;
+}
+
+function mockBuildApp(GeolocationServices) {
+  async function services(fastify) {
+    await fastify.decorate('geolocationServices', GeolocationServices);
+  }
+
+  // load fastify and update function
+  const fastify = Fastify({ logger: true });
+  fastify.register(Autoload, { dir: getApiGatewayDirectory() });
+  fastify.register(pluginLoader(services));
+
+  return fastify;
+}
+
+module.exports = {
+  mockPlaces, mockAddress, mockDeletePlace, mockBuildApp,
+};

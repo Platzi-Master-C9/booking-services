@@ -100,10 +100,25 @@ const getPlaceSchema = {
   },
 };
 
+const deletePlaceSchema = {
+  description:
+    'Given a placeId when a user delte a place, then delete the geolocation place in geolocation db.',
+  tags: ['Geolocation'],
+  security: [{ Bearer: [] }],
+  querystring: {
+    type: 'object',
+    properties: {
+      placeId: { type: 'string', description: 'Id from a place' },
+    },
+    required: ['placeId'],
+  },
+};
+
 module.exports = {
   updatePlaceSchema,
   createPlaceSchema,
   getPlacesSchema,
   getAddressSchema,
+  deletePlaceSchema,
   getPlaceSchema,
 };
