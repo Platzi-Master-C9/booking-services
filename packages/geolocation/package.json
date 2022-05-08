@@ -21,7 +21,10 @@
   },
   "scripts": {
     "test": "jest",
-    "start:sync-db": "node src/drivers/mongodb/populate.js"
+    "test:watch": "jest --watch",
+    "start:sync-db": "node src/drivers/mongodb/populate.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "bugs": {
     "url": "https://github.com/Platzi-Master-C9/backend-services/issues"
@@ -33,7 +36,7 @@
     "winston": "^3.6.0"
   },
   "devDependencies": {
-    "@faker-js/faker": "^6.0.0",
+    "@faker-js/faker": "^6.1.2",
     "eslint": "^8.10.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
