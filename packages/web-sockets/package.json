@@ -34,8 +34,8 @@
   "dependencies": {
     "@booking-services/shared": "^0.0.1",
     "@socket.io/redis-adapter": "^7.2.0",
+    "ioredis": "^5.0.4",
     "jest": "^28.0.3",
-    "redis": "^4.1.0",
     "socket.io": "^4.5.0"
   }
 }
