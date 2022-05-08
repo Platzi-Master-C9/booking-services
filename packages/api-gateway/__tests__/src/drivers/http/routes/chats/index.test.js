@@ -1,8 +1,37 @@
 // External dependencies
 const { faker } = require('@faker-js/faker');
+const { listUserChats, getChatRoomLastMessage } = require('@booking-services/messages');
 
 // Internal dependencies
 const { fastify } = require('../../../../../../src/drivers/http/server');
+
+// Mocks
+const customerID = faker.datatype.uuid();
+const hostID = faker.datatype.uuid();
+
+const mockUserChats = {
+  pages: 1,
+  chats: [
+    {
+      _id: faker.datatype.uuid(),
+      bookingId: faker.datatype.uuid(),
+      hostId: hostID,
+      customerId: customerID,
+      createdAt: faker.datatype.datetime(),
+      updatedAt: faker.datatype.datetime(),
+      deletedAt: null,
+    },
+  ],
+};
+
+const mockLastMessage = {
+  _id: faker.datatype.uuid(),
+  chatId: mockUserChats.chats[0]._id,
+  text: faker.lorem.sentence(),
+  createdAt: faker.datatype.datetime(),
+  deletedAt: null,
+  createdBy: customerID,
+};
 
 describe('GET /chats', () => {
   describe('given an authenticated user', () => {
@@ -12,25 +41,26 @@ describe('GET /chats', () => {
     };
 
     describe('when requesting page 1', () => {
-      /** @type {import('fastify').FastifyReply} */
       let response;
       let responseJson;
 
       beforeAll(async () => {
+        listUserChats.mockReturnValue(mockUserChats);
+        getChatRoomLastMessage.mockReturnValue(mockLastMessage);
+
         response = await fastify.inject({
           method: 'GET',
           url: '/chats',
           headers,
         });
-
         responseJson = response.json();
       });
 
-      test('then status should be 200', () => {
+      test('then must return a 200 status code', () => {
         expect(response.statusCode).toBe(200);
       });
 
-      test('response should match pagination schema', () => {
+      test('then must return the paginated result', () => {
         expect(responseJson).toHaveProperty('page');
         expect(typeof responseJson.page).toBe('number');
         expect(responseJson).toHaveProperty('pages');

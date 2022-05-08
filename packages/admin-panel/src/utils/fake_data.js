@@ -34,7 +34,53 @@ function sendMessage(userId, message) {
   console.log(`Sending message: ${message} to user: ${userId}`);
 }
 
+const Admins = [
+  {
+    id: 1,
+    fullName: faker.name.findName(),
+    urlImage: faker.image.avatar(),
+    profile: 1,
+  },
+  {
+    id: 2,
+    fullName: faker.name.findName(),
+    urlImage: faker.image.avatar(),
+    profile: 2,
+  },
+  {
+    id: 3,
+    fullName: faker.name.findName(),
+    urlImage: faker.image.avatar(),
+    profile: 1,
+  },
+  {
+    id: 4,
+    fullName: faker.name.findName(),
+    urlImage: faker.image.avatar(),
+    profile: 2,
+  },
+  {
+    id: 5,
+    fullName: faker.name.findName(),
+    urlImage: faker.image.avatar(),
+    profile: 1,
+  },
+  {
+    id: 6,
+    fullName: faker.name.findName(),
+    urlImage: faker.image.avatar(),
+    profile: 2,
+  },
+];
+
+function getAdmin(adminId) {
+  const idx = Admins.findIndex((admin) => admin.id === adminId);
+  if (idx === -1) { return false; }
+  return Admins[idx];
+}
+
 module.exports = {
   getUser,
   sendMessage,
+  getAdmin,
 };

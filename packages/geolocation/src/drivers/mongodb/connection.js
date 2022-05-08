@@ -1,13 +1,14 @@
 const { MongoClient } = require('mongodb');
+const boom = require('@hapi/boom');
 
-const config = require('../../../config/mongodb');
+const { user, pass, uri } = require('../../../config/mongodb');
 const { dbOptions } = require('../../utils/constants');
-const Logger = require('../../utils/logger');
+const { Logger } = require('@booking-services/shared');
 
-const uri = `mongodb://${config.user}:${config.pass}@${config.uri}`;
-const name = dbOptions.name;
-const collection = dbOptions.collection;
-const client = new MongoClient(uri);
+const URL = `mongodb://${user}:${pass}@${uri}`;
+const { name, collection } = dbOptions;
+const client = new MongoClient(URL);
+let results;
 
 /**
  * @description return the connection with the db
@@ -17,18 +18,27 @@ const client = new MongoClient(uri);
  * const places = collection.find()
  */
 
-async function connect() {
+async function connect(method, options) {
   try {
     await client.connect();
     Logger.info({
       message: '[geolocation:mongodb]: Connection succesfully to server',
     });
-    return client.db(name).collection(collection);
+    // eslint-disable-next-line
+    results = await client
+      .db(name)
+      .collection(collection)
+      [method](...options);
   } catch (error) {
     Logger.error({
       message: `[geolocation:mongodb]: Could not connect to database ${error}`,
     });
+  } finally {
+    client.close();
   }
+
+  // eslint-disable-next-line
+  return results;
 }
 
 module.exports = connect;

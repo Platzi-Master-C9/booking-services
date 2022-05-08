@@ -6,7 +6,7 @@ describe('Given a request for listing regular users', () => {
     expect(userList.getUsers()).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
-          id: expect.any(String),
+          id: expect.any(Number),
           fullName: expect.any(String),
           urlImage: expect.any(String),
           dateOfRegister: expect.any(Object),

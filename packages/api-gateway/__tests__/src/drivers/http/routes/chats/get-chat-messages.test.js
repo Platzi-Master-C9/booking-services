@@ -1,24 +1,48 @@
 // External dependencies
 const { faker } = require('@faker-js/faker');
+const { listChatMessages, isChatRelatedToUser } = require('@booking-services/messages');
 
 // Internal dependencies
 const { fastify } = require('../../../../../../src/drivers/http/server');
 
+// Mocks
+const userID = faker.datatype.uuid();
+
+const mockListChatMessages = {
+  pages: 1,
+  messages: [
+    {
+      _id: faker.datatype.uuid(),
+      chatId: faker.datatype.uuid(),
+      text: faker.lorem.sentence(),
+      createdBy: userID,
+      createdAt: faker.datatype.datetime(),
+      deletedAt: null,
+    },
+  ],
+};
+
 describe('GET /chats/{chatId}/messages', () => {
   describe('given an authenticated user and a valid chatId', () => {
     // TODO: Change this once we have authentication ready
-    const bearerToken = faker.datatype.uuid();
+    const bearerToken = userID;
     const chatId = 1;
 
     const headers = {
       Authorization: `Bearer ${bearerToken}`,
     };
 
+    beforeAll(() => {
+      isChatRelatedToUser.mockReturnValue(true);
+    });
+
     describe('when requesting page 1', () => {
       let response;
       let responseJson;
 
       beforeAll(async () => {
+        listChatMessages.mockReturnValue(mockListChatMessages);
+
         response = await fastify.inject({
           method: 'GET',
           url: `/chats/${chatId}/messages`,
@@ -76,6 +100,24 @@ describe('GET /chats/{chatId}/messages', () => {
         expect(responseJson).toHaveProperty('error');
         expect(responseJson).toHaveProperty('message');
         expect(responseJson).toHaveProperty('statusCode');
+      });
+    });
+
+    describe('when chat room is not related to user', () => {
+      let response;
+
+      beforeAll(async () => {
+        isChatRelatedToUser.mockReturnValue(false);
+
+        response = await fastify.inject({
+          method: 'GET',
+          url: `/chats/${chatId}/messages`,
+          headers,
+        });
+      });
+
+      test('then status should be 404', () => {
+        expect(response.statusCode).toBe(404);
       });
     });
   });
