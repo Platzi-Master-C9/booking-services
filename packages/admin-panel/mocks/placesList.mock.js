@@ -16,7 +16,7 @@ module.exports = [
   {
     id: 3,
     placeName: faker.company.companyName(),
-    status: 'ACTIVE',
+    status: 'INACTIVE',
     hostName: faker.name.findName(),
   },
   {

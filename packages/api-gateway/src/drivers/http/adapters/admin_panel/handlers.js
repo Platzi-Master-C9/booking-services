@@ -26,7 +26,7 @@ async function changeUserStatus(req, reply) {
 async function getUsers(req, reply) {
   const result = await this.adminPanelService.getUsers(
     req.query.status,
-    req.query.full_name,
+    req.query.fullName,
   );
 
   return reply.code(200)
