@@ -1,7 +1,5 @@
-'use strict';
-
-const websockets = require('..');
-
 describe('webSockets', () => {
-    it('needs tests');
+  it('needs tests', () => {
+    expect(true).toBeTruthy();
+  });
 });

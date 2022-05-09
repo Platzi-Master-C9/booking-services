@@ -42,6 +42,8 @@ process.on('SIGINT', () => {
   subClient.quit();
 
   Logger.info('[redis] pubClient and subClient were forced to be disconnected');
+
+  process.exit(1);
 });
 
 module.exports = {

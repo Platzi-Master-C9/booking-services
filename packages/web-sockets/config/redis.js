@@ -1,3 +1,4 @@
+/* eslint-disable dot-notation */
 // External dependencies
 const dotenv = require('dotenv');
 
@@ -7,7 +8,7 @@ const path = require('./environment');
 dotenv.config({ path });
 
 module.exports = {
-  host: process.env['WEB.SOCKET.REDIS.HOST'],
-  port: process.env['WEB.SOCKET.REDIS.PORT'],
-  password: process.env['WEB.SOCKET.REDIS.PASSWORD'],
+  host: process.env['WEB_SOCKET_REDIS_HOST'],
+  port: process.env['WEB_SOCKET_REDIS_PORT'],
+  password: process.env['WEB_SOCKET_REDIS_PASSWORD'],
 };
