@@ -9,6 +9,14 @@ const { dbName, collectionName } = dbOptions;
 const client = new MongoClient(URL);
 let results;
 
+/**
+ * @description return the connection with the db
+ * @returns returns the collection to query
+ * @example
+ * const collection = await connect()
+ * const places = collection.find()
+ */
+
 async function connect(method, options) {
   try {
     await client.connect();
@@ -18,10 +26,14 @@ async function connect(method, options) {
       results = await results.toArray();
     }
   } catch (error) {
-    throw boom.notFound('[geolocation:DB-Connection]: something happened when the request/connection to the DB was made: ', error);
+    Logger.error({
+      message: `[geolocation:mongodb]: Could not connect to database ${error}`,
+    });
   } finally {
     client.close();
   }
+
+  // eslint-disable-next-line
   return results;
 }
 

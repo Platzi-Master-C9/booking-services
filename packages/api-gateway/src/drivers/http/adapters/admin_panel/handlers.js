@@ -26,7 +26,7 @@ async function changeUserStatus(req, reply) {
 async function getUsers(req, reply) {
   const result = await this.adminPanelService.getUsers(
     req.query.status,
-    req.query.full_name,
+    req.query.fullName,
   );
 
   return reply.code(200)
@@ -64,7 +64,10 @@ async function getAdminId(req, reply) {
 }
 
 async function getAdmins(req, reply) {
-  const result = await this.adminPanelService.getAdmins(req.query.profile, req.query.full_name);
+  const result = await this.adminPanelService.getAdmins(
+    req.query.profile,
+    req.query.full_name,
+    );
   return reply.code(200)
     .header('Content-Type', 'application/json; chartset:utf-8')
     .send({ result });
@@ -82,6 +85,42 @@ async function listPlaces(req, reply) {
     .send({ result });
 }
 
+async function editUserInfo(req, reply) {
+  try {
+    const result = await this.adminPanelService.editUserInfo(
+      req.params.user_id,
+      req.body.first_name,
+      req.body.second_name,
+      req.body.first_surname,
+      req.body.second_surname,
+      req.body.email,
+      req.body.phone,
+      req.body.url_image,
+    );
+    return reply.code(200)
+      .header('Content-Type', 'application/json; chartset:utf-8')
+      .send({ result });
+  } catch (e) {
+    return reply.code(400).send({
+      message: e.message,
+    });
+  }
+}
+
+async function listBookings(req, reply) {
+
+  const result = await this.adminPanelService.listBookings(
+    req.query.dateOfBook,
+    req.query.status,
+    req.query.placeName,
+    req.query.userName
+  );
+
+  return reply.code(200)
+    .header('Content-Type', 'application/json; chartset:utf-8')
+    .send({ result });
+}
+
 module.exports = {
   sayHello,
   changeUserStatus,
@@ -90,4 +129,6 @@ module.exports = {
   getAdminId,
   getAdmins,
   listPlaces,
+  editUserInfo,
+  listBookings,
 };
