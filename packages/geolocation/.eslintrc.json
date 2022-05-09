@@ -11,6 +11,10 @@
   "parserOptions": {
       "ecmaVersion": "latest"
   },
+  "extends": ["airbnb-base"],
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
   "rules": {
     "no-console": "warn"
   }

@@ -17,6 +17,7 @@ const populate = () => {
       city: faker.address.city(),
       zipcode: faker.address.zipCode(),
       street_address: faker.address.streetAddress(),
+      price: faker.commerce.price(),
       place_db_id: faker.datatype.uuid(),
       created_at: faker.date.recent(),
       updated_at: faker.date.recent(),

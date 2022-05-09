@@ -3,16 +3,13 @@
  */
 
 // Services
-const { updatePlace } = require('./useCases');
-const { deletePlace } = require('./useCases');
+const { getPlaces, updatePlace, deletePlace } = require('./useCases');
 
 // Domains
-const { deletePlaceQuery } = require('./domains');
-const { updatePlaceQuery } = require('./domains');
-const welcome = require('./utils/welcomePackage');
+const { geoNearQuery, updatePlaceQuery, deletePlaceQuery } = require('./domains');
 
 module.exports = {
-  geolocationWelcome: welcome,
+  getPlaces: getPlaces(geoNearQuery),
   deletePlace: deletePlace(deletePlaceQuery),
   updatePlace: updatePlace(updatePlaceQuery),
 };

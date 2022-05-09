@@ -77,7 +77,7 @@ async function listPlaces(req, reply) {
   const result = await this.adminPanelService.listPlaces(
     req.query.status,
     req.query.placeName,
-    req.query.hostName
+    req.query.hostName,
   );
 
   return reply.code(200)

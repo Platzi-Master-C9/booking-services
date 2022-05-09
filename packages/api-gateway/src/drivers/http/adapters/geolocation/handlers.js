@@ -76,7 +76,7 @@ async function getPlaces(req, reply) {
 
     req.log.info('[http-server]: Getting places: ', { lon, lat, radius });
 
-    const places = await this.geolocationServices.getPlaces(lat, lon, radius);
+    const places = await this.geolocationServices.getPlaces(lon, lat, radius);
 
     return reply
       .code(200)
