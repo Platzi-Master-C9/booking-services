@@ -76,7 +76,7 @@ async function updateUser(req, reply) {
       },
     });
 
-    if (result.isBoom === true) {
+    if (result.isBoom) {
       return errorHandler(result, reply);
     }
 

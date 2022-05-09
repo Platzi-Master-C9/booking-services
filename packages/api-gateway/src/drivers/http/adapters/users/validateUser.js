@@ -62,7 +62,7 @@ async function validateUser(req, reply) {
       },
     });
 
-    if (result.isBoom === true) {
+    if (result.isBoom) {
       return errorHandler(result, reply);
     }
 

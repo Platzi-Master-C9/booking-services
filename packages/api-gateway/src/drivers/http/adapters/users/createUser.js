@@ -35,7 +35,7 @@ async function createUser(req, reply) {
       phoneNumber,
     });
 
-    if (result.isBoom === true) {
+    if (result.isBoom) {
       return errorHandler(result, reply);
     }
 
