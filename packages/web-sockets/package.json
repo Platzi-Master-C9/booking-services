@@ -21,7 +21,9 @@
     "url": "git+https://github.com/hecttoressau/booking-services.git"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix"
   },
   "bugs": {
     "url": "https://github.com/hecttoressau/booking-services/issues"

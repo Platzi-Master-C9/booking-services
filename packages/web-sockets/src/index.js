@@ -1,6 +1,6 @@
 // Internal dependencies
 const { Logger } = require('@booking-services/shared');
-const WbServer = require('./drivers/wb/server');
+const HTTPServer = require('./drivers/http/server');
 
-WbServer.start()
+HTTPServer.start()
   .catch((error) => Logger.debug(`[web-socket server] Something went wrong running server ${error}`));
