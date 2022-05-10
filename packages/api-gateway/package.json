@@ -34,7 +34,6 @@
   },
   "dependencies": {
     "@booking-services/admin-panel": "^1.0.0",
-    "@booking-services/auth": "^0.0.1",
     "@booking-services/geolocation": "^1.0.0",
     "@booking-services/math": "^1.0.0",
     "@booking-services/messages": "^1.0.0",

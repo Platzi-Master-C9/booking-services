@@ -169,7 +169,6 @@ const adminIDSchema = {
   },
 };
 
-
 const placesListSchema = {
   description: 'Get a list of places',
   tags: ['Administration panel'],

@@ -6,9 +6,21 @@ const { authAdapters } = require('../../../adapters');
 function main(fastify, _, done) {
   // Register routes
   fastify.get('/', {
-    handler: authAdapters.getPrivate,
     schema: authEndpointsStatusSchema,
+    handler: authAdapters.getPrivateScoped,
     preValidation: fastify.authenticate,
+    preHandler: [
+      fastify.hasPermissions([
+        'place:create',
+        'another:a',
+        'another:b',
+      ]),
+      fastify.hasRole([
+        'anfitrion',
+        'tester',
+        'another',
+      ]),
+    ],
   });
 
   done();
