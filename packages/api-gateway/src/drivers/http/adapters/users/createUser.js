@@ -2,7 +2,7 @@ const errorHandler = require('./errorHandler');
 
 async function createUser(req, reply) {
   try {
-    const {
+    const data = ({
       email,
       firstName,
       secondName,
@@ -11,29 +11,11 @@ async function createUser(req, reply) {
       birthDate,
       gender,
       phoneNumber,
-    } = req.body;
+    } = req.body);
 
-    req.log.info('[http-server]: Creating user with: ', {
-      email,
-      firstName,
-      secondName,
-      firstSurname,
-      secondSurname,
-      birthDate,
-      gender,
-      phoneNumber,
-    });
+    req.log.info('[http-server]: Creating user with: ', data);
 
-    const result = await this.userServices.createUser({
-      email,
-      firstName,
-      secondName,
-      firstSurname,
-      secondSurname,
-      birthDate,
-      gender,
-      phoneNumber,
-    });
+    const result = await this.userServices.createUser(data);
 
     if (result.isBoom) {
       return errorHandler(result, reply);

@@ -2,65 +2,31 @@ const errorHandler = require('./errorHandler');
 
 async function validateUser(req, reply) {
   try {
-    const {
-      firstName,
-      secondName,
-      firstSurname,
-      secondSurname,
-      birthDate,
-      nationality,
-      dniId,
-      dniFrontImg,
-      dniBackImg,
-      gender,
-      phoneNumber,
-      emergencyNumber,
-      passport,
-      address: {
-        country, city, state, address, zip,
-      },
-    } = req.body;
-    const { userId } = req.params;
+    const data = {
+      ...({ userId } = req.params),
+      ...({
+        firstName,
+        secondName,
+        firstSurname,
+        secondSurname,
+        birthDate,
+        nationality,
+        dniId,
+        dniFrontImg,
+        dniBackImg,
+        gender,
+        phoneNumber,
+        emergencyNumber,
+        passport,
+        address: {
+          country, city, state, address, zip,
+        },
+      } = req.body),
+    };
 
-    req.log.info('[http-server]: Validate user with: ', {
-      userId,
-      firstName,
-      secondName,
-      firstSurname,
-      secondSurname,
-      birthDate,
-      nationality,
-      dniId,
-      dniFrontImg,
-      dniBackImg,
-      gender,
-      phoneNumber,
-      emergencyNumber,
-      passport,
-      address: {
-        country, city, state, address, zip,
-      },
-    });
+    req.log.info('[http-server]: Validate user with: ', data);
 
-    const result = await this.userServices.validateUser({
-      userId,
-      firstName,
-      secondName,
-      firstSurname,
-      secondSurname,
-      birthDate,
-      nationality,
-      dniId,
-      dniFrontImg,
-      dniBackImg,
-      gender,
-      phoneNumber,
-      emergencyNumber,
-      passport,
-      address: {
-        country, city, state, address, zip,
-      },
-    });
+    const result = await this.userServices.validateUser(data);
 
     if (result.isBoom) {
       return errorHandler(result, reply);
