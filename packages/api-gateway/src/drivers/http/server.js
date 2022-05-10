@@ -1,10 +1,12 @@
 // External dependencies
-const Fastify = require('fastify');
 const Autoload = require('fastify-autoload');
-const Swagger = require('fastify-swagger');
+const Fastify = require('fastify');
+const FastifyAuth0 = require('fastify-auth0-verify');
 const path = require('path');
+const Swagger = require('fastify-swagger');
 
 // Internal dependencies
+const configAuth = require('../../../config/auth0');
 const swaggerOptions = require('./utils/swagger');
 
 // Setup
@@ -20,6 +22,11 @@ if (!isTestEnv) {
   // Swagger needs to be loaded before the routes
   fastify.register(Swagger, swaggerOptions);
 }
+
+fastify.register(FastifyAuth0, {
+  domain: configAuth.domain,
+  audience: configAuth.audience,
+});
 
 fastify.register(Autoload, { dir: path.join(__dirname, 'routes') });
 fastify.register(Autoload, { dir: path.join(__dirname, 'plugins') });
