@@ -6,6 +6,7 @@ const path = require('path');
 const Swagger = require('fastify-swagger');
 
 // Internal dependencies
+const authDecorators = require('./decorators/auth');
 const configAuth = require('../../../config/auth0');
 const swaggerOptions = require('./utils/swagger');
 
@@ -27,6 +28,10 @@ fastify.register(FastifyAuth0, {
   domain: configAuth.domain,
   audience: configAuth.audience,
 });
+
+// Decorators for authorization
+fastify.decorate('hasPermissions', authDecorators.hasPermissions);
+fastify.decorate('hasRole', authDecorators.hasRole);
 
 fastify.register(Autoload, { dir: path.join(__dirname, 'routes') });
 fastify.register(Autoload, { dir: path.join(__dirname, 'plugins') });
