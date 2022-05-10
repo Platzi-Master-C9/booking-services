@@ -169,7 +169,6 @@ const adminIDSchema = {
   },
 };
 
-
 const adminListSchema = {
   description: 'Query admin list data',
   tags: ['Administration panel'],
@@ -364,7 +363,7 @@ const bookingListSchema = {
       },
     },
   },
-}
+};
 
 module.exports = {
   defaultSchema,
