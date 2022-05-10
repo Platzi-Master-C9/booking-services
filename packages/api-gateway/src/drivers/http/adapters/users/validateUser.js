@@ -22,7 +22,7 @@ async function validateUser(req, reply) {
     } = req.body;
     const { userId } = req.params;
 
-    req.log.info('[http-server]: Creating user with: ', {
+    req.log.info('[http-server]: Validate user with: ', {
       userId,
       firstName,
       secondName,

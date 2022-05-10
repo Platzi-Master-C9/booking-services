@@ -22,10 +22,9 @@ async function updateUser(req, reply) {
         country, city, state, address, zip,
       },
     } = req.body;
-    const { userId } = req.params;
 
-    req.log.info('[http-server]: Creating user with: ', {
-      userId,
+    const data = {
+      ...({ userId } = req.params),
       email,
       avatar,
       firstName,
@@ -42,39 +41,13 @@ async function updateUser(req, reply) {
       emergencyNumber,
       passport,
       address: {
-        country,
-        city,
-        state,
-        address,
-        zip,
+        country, city, state, address, zip,
       },
-    });
+    };
 
-    const result = await this.userServices.updateUser({
-      userId,
-      email,
-      avatar,
-      firstName,
-      secondName,
-      firstSurname,
-      secondSurname,
-      birthDate,
-      nationality,
-      dniId,
-      dniFrontImg,
-      dniBackImg,
-      gender,
-      phoneNumber,
-      emergencyNumber,
-      passport,
-      address: {
-        country,
-        city,
-        state,
-        address,
-        zip,
-      },
-    });
+    req.log.info('[http-server]: Update user with: ', data);
+
+    const result = await this.userServices.updateUser(data);
 
     if (result.isBoom) {
       return errorHandler(result, reply);
