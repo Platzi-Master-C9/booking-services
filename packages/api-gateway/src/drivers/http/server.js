@@ -1,13 +1,12 @@
 // External dependencies
 const Autoload = require('fastify-autoload');
-const CORS = require('@fastify/cors');
 const Fastify = require('fastify');
 const Swagger = require('fastify-swagger');
 const path = require('path');
 
 // Internal dependencies
 const swaggerOptions = require('./utils/swagger');
-const configCORS = require('./config/cors');
+const configCORS = require('../../../config/cors');
 
 // Setup
 const isTestEnv = process.env.NODE_ENV === 'test';
@@ -18,7 +17,7 @@ const fastify = Fastify({
 });
 
 // Enable cors
-fastify.register(CORS, {
+fastify.register(require('@fastify/cors'), {
   origin: configCORS.domain,
 });
 
