@@ -14,7 +14,7 @@ const userList = [
     fullName: faker.name.findName(),
     urlImage: faker.image.avatar(),
     dateOfRegister: faker.date.future(),
-    status: 'ACTIVE',
+    status: 'BANNED',
     profile: 1,
   },
   {

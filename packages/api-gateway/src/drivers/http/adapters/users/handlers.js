@@ -70,11 +70,13 @@ async function validateUser(req, reply) {
       phoneNumber,
       emergencyNumber,
       passport,
-      address: { country, city, state, address, zip },
+      address: {
+        country, city, state, address, zip,
+      },
     } = req.body;
     const { userId } = req.params;
 
-    req.log.info("[http-server]: Creating user with: ", {
+    req.log.info('[http-server]: Creating user with: ', {
       userId,
       firstName,
       secondName,
@@ -89,7 +91,9 @@ async function validateUser(req, reply) {
       phoneNumber,
       emergencyNumber,
       passport,
-      address: { country, city, state, address, zip },
+      address: {
+        country, city, state, address, zip,
+      },
     });
 
     const result = await this.userServices.validateUser({
@@ -107,7 +111,9 @@ async function validateUser(req, reply) {
       phoneNumber,
       emergencyNumber,
       passport,
-      address: { country, city, state, address, zip },
+      address: {
+        country, city, state, address, zip,
+      },
     });
 
     if (result.isBoom === true) {
