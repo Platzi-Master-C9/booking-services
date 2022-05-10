@@ -1,5 +1,5 @@
 const { userAdapter } = require('../../adapters');
-const { createUserSchema, validateUserSchema} = require('./schema');
+const { createUserSchema, validateUserSchema } = require('./schema');
 
 async function UserRouter(fastify) {
   await fastify.post('/', { schema: createUserSchema }, userAdapter.createUser);
