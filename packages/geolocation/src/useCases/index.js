@@ -1,7 +1,7 @@
-'use strict';
-
-const Place = require('./place');
+const { getPlaces, updatePlace, deletePlace } = require('./places');
 
 module.exports = {
-  Place,
+  getPlaces,
+  deletePlace,
+  updatePlace,
 };

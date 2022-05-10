@@ -169,6 +169,50 @@ const adminIDSchema = {
   },
 };
 
+
+const adminListSchema = {
+  description: 'Query admin list data',
+  tags: ['Administration panel'],
+  querystring: {
+    type: 'object',
+    properties: {
+      profile: { type: 'number' },
+      fullName: { type: 'string' },
+    },
+  },
+  response: {
+    200: {
+      type: 'object',
+      properties: {
+        result: {
+          type: 'array',
+          items: {
+            type: 'object',
+            properties: {
+              id: { type: 'number' },
+              fullName: { type: 'string' },
+              urlImage: { type: 'string' },
+              profile: { type: 'number' },
+            },
+          },
+        },
+      },
+    },
+    '4xx': {
+      type: 'object',
+      properties: {
+        message: { type: 'string' },
+      },
+    },
+    '5xx': {
+      type: 'object',
+      properties: {
+        message: { type: 'string' },
+      },
+    },
+  },
+};
+
 const placesListSchema = {
   description: 'Get a list of places',
   tags: ['Administration panel'],
@@ -185,13 +229,6 @@ const placesListSchema = {
       type: 'object',
       properties: {
         result: {
-          type: 'object',
-          properties: {
-            id: { type: 'number' },
-            fullName: { type: 'string' },
-            urlImage: { type: 'string' },
-            profile: { type: 'number' },
-          },
           type: 'array',
           items: {
             type: 'object',
@@ -220,11 +257,123 @@ const placesListSchema = {
   },
 };
 
+const editUserSchema = {
+  description: 'edit user information: Giving a user id the administrator can edit the following fields, first name, second name, first surname, second surname, email, phone or url',
+  tags: ['Administration panel'],
+  body: {
+    type: 'object',
+    properties: {
+      first_name: { type: 'string' },
+      second_name: { type: 'string' },
+      first_surname: { type: 'string' },
+      second_surname: { type: 'string' },
+      email: { type: 'string' },
+      phone: { type: 'string' },
+      url_image: { type: 'string' },
+    },
+  },
+  params: {
+    type: 'object',
+    properties: {
+      user_id: { type: 'number' },
+    },
+  },
+  response: {
+    // 200: {
+    //   type: 'object',
+    //   properties: {
+    //     result: {
+    //       type: 'object',
+    //       properties: {
+    //         user_id: { type: 'number' },
+    //         first_name: { type: 'string' },
+    //         second_name: { type: 'string' },
+    //         first_surname: { type: 'string' },
+    //         second_surname: { type: 'string' },
+    //         email: { type: 'string' },
+    //         phone: { type: 'string' },
+    //         url_image: { type: 'string' },
+    //       },
+    //     },
+    //   },
+    // },
+    200: {
+      type: 'object',
+      properties: {
+        result: { type: 'string' },
+      },
+    },
+    '4xx': {
+      type: 'object',
+      properties: {
+        message: { type: 'string' },
+      },
+    },
+    '5xx': {
+      type: 'object',
+      properties: {
+        message: { type: 'string' },
+      },
+    },
+  },
+};
+
+const bookingListSchema = {
+  description: 'Get a list of bookings',
+  tags: ['Administration panel'],
+  querystring: {
+    type: 'object',
+    properties: {
+      dateOfBook: { type: 'string' },
+      status: { type: 'string' },
+      place: { type: 'string' },
+      userName: { type: 'string' },
+    },
+  },
+  response: {
+    200: {
+      type: 'object',
+      properties: {
+        result: {
+          type: 'array',
+          items: {
+            type: 'object',
+            properties: {
+              id: { type: 'string' },
+              dateOfBook: { type: 'string' },
+              placeName: { type: 'string' },
+              userName: { type: 'string' },
+              status: { type: 'string' },
+              fromDate: { type: 'string' },
+              endDate: { type: 'string' },
+            },
+          },
+        },
+      },
+    },
+    '4xx': {
+      type: 'object',
+      properties: {
+        message: { type: 'string' },
+      },
+    },
+    '5xx': {
+      type: 'object',
+      properties: {
+        message: { type: 'string' },
+      },
+    },
+  },
+}
+
 module.exports = {
   defaultSchema,
   changeUSerStatusSchema,
   userListSchema,
   userDetailSchema,
   adminIDSchema,
+  adminListSchema,
   placesListSchema,
+  editUserSchema,
+  bookingListSchema,
 };
