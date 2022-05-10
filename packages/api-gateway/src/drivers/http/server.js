@@ -2,13 +2,10 @@
 const Fastify = require('fastify');
 const Autoload = require('fastify-autoload');
 const Swagger = require('fastify-swagger');
-const FastifyAuth0 = require('fastify-auth0-verify');
 const path = require('path');
 
 // Internal dependencies
-const authDecorators = require('./decorators/auth');
-const { version } = require('../../../package.json');
-const configAuth = require('../../../config/auth0');
+const swaggerOptions = require('./utils/swagger');
 
 // Setup
 const isTestEnv = process.env.NODE_ENV === 'test';
@@ -18,58 +15,11 @@ const fastify = Fastify({
   logger: !isTestEnv,
 });
 
-/** @type {import('fastify-swagger').SwaggerOptions} */
-const swaggerOptions = {
-  routePrefix: '/docs',
-  openapi: {
-    info: {
-      title: 'Booking API Gateway',
-      description: 'API Gateway for Booking Services',
-      version,
-    },
-    schemes: ['http', 'https'],
-    consumes: ['application/json'],
-    produces: ['application/json'],
-    tags: [
-      { name: 'Math', description: 'Math endpoints' },
-      { name: 'Status', description: 'Status endpoints' },
-      { name: 'Search Engine', description: 'Search Engine endpoints' },
-      { name: 'Geolocation', description: 'Geolocation endpoints' },
-      { name: 'Booking', description: 'Booking endpoints' },
-      { name: 'Core', description: 'Core endpoints' },
-      { name: 'Users', description: 'User endpoints' },
-      { name: 'Notifications', description: 'Notification endpoints' },
-      { name: 'Messages', description: 'Messages endpoints' },
-      { name: 'Places', description: 'Places endpoints' },
-      { name: 'Administration panel', description: 'Administration panel endpoints' },
-      { name: 'Auth', description: 'Auth endpoints' },
-    ],
-    components: {
-      securitySchemes: {
-        Bearer: {
-          type: 'http',
-          scheme: 'bearer',
-        },
-      },
-    },
-  },
-  exposeRoute: true,
-};
-
 // Avoid loading swagger when running tests
 if (!isTestEnv) {
   // Swagger needs to be loaded before the routes
   fastify.register(Swagger, swaggerOptions);
 }
-
-fastify.register(FastifyAuth0, {
-  domain: configAuth.domain,
-  audience: configAuth.audience,
-});
-
-// Decorators for authorization
-fastify.decorate('hasPermissions', authDecorators.hasPermissions);
-fastify.decorate('hasRole', authDecorators.hasRole);
 
 fastify.register(Autoload, { dir: path.join(__dirname, 'routes') });
 fastify.register(Autoload, { dir: path.join(__dirname, 'plugins') });
