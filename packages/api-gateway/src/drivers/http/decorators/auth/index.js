@@ -1,8 +1,8 @@
-const hasPermissions = (permissions) => (req, reply, done) => {
+const hasPermissions = (endpointPermissions) => (req, reply, done) => {
   const userPermissions = req.user.permissions;
   for (let i = 0; i < userPermissions.length; i++) {
     const userPermission = userPermissions[i];
-    if (permissions.includes(userPermission)) {
+    if (endpointPermissions.includes(userPermission)) {
       return done();
     }
   }
@@ -13,13 +13,11 @@ const hasPermissions = (permissions) => (req, reply, done) => {
   });
 };
 
-const hasRole = (roles, ignore = false) => (req, reply, done) => {
-  if (ignore) return done();
-
-  const userPermissions = req.user.permissions;
-  for (let i = 0; i < userPermissions.length; i++) {
-    const userPermission = userPermissions[i];
-    if (roles.includes(userPermission)) {
+const hasRole = (endpointRoles) => (req, reply, done) => {
+  const userRoles = req.user.permissions;
+  for (let i = 0; i < userRoles.length; i++) {
+    const userRole = userRoles[i];
+    if (endpointRoles.includes(userRole)) {
       return done();
     }
   }

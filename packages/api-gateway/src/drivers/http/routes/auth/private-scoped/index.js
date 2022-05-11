@@ -14,11 +14,13 @@ function main(fastify, _, done) {
         'place:create',
         'another:a',
         'another:b',
+        'create:roles',
       ]),
       fastify.hasRole([
         'anfitrion',
         'tester',
         'another',
+        'host',
       ]),
     ],
   });
