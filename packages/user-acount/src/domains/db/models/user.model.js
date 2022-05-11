@@ -103,7 +103,6 @@ const usersSchema = {
     defaultValue: Sequelize.NOW,
   },
   addressId: {
-    //unsure if auto_increment should be added
     field: "address_id",
     allowNull: false,
     type: DataTypes.INTEGER,

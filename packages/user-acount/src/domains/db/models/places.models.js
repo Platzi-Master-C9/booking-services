@@ -1,6 +1,6 @@
 const {Model, DataTypes, Sequelize} = require('sequelize');
 
-const PLACES_TABLE = ' Places';
+const PLACES_TABLE = ' places';
 
 const placesSchema ={
   id:{
@@ -19,7 +19,7 @@ const placesSchema ={
 class places extends Model {
   static associate(models) {
     this.hasMany(models.userFavoritePlaces , {
-      as: 'User favorite places',
+      as: 'user_favorite_places',
       foreignKey: 'placesId'
     });
   }
@@ -32,3 +32,5 @@ class places extends Model {
     }
   }
 }
+
+module.exports = {PLACES_TABLE, placesSchema, places}

@@ -1,6 +1,7 @@
 "use strict";
 const { DataTypes, Sequelize } = require("sequelize");
 const { USERS_TABLE } = require("./../models/user.model");
+const { EMERGENCY_CONTACTS_TABLE } = require("./../models/emergencyContacts.models.js")
 
 module.exports = {
   async up(queryInterface) {
@@ -97,11 +98,10 @@ module.exports = {
         allowNull: false,
         type: DataTypes.DATE,
         field: "created_at",
-        defaultValue: Sequelize.NOW,
+        defaultValue: Sequelize.NOW,      
       }
-    });
+    })
   },
-
   async down(queryInterface) {
     await queryInterface.dropTable(USERS_TABLE);
   },

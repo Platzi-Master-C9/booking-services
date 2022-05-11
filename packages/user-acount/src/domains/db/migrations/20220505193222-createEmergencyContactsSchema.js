@@ -25,7 +25,21 @@ module.exports = {
         type: DataTypes.DATE,
         field: 'created_at',
         defaultValue: Sequelize.NOW
+      },
+      updateAt:{
+        type: Sequelize.DATE
       }
+    }).then(function() {
+      queryInterface.createTable('USERS_TABLE', {
+        emergencyContactsId: {
+          field: 'emergency_contacts_id',
+          type: Sequelize.INTEGER,
+          allowNull: false,
+          references: { model: EMERGENCY_CONTACTS_TABLE, key: 'id' },
+          onUpdate: "CASCADE",
+          onDelete: "SET NULL",
+        }
+      })
     });
   },
 
