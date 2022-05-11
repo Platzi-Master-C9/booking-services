@@ -1,21 +1,11 @@
 const errorHandler = require('./errorHandler');
+const getInfoUser = require('./getInfoUser');
 
 async function createUser(req, reply) {
   try {
-    const data = ({
-      email,
-      firstName,
-      secondName,
-      firstSurname,
-      secondSurname,
-      birthDate,
-      gender,
-      phoneNumber,
-    } = req.body);
+    req.log.info('[http-server]: Creating user of: ', getInfoUser(req.body));
 
-    req.log.info('[http-server]: Creating user with: ', data);
-
-    const result = await this.userServices.createUser(data);
+    const result = await this.userServices.createUser(req.body);
 
     if (result.isBoom) {
       return errorHandler(result, reply);

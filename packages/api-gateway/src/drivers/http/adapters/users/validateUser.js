@@ -1,30 +1,14 @@
 const errorHandler = require('./errorHandler');
+const getInfoUser = require('./getInfoUser');
 
 async function validateUser(req, reply) {
   try {
     const data = {
-      ...({ userId } = req.params),
-      ...({
-        firstName,
-        secondName,
-        firstSurname,
-        secondSurname,
-        birthDate,
-        nationality,
-        dniId,
-        dniFrontImg,
-        dniBackImg,
-        gender,
-        phoneNumber,
-        emergencyNumber,
-        passport,
-        address: {
-          country, city, state, address, zip,
-        },
-      } = req.body),
+      ...req.params,
+      ...req.body,
     };
 
-    req.log.info('[http-server]: Validate user with: ', data);
+    req.log.info('[http-server]: Validate user of: ', getInfoUser(data));
 
     const result = await this.userServices.validateUser(data);
 

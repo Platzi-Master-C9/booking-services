@@ -1,51 +1,14 @@
 const errorHandler = require('./errorHandler');
+const getInfoUser = require('./getInfoUser');
 
 async function updateUser(req, reply) {
   try {
-    const {
-      email,
-      avatar,
-      firstName,
-      secondName,
-      firstSurname,
-      secondSurname,
-      birthDate,
-      nationality,
-      dniId,
-      dniFrontImg,
-      dniBackImg,
-      gender,
-      phoneNumber,
-      emergencyNumber,
-      passport,
-      address: {
-        country, city, state, address, zip,
-      },
-    } = req.body;
-
     const data = {
-      ...({ userId } = req.params),
-      email,
-      avatar,
-      firstName,
-      secondName,
-      firstSurname,
-      secondSurname,
-      birthDate,
-      nationality,
-      dniId,
-      dniFrontImg,
-      dniBackImg,
-      gender,
-      phoneNumber,
-      emergencyNumber,
-      passport,
-      address: {
-        country, city, state, address, zip,
-      },
+      ...req.params,
+      ...req.body,
     };
 
-    req.log.info('[http-server]: Update user with: ', data);
+    req.log.info('[http-server]: Update user of: ', getInfoUser(data));
 
     const result = await this.userServices.updateUser(data);
 
