@@ -1,10 +1,10 @@
 const generateSuffix = (packageName) => {
   const delimiter = packageName.indexOf('/') + 1;
-  let suffix = packageName.substring(delimiter, packageName.length);
+  let preffix = packageName.substring(delimiter, packageName.length);
 
-  suffix = suffix.toUpperCase();
+  preffix = preffix.toUpperCase();
 
-  return suffix;
+  return preffix;
 };
 
 module.exports = generateSuffix;

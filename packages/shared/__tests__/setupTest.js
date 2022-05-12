@@ -29,13 +29,13 @@ const packages = [
   '@booking-services/messages',
 ];
 
-// TODO add suffixes use to connect to mongoose
-const suffixes = [
+// TODO add preffixes use to connect to mongoose
+const preffixes = [
   'messages',
 ];
 
 module.exports = {
   packages,
   packagesUsingMongoose,
-  suffixes,
+  preffixes,
 };

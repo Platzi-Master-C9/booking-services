@@ -2,7 +2,7 @@
 const Mongoose = require('mongoose');
 
 // Internal dependencies
-const generateSuffix = require('../../utils/generate-suffix');
+const generatePreffix = require('../../utils/generate-preffix');
 const getMongoCredentials = require('../../../config/get-mongo-credentials');
 const showConnectionInfo = require('./connection-info');
 
@@ -11,8 +11,8 @@ Mongoose.Promise = global.Promise;
 const createMongoConnection = (packageName) => {
   if (typeof packageName !== 'string') throw new Error('packageName should be a string');
 
-  const suffix = generateSuffix(packageName);
-  const credentials = getMongoCredentials(suffix);
+  const preffix = generatePreffix(packageName);
+  const credentials = getMongoCredentials(preffix);
 
   const db = Mongoose.createConnection(credentials.uri, {
     authSource: credentials.authSource,
