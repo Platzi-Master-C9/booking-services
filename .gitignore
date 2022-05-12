@@ -3,6 +3,7 @@ yarn-error.log
 lerna-debug.log
 .env
 .env.*
+!.env.example
 coverage
 .vscode
 .DS_Store
