@@ -36,7 +36,7 @@ module.exports = {
         field: 'created_at',
         default: Sequelize.NOW
       }
-    });
+    });    
   },
 
   async down(queryInterface) {

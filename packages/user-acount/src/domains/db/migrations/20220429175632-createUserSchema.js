@@ -1,7 +1,9 @@
 "use strict";
 const { DataTypes, Sequelize } = require("sequelize");
-const { USERS_TABLE } = require("./../models/user.model");
+
+const { USERS_TABLE } = require("./../models/user.model.js");
 const { EMERGENCY_CONTACTS_TABLE } = require("./../models/emergencyContacts.models.js")
+
 
 module.exports = {
   async up(queryInterface) {
@@ -99,8 +101,18 @@ module.exports = {
         type: DataTypes.DATE,
         field: "created_at",
         defaultValue: Sequelize.NOW,      
-      }
-    })
+      },    
+    });
+    await queryInterface.addColumn(USERS_TABLE, "emergency_contacts_id",{      
+        allowNull: false,
+        type: DataTypes.INTEGER,
+        references: {
+          model: EMERGENCY_CONTACTS_TABLE,
+          key: "id",
+        },
+        onUpdate: "CASCADE",
+        onDelete: "SET NULL",          
+     })
   },
   async down(queryInterface) {
     await queryInterface.dropTable(USERS_TABLE);
