@@ -1,8 +1,8 @@
-// External packages
+// External dependencies
 const { createMongoConnection } = require('@booking-services/shared');
-// Internal packages
-const { name } = require('../../../package.json');
+// Internal dependencies
+const { preffix } = require('../../utils/constants');
 
-const connection = createMongoConnection(name);
+const connection = createMongoConnection(preffix);
 
 module.exports = connection;
