@@ -1,7 +1,7 @@
 const Logger = require('./utils/logger');
-const Connection = require('./drivers/mongodb/connection');
+const createMongoConnection = require('./drivers/mongodb/create-connection');
 
 module.exports = {
   Logger,
-  Connection,
+  createMongoConnection,
 };
