@@ -29,6 +29,7 @@
     "jest": "^27.5.1"
   },
   "dependencies": {
+    "nodemailer": "^6.7.3",
     "@booking-services/shared": "^0.0.1"
   }
 }
