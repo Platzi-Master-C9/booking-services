@@ -7,11 +7,11 @@ const getUsers = (status, fullName, userType, validated) => {
   // if the user sent a status or a fullName, we have to make a filter
   fakeUserList = fakeUserList.filter((user) => user.userType !== 3 && user.userType !== 4);
 
-  if(userType){
+  if (userType) {
     fakeUserList = fakeUserList.filter((user) => user.userType === userType);
   }
 
-  if(validated){
+  if (validated) {
     fakeUserList = fakeUserList.filter((user) => user.validated === validated);
   }
 
