@@ -7,10 +7,10 @@ const showConnectionInfo = require('./connection-info');
 
 Mongoose.Promise = global.Promise;
 
-const createMongoConnection = (preffix) => {
-  if (typeof preffix !== 'string') throw new Error('preffix should be a string');
+const createMongoConnection = (prefix) => {
+  if (typeof prefix !== 'string') throw new Error('prefix should be a string');
 
-  const credentials = getMongoCredentials(preffix.toUpperCase());
+  const credentials = getMongoCredentials(prefix.toUpperCase());
 
   const db = Mongoose.createConnection(credentials.uri, {
     authSource: credentials.authSource,

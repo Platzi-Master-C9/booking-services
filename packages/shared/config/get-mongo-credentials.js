@@ -5,12 +5,12 @@ const { path } = require('./environment');
 
 dotenv.config({ path });
 
-const getMongoCredentials = (preffix) => {
+const getMongoCredentials = (prefix) => {
   const credentials = {
-    authSource: process.env[`${preffix}_MONGO_AUTH_SOURCE`],
-    uri: process.env[`${preffix}_MONGO_URI`],
-    username: process.env[`${preffix}_MONGO_USER`],
-    password: process.env[`${preffix}_MONGO_PASSWORD`],
+    authSource: process.env[`${prefix}_MONGO_AUTH_SOURCE`],
+    uri: process.env[`${prefix}_MONGO_URI`],
+    username: process.env[`${prefix}_MONGO_USER`],
+    password: process.env[`${prefix}_MONGO_PASSWORD`],
   };
   const credentialsEntries = Object.entries(credentials);
 
