@@ -8,7 +8,7 @@ const newPlaceInfo = {
 };
 
 describe('Given a client that wants to save a new place', () => {
-  // the succesful
+  // the successful
   describe('When it does the post petition with the required data', () => {
     test('Then the server must send a 201 status code', async () => {
       const response = await fastify.inject({

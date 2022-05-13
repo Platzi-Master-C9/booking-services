@@ -18,7 +18,7 @@ async function updateUser(req, reply) {
 
     return reply
       .code(200)
-      .header('Content-Type', 'application/json; chartset:utf-8')
+      .header('Content-Type', 'application/json; charset=utf-8')
       .send({ result });
   } catch (error) {
     return errorHandler(error, reply);

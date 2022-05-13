@@ -6,7 +6,7 @@ const updatePlaceSchema = {
     type: 'object',
     properties: {
       id: { type: 'string', description: 'place Id' },
-      address: { type: 'string', description: 'addres to update' },
+      address: { type: 'string', description: 'address to update' },
     },
     required: ['id', 'address'],
   },
@@ -102,7 +102,7 @@ const getPlaceSchema = {
 
 const deletePlaceSchema = {
   description:
-    'Given a placeId when a user delte a place, then delete the geolocation place in geolocation db.',
+    'Given a placeId when a user delete a place, then delete the geolocation place in geolocation db.',
   tags: ['Geolocation'],
   security: [{ Bearer: [] }],
   querystring: {

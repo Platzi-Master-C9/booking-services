@@ -1,4 +1,4 @@
-// TODO_JAIRO: schema doesn't work propertly
+// TODO_JAIRO: schema doesn't work properly
 const defaultSchema = {
   description: 'Index Route',
   tags: ['Administration panel'],
