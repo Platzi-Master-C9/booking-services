@@ -21,7 +21,7 @@ describe('Update a place then return id and status code 200', () => {
   fastify.register(pluginLoader(services));
 
   // run the test
-  test('Given a id and address, whend a user update aplace, then return the status code 200', async () => {
+  test('Given a id and address, when a user update a place, then return the status code 200', async () => {
     const placeUpdated = await fastify.inject({
       method: 'PATCH',
       url: 'geolocation/place',
@@ -55,7 +55,7 @@ describe('Update a place failed then return status code 404', () => {
   fastify.register(pluginLoader(services));
 
   // run the test
-  test('Given a id and address, whend is required a update with an Id an this was not found, then return the status code 404', async () => {
+  test('Given a id and address, when is required a update with an Id an this was not found, then return the status code 404', async () => {
     const placeUpdated = await fastify.inject({
       method: 'PATCH',
       url: 'geolocation/place',
@@ -74,7 +74,7 @@ describe('Update a place failed then return status code 404', () => {
 describe('Update a place failed then return status code 500', () => {
   // mock update place
   const updatePlace = () => async (id) => {
-    throw boom.internal(`somthincannot update the place with the ${id}`);
+    throw boom.internal(`something cannot update the place with the ${id}`);
   };
   const GeolocationServices = {
     updatePlace: updatePlace(),
@@ -89,7 +89,7 @@ describe('Update a place failed then return status code 500', () => {
   fastify.register(pluginLoader(services));
 
   // run the test
-  test('Given a id and address, whend is required a update and the DB cannot update, then return the status code 500', async () => {
+  test('Given a id and address, when is required a update and the DB cannot update, then return the status code 500', async () => {
     const placeUpdated = await fastify.inject({
       method: 'PATCH',
       url: 'geolocation/place',

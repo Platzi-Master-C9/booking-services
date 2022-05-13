@@ -24,15 +24,15 @@ async function listUserChatRooms(req, reply) {
   });
 
   req.log.info('[http-server]: Fetching last message of each chat rooms.');
-  const messagessAsyncQueue = [];
+  const messagesAsyncQueue = [];
   // Get the last 10 messages
   chats.forEach((chat) => {
-    messagessAsyncQueue.push(
+    messagesAsyncQueue.push(
       this.messageServices.getChatRoomLastMessage({ chatId: chat._id }),
     );
   });
 
-  const messages = await Promise.all(messagessAsyncQueue);
+  const messages = await Promise.all(messagesAsyncQueue);
 
   // Map the messages to the chat rooms
   messages.forEach((message) => {
@@ -45,7 +45,7 @@ async function listUserChatRooms(req, reply) {
 }
 
 /**
- * List the mesages of a user chat room.
+ * List the messages of a user chat room.
  * @type {import('fastify').RouteHandler}
  */
 async function listChatMessages(req, reply) {
