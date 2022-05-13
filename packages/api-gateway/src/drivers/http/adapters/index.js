@@ -1,5 +1,5 @@
 // Internal dependencies
-const adminPanelAdapters = require('./admin_panel/handlers');
+const adminPanelAdapters = require('./admin-panel/handlers');
 const authAdapters = require('./auth/handlers');
 const geolocationAdapters = require('./geolocation/handlers');
 const mathAdapters = require('./math/handlers');

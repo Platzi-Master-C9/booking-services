@@ -1,24 +1,19 @@
-const boom = require('@hapi/boom');
-const validatorHandler = require('../utils/validator/validatorHandler');
-const { createUserSchema, validateUserSchema } = require('../utils/validator/schema/user.schema');
+// const boom = require('@hapi/boom');
 
-function createUser(model) {
-  const data = validatorHandler(createUserSchema, model);
-  if (data !== model) {
-    return boom.badData(data);
-  }
+function createUser(data) {
   return data;
 }
 
-function validateUser(model) {
-  const data = validatorHandler(validateUserSchema, model);
-  if (data !== model) {
-    return boom.badData(data);
-  }
+function validateUser(data) {
+  return data;
+}
+
+function updateUser(data) {
   return data;
 }
 
 module.exports = {
   createUser,
   validateUser,
+  updateUser,
 };

@@ -1,4 +1,4 @@
-// TODO_JAIRO: schema doesn't work propertly
+// TODO_JAIRO: schema doesn't work properly
 const defaultSchema = {
   description: 'Index Route',
   tags: ['Administration panel'],
@@ -70,7 +70,7 @@ const userListSchema = {
               urlImage: { type: 'string' },
               dateOfRegister: { type: 'string' },
               userType: { type: 'number' },
-	            validated: { type: 'boolean' },
+              validated: { type: 'boolean' },
               status: { type: 'string' },
             },
           },
@@ -114,7 +114,7 @@ const userDetailSchema = {
             urlImage: { type: 'string' },
             dateOfRegister: { type: 'string' },
             userType: { type: 'number' },
-	          validated: { type: 'boolean' },
+            validated: { type: 'boolean' },
             status: { type: 'string' },
           },
         },
@@ -284,24 +284,6 @@ const editUserSchema = {
     },
   },
   response: {
-    // 200: {
-    //   type: 'object',
-    //   properties: {
-    //     result: {
-    //       type: 'object',
-    //       properties: {
-    //         user_id: { type: 'number' },
-    //         first_name: { type: 'string' },
-    //         second_name: { type: 'string' },
-    //         first_surname: { type: 'string' },
-    //         second_surname: { type: 'string' },
-    //         email: { type: 'string' },
-    //         phone: { type: 'string' },
-    //         url_image: { type: 'string' },
-    //       },
-    //     },
-    //   },
-    // },
     200: {
       type: 'object',
       properties: {

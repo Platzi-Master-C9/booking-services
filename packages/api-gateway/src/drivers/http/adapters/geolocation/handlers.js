@@ -46,7 +46,7 @@ async function createPlace(req, reply) {
 
     return reply
       .code(200)
-      .header('Content-Type', 'application/json; chartset:utf-8')
+      .header('Content-Type', 'application/json; charset=utf-8')
       .send({ id: placeId });
   } catch (error) {
     return errorHandler(error, reply);
@@ -63,7 +63,7 @@ async function getPlace(req, reply) {
 
     return reply
       .code(200)
-      .header('Content-Type', 'application/json; chartset:utf-8')
+      .header('Content-Type', 'application/json; charset=utf-8')
       .send({ data: place });
   } catch (error) {
     return errorHandler(error, reply);
@@ -80,7 +80,7 @@ async function getPlaces(req, reply) {
 
     return reply
       .code(200)
-      .header('Content-Type', 'application/json; chartset:utf-8')
+      .header('Content-Type', 'application/json; charset=utf-8')
       .send(places);
   } catch (error) {
     return errorHandler(error, reply);
@@ -97,7 +97,7 @@ async function getAddress(req, reply) {
 
     return reply
       .code(200)
-      .header('Content-Type', 'application/json; chartset:utf-8')
+      .header('Content-Type', 'application/json; charset=utf-8')
       .send(address);
   } catch (error) {
     return errorHandler(error, reply);
@@ -116,7 +116,7 @@ async function deletePlace(req, reply) {
 
     return reply
       .code(200)
-      .header('Content-Type', 'application/json; chartset:utf-8')
+      .header('Content-Type', 'application/json; charset=utf-8')
       .send({
         placeId: placeDeleted,
         message: 'geolocation place deleted successfully',
@@ -132,7 +132,7 @@ async function updatePlace(req, reply) {
     const placeId = await this.geolocationServices.updatePlace(id, address);
     return reply
       .code(200)
-      .header('Content-Type', 'application/json; chartset:utf-8')
+      .header('Content-Type', 'application/json; charset=utf-8')
       .send({ id: placeId });
   } catch (error) {
     return errorHandler(error, reply);

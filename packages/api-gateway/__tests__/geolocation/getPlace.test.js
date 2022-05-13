@@ -30,7 +30,7 @@ describe('Get a place then return a object and status code 200', () => {
   fastify.register(pluginLoader(services));
 
   // run the test
-  test('Given an id, whend a place is required, then return the status code 200 and a place object', async () => {
+  test('Given an id, when a place is required, then return the status code 200 and a place object', async () => {
     const placeUpdated = await fastify.inject({
       method: 'GET',
       url: 'geolocation/place',
@@ -73,7 +73,7 @@ describe('Gat a place failed then return status code 404', () => {
   fastify.register(pluginLoader(services));
 
   // run the test
-  test('Given an id, whend is required a place with a specific Id an this was not found, then return the status code 404', async () => {
+  test('Given an id, when is required a place with a specific Id an this was not found, then return the status code 404', async () => {
     const placeUpdated = await fastify.inject({
       method: 'GET',
       url: 'geolocation/place',
