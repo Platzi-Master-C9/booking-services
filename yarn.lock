@@ -584,6 +584,14 @@
   dependencies:
     ajv "^6.12.6"
 
+"@fastify/cors@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@fastify/cors/-/cors-7.0.0.tgz#c67c5a5909498b696bb19578e903f36037ac6f32"
+  integrity sha512-nlo6ScwagBNJacAZD3KX90xjWLIoV0vN9QqoX1wUE9ZeZMdvkVkMZCGlxEtr00NshV0X5wDge4w5rwox7rRzSg==
+  dependencies:
+    fastify-plugin "^3.0.0"
+    vary "^1.1.2"
+
 "@fastify/jwt@^5.0.0":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@fastify/jwt/-/jwt-5.0.1.tgz#9c44bc994c372019a23cb6dd8a3bd7f93e7ab88b"
@@ -4198,7 +4206,7 @@ fastfall@^1.5.0:
   dependencies:
     reusify "^1.0.0"
 
-fastify-auth0-verify@^0.7.3, fastify-auth0-verify@^0.7.4:
+fastify-auth0-verify@^0.7.4:
   version "0.7.4"
   resolved "https://registry.yarnpkg.com/fastify-auth0-verify/-/fastify-auth0-verify-0.7.4.tgz#ef0431756f3a3226cbd3e465d208fb38c375a9d7"
   integrity sha512-ZWucbC75i3zUTRl5fs5DDEq1bXye2HpkbJhEbsWtoeVgqEzz1W2j+VySZnPAX+fqFQJAavV4CF2bnDxk8eJCcQ==
@@ -10502,6 +10510,11 @@ validator@^13.7.0:
   version "13.7.0"
   resolved "https://registry.yarnpkg.com/validator/-/validator-13.7.0.tgz#4f9658ba13ba8f3d82ee881d3516489ea85c0857"
   integrity sha512-nYXQLCBkpJ8X6ltALua9dRrZDHVYxjJ1wgskNt1lH9fzGjs3tgojGSCBjmEPwkWS1y29+DrizMTW19Pr9uB2nw==
+
+vary@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
+  integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
 
 verror@1.10.0:
   version "1.10.0"
