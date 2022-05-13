@@ -4198,7 +4198,7 @@ fastfall@^1.5.0:
   dependencies:
     reusify "^1.0.0"
 
-fastify-auth0-verify@^0.7.3, fastify-auth0-verify@^0.7.4:
+fastify-auth0-verify@^0.7.3:
   version "0.7.4"
   resolved "https://registry.yarnpkg.com/fastify-auth0-verify/-/fastify-auth0-verify-0.7.4.tgz#ef0431756f3a3226cbd3e465d208fb38c375a9d7"
   integrity sha512-ZWucbC75i3zUTRl5fs5DDEq1bXye2HpkbJhEbsWtoeVgqEzz1W2j+VySZnPAX+fqFQJAavV4CF2bnDxk8eJCcQ==

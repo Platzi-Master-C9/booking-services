@@ -3,7 +3,7 @@ const { faker } = require('@faker-js/faker');
 const { mockBuildApp } = require('../../mocks/geolocation.mock');
 
 describe('[DELETE] geolocation/place endpoint then return id and status code 200', () => {
-  test('Given an id when a user wants to delete a place, then return status code 200 and the id of the deleted place in geolocation databse', async () => {
+  test('Given an id when a user wants to delete a place, then return status code 200 and the id of the deleted place in geolocation database', async () => {
     const deletePlace = () => async (id) => id;
     const GeolocationServices = {
       deletePlace: deletePlace(),

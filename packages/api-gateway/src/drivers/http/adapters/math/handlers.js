@@ -6,7 +6,7 @@ async function createSum(req, reply) {
   const result = await this.mathServices.sumOperation({ inputA, inputB });
 
   return reply.code(200)
-    .header('Content-Type', 'application/json; chartset:utf-8')
+    .header('Content-Type', 'application/json; charset=utf-8')
     .send({ result });
 }
 
