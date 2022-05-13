@@ -1,6 +1,6 @@
 "use strict";
 const { DataTypes, Sequelize } = require("sequelize");
-const { PLACES_TABLE } = require("./../models/places.models.js");
+const { PLACES_TABLE } = require("../models/places.models.js");
 
 module.exports = {
   async up(queryInterface) {

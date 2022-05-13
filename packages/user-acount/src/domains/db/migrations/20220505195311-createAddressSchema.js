@@ -1,6 +1,6 @@
 "use strict";
 const { DataTypes, Sequelize } = require("sequelize");
-const { ADDRESS_TABLE } = require("./../models/address.models.js");
+const { ADDRESS_TABLE } = require("../models/address.models.js");
 
 
 module.exports = {

@@ -1,6 +1,6 @@
 "use strict";
 const { DataTypes, Sequelize } = require("sequelize");
-const { USER_FAVORITE_PLACES_TABLE } = require("./../models/userFavoritePlaces.models.js");
+const { USER_FAVORITE_PLACES_TABLE } = require("../models/userFavoritePlaces.models.js");
 
 module.exports = {
   async up(queryInterface) {

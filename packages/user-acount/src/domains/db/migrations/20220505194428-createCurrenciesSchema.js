@@ -1,6 +1,6 @@
 "use strict";
 const { DataTypes, Sequelize } = require("sequelize");
-const { CURRENCIES_TABLE } = require("./../models/currencies.models.js");
+const { CURRENCIES_TABLE } = require("../models/currencies.models.js");
 
 module.exports = {
   async up(queryInterface) {
