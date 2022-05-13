@@ -7,16 +7,7 @@ const getApiGatewayDirectory = require('../../src/utils/getApiGateweyDirectory')
 
 describe('Create a place then return id and status code 200', () => {
   // mock update place
-  const createPlace = () => async ({
-    location,
-    country,
-    state,
-    city,
-    zipcode,
-    streetAddress,
-    placeDBId,
-    price,
-  }) => '4d7w8w44f4s84s8d7f4s8d74';
+  const createPlace = () => async () => '4d7w8w44f4s84s8d7f4s8d74';
   const GeolocationServices = {
     createPlace: createPlace(),
   };
@@ -55,16 +46,7 @@ describe('Create a place then return id and status code 200', () => {
 
 describe('Create a place failed then return status code 500', () => {
   // mock update place
-  const createPlace = () => async ({
-    location,
-    country,
-    state,
-    city,
-    zipcode,
-    streetAddress,
-    placeDBId,
-    price,
-  }) => {
+  const createPlace = () => async () => {
     throw boom.internal('cannot update the place');
   };
   const GeolocationServices = {

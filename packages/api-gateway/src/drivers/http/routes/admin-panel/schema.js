@@ -69,8 +69,8 @@ const userListSchema = {
               fullName: { type: 'string' },
               urlImage: { type: 'string' },
               dateOfRegister: { type: 'string' },
-              userType : { type: 'number' },
-	            validated : { type: 'boolean' },
+              userType: { type: 'number' },
+              validated: { type: 'boolean' },
               status: { type: 'string' },
             },
           },
@@ -113,8 +113,8 @@ const userDetailSchema = {
             fullName: { type: 'string' },
             urlImage: { type: 'string' },
             dateOfRegister: { type: 'string' },
-            userType : { type: 'number' },
-	          validated : { type: 'boolean' },
+            userType: { type: 'number' },
+            validated: { type: 'boolean' },
             status: { type: 'string' },
           },
         },
@@ -284,24 +284,6 @@ const editUserSchema = {
     },
   },
   response: {
-    // 200: {
-    //   type: 'object',
-    //   properties: {
-    //     result: {
-    //       type: 'object',
-    //       properties: {
-    //         user_id: { type: 'number' },
-    //         first_name: { type: 'string' },
-    //         second_name: { type: 'string' },
-    //         first_surname: { type: 'string' },
-    //         second_surname: { type: 'string' },
-    //         email: { type: 'string' },
-    //         phone: { type: 'string' },
-    //         url_image: { type: 'string' },
-    //       },
-    //     },
-    //   },
-    // },
     200: {
       type: 'object',
       properties: {
