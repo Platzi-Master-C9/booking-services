@@ -27,6 +27,8 @@ async function getUsers(req, reply) {
   const result = await this.adminPanelService.getUsers(
     req.query.status,
     req.query.fullName,
+    req.query.userType,
+    req.query.validated,
   );
 
   return reply.code(200)
@@ -67,7 +69,7 @@ async function getAdmins(req, reply) {
   const result = await this.adminPanelService.getAdmins(
     req.query.profile,
     req.query.full_name,
-    );
+  );
   return reply.code(200)
     .header('Content-Type', 'application/json; chartset:utf-8')
     .send({ result });
@@ -108,12 +110,11 @@ async function editUserInfo(req, reply) {
 }
 
 async function listBookings(req, reply) {
-
   const result = await this.adminPanelService.listBookings(
     req.query.dateOfBook,
     req.query.status,
     req.query.placeName,
-    req.query.userName
+    req.query.userName,
   );
 
   return reply.code(200)

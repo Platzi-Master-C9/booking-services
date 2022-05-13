@@ -1,10 +1,13 @@
 // External dependencies
-const Fastify = require('fastify');
 const Autoload = require('fastify-autoload');
-const Swagger = require('fastify-swagger');
+const Fastify = require('fastify');
+const FastifyAuth0 = require('fastify-auth0-verify');
 const path = require('path');
+const Swagger = require('fastify-swagger');
 
 // Internal dependencies
+const authDecorators = require('./decorators/auth');
+const configAuth = require('../../../config/auth0');
 const swaggerOptions = require('./utils/swagger');
 
 // Setup
@@ -21,12 +24,21 @@ if (!isTestEnv) {
   fastify.register(Swagger, swaggerOptions);
 }
 
+fastify.register(FastifyAuth0, {
+  domain: configAuth.domain,
+  audience: configAuth.audience,
+});
+
+// Decorators for authorization
+fastify.decorate('hasPermissions', authDecorators.hasPermissions);
+fastify.decorate('hasRole', authDecorators.hasRole);
+
 fastify.register(Autoload, { dir: path.join(__dirname, 'routes') });
 fastify.register(Autoload, { dir: path.join(__dirname, 'plugins') });
 
 async function start() {
   try {
-    await fastify.listen(process.env.SERVER_PORT || 3000, '0.0.0.0');
+    await fastify.listen(process.env.SERVER_PORT || 3001, '0.0.0.0');
   } catch (error) {
     fastify.log.error(
       `[http-server]: Error with message ${error.message} has happened`,

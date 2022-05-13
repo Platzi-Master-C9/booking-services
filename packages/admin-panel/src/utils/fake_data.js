@@ -51,19 +51,19 @@ const Admins = [
     id: 3,
     fullName: faker.name.findName(),
     urlImage: faker.image.avatar(),
-    profile: 1,
+    profile: 3,
   },
   {
     id: 4,
     fullName: faker.name.findName(),
     urlImage: faker.image.avatar(),
-    profile: 2,
+    profile: 4,
   },
   {
     id: 5,
     fullName: faker.name.findName(),
     urlImage: faker.image.avatar(),
-    profile: 1,
+    profile: 3,
   },
   {
     id: 6,
