@@ -13,6 +13,11 @@ switch (process.env.NODE_ENV) {
     path = `/src/${filename}`;
     break;
   }
+  case supportedEnvs.TEST: {
+    environment = 'TEST_';
+    path = `${join(__dirname, '../../..')}/${filename}`;
+    break;
+  }
   default: {
     environment = 'DEV_';
     path = `${join(__dirname, '../../..')}/${filename}`;
