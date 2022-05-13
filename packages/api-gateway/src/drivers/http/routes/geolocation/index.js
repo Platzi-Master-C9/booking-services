@@ -48,6 +48,7 @@ async function geolocationRouter(fastify) {
       schema: deletePlaceSchema,
     },
     geolocationAdapters.deletePlace,
+  );
 
   await fastify.patch(
     '/place',
