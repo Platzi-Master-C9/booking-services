@@ -61,8 +61,29 @@ const validateUserSchema = Joi.object({
 });
 
 const updateUserSchema = Joi.object({
+  userId: id.required(),
   email,
   avatar,
+  firstName,
+  secondName,
+  firstSurname,
+  secondSurname,
+  birthDate,
+  nationality,
+  dniId,
+  dniFrontImg: dniImg,
+  dniBackImg: dniImg,
+  gender,
+  phoneNumber,
+  emergencyNumber: phoneNumber,
+  passport,
+  address: {
+    country: nationality,
+    city,
+    state,
+    address,
+    zip,
+  },
 });
 
 const getUserSchema = Joi.object({
