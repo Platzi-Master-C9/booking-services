@@ -14,7 +14,7 @@ const getAdminId = (adminId) => {
   const admin = othersSquad.getAdmin(adminId);
 
   // validate if the admin is valid
-  if (!admin) {
+  if (!admin || admin.profile !== 3 || admin.profile !== 4) {
     throw new Error('Admin does not exist');
   }
   return admin;
