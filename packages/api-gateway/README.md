@@ -9,6 +9,7 @@
 - [Testing](#testing)
 - [Utils](#utils)
   - [Add a new endpoint](#add-a-new-endpoint)
+  - [Protect an endpoint](#protect-an-endpoint)
 
 ## Features
 - Fastify
@@ -92,5 +93,24 @@ const schema = {
 fastify.get('/messages', {
   schema,
   handler: messagesServices.getMessages,
+});
+```
+### Protect an endpoint
+
+There are three ways to protect an endpoint:
+1) That the user is authenticated
+2) By user permissions
+3) By user roles.
+
+The protections are added to the hooks and, if necessary, the conditions to be met are passed as parameters.
+
+#### Protect the path only for authenticated users.
+Just add the hook `preValidation` in the path to be protected.
+
+```js
+fastify.get('/', {
+  handler: authAdapters.getPrivate,
+  schema: authEndpointsStatusSchema,
+  preValidation: fastify.authenticate,
 });
 ```
