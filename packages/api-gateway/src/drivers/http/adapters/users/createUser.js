@@ -1,5 +1,5 @@
 const errorHandler = require('./errorHandler');
-const getInfoUserForInfoLog = require('./getInfoUserForInfoLog');
+const { getInfoUserForInfoLog } = require('./getInfoUserForInfoLog');
 
 async function createUser(req, reply) {
   try {

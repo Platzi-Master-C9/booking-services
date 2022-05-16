@@ -5,4 +5,10 @@ function getInfoUserForInfoLog(data) {
   };
 }
 
-module.exports = getInfoUserForInfoLog;
+function getInfoUserForInfoDeleteLog(data) {
+  return {
+    userId: data.userId,
+  };
+}
+
+module.exports = { getInfoUserForInfoLog, getInfoUserForInfoDeleteLog };
