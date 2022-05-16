@@ -1,8 +1,8 @@
-function getInfoUser(data) {
+function getInfoUserForInfoLog(data) {
   return {
     firstName: data.firstName,
     firstSurname: data.firstSurname,
   };
 }
 
-module.exports = getInfoUser;
+module.exports = getInfoUserForInfoLog;

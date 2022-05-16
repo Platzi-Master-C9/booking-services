@@ -1,9 +1,9 @@
 const errorHandler = require('./errorHandler');
-const getInfoUser = require('./getInfoUser');
+const getInfoUserForInfoLog = require('./getInfoUserForInfoLog');
 
 async function createUser(req, reply) {
   try {
-    req.log.info('[http-server]: Creating user of: ', getInfoUser(req.body));
+    req.log.info('[http-server]: Creating user of: ', getInfoUserForInfoLog(req.body));
 
     const result = await this.userServices.createUser(req.body);
 
