@@ -1,6 +1,9 @@
 "use strict";
 const { DataTypes, Sequelize } = require("sequelize");
+
 const { ADDRESS_TABLE } = require("../models/address.models.js");
+const { USERS_TABLE } = require("../models/user.models.js");
+
 
 
 module.exports = {
@@ -36,7 +39,17 @@ module.exports = {
         field: 'created_at',
         default: Sequelize.NOW
       }
-    });    
+    });
+    await queryInterface.addColumn(USERS_TABLE, "address_id",{      
+      allowNull: false,
+      type: DataTypes.INTEGER,
+      references: {
+        model: ADDRESS_TABLE,
+        key: "id",
+      },
+      onUpdate: "CASCADE",
+      onDelete: "SET NULL",          
+  })    
   },
 
   async down(queryInterface) {

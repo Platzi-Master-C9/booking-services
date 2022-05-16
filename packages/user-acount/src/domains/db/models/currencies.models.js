@@ -1,5 +1,6 @@
 const {Model, DataTypes, Sequelize } = require('sequelize');
-const{ USERS_TABLE } = require('./user.model')
+
+const{ USERS_TABLE } = require("./user.models.js")
 
 const CURRENCIES_TABLE = 'currencies';
 

@@ -1,6 +1,9 @@
 "use strict";
 const { DataTypes, Sequelize } = require("sequelize");
+
 const { CITIES_TABLE } = require("../models/cities.models.js");
+const { ADDRESS_TABLE } = require("../models/address.models.js");
+
 
 module.exports = {
   async up(queryInterface) {
@@ -9,6 +12,7 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryLey: true,
+        unique: true,
         type: DataTypes.INTEGER
       },
       name:{
@@ -23,6 +27,16 @@ module.exports = {
         default: Sequelize.NOW
       }     
     });
+    await queryInterface.addColumn(ADDRESS_TABLE, "city_id",{      
+      allowNull: false,
+      type: DataTypes.INTEGER,
+      references: {
+        model: CITIES_TABLE,
+        key: "id",
+      },
+      onUpdate: "CASCADE",
+      onDelete: "SET NULL",          
+  }) 
   },
 
   async down(queryInterface) {

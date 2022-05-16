@@ -1,8 +1,8 @@
 const { Model, DataTypes, Sequelize } = require("sequelize");
 
-const { ADDRESS_TABLE } = require("./address.models");
-const { EMERGENCY_CONTACTS_TABLE } = require("./emergencyContacts.models");
-const { CURRENCIES_TABLE } = require("./currencies.models");
+const { ADDRESS_TABLE } = require("./address.models.js");
+const { EMERGENCY_CONTACTS_TABLE } = require("./emergencyContacts.models.js");
+const { CURRENCIES_TABLE } = require("./currencies.models.js");
 
 
 const USERS_TABLE = "users";

@@ -1,7 +1,7 @@
 const {Model, DataTypes, Sequelize} = require('sequelize')
 
-const { ADDRESS_TABLE} = require('./address.models');
-const { COUNTRIES_TABLE } = require('./countries.models');
+const { ADDRESS_TABLE} = require('./address.models.js');
+const { COUNTRIES_TABLE } = require('./countries.models.js');
 
 const CITIES_TABLE = 'cities';
 
@@ -10,6 +10,7 @@ const citiesSchema = {
     allowNull: false,
     autoIncrement: true,
     primaryLey: true,
+    unique: true,
     type: DataTypes.INTEGER
   },
   name:{

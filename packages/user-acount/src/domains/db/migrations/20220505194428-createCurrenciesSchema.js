@@ -1,5 +1,7 @@
 "use strict";
 const { DataTypes, Sequelize } = require("sequelize");
+
+const { USERS_TABLE } = require("../models/user.models.js");
 const { CURRENCIES_TABLE } = require("../models/currencies.models.js");
 
 module.exports = {
@@ -23,6 +25,16 @@ module.exports = {
         defaultValue: Sequelize.NOW
       }
     });
+    await queryInterface.addColumn(USERS_TABLE, "currency_id",{      
+      allowNull: false,
+      type: DataTypes.INTEGER,
+      references: {
+        model: CURRENCIES_TABLE,
+        key: "id",
+      },
+      onUpdate: "CASCADE",
+      onDelete: "SET NULL",          
+  })
   },
 
   async down(queryInterface) {

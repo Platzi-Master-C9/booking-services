@@ -1,8 +1,6 @@
 const {Model, DataTypes, Sequelize } = require('sequelize');
-const { COUNTRIES_TABLE } = require('./countries.models');
 
-const {USERS_TABLE } = require('./user.model')
-
+const {USERS_TABLE } = require('./user.models.js')
 const EMERGENCY_CONTACTS_TABLE = 'emergency_contacts'
 
 const emergencyContactsSchema = {

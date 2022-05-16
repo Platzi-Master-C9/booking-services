@@ -1,7 +1,7 @@
 const {Model, DataTypes, Sequelize} = require ('sequelize');
-const { CITIES_TABLE } = require('./cities.models');
 
-const { USERS_TABLE} = require ('./user.model');
+const { CITIES_TABLE } = require('./cities.models.js');
+const { USERS_TABLE} = require ('./user.models.js');
 
 const ADDRESS_TABLE = 'address';
 

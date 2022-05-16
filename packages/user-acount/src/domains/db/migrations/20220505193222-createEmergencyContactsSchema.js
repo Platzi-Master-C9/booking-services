@@ -2,7 +2,7 @@
 const { DataTypes, Sequelize } = require("sequelize");
 
 const { EMERGENCY_CONTACTS_TABLE } = require("./../models/emergencyContacts.models.js");
-const { USERS_TABLE } = require("./../models/user.model.js");
+const { USERS_TABLE } = require("./../models/user.models.js");
 
 module.exports = {
   async up(queryInterface) {
@@ -29,7 +29,7 @@ module.exports = {
         defaultValue: Sequelize.NOW
       }
     });
-      await queryInterface.createTable(USERS_TABLE, "emergency_contacts_id",{      
+      await queryInterface.addColumn(USERS_TABLE, "emergency_contacts_id",{      
         allowNull: false,
         type: DataTypes.INTEGER,
         references: {
