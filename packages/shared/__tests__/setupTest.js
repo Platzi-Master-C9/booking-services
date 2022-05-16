@@ -1,4 +1,14 @@
-jest.mock('@booking-services/shared', () => ({
+require('mongoose');
+
+jest.mock('../src/drivers/mongodb/connection-info', () => ({
+  showConnectionInfo: jest.fn().mockImplementation(),
+}));
+
+jest.mock('../src/drivers/mongodb/create-connection', () => ({
+  createConnection: jest.fn().mockImplementation(() => Promise.resolve()),
+}));
+
+jest.mock('../src/utils/logger', () => ({
   __esModule: true,
   Logger: {
     info: jest.fn(),
@@ -8,34 +18,7 @@ jest.mock('@booking-services/shared', () => ({
   },
 }));
 
-// TODO add packages which use mongoose
-const packagesUsingMongoose = [
-  '@booking-services/messages',
-];
-
-// TODO add packages name when we create a new one
-const packages = [
-  '@booking-services/user-account',
-  '@booking-services/places',
-  '@booking-services/math',
-  '@booking-services/shared',
-  '@booking-services/api-gateway',
-  '@booking-services/booking',
-  '@booking-services/search-engine',
-  '@booking-services/data-monitoring',
-  '@booking-services/geolocation',
-  '@booking-services/notification-system',
-  '@booking-services/admin-panel',
-  '@booking-services/messages',
-];
-
-// TODO add preffixes use to connect to mongoose
-const preffixes = [
-  'messages',
-];
-
-module.exports = {
-  packages,
-  packagesUsingMongoose,
-  preffixes,
-};
+jest.mock('mongoose', () => ({
+  createConnection: jest.fn().mockImplementation(() => Promise.resolve()),
+  Connection: jest.fn(),
+}));

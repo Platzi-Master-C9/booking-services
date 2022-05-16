@@ -1,6 +1,7 @@
 const supportedEnvs = {
   PRODUCTION: 'production',
-  DEVELOP: 'develop',
+  DEVELOPMENT: 'development',
+  TEST: 'test',
 };
 
 module.exports = {

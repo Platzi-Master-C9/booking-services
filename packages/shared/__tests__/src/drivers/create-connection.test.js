@@ -2,27 +2,31 @@
 const { faker } = require('@faker-js/faker');
 
 // Internal dependencies
-const {
-  preffixes,
-} = require('../../setupTest');
 const createMongoConnection = require('../../../src/drivers/mongodb/create-connection');
+const getMongoCredentials = require('../../../config/get-mongo-credentials');
+const showConnectionInfo = require('../../../src/drivers/mongodb/connection-info');
 
-const randomIndexValid = Math.floor(Math.random() * preffixes.length);
+const mockPrefix = faker.database.column();
+
+process.env.TEST_MONGO_URI = faker.internet.url();
+process.env.TEST_MONGO_USER = faker.internet.userName();
+process.env.TEST_MONGO_PASSWORD = faker.internet.password();
 
 describe('driver: createConnection', () => {
-  describe('given an invalid package name', () => {
+  describe('given an invalid peffix', () => {
     describe('when we get mongo credentials', () => {
       test('then should return error', () => {
-        expect(() => createMongoConnection(null).toThrow());
+        expect(() => createMongoConnection(mockPrefix).toThrow());
       });
     });
   });
 
-  describe('given a preffix', () => {
-    describe('when that preffix is env identifier', () => {
+  describe('given a prefix', () => {
+    describe('when that prefix is env identifier', () => {
       test('then should return connection object', () => {
-        const connection = createMongoConnection(preffixes[randomIndexValid]);
-        connection.close();
+        const connection = createMongoConnection('test').mockImplementation();
+        expect(getMongoCredentials).toHaveBeenCalled();
+        expect(showConnectionInfo).toHaveBeenCalledWith(expect.anything());
         expect(typeof connection).toBe('object');
       });
     });

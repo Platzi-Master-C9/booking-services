@@ -16,7 +16,7 @@ const getMongoCredentials = (prefix) => {
 
   for (let i = 1; i < credentialsEntries.length; i += 1) {
     if (credentialsEntries[i][1] === undefined) {
-      throw new Error(`You don't have ${credentialsEntries[i][0]} in your environment vars`);
+      throw new Error(`You don't have ${credentialsEntries[i][0]} in your environment vars prefix ${prefix}`);
     }
   }
 
