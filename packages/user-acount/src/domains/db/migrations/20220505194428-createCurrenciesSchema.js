@@ -38,7 +38,7 @@ module.exports = {
   },
 
   async down(queryInterface) {
-    await queryInterface.dropTable(CURRENCIES_TABLE);
     await queryInterface.removeColumn(USERS_TABLE, "currency_id"); 
+    await queryInterface.dropTable(CURRENCIES_TABLE);
   },
 };

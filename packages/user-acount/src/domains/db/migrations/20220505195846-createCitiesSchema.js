@@ -40,7 +40,7 @@ module.exports = {
   },
 
   async down(queryInterface) {
-    await queryInterface.dropTable(CITIES_TABLE);
-    await queryInterface.removeColumn(ADDRESS_TABLE, "city_id"); 
+    await queryInterface.removeColumn(ADDRESS_TABLE, "city_id");
+    await queryInterface.dropTable(CITIES_TABLE); 
   },
 };

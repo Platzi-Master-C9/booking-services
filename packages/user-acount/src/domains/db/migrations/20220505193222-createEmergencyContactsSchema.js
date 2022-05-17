@@ -42,7 +42,7 @@ module.exports = {
   },
 
   async down(queryInterface) {
-    await queryInterface.dropTable(EMERGENCY_CONTACTS_TABLE);
     await queryInterface.removeColumn(USERS_TABLE, "emergency_contacts_id"); 
+    await queryInterface.dropTable(EMERGENCY_CONTACTS_TABLE);
   },
 };
