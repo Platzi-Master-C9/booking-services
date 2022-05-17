@@ -33,5 +33,6 @@ module.exports = {
   },
   async down(queryInterface) {
     await queryInterface.dropTable(PLACES_TABLE);
+    await queryInterface.removeColumn(USER_FAVORITE_PLACES_TABLE, "place_id"); 
   },
 };

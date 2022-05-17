@@ -1,7 +1,7 @@
 "use strict";
 const { DataTypes, Sequelize } = require("sequelize");
 
-const { EMERGENCY_CONTACTS_TABLE } = require("./../models/emergencyContacts.models.js");
+const { EMERGENCY_CONTACTS_TABLE, emergencyContacts } = require("./../models/emergencyContacts.models.js");
 const { USERS_TABLE } = require("./../models/user.models.js");
 
 module.exports = {
@@ -43,5 +43,6 @@ module.exports = {
 
   async down(queryInterface) {
     await queryInterface.dropTable(EMERGENCY_CONTACTS_TABLE);
+    await queryInterface.removeColumn(USERS_TABLE, "emergency_contacts_id"); 
   },
 };

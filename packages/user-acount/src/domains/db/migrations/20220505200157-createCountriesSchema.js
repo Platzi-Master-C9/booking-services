@@ -40,5 +40,6 @@ module.exports = {
 
   async down(queryInterface) {
     await queryInterface.dropTable(COUNTRIES_TABLE);
+    await queryInterface.removeColumn(CITIES_TABLE, "country_id"); 
   },
 };
