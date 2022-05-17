@@ -1,5 +1,5 @@
 const errorHandler = require('./errorHandler');
-const getInfoUser = require('./getInfoUser');
+const { getInfoUserForInfoLog } = require('./getInfoUserForInfoLog');
 
 async function validateUser(req, reply) {
   try {
@@ -8,7 +8,7 @@ async function validateUser(req, reply) {
       ...req.body,
     };
 
-    req.log.info('[http-server]: Validate user of: ', getInfoUser(data));
+    req.log.info('[http-server]: Validate user of: ', getInfoUserForInfoLog(data));
 
     const result = await this.userServices.validateUser(data);
 

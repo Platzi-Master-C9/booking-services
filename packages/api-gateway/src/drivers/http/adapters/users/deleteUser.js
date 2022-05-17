@@ -1,11 +1,11 @@
 const errorHandler = require('./errorHandler');
-const { getInfoUserForInfoLog } = require('./getInfoUserForInfoLog');
+const { getInfoUserForInfoDeleteLog } = require('./getInfoUserForInfoLog');
 
-async function createUser(req, reply) {
+async function deleteUser(req, reply) {
   try {
-    req.log.info('[http-server]: Creating user of: ', getInfoUserForInfoLog(req.body));
+    req.log.info('[http-server]: Deleting user of: ', getInfoUserForInfoDeleteLog(req.params));
 
-    const result = await this.userServices.createUser(req.body);
+    const result = await this.userServices.deleteUser(req.params);
 
     if (result.isBoom) {
       return errorHandler(result, reply);
@@ -20,4 +20,4 @@ async function createUser(req, reply) {
   }
 }
 
-module.exports = createUser;
+module.exports = deleteUser;

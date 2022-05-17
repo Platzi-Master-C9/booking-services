@@ -9,10 +9,12 @@ const {
   createUserSchema,
   updateUserSchema,
   validateUserSchema,
+  getUserSchema
 } = require('./utils/validator/schema/user.schema');
 
 module.exports = {
   createUser: validatorHandler.bind(null, userService.createUser, createUserSchema),
   validateUser: validatorHandler.bind(null, userService.validateUser, validateUserSchema),
   updateUser: validatorHandler.bind(null, userService.updateUser, updateUserSchema),
+  deleteUser: validatorHandler.bind(null, userService.deleteUser, getUserSchema),
 };
