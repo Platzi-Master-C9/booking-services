@@ -105,16 +105,6 @@ module.exports = {
         defaultValue: Sequelize.NOW,      
       },    
     });
-    await queryInterface.addColumn(USER_FAVORITE_PLACES_TABLE, "user_id",{      
-      allowNull: false,
-      type: DataTypes.INTEGER,
-      references: {
-        model: USERS_TABLE,
-        key: "id",
-      },
-      onUpdate: "CASCADE",
-      onDelete: "SET NULL",          
-  })
   },
   async down(queryInterface) {
     await queryInterface.dropTable(USERS_TABLE);

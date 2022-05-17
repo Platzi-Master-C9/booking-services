@@ -1,6 +1,8 @@
 "use strict";
 const { DataTypes, Sequelize } = require("sequelize");
+
 const { USER_FAVORITE_PLACES_TABLE } = require("../models/userFavoritePlaces.models.js");
+const { USERS_TABLE } = require("./../models/user.models.js");
 
 module.exports = {
   async up(queryInterface) {
@@ -23,6 +25,16 @@ module.exports = {
         defaultValue: Sequelize.NOW
       }
     });
+    await queryInterface.addColumn(USER_FAVORITE_PLACES_TABLE, "user_id",{      
+      allowNull: false,
+      type: DataTypes.INTEGER,
+      references: {
+        model: USERS_TABLE,
+        key: "id",
+      },
+      onUpdate: "CASCADE",
+      onDelete: "SET NULL",          
+  })
   },
   async down(queryInterface) {
     await queryInterface.dropTable(USER_FAVORITE_PLACES_TABLE);
