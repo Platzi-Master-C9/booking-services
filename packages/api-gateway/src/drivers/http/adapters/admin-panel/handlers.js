@@ -1,3 +1,5 @@
+const errorHandler = require('./errorHandler');
+
 async function sayHello(req, reply) {
   const result = await this.adminPanelService.sayHello();
   return reply.code(200)
@@ -122,6 +124,26 @@ async function listBookings(req, reply) {
     .send({ result });
 }
 
+//const getInfoUser = require('./getInfoUser');
+
+async function createAdmin(req, reply) {
+  try {
+
+    const result = await this.adminPanelService.createAdmin(req.body);
+
+    if (result.isBoom) {
+      return errorHandler(result, reply);
+    }
+
+    return reply
+      .code(201)
+      .header('Content-Type', 'application/json; charset=utf-8')
+      .send({ result });
+  } catch (error) {
+    return errorHandler(error, reply);
+  }
+}
+
 module.exports = {
   sayHello,
   changeUserStatus,
@@ -132,4 +154,5 @@ module.exports = {
   listPlaces,
   editUserInfo,
   listBookings,
+  createAdmin,
 };

@@ -353,6 +353,26 @@ const bookingListSchema = {
   },
 };
 
+const createAdminSchema = {
+  description: 'Create a new admin or superAdmin',
+  tags: ['Administration panel'],
+  body: {
+    type: 'object',
+    properties: {
+      first_name: { type: 'string' },
+      second_name: { type: 'string' },
+      first_surname: { type: 'string' },
+      second_surname: { type: 'string' },
+      profile: { type: 'string' },
+    },
+    required: [
+      'first_name',
+      'first_surname',
+      'profile',
+    ],
+  },
+};
+
 module.exports = {
   defaultSchema,
   changeUSerStatusSchema,
@@ -363,4 +383,5 @@ module.exports = {
   placesListSchema,
   editUserSchema,
   bookingListSchema,
+  createAdminSchema,
 };

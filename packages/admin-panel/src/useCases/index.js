@@ -7,6 +7,7 @@ const adminList = require('./adminList');
 const places = require('./places');
 const userEdit = require('./userEdit');
 const bookings = require('./bookings');
+const adminCreate = require('./adminCreate');
 
 module.exports = {
   firstCase,
@@ -18,4 +19,5 @@ module.exports = {
   places,
   userEdit,
   bookings,
+  adminCreate,
 };
