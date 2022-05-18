@@ -1,5 +1,5 @@
-const preffix = 'messages';
+const prefix = 'messages';
 
 module.exports = {
-  preffix,
+  prefix,
 };

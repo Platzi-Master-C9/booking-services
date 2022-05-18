@@ -1,8 +1,7 @@
 // External dependencies
-const { createMongoConnection } = require('@booking-services/shared');
+const { MongoDriver } = require('@booking-services/shared');
+
 // Internal dependencies
-const { preffix } = require('../../utils/constants');
+const { prefix } = require('../../utils/constants');
 
-const connection = createMongoConnection(preffix);
-
-module.exports = connection;
+module.exports = MongoDriver.createConnection(prefix);
