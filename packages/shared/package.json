@@ -20,18 +20,21 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "precommit": "yarn lint && yarn test"
   },
   "bugs": {
     "url": "https://github.com/Platzi-Master-C9/booking-services/issues"
   },
   "devDependencies": {
+    "@faker-js/faker": "^6.3.1",
     "eslint": "^8.2.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-import": "^2.26.0",
     "jest": "^27.5.1"
   },
   "dependencies": {
+    "mongoose": "^6.3.2",
     "winston": "^3.7.2"
   }
 }

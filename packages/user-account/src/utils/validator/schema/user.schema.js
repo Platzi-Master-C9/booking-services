@@ -87,7 +87,7 @@ const updateUserSchema = Joi.object({
 });
 
 const getUserSchema = Joi.object({
-  id: id.required(),
+  userId: id.required(),
 });
 
 module.exports = {
