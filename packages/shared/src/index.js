@@ -1,10 +1,8 @@
 // Internal dependencies
 const Logger = require('./utils/logger');
-const createMongoConnection = require('./drivers/mongodb/create-connection');
-const showConnectionInfo = require('./drivers/mongodb/connection-info');
+const MongoDriver = require('./drivers/mongodb');
 
 module.exports = {
   Logger,
-  createMongoConnection,
-  showConnectionInfo,
+  MongoDriver,
 };

@@ -1,13 +1,3 @@
-require('mongoose');
-
-jest.mock('../src/drivers/mongodb/connection-info', () => ({
-  showConnectionInfo: jest.fn().mockImplementation(),
-}));
-
-jest.mock('../src/drivers/mongodb/create-connection', () => ({
-  createConnection: jest.fn().mockImplementation(() => Promise.resolve()),
-}));
-
 jest.mock('../src/utils/logger', () => ({
   __esModule: true,
   Logger: {

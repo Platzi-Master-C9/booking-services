@@ -1,38 +1,38 @@
 // External dependencies
-const { faker } = require('@faker-js/faker');
+const mongoose = require('mongoose');
 
 // Internal dependencies
 const createMongoConnection = require('../../../src/drivers/mongodb/create-connection');
-const getMongoCredentials = require('../../../config/get-mongo-credentials');
-const showConnectionInfo = require('../../../src/drivers/mongodb/connection-info');
+const { setupMongoEvents } = require('../../../src/drivers/mongodb/connection-info');
 
-const mockPrefix = faker.database.column();
+// Mocks
+jest.mock('mongoose', () => ({
+  createConnection: jest.fn(),
+}));
+jest.mock('../../../src/drivers/mongodb/get-mongo-credentials');
+jest.mock('../../../src/drivers/mongodb/connection-info');
 
-process.env.TEST_MONGO_URI = faker.internet.url();
-process.env.TEST_MONGO_USER = faker.internet.userName();
-process.env.TEST_MONGO_PASSWORD = faker.internet.password();
+describe('createMongoConnection', () => {
+  describe('given "PACKAGE-NAME" as prefix', () => {
+    const prefix = 'PACKAGE-NAME';
 
-describe('driver: createConnection', () => {
-  describe('given an invalid peffix', () => {
-    describe('when we get mongo credentials', () => {
-      test('then should return error', () => {
-        expect(() => createMongoConnection(mockPrefix).toThrow());
+    describe('when connection is successful', () => {
+      test('then should return mongo instance', async () => {
+        mongoose.createConnection.mockReturnValue('mongoose instance');
+
+        expect(createMongoConnection(prefix)).toBe('mongoose instance');
+        expect(mongoose.createConnection).toHaveBeenCalledTimes(1);
+        expect(setupMongoEvents).toHaveBeenCalledWith('mongoose instance');
       });
     });
   });
 
-  describe('given a prefix', () => {
-    describe('when that prefix is env identifier', () => {
-      test('then should return connection object', () => {
-        const connection = createMongoConnection('test').mockImplementation();
-        expect(getMongoCredentials).toHaveBeenCalled();
-        expect(showConnectionInfo).toHaveBeenCalledWith(expect.anything());
-        expect(typeof connection).toBe('object');
-      });
-    });
-    describe('when that string is not a env identifier', () => {
-      test('then should return error', () => {
-        expect(() => createMongoConnection(faker.random.alphaNumeric(10)));
+  describe('given a non-string value as prefix', () => {
+    const prefix = true;
+
+    describe('when create connection', () => {
+      test('then should return an error', async () => {
+        expect(() => createMongoConnection(prefix)).toThrow('prefix should be a string');
       });
     });
   });
