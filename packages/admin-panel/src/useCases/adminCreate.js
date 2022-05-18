@@ -1,5 +1,5 @@
-function createAdmin() {
-  return 'The user admin was created';
+function createAdmin(data) {
+  return data;
 }
 
 module.exports = {

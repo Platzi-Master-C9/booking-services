@@ -1,12 +1,12 @@
 const { faker } = require('@faker-js/faker');
-const { adminCreate } = require('../src/useCases');
+const { createAdmin } = require('../src/index');
 
 const adminFake = {
-  first_name: faker.name.firstName(),
-  second_name: faker.name.middleName(),
-  first_surname: faker.name.lastName(),
-  second_surname: faker.name.lastName(),
-  profile: faker.datatype.number({ min: 1, max: 2 }),
+  firstName: faker.name.firstName(),
+  secondName: faker.name.middleName(),
+  firstSurname: faker.name.lastName(),
+  secondSurname: faker.name.lastName(),
+  profile: faker.datatype.number({ min: 3, max: 4 }).toString(),
 };
 
 function validatorEmptyStringHandler(func, value, Fake) {
@@ -25,30 +25,30 @@ function validatorRequireHandler(func, value, Fake) {
 }
 
 describe('Given an admin create request', () => {
-  test('When calling adminCreate.createAdmin() with information', () => {
-    expect(adminCreate(adminFake)).toBe(adminFake);
+  test('When calling createAdmin() with information', () => {
+    expect(createAdmin(adminFake)).toBe(adminFake);
   });
 
   test('data cannot be empty', () => {
     const string = [
-      'first_name',
-      'second_name',
-      'first_surname',
-      'second_surname',
+      'firstName',
+      'secondName',
+      'firstSurname',
+      'secondSurname',
       'profile',
     ];
     string.forEach((element) => {
-      validatorEmptyStringHandler(adminCreate, element, adminFake);
+      validatorEmptyStringHandler(createAdmin, element, adminFake);
     });
   });
   test('data required', () => {
     const string = [
-      'first_name',
-      'first_surname',
+      'firstName',
+      'firstSurname',
       'profile',
     ];
     string.forEach((element) => {
-      validatorRequireHandler(adminCreate, element, adminFake);
+      validatorRequireHandler(createAdmin, element, adminFake);
     });
   });
 });

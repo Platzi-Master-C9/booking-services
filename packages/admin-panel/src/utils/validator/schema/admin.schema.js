@@ -4,7 +4,7 @@ const firstName = Joi.string().max(100);
 const secondName = Joi.string().max(100);
 const firstSurname = Joi.string().max(100);
 const secondSurname = Joi.string().max(100);
-const profile = Joi.string().regex(/^[1-2]{1}$/);
+const profile = Joi.string().regex(/^[3-4]{1}$/);
 
 const createAdminSchema = Joi.object({
   firstName: firstName.required(),
