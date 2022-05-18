@@ -8,7 +8,7 @@ const path = require('./environment');
 dotenv.config({ path });
 
 module.exports = {
-  host: process.env['WEB_SOCKET_REDIS_HOST'],
-  port: process.env['WEB_SOCKET_REDIS_PORT'],
-  password: process.env['WEB_SOCKET_REDIS_PASSWORD'],
+  host: process.env.WB_REDIS_HOST,
+  port: process.env.WB_REDIS_PORT,
+  password: process.env.WB_REDIS_PASSWORD,
 };
