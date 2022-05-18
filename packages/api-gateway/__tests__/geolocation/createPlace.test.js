@@ -1,5 +1,5 @@
 const Fastify = require('fastify');
-const Autoload = require('fastify-autoload');
+const Autoload = require('@fastify/autoload');
 const pluginLoader = require('fastify-plugin');
 const boom = require('@hapi/boom');
 const { faker } = require('@faker-js/faker');
