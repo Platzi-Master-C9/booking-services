@@ -12,8 +12,13 @@ function updateUser(data) {
   return data;
 }
 
+function deleteUser(data) {
+  return data;
+}
+
 module.exports = {
   createUser,
   validateUser,
   updateUser,
+  deleteUser,
 };
