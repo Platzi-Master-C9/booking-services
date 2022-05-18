@@ -29,7 +29,9 @@
   },
   "dependencies": {
     "@booking-services/shared": "^0.0.1",
-    "@faker-js/faker": "^6.1.2"
+    "@faker-js/faker": "^6.1.2",
+    "@hapi/boom": "^10.0.0",
+    "joi": "^17.6.0"
   },
   "devDependencies": {
     "eslint": "^8.11.0",

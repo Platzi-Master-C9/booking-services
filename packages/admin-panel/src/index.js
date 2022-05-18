@@ -4,6 +4,11 @@ const adminPanelService = require('./useCases');
 // aquí importamos el servicio que queremos usar
 const listPlacesMock = require('../mocks/placesList.mock');
 const bookingsMock = require('../mocks/bookingsList.mock');
+const validatorHandler = require('./utils/validator/validatorHandler');
+
+const {
+  createAdminSchema,
+} = require('./utils/validator/schema/admin.schema');
 
 module.exports = {
   sayHello: adminPanelService.firstCase.sayHello,
@@ -15,4 +20,9 @@ module.exports = {
   listPlaces: adminPanelService.places.listPlaces(listPlacesMock),
   editUserInfo: adminPanelService.userEdit.editUserInfo,
   listBookings: adminPanelService.bookings.listBookings(bookingsMock),
+  createAdmin: validatorHandler.bind(
+    null,
+    adminPanelService.adminCreate.createAdmin,
+    createAdminSchema,
+  ),
 };
