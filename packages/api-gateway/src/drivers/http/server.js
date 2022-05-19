@@ -9,6 +9,7 @@ const Swagger = require('fastify-swagger');
 const authDecorators = require('./decorators/auth');
 const configAuth = require('../../../config/auth0');
 const swaggerOptions = require('./utils/swagger');
+const configCORS = require('../../../config/cors');
 
 // Setup
 const isTestEnv = process.env.NODE_ENV === 'test';
@@ -16,6 +17,12 @@ const isTestEnv = process.env.NODE_ENV === 'test';
 const fastify = Fastify({
   // Disable logs in test environment
   logger: !isTestEnv,
+});
+
+// Enable cors
+fastify.register(require('@fastify/cors'), {
+  origin: configCORS.domain,
+  credentials: true,
 });
 
 // Avoid loading swagger when running tests
