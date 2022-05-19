@@ -1,45 +1,44 @@
-const {Model, DataTypes, Sequelize} = require('sequelize');
-
-const {CITIES_TABLE} = require('./cities.models.js');
+const { Model, DataTypes, Sequelize } = require('sequelize');
 
 const COUNTRIES_TABLE = 'countries';
 
 const countriesSchema = {
-  id:{
+  id: {
     allowNull: false,
     autoIncrement: true,
     primaryKey: true,
     unique: true,
-    type: DataTypes.INTEGER
+    type: DataTypes.INTEGER,
   },
   name: {
     allowNull: false,
     type: DataTypes.STRING,
-    unique: true  
+    unique: true,
   },
-  createdAt:{
-    allowNull:false,
+  createdAt: {
+    allowNull: false,
     type: DataTypes.DATE,
     field: 'created_at',
-    default: Sequelize.NOW
-  }
-}
+    default: Sequelize.NOW,
+  },
+};
 
-class countries extends Model{
-  static associate(models){
+class countries extends Model {
+  static associate(models) {
     this.hasMany(models.cities, {
       as: 'cities',
-      foreignKey: 'countryId'
-    })
+      foreignKey: 'countryId',
+    });
   }
-  static config(sequelize){
-    return{
+
+  static config(sequelize) {
+    return {
       sequelize,
       tableName: COUNTRIES_TABLE,
       modelName: 'countries',
-      timestamps: false
-    }
+      timestamps: false,
+    };
   }
 }
 
-module.exports = {COUNTRIES_TABLE, countriesSchema, countries}
+module.exports = { COUNTRIES_TABLE, countriesSchema, countries };

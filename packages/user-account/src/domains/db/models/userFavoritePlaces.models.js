@@ -1,66 +1,66 @@
-const {Model, DataTypes, Sequelize} = require('sequelize');
+const { Model, DataTypes, Sequelize } = require('sequelize');
 
-const { USERS_TABLE, } = require('./user.models.js');
-const { PLACES_TABLE } = require('./places.models.js')
+const { USERS_TABLE } = require('./user.models');
+const { PLACES_TABLE } = require('./places.models');
 
 const USER_FAVORITE_PLACES_TABLE = 'user_favorite_places';
 
 const userFavoritePlacesSchema = {
-  id:{
+  id: {
     allowNull: false,
     autoIncrement: true,
     primaryKey: true,
-    type: DataTypes.INTEGER
+    type: DataTypes.INTEGER,
   },
   name: {
     allowNull: false,
     unique: true,
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
   },
   userId: {
     field: 'user_id',
     allowNull: false,
     type: DataTypes.INTEGER,
-    references:{
+    references: {
       model: USERS_TABLE,
-      key: 'id'
+      key: 'id',
     },
     onUpdate: 'CASCADE',
-    OnDelete: 'SET NULL'
+    OnDelete: 'SET NULL',
   },
-  placeId:{
-    field: "place_id",
+  placeId: {
+    field: 'place_id',
     allowNull: false,
     type: DataTypes.INTEGER,
     references: {
       model: PLACES_TABLE,
-      key: "id",
+      key: 'id',
     },
-    onUpdate: "CASCADE",
-    onDelete: "SET NULL",
+    onUpdate: 'CASCADE',
+    onDelete: 'SET NULL',
   },
-  createdAt:{
+  createdAt: {
     allowNull: false,
     type: DataTypes.DATE,
     field: 'created_at',
-    defaultValue: Sequelize.NOW
-  }
-}
+    defaultValue: Sequelize.NOW,
+  },
+};
 
 class userFavoritePlaces extends Model {
   static associate(models) {
-    this.belongsTo(models.users, {as: 'users'});
-    this.belongsTo(models.places, {as: 'places'});
+    this.belongsTo(models.users, { as: 'users' });
+    this.belongsTo(models.places, { as: 'places' });
   }
-  
+
   static config(sequelize) {
     return {
       sequelize,
-      tableName: USER_FAVORITE_PLACES,
+      tableName: USER_FAVORITE_PLACES_TABLE,
       modelName: 'user_favorite_places',
-      timestamps: false
-    }
+      timestamps: false,
+    };
   }
 }
 
-module.exports = {USER_FAVORITE_PLACES_TABLE, userFavoritePlacesSchema, userFavoritePlaces}
+module.exports = { USER_FAVORITE_PLACES_TABLE, userFavoritePlacesSchema, userFavoritePlaces };

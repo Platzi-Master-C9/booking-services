@@ -1,58 +1,58 @@
-const {Model, DataTypes, Sequelize} = require('sequelize')
+const { Model, DataTypes, Sequelize } = require('sequelize');
 
-const { ADDRESS_TABLE} = require('./address.models.js');
-const { COUNTRIES_TABLE } = require('./countries.models.js');
+const { COUNTRIES_TABLE } = require('./countries.models');
 
 const CITIES_TABLE = 'cities';
 
 const citiesSchema = {
-  id:{
+  id: {
     allowNull: false,
     autoIncrement: true,
     primaryLey: true,
     unique: true,
-    type: DataTypes.INTEGER
+    type: DataTypes.INTEGER,
   },
-  name:{
-    allowNull:false,
+  name: {
+    allowNull: false,
     type: DataTypes.STRING,
-    unique: true
+    unique: true,
   },
-  countryId:{
+  countryId: {
     field: 'country_id',
     allowNull: false,
     type: DataTypes.INTEGER,
-    references:{
+    references: {
       model: COUNTRIES_TABLE,
-      key: 'id'
+      key: 'id',
     },
     onUpdate: 'CASCADE',
-    onDelete: 'SET NULL'
+    onDelete: 'SET NULL',
   },
-  createdAt:{
+  createdAt: {
     allowNull: false,
     type: DataTypes.DATE,
     field: 'created_at',
-    default: Sequelize.NOW
-  }
-}
+    default: Sequelize.NOW,
+  },
+};
 
-class cities extends Model{
-  static associate(models){
-    this.belongsTo(models.countries, {as: 'countries'})
-    this.hasMany(models.address,{
+class cities extends Model {
+  static associate(models) {
+    this.belongsTo(models.countries, { as: 'countries' });
+    this.hasMany(models.address, {
       as: 'address',
-      foreignKey: 'cityId'
-    })
+      foreignKey: 'cityId',
+    });
   }
-  static config(sequelize){
-    return{
+
+  static config(sequelize) {
+    return {
       sequelize,
       tableName: CITIES_TABLE,
       modelName: 'cities',
-      timestamps: false
-    }
+      timestamps: false,
+    };
   }
 }
 
-module.exports = {CITIES_TABLE, citiesSchema, cities}
+module.exports = { CITIES_TABLE, citiesSchema, cities };

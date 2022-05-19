@@ -1,6 +1,4 @@
-const {Model, DataTypes, Sequelize } = require('sequelize');
-
-const{ USERS_TABLE } = require("./user.models.js")
+const { Model, DataTypes, Sequelize } = require('sequelize');
 
 const CURRENCIES_TABLE = 'currencies';
 
@@ -9,36 +7,37 @@ const currenciesSchema = {
     allowNull: false,
     autoIncrement: true,
     primaryKey: true,
-    type: DataTypes.INTEGER
+    type: DataTypes.INTEGER,
   },
-  name:{
+  name: {
     allowNull: false,
     unique: true,
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
   },
-  createdAt:{
+  createdAt: {
     allowNull: false,
     type: DataTypes.DATE,
     field: 'created_at',
-    defaultValue: Sequelize.NOW
-  }
-}
+    defaultValue: Sequelize.NOW,
+  },
+};
 
 class currencies extends Model {
-  static associate(models){
-    this.hasMany(models.users,{
+  static associate(models) {
+    this.hasMany(models.users, {
       as: 'users',
-      foreignKey: 'currencyId'
+      foreignKey: 'currencyId',
     });
   }
-  static config(sequelize){
-    return{
+
+  static config(sequelize) {
+    return {
       sequelize,
       tableName: CURRENCIES_TABLE,
       modelName: 'currencies',
-      timestamps: false
-    }
+      timestamps: false,
+    };
   }
 }
 
-module.exports = {CURRENCIES_TABLE, currenciesSchema, currencies }
+module.exports = { CURRENCIES_TABLE, currenciesSchema, currencies };

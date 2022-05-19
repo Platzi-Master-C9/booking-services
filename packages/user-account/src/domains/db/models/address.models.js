@@ -1,70 +1,70 @@
-const {Model, DataTypes, Sequelize} = require ('sequelize');
+const { Model, DataTypes, Sequelize } = require('sequelize');
 
-const { CITIES_TABLE } = require('./cities.models.js');
-const { USERS_TABLE} = require ('./user.models.js');
+const { CITIES_TABLE } = require('./cities.models');
 
 const ADDRESS_TABLE = 'address';
 
 const addressSchema = {
-  id:{
+  id: {
     allowNull: false,
     autoIncrement: true,
     primaryKey: true,
-    type: DataTypes.INTEGER
+    type: DataTypes.INTEGER,
   },
-  address1:{
+  address1: {
     allowNull: false,
     type: DataTypes.STRING,
-    field: 'address_1'
+    field: 'address_1',
   },
-  address2:{
+  address2: {
     allowNull: false,
     type: DataTypes.STRING,
-    field: 'address_2'
+    field: 'address_2',
   },
-  state:{
+  state: {
     allowNull: false,
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
   },
-  zip:{
+  zip: {
     allowNull: false,
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
   },
-  cityId:{
+  cityId: {
     field: 'city_id',
     allowNull: false,
     type: DataTypes.INTEGER,
-    references:{
+    references: {
       model: CITIES_TABLE,
-      key: 'id'
+      key: 'id',
     },
     onUpdate: 'CASCADE',
-    onDelete: 'SET NULL'
+    onDelete: 'SET NULL',
   },
-  createdAt:{
+  createdAt: {
     allowNull: false,
     type: DataTypes.DATE,
     field: 'created_at',
-    default: Sequelize.NOW
-  }
-}
+    default: Sequelize.NOW,
+  },
+};
 
 class address extends Model {
-  static associate(models){
-    this.belongsTo(models.cities, {as: 'cities'});
+  static associate(models) {
+    this.belongsTo(models.cities, { as: 'cities' });
     this.hasMany(models.users, {
       as: 'users',
-      foreignKey: 'addressId'
-    })
+      foreignKey: 'addressId',
+    });
   }
+
   static config(sequelize) {
-    return{
+    return {
       sequelize,
       tableName: ADDRESS_TABLE,
       modelName: 'address',
-      timestamps: false
-    }
+      timestamps: false,
+    };
   }
 }
 
-module.exports = {ADDRESS_TABLE, addressSchema, address}
+module.exports = { ADDRESS_TABLE, addressSchema, address };

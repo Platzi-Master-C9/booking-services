@@ -1,47 +1,47 @@
-const {Model, DataTypes, Sequelize } = require('sequelize');
+const { Model, DataTypes, Sequelize } = require('sequelize');
 
-const {USERS_TABLE } = require('./user.models.js')
-const EMERGENCY_CONTACTS_TABLE = 'emergency_contacts'
+const EMERGENCY_CONTACTS_TABLE = 'emergency_contacts';
 
 const emergencyContactsSchema = {
-  id:{
+  id: {
     allowNull: false,
     autoIncrement: true,
     primaryKey: true,
-    type: DataTypes.INTEGER
+    type: DataTypes.INTEGER,
   },
-  name:{
+  name: {
     allowNull: false,
     type: DataTypes.STRING,
   },
-  telephone_number:{
+  telephone_number: {
     allowNull: false,
     type: DataTypes.STRING,
-    unique: true
+    unique: true,
   },
   createdAt: {
     allowNull: false,
     type: DataTypes.DATE,
     field: 'created_at',
-    defaultValue: Sequelize.NOW
-  }
-}
+    defaultValue: Sequelize.NOW,
+  },
+};
 
 class emergencyContacts extends Model {
-  static associate(models){
+  static associate(models) {
     this.hasOne(models.users, {
-      as:'users',
-      foreignKey: 'emergencyContactId'
-    })
+      as: 'users',
+      foreignKey: 'emergencyContactId',
+    });
   }
+
   static config(sequelize) {
-    return{
+    return {
       sequelize,
       tableName: EMERGENCY_CONTACTS_TABLE,
       modelName: 'emergency_contacts',
-      timestamps: false
-    }
+      timestamps: false,
+    };
   }
 }
 
-module.exports = { EMERGENCY_CONTACTS_TABLE, emergencyContactsSchema, emergencyContacts}
+module.exports = { EMERGENCY_CONTACTS_TABLE, emergencyContactsSchema, emergencyContacts };

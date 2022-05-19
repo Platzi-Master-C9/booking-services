@@ -1,8 +1,7 @@
-"use strict";
-const { DataTypes, Sequelize } = require("sequelize");
+const { DataTypes, Sequelize } = require('sequelize');
 
-const { USERS_TABLE } = require("../models/user.models.js");
-const { CURRENCIES_TABLE } = require("../models/currencies.models.js");
+const { USERS_TABLE } = require('../models/user.models');
+const { CURRENCIES_TABLE } = require('../models/currencies.models');
 
 module.exports = {
   async up(queryInterface) {
@@ -11,34 +10,34 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER,
       },
-      name:{
+      name: {
         allowNull: false,
         unique: true,
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
       },
-      createdAt:{
+      createdAt: {
         allowNull: false,
         type: DataTypes.DATE,
         field: 'created_at',
-        defaultValue: Sequelize.NOW
-      }
+        defaultValue: Sequelize.NOW,
+      },
     });
-    await queryInterface.addColumn(USERS_TABLE, "currency_id",{      
+    await queryInterface.addColumn(USERS_TABLE, 'currency_id', {
       allowNull: false,
       type: DataTypes.INTEGER,
       references: {
         model: CURRENCIES_TABLE,
-        key: "id",
+        key: 'id',
       },
-      onUpdate: "CASCADE",
-      onDelete: "SET NULL",          
-  })
+      onUpdate: 'CASCADE',
+      onDelete: 'SET NULL',
+    });
   },
 
   async down(queryInterface) {
-    await queryInterface.removeColumn(USERS_TABLE, "currency_id"); 
+    await queryInterface.removeColumn(USERS_TABLE, 'currency_id');
     await queryInterface.dropTable(CURRENCIES_TABLE);
   },
 };
