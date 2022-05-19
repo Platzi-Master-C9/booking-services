@@ -39,8 +39,13 @@ jest.mock('winston', () => ({
 }));
 
 jest.mock('@booking-services/places', () => ({
-  postPlace: jest.fn(),
+  postPlace: jest.fn(() => ({ dataValues: { id: 1 } })),
+  postImage: jest.fn(),
+  postPerk: jest.fn(),
+  postSpace: jest.fn(),
+  postRule: jest.fn(),
   getPlaces: jest.fn(() => []),
+  uploadFiles: jest.fn(() => []),
   deletePlace: jest.fn((id) => {
     if (typeof id !== 'number' || id >= 1000) {
       throw new Error();

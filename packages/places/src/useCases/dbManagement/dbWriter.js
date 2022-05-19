@@ -3,7 +3,7 @@ const { Logger } = require('@booking-services/shared');
 const dbWritter = (Model) => async (newRowInfo) => {
     let data;
     try {
-        data = await Model.create(newRowInfo);
+        data = await Model.bulkCreate(newRowInfo);
         Logger.debug(`[dbWritter]: new row saved correctly at ${Model.tableName}`);
     } catch (error) {
         Logger.error(`[dbWritter]: error when saving a new row at ${Model.tableName}:`, error);
