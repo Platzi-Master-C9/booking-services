@@ -3,6 +3,11 @@ const supportedEnvs = {
   DEVELOPMENT: 'development',
 };
 
+const events = {
+  NEW_MESSAGE: 'new_message',
+};
+
 module.exports = {
+  events,
   supportedEnvs,
 };

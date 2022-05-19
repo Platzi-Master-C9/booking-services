@@ -1,5 +1,6 @@
 // Internal dependencies
+const Socketio = require('./drivers/http');
 
-const socketioConfig = require('./drivers/http/server');
-
-module.exports = socketioConfig;
+module.exports = {
+  Socketio,
+};
