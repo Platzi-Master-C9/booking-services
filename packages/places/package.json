@@ -30,7 +30,9 @@
   },
   "dependencies": {
     "@booking-services/shared": "^0.0.1",
+    "cloudinary": "^1.30.0",
     "mysql2": "^2.3.3",
+    "pump": "^3.0.0",
     "sequelize": "^6.17.0",
     "winston": "^3.6.0"
   }

@@ -5,6 +5,11 @@ const newPlaceInfo = {
   price_per_night_usd: 15,
   host_id: 1,
   type: 'casa',
+  description: 'description',
+  images: [],
+  perks: [],
+  spaces: [],
+  rules: [],
 };
 
 describe('Given a client that wants to save a new place', () => {
@@ -14,9 +19,8 @@ describe('Given a client that wants to save a new place', () => {
       const response = await fastify.inject({
         method: 'POST',
         url: '/places',
-        body: newPlaceInfo,
+        body: newPlaceInfo,       
       });
-
       expect(response.statusCode).toBe(201);
     });
   });

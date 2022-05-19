@@ -33,6 +33,9 @@ const Place = database.define('Place', {
         type: STRING(20),
         allowNull: false,
     },
+    description: {
+        type: STRING,
+    },
     is_active,
 
 }, { tableName: 'places' });

@@ -4,6 +4,7 @@ const Fastify = require('fastify');
 const FastifyAuth0 = require('fastify-auth0-verify');
 const path = require('path');
 const Swagger = require('fastify-swagger');
+const multipart = require('@fastify/multipart');
 
 // Internal dependencies
 const authDecorators = require('./decorators/auth');
@@ -28,6 +29,7 @@ fastify.register(FastifyAuth0, {
   domain: configAuth.domain,
   audience: configAuth.audience,
 });
+fastify.register(multipart)
 
 // Decorators for authorization
 fastify.decorate('hasPermissions', authDecorators.hasPermissions);
