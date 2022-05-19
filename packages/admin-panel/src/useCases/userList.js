@@ -1,14 +1,14 @@
 const { userList } = require('../../mocks/userList.mock');
 
-const getUsers = (status, fullName, userType, validated) => {
+const getUsers = (status, fullName, profile, validated) => {
   let fakeUserList = userList;
-  // since this endpoint is just for listing regular users, we have to filter by userType
-  // in this case, userType = 3 and userType = 4 are admins and super Admins
+  // since this endpoint is just for listing regular users, we have to filter by profile
+  // in this case, profile = 3 and profile = 4 are admins and super Admins
   // if the user sent a status or a fullName, we have to make a filter
-  fakeUserList = fakeUserList.filter((user) => user.userType !== 3 && user.userType !== 4);
+  fakeUserList = fakeUserList.filter((user) => user.profile !== 3 && user.profile !== 4);
 
-  if (userType) {
-    fakeUserList = fakeUserList.filter((user) => user.userType === userType);
+  if (profile) {
+    fakeUserList = fakeUserList.filter((user) => user.profile === profile);
   }
 
   if (validated) {

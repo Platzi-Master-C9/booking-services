@@ -27,7 +27,7 @@ async function getUsers(req, reply) {
   const result = await this.adminPanelService.getUsers(
     req.query.status,
     req.query.fullName,
-    req.query.userType,
+    req.query.profile,
     req.query.validated,
   );
 

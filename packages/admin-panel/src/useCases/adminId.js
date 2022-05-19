@@ -1,4 +1,4 @@
-const othersSquad = require('../utils/fake_data');
+const { getAdmin } = require('../../mocks/adminList.mock');
 
 const getAdminId = (adminId) => {
   // the user who will use the endpoint must be authenticated,
@@ -11,10 +11,9 @@ const getAdminId = (adminId) => {
 
   // check if there is an administrator,
   // if there is, it returns an object with the data of the administrator
-  const admin = othersSquad.getAdmin(adminId);
-
+  const admin = getAdmin(adminId);
   // validate if the admin is valid
-  if (!admin || admin.profile !== 3 || admin.profile !== 4) {
+  if ((!admin) || (admin.profile !== 3 && admin.profile !== 4)) {
     throw new Error('Admin does not exist');
   }
   return admin;

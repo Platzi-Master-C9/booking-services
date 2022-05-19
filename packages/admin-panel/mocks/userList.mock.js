@@ -7,7 +7,7 @@ const userList = [
     urlImage: faker.image.avatar(),
     dateOfRegister: faker.date.future(),
     status: 'ACTIVE',
-    userType: 2,
+    profile: 2,
     validated: true,
   },
   {
@@ -16,7 +16,7 @@ const userList = [
     urlImage: faker.image.avatar(),
     dateOfRegister: faker.date.future(),
     status: 'BANNED',
-    userType: 1,
+    profile: 1,
     validated: false,
   },
   {
@@ -25,7 +25,7 @@ const userList = [
     urlImage: faker.image.avatar(),
     dateOfRegister: faker.date.future(),
     status: 'ACTIVE',
-    userType: 1,
+    profile: 1,
     validated: true,
   },
   {
@@ -34,7 +34,7 @@ const userList = [
     urlImage: faker.image.avatar(),
     dateOfRegister: faker.date.future(),
     status: 'ACTIVE',
-    userType: 1,
+    profile: 1,
     validated: false,
   },
 ];
