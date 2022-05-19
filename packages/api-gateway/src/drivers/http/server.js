@@ -22,6 +22,7 @@ const fastify = Fastify({
 // Enable cors
 fastify.register(require('@fastify/cors'), {
   origin: configCORS.domain,
+  credentials: true,
 });
 
 // Avoid loading swagger when running tests
