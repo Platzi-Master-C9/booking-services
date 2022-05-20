@@ -6,10 +6,10 @@ const { currencies, currenciesSchema } = require('./currencies.models');
 
 function setupModels(sequelize) {
   users.init(usersSchema, users.config(sequelize));
-  users.init(userFavoritePlacesSchema, userFavoritePlaces.config(sequelize));
-  users.init(addressSchema, address.config(sequelize));
-  users.init(emergencyContactsSchema, emergencyContacts.config(sequelize));
-  users.init(currenciesSchema, currencies.config(sequelize));
+  userFavoritePlaces.init(userFavoritePlacesSchema, userFavoritePlaces.config(sequelize));
+  address.init(addressSchema, address.config(sequelize));
+  emergencyContacts.init(emergencyContactsSchema, emergencyContacts.config(sequelize));
+  currencies.init(currenciesSchema, currencies.config(sequelize));
 
   users.associate(sequelize.models);
   userFavoritePlaces.associate(sequelize.models);
