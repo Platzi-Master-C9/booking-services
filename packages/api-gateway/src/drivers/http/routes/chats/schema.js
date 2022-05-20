@@ -84,7 +84,29 @@ const listChatMessagesSchema = {
   },
 };
 
+/** @type {import('fastify').RouteOptions['schema']} */
+const saveNewMessageSchema = {
+  description: 'Save new message in chat room.',
+  tags: ['Messages'],
+  security: [{ Bearer: [] }],
+  params: {
+    type: 'object',
+    properties: {
+      chatId: { type: 'string' },
+      text: { type: 'string' },
+    },
+    required: ['chatId', 'text'],
+  },
+  response: {
+    200: {
+      type: 'object',
+      properties: MESSAGE_PROPS,
+    },
+  },
+};
+
 module.exports = {
   listChatRoomsSchema,
   listChatMessagesSchema,
+  saveNewMessageSchema,
 };

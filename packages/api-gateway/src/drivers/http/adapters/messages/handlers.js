@@ -77,7 +77,27 @@ async function listChatMessages(req, reply) {
   return reply.code(200).send(paginatedResult);
 }
 
+/**
+ * Send new message from the requesting chat room
+ * @type {import('fastify').RouteHandler}
+ */
+async function saveNewMessage() {
+  // eslint-disable-next-line prefer-arrow-callback
+  this.io.on('connection', function (socket) {
+    socket.on('send-message', function (message) {
+      if (typeof message !== 'object' || !message) {
+        this.log.error('[newMessage] message onject is required');
+        throw new Error('Object message is required');
+      }
+
+      const newMessage = this.messageServices.saveMessage(message.chatId, message.text);
+      this.wbServices.sendMessage(socket, newMessage);
+    });
+  });
+}
+
 module.exports = {
   listUserChatRooms,
   listChatMessages,
+  saveNewMessage,
 };

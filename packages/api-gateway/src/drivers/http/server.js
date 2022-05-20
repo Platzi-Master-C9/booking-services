@@ -33,8 +33,9 @@ fastify.register(FastifyAuth0, {
 fastify.decorate('hasPermissions', authDecorators.hasPermissions);
 fastify.decorate('hasRole', authDecorators.hasRole);
 
-fastify.register(Autoload, { dir: path.join(__dirname, 'routes') });
+// Plugins need to be loaded before the routes
 fastify.register(Autoload, { dir: path.join(__dirname, 'plugins') });
+fastify.register(Autoload, { dir: path.join(__dirname, 'routes') });
 
 async function start() {
   try {

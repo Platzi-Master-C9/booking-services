@@ -1,8 +1,8 @@
 const { events } = require('../../../utils/constants');
 
-const sendMessage = (socket, chatId, message) => {
-  socket.join(chatId);
-  socket.to(chatId).emit(events.NEW_MESSAGE, message);
+const sendMessage = (socket, message) => {
+  socket.join(message.chatId);
+  socket.to(message.chatId).emit(events.NEW_MESSAGE, message);
 };
 
 module.exports = sendMessage;

@@ -1,7 +1,7 @@
-const sendMessage = require('./use-cases/send-message');
+const services = require('./use-cases');
 const makeServer = require('./server');
 
 module.exports = {
-  sendMessage,
+  services,
   makeServer,
 };

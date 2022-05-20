@@ -1,5 +1,13 @@
+// External dependencies
+const { Logger } = require('@booking-services/shared');
 // Internal dependencies
 const HttpServer = require('./drivers/http/server');
 
-// eslint-disable-next-line no-console
-HttpServer.start().catch((err) => console.error('Something went wrong running server', err));
+HttpServer.start()
+  .catch((err) => Logger.debug(`[Http-server]Something went wrong running server ${err}`));
+
+HttpServer.fastify.ready().then(() => {
+  HttpServer.fastify.io.on('connection', () => {
+    Logger.info('[wb-sockets] Client connected');
+  });
+});

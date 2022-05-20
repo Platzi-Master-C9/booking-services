@@ -12,7 +12,8 @@ if (origin === undefined) origin = '*';
 else origin = origin.split(',');
 
 module.exports = {
-  methods: process.env.WB_METHODS_CORS,
   credentials: process.env.WB_CREDENTIALS_CORS,
+  methods: process.env.WB_METHODS_CORS,
   origin,
+  port: process.env.SERVER_PORT || 3002,
 };

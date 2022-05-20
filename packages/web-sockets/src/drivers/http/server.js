@@ -10,7 +10,7 @@ const {
   origin,
 } = require('../../../config/socketio');
 
-module.exports = (httpServer) => {
+module.exports = function (httpServer) {
   const io = new Server(httpServer, {
     cors: {
       origin,
@@ -19,6 +19,5 @@ module.exports = (httpServer) => {
     },
   });
   io.adapter(createAdapter(pubClient, subClient));
-
   return io;
 };

@@ -5,6 +5,7 @@ const {
   makeGetChatRoomLastMessage,
   makeListChatMessages,
   makeIsChatRelatedToUser,
+  makeSaveMessage,
 } = require('./use-cases');
 const { FakeChatModel, FakeMessageModel } = require('./utils/fixtures');
 
@@ -14,4 +15,5 @@ module.exports = {
   getChatRoomLastMessage: makeGetChatRoomLastMessage(FakeMessageModel),
   listChatMessages: makeListChatMessages(FakeMessageModel),
   isChatRelatedToUser: makeIsChatRelatedToUser(FakeChatModel),
+  saveMessage: makeSaveMessage(FakeMessageModel),
 };
