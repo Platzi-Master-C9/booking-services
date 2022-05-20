@@ -9,7 +9,7 @@ const {
   createUserSchema,
   updateUserSchema,
   validateUserSchema,
-  getUserSchema
+  getUserSchema,
 } = require('./utils/validator/schema/user.schema');
 
 module.exports = {

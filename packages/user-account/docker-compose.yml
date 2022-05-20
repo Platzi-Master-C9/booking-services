@@ -1,0 +1,23 @@
+version: '3.3'
+
+services:
+  postgres:
+    image: postgres:13
+    container_name: db
+
+    environment:
+      - POSTGRES_DB=user-account
+      - POSTGRES_USER=malon
+      - POSTGRES_PASSWORD=admin123 
+    ports:
+      - 5433:5432
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data/
+  
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=marlon.ramirezlizcano@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=rootadmin
+    ports:
+      - 5050:80
