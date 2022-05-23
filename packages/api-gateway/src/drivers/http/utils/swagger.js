@@ -1,6 +1,6 @@
 const { version } = require('../../../../package.json');
 
-/** @type {import('fastify-swagger').SwaggerOptions} */
+/** @type {import('@fastify/swagger').SwaggerOptions} */
 const swaggerOptions = {
   routePrefix: '/docs',
   openapi: {

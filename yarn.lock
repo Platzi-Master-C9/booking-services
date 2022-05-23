@@ -22,7 +22,13 @@
   resolved "https://registry.yarnpkg.com/@babel/compat-data/-/compat-data-7.17.10.tgz#711dc726a492dfc8be8220028b1b92482362baab"
   integrity sha512-GZt/TCsG70Ms19gfZO1tM4CVnXsPgEPBCpJu+Qz3L0LUDsY5nZqFZglIoPC1kIYOtNBZlrnFT+klg12vFGZXrw==
 
+"@babel/compat-data@^7.17.7":
+  version "7.17.7"
+  resolved "https://registry.yarnpkg.com/@babel/compat-data/-/compat-data-7.17.7.tgz#078d8b833fbbcc95286613be8c716cef2b519fa2"
+  integrity sha512-p8pdE6j0a29TNGebNm7NzYZWB3xVZJBZ7XGs42uAKzQo8VQ3F0By/cQCtUEABwIqw5zo6WA4NbmxsfzADzMKnQ==
+
 "@babel/core@^7.1.0", "@babel/core@^7.12.3", "@babel/core@^7.7.2", "@babel/core@^7.8.0":
+"@babel/core@^7.1.0", "@babel/core@^7.11.6", "@babel/core@^7.12.3", "@babel/core@^7.7.2", "@babel/core@^7.8.0":
   version "7.17.12"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.17.12.tgz#b4eb2d7ebc3449b062381644c93050db545b70ee"
   integrity sha512-44ODe6O1IVz9s2oJE3rZ4trNNKTX9O7KpQpfAP4t8QII/zwrVRHL7i2pxhqtcY7tqMLrrKfMlBKnm1QlrRFs5w==
@@ -47,6 +53,40 @@
   version "7.17.12"
   resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.17.12.tgz#5970e6160e9be0428e02f4aba62d8551ec366cc8"
   integrity sha512-V49KtZiiiLjH/CnIW6OjJdrenrGoyh6AmKQ3k2AZFKozC1h846Q4NYlZ5nqAigPDUXfGzC88+LOUuG8yKd2kCw==
+"@babel/core@^7.11.6":
+  version "7.17.10"
+  resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.17.10.tgz#74ef0fbf56b7dfc3f198fc2d927f4f03e12f4b05"
+  integrity sha512-liKoppandF3ZcBnIYFjfSDHZLKdLHGJRkoWtG8zQyGJBQfIYobpnVGI5+pLBNtS6psFLDzyq8+h5HiVljW9PNA==
+  dependencies:
+    "@ampproject/remapping" "^2.1.0"
+    "@babel/code-frame" "^7.16.7"
+    "@babel/generator" "^7.17.10"
+    "@babel/helper-compilation-targets" "^7.17.10"
+    "@babel/helper-module-transforms" "^7.17.12"
+    "@babel/helpers" "^7.17.9"
+    "@babel/parser" "^7.17.12"
+    "@babel/template" "^7.16.7"
+    "@babel/traverse" "^7.17.12"
+    "@babel/types" "^7.17.12"
+    convert-source-map "^1.7.0"
+    debug "^4.1.0"
+    gensync "^1.0.0-beta.2"
+    json5 "^2.2.1"
+    semver "^6.3.0"
+
+"@babel/generator@^7.17.12", "@babel/generator@^7.7.2":
+  version "7.17.12"
+  resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.17.12.tgz#5970e6160e9be0428e02f4aba62d8551ec366cc8"
+  integrity sha512-V49KtZiiiLjH/CnIW6OjJdrenrGoyh6AmKQ3k2AZFKozC1h846Q4NYlZ5nqAigPDUXfGzC88+LOUuG8yKd2kCw==
+  dependencies:
+    "@babel/types" "^7.17.10"
+    "@jridgewell/gen-mapping" "^0.1.0"
+    jsesc "^2.5.1"
+
+"@babel/generator@^7.17.9", "@babel/generator@^7.7.2":
+  version "7.17.9"
+  resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.17.9.tgz#f4af9fd38fa8de143c29fce3f71852406fc1e2fc"
+  integrity sha512-rAdDousTwxbIxbz5I7GEQ3lUip+xVCXooZNbsydCWs3xA7ZsYOv+CFRdzGxRX78BmQHu9B1Eso59AOZQOJDEdQ==
   dependencies:
     "@babel/types" "^7.17.12"
     "@jridgewell/gen-mapping" "^0.3.0"
@@ -56,6 +96,16 @@
   version "7.17.10"
   resolved "https://registry.yarnpkg.com/@babel/helper-compilation-targets/-/helper-compilation-targets-7.17.10.tgz#09c63106d47af93cf31803db6bc49fef354e2ebe"
   integrity sha512-gh3RxjWbauw/dFiU/7whjd0qN9K6nPJMqe6+Er7rOavFh0CQUSwhAE3IcTho2rywPJFxej6TUUHDkWcYI6gGqQ==
+  dependencies:
+    "@babel/compat-data" "^7.17.10"
+    "@babel/helper-validator-option" "^7.16.7"
+    browserslist "^4.20.2"
+    semver "^6.3.0"
+
+"@babel/helper-compilation-targets@^7.17.7":
+  version "7.17.7"
+  resolved "https://registry.yarnpkg.com/@babel/helper-compilation-targets/-/helper-compilation-targets-7.17.7.tgz#a3c2924f5e5f0379b356d4cfb313d1414dc30e46"
+  integrity sha512-UFzlz2jjd8kroj0hmCFV5zr+tQPi1dpC2cRsDV/3IEW8bJfCPrPpmcSN6ZS8RqIq4LXcmpipCQFPddyFA5Yc7w==
   dependencies:
     "@babel/compat-data" "^7.17.10"
     "@babel/helper-validator-option" "^7.16.7"
@@ -156,6 +206,11 @@
   version "7.17.12"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.17.12.tgz#36c2ed06944e3691ba82735fc4cf62d12d491a23"
   integrity sha512-FLzHmN9V3AJIrWfOpvRlZCeVg/WLdicSnTMsLur6uDj9TT8ymUlG9XxURdW/XvuygK+2CW0poOJABdA4m/YKxA==
+
+"@babel/parser@^7.17.10":
+  version "7.17.10"
+  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.17.10.tgz#873b16db82a8909e0fbd7f115772f4b739f6ce78"
+  integrity sha512-n2Q6i+fnJqzOaq2VkdXxy2TCPCWQZHiCo0XqmrCvDWcZQKRyZzYi4Z0yxlBuN0w+r2ZHmre+Q087DSrw3pbJDQ==
 
 "@babel/plugin-syntax-async-generators@^7.8.4":
   version "7.8.4"
@@ -261,6 +316,26 @@
   version "7.17.12"
   resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.17.12.tgz#011874d2abbca0ccf1adbe38f6f7a4ff1747599c"
   integrity sha512-zULPs+TbCvOkIFd4FrG53xrpxvCBwLIgo6tO0tJorY7YV2IWFxUfS/lXDJbGgfyYt9ery/Gxj2niwttNnB0gIw==
+"@babel/traverse@^7.17.10":
+  version "7.17.10"
+  resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.17.10.tgz#1ee1a5ac39f4eac844e6cf855b35520e5eb6f8b5"
+  integrity sha512-VmbrTHQteIdUUQNTb+zE12SHS/xQVIShmBPhlNP12hD5poF2pbITW1Z4172d03HegaQWhLffdkRJYtAzp0AGcw==
+  dependencies:
+    "@babel/code-frame" "^7.16.7"
+    "@babel/generator" "^7.17.10"
+    "@babel/helper-environment-visitor" "^7.16.7"
+    "@babel/helper-function-name" "^7.17.9"
+    "@babel/helper-hoist-variables" "^7.16.7"
+    "@babel/helper-split-export-declaration" "^7.16.7"
+    "@babel/parser" "^7.17.10"
+    "@babel/types" "^7.17.10"
+    debug "^4.1.0"
+    globals "^11.1.0"
+
+"@babel/traverse@^7.17.3", "@babel/traverse@^7.17.9", "@babel/traverse@^7.7.2":
+  version "7.17.9"
+  resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.17.9.tgz#1f9b207435d9ae4a8ed6998b2b82300d83c37a0d"
+  integrity sha512-PQO8sDIJ8SIwipTPiR71kJQCKQYB5NGImbOviK8K+kg5xkNSYXLBupuX9QhatFowrsvo9Hj8WgArg3W7ijNAQw==
   dependencies:
     "@babel/code-frame" "^7.16.7"
     "@babel/generator" "^7.17.12"
@@ -277,6 +352,14 @@
   version "7.17.12"
   resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.17.12.tgz#1210690a516489c0200f355d87619157fbbd69a0"
   integrity sha512-rH8i29wcZ6x9xjzI5ILHL/yZkbQnCERdHlogKuIb4PUr7do4iT8DPekrTbBLWTnRQm6U0GYABbTMSzijmEqlAg==
+  dependencies:
+    "@babel/helper-validator-identifier" "^7.16.7"
+    to-fast-properties "^2.0.0"
+
+"@babel/types@^7.17.10":
+  version "7.17.10"
+  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.17.10.tgz#d35d7b4467e439fcf06d195f8100e0fea7fc82c4"
+  integrity sha512-9O26jG0mBYfGkUYCYZRnBwbVLd1UZOICEr2Em6InB6jVfsAv1GKgwXHmrSg+WFWDmeKTA6vyTZiN8tCSM5Oo3A==
   dependencies:
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
@@ -472,6 +555,30 @@
     ajv "^6.12.4"
     debug "^4.3.2"
     espree "^9.3.2"
+"@eslint/eslintrc@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-1.2.1.tgz#8b5e1c49f4077235516bc9ec7d41378c0f69b8c6"
+  integrity sha512-bxvbYnBPN1Gibwyp6NrpnFzA3YtRL3BBAyEAFVIpNTm2Rn4Vy87GA5M4aSn3InRrlsbX5N0GW7XIx+U4SAEKdQ==
+  dependencies:
+    ajv "^6.12.4"
+    debug "^4.3.2"
+    espree "^9.3.1"
+    globals "^13.9.0"
+    ignore "^5.2.0"
+    import-fresh "^3.2.1"
+    js-yaml "^4.1.0"
+    minimatch "^3.1.2"
+    minimatch "^3.0.4"
+    strip-json-comments "^3.1.1"
+
+"@eslint/eslintrc@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-1.2.2.tgz#4989b9e8c0216747ee7cca314ae73791bb281aae"
+  integrity sha512-lTVWHs7O2hjBFZunXTZYnYqtB9GakA1lnxIf+gKq2nY5gxkkNi/lQvveW6t8gFdOHTg6nG50Xs95PrLqVpcaLg==
+  dependencies:
+    ajv "^6.12.4"
+    debug "^4.3.2"
+    espree "^9.3.2"
     globals "^13.9.0"
     ignore "^5.2.0"
     import-fresh "^3.2.1"
@@ -553,7 +660,49 @@
     unique-filename "^1.1.1"
     which "^1.3.1"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 "@faker-js/faker@^6.0.0", "@faker-js/faker@^6.1.1", "@faker-js/faker@^6.1.2", "@faker-js/faker@^6.2.0", "@faker-js/faker@^6.3.1":
+=======
+=======
+>>>>>>> feat(web-sockets): configuring socketio instance
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> feat(web-sockets): enable connection to redis
+"@faker-js/faker@^6.0.0", "@faker-js/faker@^6.2.0":
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/@faker-js/faker/-/faker-6.3.0.tgz#5d62c8382bfa1fb4cdd28bf16163b8ce5c951246"
+  integrity sha512-MI4sLlXEFBujHYHZMUo7S4BkCcQRPr/7rB2DA1grhnFzg8yNnVbfeEPWSDO9TCmNMSowlE+0bFQdDwb1SypIxQ==
+
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> feat(web-sockets): implementing repo pattern
+=======
+"@faker-js/faker@^6.0.0", "@faker-js/faker@^6.2.0":
+=======
+"@faker-js/faker@^6.0.0", "@faker-js/faker@^6.1.1", "@faker-js/faker@^6.1.2", "@faker-js/faker@^6.2.0":
+>>>>>>> feat(web-sockets): configuring socketio instance
+  version "6.3.1"
+  resolved "https://registry.yarnpkg.com/@faker-js/faker/-/faker-6.3.1.tgz#1ae963dd40405450a2945408cba553e1afa3e0fb"
+  integrity sha512-8YXBE2ZcU/pImVOHX7MWrSR/X5up7t6rPWZlk34RwZEcdr3ua6X+32pSd6XuOQRN+vbuvYNfA6iey8NbrjuMFQ==
+
+<<<<<<< HEAD
+>>>>>>> feat(web-sockets): enable connection to redis
+>>>>>>> feat(web-sockets): enable connection to redis
+"@faker-js/faker@^6.1.1", "@faker-js/faker@^6.1.2":
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/@faker-js/faker/-/faker-6.1.2.tgz#7093ea65e6d78eae388918a46968c083366bd621"
+  integrity sha512-QSvmexHCxeRUk1/yKmoEDaWB5Hohjvtim5g2JJwy8S/l0L4b3y/GxSpE6vN4SBoVGGahEQW21uqyRr7EofI35A==
+
+"@faker-js/faker@^6.3.1":
+>>>>>>> feat(web-sockets): enable connection to redis
+=======
+"@faker-js/faker@^6.0.0", "@faker-js/faker@^6.1.1", "@faker-js/faker@^6.1.2", "@faker-js/faker@^6.2.0", "@faker-js/faker@^6.3.1":
+>>>>>>> build(web-sockets): changing dependencies in api-gateway to be able to use socketio there
   version "6.3.1"
   resolved "https://registry.yarnpkg.com/@faker-js/faker/-/faker-6.3.1.tgz#1ae963dd40405450a2945408cba553e1afa3e0fb"
   integrity sha512-8YXBE2ZcU/pImVOHX7MWrSR/X5up7t6rPWZlk34RwZEcdr3ua6X+32pSd6XuOQRN+vbuvYNfA6iey8NbrjuMFQ==
@@ -565,7 +714,14 @@
   dependencies:
     ajv "^6.12.6"
 
+<<<<<<< HEAD
 "@fastify/autoload@^4.0.0":
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+"@fastify/autoload@^4.0.1":
+>>>>>>> master
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@fastify/autoload/-/autoload-4.0.1.tgz#7b3008af96ef0cd20926e01b04aaae0a2c4e225b"
   integrity sha512-eiKxDuz83gFID9LN2BVma0sj3gqDqP8sCHbNN4JmLGe2YNzrSQ+11axweIV8eu1tfWu6v8rgTqu/nu59QXhlsw==
@@ -573,11 +729,21 @@
     pkg-up "^3.1.0"
     semver "^7.3.5"
 
+<<<<<<< HEAD
+=======
+>>>>>>> build(web-sockets): changing dependencies in api-gateway to be able to use socketio there
+>>>>>>> master
 "@fastify/error@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@fastify/error/-/error-2.0.0.tgz#a9f94af56eb934f0ab1ce4ef9f0ced6ebf2319dc"
   integrity sha512-wI3fpfDT0t7p8E6dA2eTECzzOd+bZsZCJ2Hcv+Onn2b7ZwK3RwD27uW2QDaMtQhAfWQQP+WNK7nKf0twLsBf9w==
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> feat(web-sockets): configuring socketio instance
+=======
+>>>>>>> build(web-sockets): changing dependencies in api-gateway to be able to use socketio there
 "@fastify/jwt@^5.0.0":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@fastify/jwt/-/jwt-5.0.1.tgz#9c44bc994c372019a23cb6dd8a3bd7f93e7ab88b"
@@ -589,7 +755,11 @@
     http-errors "^2.0.0"
     steed "^1.1.3"
 
+<<<<<<< HEAD
 "@fastify/static@^5.0.0":
+=======
+"@fastify/static@^5.0.0", "@fastify/static@^5.0.2":
+>>>>>>> master
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/@fastify/static/-/static-5.0.2.tgz#46cee887393b422f4b10a46a14e970a64dd086d4"
   integrity sha512-HvyXZ5a7hUHoSBRq9jKUuKIUCkHMkCDcmiAeEmixXlGOx8pEWx3NYOIaiivcjWa6/NLvfdUT+t/jzfVQ2PA7Gw==
@@ -602,7 +772,11 @@
     readable-stream "^3.4.0"
     send "^0.17.1"
 
+<<<<<<< HEAD
 "@fastify/swagger@^6.0.0":
+=======
+"@fastify/swagger@^6.0.1":
+>>>>>>> master
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/@fastify/swagger/-/swagger-6.0.1.tgz#91defa72b3bb68265bc67c725800bb01318d21ba"
   integrity sha512-6STMY44AA3Ks7/CYRSh3ocZCVUAHMO/ochtLkP1R7i0XMjpdKFpAEwdGffocjfeD0BRglC36Y22qLHw+YKMCtg==
@@ -656,6 +830,11 @@
     update-notifier "^2.2.0"
     yargs "^8.0.2"
 
+"@ioredis/commands@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@ioredis/commands/-/commands-1.1.1.tgz#2ba4299ea624a6bfac15b35f6df90b0015691ec3"
+  integrity sha512-fsR4P/ROllzf/7lXYyElUJCheWdTJVJvOTps8v9IWKFATxR61ANOlnoPqhH099xYLrJGpc2ZQ28B3rMeUt5VQg==
+
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@istanbuljs/load-nyc-config/-/load-nyc-config-1.1.0.tgz#fd3db1d59ecf7cf121e80650bb86712f9b55eced"
@@ -682,6 +861,18 @@
     chalk "^4.0.0"
     jest-message-util "^27.5.1"
     jest-util "^27.5.1"
+    slash "^3.0.0"
+
+"@jest/console@^28.1.0":
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/@jest/console/-/console-28.1.0.tgz#db78222c3d3b0c1db82f1b9de51094c2aaff2176"
+  integrity sha512-tscn3dlJFGay47kb4qVruQg/XWlmvU0xp3EJOjzzY+sBaI+YgwKcvAmTcyYU7xEiLLIY5HCdWRooAL8dqkFlDA==
+  dependencies:
+    "@jest/types" "^28.1.0"
+    "@types/node" "*"
+    chalk "^4.0.0"
+    jest-message-util "^28.1.0"
+    jest-util "^28.1.0"
     slash "^3.0.0"
 
 "@jest/core@^27.5.1":
@@ -718,6 +909,41 @@
     slash "^3.0.0"
     strip-ansi "^6.0.0"
 
+"@jest/core@^28.1.0":
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/@jest/core/-/core-28.1.0.tgz#784a1e6ce5358b46fcbdcfbbd93b1b713ed4ea80"
+  integrity sha512-/2PTt0ywhjZ4NwNO4bUqD9IVJfmFVhVKGlhvSpmEfUCuxYf/3NHcKmRFI+I71lYzbTT3wMuYpETDCTHo81gC/g==
+  dependencies:
+    "@jest/console" "^28.1.0"
+    "@jest/reporters" "^28.1.0"
+    "@jest/test-result" "^28.1.0"
+    "@jest/transform" "^28.1.0"
+    "@jest/types" "^28.1.0"
+    "@types/node" "*"
+    ansi-escapes "^4.2.1"
+    chalk "^4.0.0"
+    ci-info "^3.2.0"
+    exit "^0.1.2"
+    graceful-fs "^4.2.9"
+    jest-changed-files "^28.0.2"
+    jest-config "^28.1.0"
+    jest-haste-map "^28.1.0"
+    jest-message-util "^28.1.0"
+    jest-regex-util "^28.0.2"
+    jest-resolve "^28.1.0"
+    jest-resolve-dependencies "^28.1.0"
+    jest-runner "^28.1.0"
+    jest-runtime "^28.1.0"
+    jest-snapshot "^28.1.0"
+    jest-util "^28.1.0"
+    jest-validate "^28.1.0"
+    jest-watcher "^28.1.0"
+    micromatch "^4.0.4"
+    pretty-format "^28.1.0"
+    rimraf "^3.0.0"
+    slash "^3.0.0"
+    strip-ansi "^6.0.0"
+
 "@jest/environment@^27.5.1":
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/@jest/environment/-/environment-27.5.1.tgz#d7425820511fe7158abbecc010140c3fd3be9c74"
@@ -727,6 +953,31 @@
     "@jest/types" "^27.5.1"
     "@types/node" "*"
     jest-mock "^27.5.1"
+
+"@jest/environment@^28.1.0":
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/@jest/environment/-/environment-28.1.0.tgz#dedf7d59ec341b9292fcf459fd0ed819eb2e228a"
+  integrity sha512-S44WGSxkRngzHslhV6RoAExekfF7Qhwa6R5+IYFa81mpcj0YgdBnRSmvHe3SNwOt64yXaE5GG8Y2xM28ii5ssA==
+  dependencies:
+    "@jest/fake-timers" "^28.1.0"
+    "@jest/types" "^28.1.0"
+    "@types/node" "*"
+    jest-mock "^28.1.0"
+
+"@jest/expect-utils@^28.1.0":
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/@jest/expect-utils/-/expect-utils-28.1.0.tgz#a5cde811195515a9809b96748ae8bcc331a3538a"
+  integrity sha512-5BrG48dpC0sB80wpeIX5FU6kolDJI4K0n5BM9a5V38MGx0pyRvUBSS0u2aNTdDzmOrCjhOg8pGs6a20ivYkdmw==
+  dependencies:
+    jest-get-type "^28.0.2"
+
+"@jest/expect@^28.1.0":
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/@jest/expect/-/expect-28.1.0.tgz#2e5a31db692597070932366a1602b5157f0f217c"
+  integrity sha512-be9ETznPLaHOmeJqzYNIXv1ADEzENuQonIoobzThOYPuK/6GhrWNIJDVTgBLCrz3Am73PyEU2urQClZp0hLTtA==
+  dependencies:
+    expect "^28.1.0"
+    jest-snapshot "^28.1.0"
 
 "@jest/fake-timers@^27.5.1":
   version "27.5.1"
@@ -740,6 +991,18 @@
     jest-mock "^27.5.1"
     jest-util "^27.5.1"
 
+"@jest/fake-timers@^28.1.0":
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/@jest/fake-timers/-/fake-timers-28.1.0.tgz#ea77878aabd5c5d50e1fc53e76d3226101e33064"
+  integrity sha512-Xqsf/6VLeAAq78+GNPzI7FZQRf5cCHj1qgQxCjws9n8rKw8r1UYoeaALwBvyuzOkpU3c1I6emeMySPa96rxtIg==
+  dependencies:
+    "@jest/types" "^28.1.0"
+    "@sinonjs/fake-timers" "^9.1.1"
+    "@types/node" "*"
+    jest-message-util "^28.1.0"
+    jest-mock "^28.1.0"
+    jest-util "^28.1.0"
+
 "@jest/globals@^27.5.1":
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/@jest/globals/-/globals-27.5.1.tgz#7ac06ce57ab966566c7963431cef458434601b2b"
@@ -748,6 +1011,15 @@
     "@jest/environment" "^27.5.1"
     "@jest/types" "^27.5.1"
     expect "^27.5.1"
+
+"@jest/globals@^28.1.0":
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/@jest/globals/-/globals-28.1.0.tgz#a4427d2eb11763002ff58e24de56b84ba79eb793"
+  integrity sha512-3m7sTg52OTQR6dPhsEQSxAvU+LOBbMivZBwOvKEZ+Rb+GyxVnXi9HKgOTYkx/S99T8yvh17U4tNNJPIEQmtwYw==
+  dependencies:
+    "@jest/environment" "^28.1.0"
+    "@jest/expect" "^28.1.0"
+    "@jest/types" "^28.1.0"
 
 "@jest/reporters@^27.5.1":
   version "27.5.1"
@@ -780,6 +1052,43 @@
     terminal-link "^2.0.0"
     v8-to-istanbul "^8.1.0"
 
+"@jest/reporters@^28.1.0":
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/@jest/reporters/-/reporters-28.1.0.tgz#5183a28b9b593b6000fa9b89b031c7216b58a9a0"
+  integrity sha512-qxbFfqap/5QlSpIizH9c/bFCDKsQlM4uAKSOvZrP+nIdrjqre3FmKzpTtYyhsaVcOSNK7TTt2kjm+4BJIjysFA==
+  dependencies:
+    "@bcoe/v8-coverage" "^0.2.3"
+    "@jest/console" "^28.1.0"
+    "@jest/test-result" "^28.1.0"
+    "@jest/transform" "^28.1.0"
+    "@jest/types" "^28.1.0"
+    "@jridgewell/trace-mapping" "^0.3.7"
+    "@types/node" "*"
+    chalk "^4.0.0"
+    collect-v8-coverage "^1.0.0"
+    exit "^0.1.2"
+    glob "^7.1.3"
+    graceful-fs "^4.2.9"
+    istanbul-lib-coverage "^3.0.0"
+    istanbul-lib-instrument "^5.1.0"
+    istanbul-lib-report "^3.0.0"
+    istanbul-lib-source-maps "^4.0.0"
+    istanbul-reports "^3.1.3"
+    jest-util "^28.1.0"
+    jest-worker "^28.1.0"
+    slash "^3.0.0"
+    string-length "^4.0.1"
+    strip-ansi "^6.0.0"
+    terminal-link "^2.0.0"
+    v8-to-istanbul "^9.0.0"
+
+"@jest/schemas@^28.0.2":
+  version "28.0.2"
+  resolved "https://registry.yarnpkg.com/@jest/schemas/-/schemas-28.0.2.tgz#08c30df6a8d07eafea0aef9fb222c5e26d72e613"
+  integrity sha512-YVDJZjd4izeTDkij00vHHAymNXQ6WWsdChFRK86qck6Jpr3DCL5W3Is3vslviRlP+bLuMYRLbdp98amMvqudhA==
+  dependencies:
+    "@sinclair/typebox" "^0.23.3"
+
 "@jest/source-map@^27.5.1":
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/@jest/source-map/-/source-map-27.5.1.tgz#6608391e465add4205eae073b55e7f279e04e8cf"
@@ -789,6 +1098,15 @@
     graceful-fs "^4.2.9"
     source-map "^0.6.0"
 
+"@jest/source-map@^28.0.2":
+  version "28.0.2"
+  resolved "https://registry.yarnpkg.com/@jest/source-map/-/source-map-28.0.2.tgz#914546f4410b67b1d42c262a1da7e0406b52dc90"
+  integrity sha512-Y9dxC8ZpN3kImkk0LkK5XCEneYMAXlZ8m5bflmSL5vrwyeUpJfentacCUg6fOb8NOpOO7hz2+l37MV77T6BFPw==
+  dependencies:
+    "@jridgewell/trace-mapping" "^0.3.7"
+    callsites "^3.0.0"
+    graceful-fs "^4.2.9"
+
 "@jest/test-result@^27.5.1":
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/@jest/test-result/-/test-result-27.5.1.tgz#56a6585fa80f7cdab72b8c5fc2e871d03832f5bb"
@@ -796,6 +1114,16 @@
   dependencies:
     "@jest/console" "^27.5.1"
     "@jest/types" "^27.5.1"
+    "@types/istanbul-lib-coverage" "^2.0.0"
+    collect-v8-coverage "^1.0.0"
+
+"@jest/test-result@^28.1.0":
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/@jest/test-result/-/test-result-28.1.0.tgz#fd149dee123510dd2fcadbbf5f0020f98ad7f12c"
+  integrity sha512-sBBFIyoPzrZho3N+80P35A5oAkSKlGfsEFfXFWuPGBsW40UAjCkGakZhn4UQK4iQlW2vgCDMRDOob9FGKV8YoQ==
+  dependencies:
+    "@jest/console" "^28.1.0"
+    "@jest/types" "^28.1.0"
     "@types/istanbul-lib-coverage" "^2.0.0"
     collect-v8-coverage "^1.0.0"
 
@@ -808,6 +1136,16 @@
     graceful-fs "^4.2.9"
     jest-haste-map "^27.5.1"
     jest-runtime "^27.5.1"
+
+"@jest/test-sequencer@^28.1.0":
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/@jest/test-sequencer/-/test-sequencer-28.1.0.tgz#ce7294bbe986415b9a30e218c7e705e6ebf2cdf2"
+  integrity sha512-tZCEiVWlWNTs/2iK9yi6o3AlMfbbYgV4uuZInSVdzZ7ftpHZhCMuhvk2HLYhCZzLgPFQ9MnM1YaxMnh3TILFiQ==
+  dependencies:
+    "@jest/test-result" "^28.1.0"
+    graceful-fs "^4.2.9"
+    jest-haste-map "^28.1.0"
+    slash "^3.0.0"
 
 "@jest/transform@^27.5.1":
   version "27.5.1"
@@ -830,6 +1168,27 @@
     source-map "^0.6.1"
     write-file-atomic "^3.0.0"
 
+"@jest/transform@^28.1.0":
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/@jest/transform/-/transform-28.1.0.tgz#224a3c9ba4cc98e2ff996c0a89a2d59db15c74ce"
+  integrity sha512-omy2xe5WxlAfqmsTjTPxw+iXRTRnf+NtX0ToG+4S0tABeb4KsKmPUHq5UBuwunHg3tJRwgEQhEp0M/8oiatLEA==
+  dependencies:
+    "@babel/core" "^7.11.6"
+    "@jest/types" "^28.1.0"
+    "@jridgewell/trace-mapping" "^0.3.7"
+    babel-plugin-istanbul "^6.1.1"
+    chalk "^4.0.0"
+    convert-source-map "^1.4.0"
+    fast-json-stable-stringify "^2.0.0"
+    graceful-fs "^4.2.9"
+    jest-haste-map "^28.1.0"
+    jest-regex-util "^28.0.2"
+    jest-util "^28.1.0"
+    micromatch "^4.0.4"
+    pirates "^4.0.4"
+    slash "^3.0.0"
+    write-file-atomic "^4.0.1"
+
 "@jest/types@^27.5.1":
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/@jest/types/-/types-27.5.1.tgz#3c79ec4a8ba61c170bf937bcf9e98a9df175ec80"
@@ -839,6 +1198,18 @@
     "@types/istanbul-reports" "^3.0.0"
     "@types/node" "*"
     "@types/yargs" "^16.0.0"
+    chalk "^4.0.0"
+
+"@jest/types@^28.1.0":
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/@jest/types/-/types-28.1.0.tgz#508327a89976cbf9bd3e1cc74641a29fd7dfd519"
+  integrity sha512-xmEggMPr317MIOjjDoZ4ejCSr9Lpbt/u34+dvc99t7DS8YirW5rwZEhzKPC2BMUFkUhI48qs6qLUSGw5FuL0GA==
+  dependencies:
+    "@jest/schemas" "^28.0.2"
+    "@types/istanbul-lib-coverage" "^2.0.0"
+    "@types/istanbul-reports" "^3.0.0"
+    "@types/node" "*"
+    "@types/yargs" "^17.0.8"
     chalk "^4.0.0"
 
 "@jridgewell/gen-mapping@^0.1.0":
@@ -862,6 +1233,14 @@
   version "3.0.7"
   resolved "https://registry.yarnpkg.com/@jridgewell/resolve-uri/-/resolve-uri-3.0.7.tgz#30cd49820a962aff48c8fffc5cd760151fca61fe"
   integrity sha512-8cXDaBBHOr2pQ7j77Y6Vp5VDT2sIqWyWQ56TjEq4ih/a4iST3dItRe8Q9fp0rrIl9DoKhWQtUQz/YpOxLkXbNA==
+<<<<<<< HEAD
+
+"@jridgewell/set-array@^1.0.0":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@jridgewell/set-array/-/set-array-1.1.1.tgz#36a6acc93987adcf0ba50c66908bd0b70de8afea"
+  integrity sha512-Ct5MqZkLGEXTVmQYbGtx9SVqD2fqwvdubdps5D3djjAkgkKwT918VNOz65pEHFaYTeWcukmJmH5SwsA9Tn2ObQ==
+=======
+>>>>>>> feat(web-sockets): configuring socketio instance
 
 "@jridgewell/set-array@^1.0.0":
   version "1.1.1"
@@ -872,8 +1251,19 @@
   version "1.4.13"
   resolved "https://registry.yarnpkg.com/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.4.13.tgz#b6461fb0c2964356c469e115f504c95ad97ab88c"
   integrity sha512-GryiOJmNcWbovBxTfZSF71V/mXbgcV3MewDe3kIMCLyIh5e7SKAeUZs+rMnJ8jkMolZ/4/VsdBmMrw3l+VdZ3w==
+<<<<<<< HEAD
 
 "@jridgewell/trace-mapping@^0.3.9":
+  version "0.3.13"
+  resolved "https://registry.yarnpkg.com/@jridgewell/trace-mapping/-/trace-mapping-0.3.13.tgz#dcfe3e95f224c8fe97a87a5235defec999aa92ea"
+  integrity sha512-o1xbKhp9qnIAoHJSWd6KlCZfqslL4valSF81H8ImioOAxluWYWOpWkpyktY2vnt4tbrX9XYaxovq6cgowaJp2w==
+  dependencies:
+    "@jridgewell/resolve-uri" "^3.0.3"
+    "@jridgewell/sourcemap-codec" "^1.4.10"
+=======
+>>>>>>> feat(web-sockets): configuring socketio instance
+
+"@jridgewell/trace-mapping@^0.3.7", "@jridgewell/trace-mapping@^0.3.9":
   version "0.3.13"
   resolved "https://registry.yarnpkg.com/@jridgewell/trace-mapping/-/trace-mapping-0.3.13.tgz#dcfe3e95f224c8fe97a87a5235defec999aa92ea"
   integrity sha512-o1xbKhp9qnIAoHJSWd6KlCZfqslL4valSF81H8ImioOAxluWYWOpWkpyktY2vnt4tbrX9XYaxovq6cgowaJp2w==
@@ -1713,6 +2103,11 @@
   resolved "https://registry.yarnpkg.com/@sideway/pinpoint/-/pinpoint-2.0.0.tgz#cff8ffadc372ad29fd3f78277aeb29e632cc70df"
   integrity sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==
 
+"@sinclair/typebox@^0.23.3":
+  version "0.23.5"
+  resolved "https://registry.yarnpkg.com/@sinclair/typebox/-/typebox-0.23.5.tgz#93f7b9f4e3285a7a9ade7557d9a8d36809cbc47d"
+  integrity sha512-AFBVi/iT4g20DHoujvMH1aEDn8fGJh4xsRGCP6d8RpLPMqsNPvW01Jcn0QysXTsg++/xj25NmJsGyH9xug/wKg==
+
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
@@ -1731,6 +2126,23 @@
   integrity sha512-OAPJUAtgeINhh/TAlUID4QTs53Njm7xzddaVlEs/SXwgtiD1tW22zAB/W1wdqfrpmikgaWQ9Fw6Ws+hsiRm5Vg==
   dependencies:
     "@sinonjs/commons" "^1.7.0"
+
+"@sinonjs/fake-timers@^9.1.1":
+  version "9.1.2"
+  resolved "https://registry.yarnpkg.com/@sinonjs/fake-timers/-/fake-timers-9.1.2.tgz#4eaab737fab77332ab132d396a3c0d364bd0ea8c"
+  integrity sha512-BPS4ynJW/o92PUR4wgriz2Ud5gpST5vz6GQfMixEDK0Z8ZCUv2M7SkBLykH56T++Xs+8ln9zTGbOvNGIe02/jw==
+  dependencies:
+    "@sinonjs/commons" "^1.7.0"
+
+"@socket.io/redis-adapter@^7.2.0":
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/@socket.io/redis-adapter/-/redis-adapter-7.2.0.tgz#d0a1c406631bf52556073cc37b764c318efe690f"
+  integrity sha512-/r6oF6Myz0K9uatB/pfCi0BhKg/KRMh1OokrqcjlNz6aq40WiXdFLRbHJQuwGHq/KvB+D6141K+IynbVxZGvhw==
+  dependencies:
+    debug "~4.3.1"
+    notepack.io "~2.2.0"
+    socket.io-adapter "^2.4.0"
+    uid2 "0.0.3"
 
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
@@ -1797,6 +2209,21 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/component-emitter@^1.2.10":
+  version "1.2.11"
+  resolved "https://registry.yarnpkg.com/@types/component-emitter/-/component-emitter-1.2.11.tgz#50d47d42b347253817a39709fef03ce66a108506"
+  integrity sha512-SRXjM+tfsSlA9VuG8hGO2nft2p8zjXCK1VcC6N4NXbBbYbSia9kzCChYQajIjzIqOOOuh5Ock6MmV2oux4jDZQ==
+
+"@types/cookie@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@types/cookie/-/cookie-0.4.1.tgz#bfd02c1f2224567676c1545199f87c3a861d878d"
+  integrity sha512-XW/Aa8APYr6jSVVA1y/DEIZX0/GMKLEVekNG727R8cs56ahETkRAy/3DR7+fJyh7oUgGwNQaRfXCun0+KbWY7Q==
+
+"@types/cors@^2.8.12":
+  version "2.8.12"
+  resolved "https://registry.yarnpkg.com/@types/cors/-/cors-2.8.12.tgz#6b2c510a7ad7039e98e7b8d3d6598f4359e5c080"
+  integrity sha512-vt+kDhq/M2ayberEtJcIN/hxXy1Pk+59g2FV/ZQceeaTyCtCucjL2Q7FXlFjtWn4n15KCr1NE2lNNFhp0lEThw==
+
 "@types/debug@^4.1.7":
   version "4.1.7"
   resolved "https://registry.yarnpkg.com/@types/debug/-/debug-4.1.7.tgz#7cc0ea761509124709b8b2d1090d8f6c17aadb82"
@@ -1812,7 +2239,7 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
-"@types/graceful-fs@^4.1.2":
+"@types/graceful-fs@^4.1.2", "@types/graceful-fs@^4.1.3":
   version "4.1.5"
   resolved "https://registry.yarnpkg.com/@types/graceful-fs/-/graceful-fs-4.1.5.tgz#21ffba0d98da4350db64891f92a9e5db3cdb4e15"
   integrity sha512-anKkLmZZ+xm4p8JWBf4hElkM4XR+EZeA2M9BAkkTldmcyDY4mbdIJnRghDJH3Ov5ooY7/UAoENtmdMSkaAd7Cw==
@@ -1858,10 +2285,45 @@
   resolved "https://registry.yarnpkg.com/@types/ms/-/ms-0.7.31.tgz#31b7ca6407128a3d2bbc27fe2d21b345397f6197"
   integrity sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 "@types/node@*", "@types/node@>= 8", "@types/node@>=12":
   version "17.0.35"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.35.tgz#635b7586086d51fb40de0a2ec9d1014a5283ba4a"
   integrity sha512-vu1SrqBjbbZ3J6vwY17jBs8Sr/BKA+/a/WtjRG+whKg1iuLFOosq872EXS0eXWILdO36DHQQeku/ZcL6hz2fpg==
+=======
+<<<<<<< HEAD
+>>>>>>> feat(web-sockets): configuring socketio instance
+"@types/node@*":
+  version "17.0.23"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.23.tgz#3b41a6e643589ac6442bdbd7a4a3ded62f33f7da"
+  integrity sha512-UxDxWn7dl97rKVeVS61vErvw086aCYhDLyvRQZ5Rk65rZKepaFdm53GeqXaKBuOhED4e9uWq34IC3TdSdJJ2Gw==
+
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+"@types/node@>=12":
+  version "17.0.23"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.23.tgz#3b41a6e643589ac6442bdbd7a4a3ded62f33f7da"
+  integrity sha512-UxDxWn7dl97rKVeVS61vErvw086aCYhDLyvRQZ5Rk65rZKepaFdm53GeqXaKBuOhED4e9uWq34IC3TdSdJJ2Gw==
+=======
+"@types/node@>= 8", "@types/node@>=12":
+  version "17.0.31"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.31.tgz#a5bb84ecfa27eec5e1c802c6bbf8139bdb163a5d"
+  integrity sha512-AR0x5HbXGqkEx9CadRH3EBYx/VkiUgZIhP4wvPn/+5KIsgpNoyFaRlVe0Zlx9gRtg8fA06a9tskE2MSN7TcG4Q==
+
+"@types/node@>=10.0.0":
+  version "17.0.30"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.30.tgz#2c6e8512acac70815e8176aa30c38025067880ef"
+  integrity sha512-oNBIZjIqyHYP8VCNAV9uEytXVeXG2oR0w9lgAXro20eugRQfY002qr3CUl6BAe+Yf/z3CRjPdz27Pu6WWtuSRw==
+>>>>>>> feat(web-sockets): implementing repo pattern
+=======
+=======
+>>>>>>> build(web-sockets): changing dependencies in api-gateway to be able to use socketio there
+"@types/node@*", "@types/node@>= 8", "@types/node@>=10.0.0", "@types/node@>=12":
+  version "17.0.34"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.34.tgz#3b0b6a50ff797280b8d000c6281d229f9c538cef"
+  integrity sha512-XImEz7XwTvDBtzlTnm8YvMqGW/ErMWBsKZ+hMTvnDIjGCKxwK5Xpc+c/oQjOauwq8M4OS11hEkpjX8rrI/eEgA==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
@@ -1913,6 +2375,13 @@
   dependencies:
     "@types/yargs-parser" "*"
 
+"@types/yargs@^17.0.8":
+  version "17.0.10"
+  resolved "https://registry.yarnpkg.com/@types/yargs/-/yargs-17.0.10.tgz#591522fce85d8739bca7b8bb90d048e4478d186a"
+  integrity sha512-gmEaFwpj/7f/ROdtIlci1R1VYU1J4j95m8T+Tj3iBgiBFKg1foE/PSl93bBd5T9LDXNPo8UlNN6W0qwD8O5OaA==
+  dependencies:
+    "@types/yargs-parser" "*"
+
 "@zkochan/cmd-shim@^3.1.0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@zkochan/cmd-shim/-/cmd-shim-3.1.0.tgz#2ab8ed81f5bb5452a85f25758eb9b8681982fd2e"
@@ -1945,6 +2414,14 @@ abstract-logging@^2.0.0:
   resolved "https://registry.yarnpkg.com/abstract-logging/-/abstract-logging-2.0.1.tgz#6b0c371df212db7129b57d2e7fcf282b8bf1c839"
   integrity sha512-2BjRTZxTPvheOvGbBslFSYOUkr+SjPtOnrLP33f+VIWLzezQpZcqVg7ja3L4dBXmzzgwT+a029jRx5PCi3JuiA==
 
+accepts@~1.3.4:
+  version "1.3.8"
+  resolved "https://registry.yarnpkg.com/accepts/-/accepts-1.3.8.tgz#0bf0be125b67014adcb0b0921e62db7bffe16b2e"
+  integrity sha512-PYAthTa2m2VKxuvSD3DPC/Gy+U+sOA1LAuT8mkmRuvw+NACSaeXEQ+NHcVF7rONl6qcaxV3Uuemwawk+7+SJLw==
+  dependencies:
+    mime-types "~2.1.34"
+    negotiator "0.6.3"
+
 acorn-globals@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/acorn-globals/-/acorn-globals-6.0.0.tgz#46cdd39f0f8ff08a876619b55f5ac8a6dc770b45"
@@ -1973,7 +2450,23 @@ acorn@^7.1.1:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.4.1.tgz#feaed255973d2e77555b83dbc08851a6c63520fa"
   integrity sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 acorn@^8.2.4, acorn@^8.4.1, acorn@^8.7.1:
+  version "8.7.1"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.7.1.tgz#0197122c843d1bf6d0a5e83220a788f278f63c30"
+  integrity sha512-Xx54uLJQZ19lKygFXOWsscKUbsBZW0CPykPhVQdhIeIwrbPmJzqeASDInc8nKBnp/JT6igTs82qPXz069H8I/A==
+=======
+acorn@^8.2.4, acorn@^8.7.0:
+  version "8.7.0"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.7.0.tgz#90951fde0f8f09df93549481e5fc141445b791cf"
+  integrity sha512-V/LGr1APy+PXIwKebEWrkZPwoeoF+w1jiOBUmuxuiUIaOHtob8Qc9BTrYo7VuI5fR8tqsy+buA2WFooR5olqvQ==
+>>>>>>> feat(web-sockets): implementing repo pattern
+
+acorn@^8.4.1:
+=======
+acorn@^8.2.4, acorn@^8.4.1, acorn@^8.7.1:
+>>>>>>> feat(web-sockets): configuring socketio instance
   version "8.7.1"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.7.1.tgz#0197122c843d1bf6d0a5e83220a788f278f63c30"
   integrity sha512-Xx54uLJQZ19lKygFXOWsscKUbsBZW0CPykPhVQdhIeIwrbPmJzqeASDInc8nKBnp/JT6igTs82qPXz069H8I/A==
@@ -2026,10 +2519,22 @@ ajv@^8.1.0:
     require-from-string "^2.0.2"
     uri-js "^4.2.2"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 ansi-align@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ansi-align/-/ansi-align-2.0.0.tgz#c36aeccba563b89ceb556f3690f0b1d9e3547f7f"
   integrity sha512-TdlOggdA/zURfMYa7ABC66j+oqfMew58KpJMbUlH3bcZP1b+cBHIHDDn5uH9INsxrHBPjsqM0tDB4jPTF/vgJA==
+=======
+ansi-align@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/ansi-align/-/ansi-align-2.0.0.tgz#c36aeccba563b89ceb556f3690f0b1d9e3547f7f"
+<<<<<<< HEAD
+  integrity sha1-w2rsy6VjuJzrVW82kPCx2eNUf38=
+>>>>>>> feat(web-sockets): enable connection to redis
+=======
+  integrity sha512-TdlOggdA/zURfMYa7ABC66j+oqfMew58KpJMbUlH3bcZP1b+cBHIHDDn5uH9INsxrHBPjsqM0tDB4jPTF/vgJA==
+>>>>>>> feat(web-sockets): configuring socketio instance
   dependencies:
     string-width "^2.0.0"
 
@@ -2040,6 +2545,11 @@ ansi-align@^3.0.0:
   dependencies:
     string-width "^4.1.0"
 
+<<<<<<< HEAD
+=======
+>>>>>>> feat(web-sockets): implementing repo pattern
+=======
+>>>>>>> feat(web-sockets): enable connection to redis
 ansi-escapes@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-3.2.0.tgz#8780b98ff9dbf5638152d1f1fe5c1d7b4442976b"
@@ -2091,16 +2601,39 @@ ansi-styles@^5.0.0:
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-5.2.0.tgz#07449690ad45777d1924ac2abb2fc8895dba836b"
   integrity sha512-Cxwpt2SfTzTtXcfOlzGEee8O+c+MmUgGrNiBcXnuWxuFJHe6a5Hz7qwhwe5OgaSYI0IJvkLqWX1ASG+cJOkEiA==
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 ansicolors@~0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/ansicolors/-/ansicolors-0.3.2.tgz#665597de86a9ffe3aa9bfbe6cae5c6ea426b4979"
   integrity sha512-QXu7BPrP29VllRxH8GwB7x5iX5qWKAAMLqKQGWTeLWVlNHNOpVMJ91dsxQAIWXpjuW5wqvxu3Jd/nRjrJ+0pqg==
+=======
+ansicolors@~0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/ansicolors/-/ansicolors-0.3.2.tgz#665597de86a9ffe3aa9bfbe6cae5c6ea426b4979"
+<<<<<<< HEAD
+  integrity sha1-ZlWX3oap/+Oqm/vmyuXG6kJrSXk=
+>>>>>>> feat(web-sockets): enable connection to redis
+=======
+  integrity sha512-QXu7BPrP29VllRxH8GwB7x5iX5qWKAAMLqKQGWTeLWVlNHNOpVMJ91dsxQAIWXpjuW5wqvxu3Jd/nRjrJ+0pqg==
+>>>>>>> feat(web-sockets): configuring socketio instance
 
 ansistyles@~0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/ansistyles/-/ansistyles-0.1.3.tgz#5de60415bda071bb37127854c864f41b23254539"
+<<<<<<< HEAD
+<<<<<<< HEAD
   integrity sha512-6QWEyvMgIXX0eO972y7YPBLSBsq7UWKFAoNNTLGaOJ9bstcEL9sCbcjf96dVfNDdUsRoGOK82vWFJlKApXds7g==
 
+=======
+>>>>>>> feat(web-sockets): implementing repo pattern
+=======
+  integrity sha1-XeYEFb2gcbs3EnhUyGT0GyMlRTk=
+=======
+  integrity sha512-6QWEyvMgIXX0eO972y7YPBLSBsq7UWKFAoNNTLGaOJ9bstcEL9sCbcjf96dVfNDdUsRoGOK82vWFJlKApXds7g==
+>>>>>>> feat(web-sockets): configuring socketio instance
+
+>>>>>>> feat(web-sockets): enable connection to redis
 any-promise@^1.0.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/any-promise/-/any-promise-1.3.0.tgz#abc6afeedcea52e809cdc0376aed3ce39635d17f"
@@ -2268,11 +2801,14 @@ asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
   integrity sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==
+<<<<<<< HEAD
 
 at-least-node@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/at-least-node/-/at-least-node-1.0.0.tgz#602cd4b46e844ad4effc92a8011a3c46e0238dc2"
   integrity sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==
+=======
+>>>>>>> feat(web-sockets): configuring socketio instance
 
 atob-lite@^2.0.0:
   version "2.0.0"
@@ -2323,6 +2859,19 @@ babel-jest@^27.5.1:
     graceful-fs "^4.2.9"
     slash "^3.0.0"
 
+babel-jest@^28.1.0:
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/babel-jest/-/babel-jest-28.1.0.tgz#95a67f8e2e7c0042e7b3ad3951b8af41a533b5ea"
+  integrity sha512-zNKk0yhDZ6QUwfxh9k07GII6siNGMJWVUU49gmFj5gfdqDKLqa2RArXOF2CODp4Dr7dLxN2cvAV+667dGJ4b4w==
+  dependencies:
+    "@jest/transform" "^28.1.0"
+    "@types/babel__core" "^7.1.14"
+    babel-plugin-istanbul "^6.1.1"
+    babel-preset-jest "^28.0.2"
+    chalk "^4.0.0"
+    graceful-fs "^4.2.9"
+    slash "^3.0.0"
+
 babel-plugin-istanbul@^6.1.1:
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/babel-plugin-istanbul/-/babel-plugin-istanbul-6.1.1.tgz#fa88ec59232fd9b4e36dbbc540a8ec9a9b47da73"
@@ -2342,6 +2891,16 @@ babel-plugin-jest-hoist@^27.5.1:
     "@babel/template" "^7.3.3"
     "@babel/types" "^7.3.3"
     "@types/babel__core" "^7.0.0"
+    "@types/babel__traverse" "^7.0.6"
+
+babel-plugin-jest-hoist@^28.0.2:
+  version "28.0.2"
+  resolved "https://registry.yarnpkg.com/babel-plugin-jest-hoist/-/babel-plugin-jest-hoist-28.0.2.tgz#9307d03a633be6fc4b1a6bc5c3a87e22bd01dd3b"
+  integrity sha512-Kizhn/ZL+68ZQHxSnHyuvJv8IchXD62KQxV77TBDV/xoBFBOfgRAk97GNs6hXdTTCiVES9nB2I6+7MXXrk5llQ==
+  dependencies:
+    "@babel/template" "^7.3.3"
+    "@babel/types" "^7.3.3"
+    "@types/babel__core" "^7.1.14"
     "@types/babel__traverse" "^7.0.6"
 
 babel-preset-current-node-syntax@^1.0.0:
@@ -2370,6 +2929,14 @@ babel-preset-jest@^27.5.1:
     babel-plugin-jest-hoist "^27.5.1"
     babel-preset-current-node-syntax "^1.0.0"
 
+babel-preset-jest@^28.0.2:
+  version "28.0.2"
+  resolved "https://registry.yarnpkg.com/babel-preset-jest/-/babel-preset-jest-28.0.2.tgz#d8210fe4e46c1017e9fa13d7794b166e93aa9f89"
+  integrity sha512-sYzXIdgIXXroJTFeB3S6sNDWtlJ2dllCdTEsnZ65ACrMojj3hVNFRmnJ1HZtomGi+Be7aqpY/HJ92fr8OhKVkQ==
+  dependencies:
+    babel-plugin-jest-hoist "^28.0.2"
+    babel-preset-current-node-syntax "^1.0.0"
+
 balanced-match@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.2.tgz#e83e3a7e3f300b34cb9d87f615fa0cbf357690ee"
@@ -2379,6 +2946,11 @@ base64-js@^1.3.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-1.5.1.tgz#1b1b440160a5bf7ad40b650f095963481903930a"
   integrity sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==
+
+base64id@2.0.0, base64id@~2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/base64id/-/base64id-2.0.0.tgz#2770ac6bc47d312af97a8bf9a634342e0cd25cb6"
+  integrity sha512-lGe34o6EHj9y3Kts9R4ZYs/Gr+6N7MCaMlIFA3F1R2O5/m7K06AxfSeO5530PEERE6/WyEg3lsuyw4GHlPZHog==
 
 base@^0.11.1:
   version "0.11.2"
@@ -2405,6 +2977,10 @@ before-after-hook@^2.0.0:
   resolved "https://registry.yarnpkg.com/before-after-hook/-/before-after-hook-2.2.2.tgz#a6e8ca41028d90ee2c24222f201c90956091613e"
   integrity sha512-3pZEU3NT5BFUo/AD5ERPWOgQOCZITni6iavr5AUw5AUwQjMlI0kzu5btnyD39AF0gUEsDPwJT+oY1ORBJijPjQ==
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> feat(web-sockets): enable connection to redis
 bin-links@^1.1.2, bin-links@^1.1.8:
   version "1.1.8"
   resolved "https://registry.yarnpkg.com/bin-links/-/bin-links-1.1.8.tgz#bd39aadab5dc4bdac222a07df5baf1af745b2228"
@@ -2422,7 +2998,13 @@ binary-extensions@^2.0.0:
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-2.2.0.tgz#75f502eeaf9ffde42fc98829645be4ea76bd9e2d"
   integrity sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==
 
+<<<<<<< HEAD
 bluebird@^3.5.1, bluebird@^3.5.3, bluebird@^3.5.5, bluebird@^3.7.2:
+=======
+=======
+>>>>>>> feat(web-sockets): enable connection to redis
+bluebird@^3.5.1, bluebird@^3.5.3, bluebird@^3.5.5:
+>>>>>>> feat(web-sockets): implementing repo pattern
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.7.2.tgz#9f229c15be272454ffa973ace0dbee79a1b0c36f"
   integrity sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg==
@@ -2495,6 +3077,20 @@ browser-process-hrtime@^1.0.0:
   resolved "https://registry.yarnpkg.com/browser-process-hrtime/-/browser-process-hrtime-1.0.0.tgz#3c9b4b7d782c8121e56f10106d84c0d0ffc94626"
   integrity sha512-9o5UecI3GhkpM6DrXr69PblIuWxPKk9Y0jHBRhdocZ2y7YECBFCsHm79Pr3OyR2AvjhDkabFJaDJMYRazHgsow==
 
+<<<<<<< HEAD
+browserslist@^4.20.2:
+  version "4.20.3"
+  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.20.3.tgz#eb7572f49ec430e054f56d52ff0ebe9be915f8bf"
+  integrity sha512-NBhymBQl1zM0Y5dQT/O+xiLP9/rzOIQdKM/eMJBAq7yBgaB6krIYLGejrwVYnSHZdqjscB1SPuAjHwxjvN6Wdg==
+  dependencies:
+    caniuse-lite "^1.0.30001332"
+    electron-to-chromium "^1.4.118"
+    escalade "^3.1.1"
+    node-releases "^2.0.3"
+    picocolors "^1.0.0"
+
+=======
+>>>>>>> feat(web-sockets): configuring socketio instance
 browserslist@^4.20.2:
   version "4.20.3"
   resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.20.3.tgz#eb7572f49ec430e054f56d52ff0ebe9be915f8bf"
@@ -2514,9 +3110,15 @@ bser@2.1.1:
     node-int64 "^0.4.0"
 
 bson@^4.6.2, bson@^4.6.3:
+<<<<<<< HEAD
   version "4.6.4"
   resolved "https://registry.yarnpkg.com/bson/-/bson-4.6.4.tgz#e66d4a334f1ab230dfcfb9ec4ea9091476dd372e"
   integrity sha512-TdQ3FzguAu5HKPPlr0kYQCyrYUYh8tFM+CMTpxjNzVzxeiJY00Rtuj3LXLHSgiGvmaWlZ8PE+4KyM2thqE38pQ==
+=======
+  version "4.6.3"
+  resolved "https://registry.yarnpkg.com/bson/-/bson-4.6.3.tgz#d1a9a0b84b9e84b62390811fc5580f6a8b1d858c"
+  integrity sha512-rAqP5hcUVJhXP2MCSNVsf0oM2OGU1So6A9pVRDYayvJ5+hygXHQApf87wd5NlhPM1J9RJnbqxIG/f8QTzRoQ4A==
+>>>>>>> feat(web-sockets): configuring socketio instance
   dependencies:
     buffer "^5.6.0"
 
@@ -2695,6 +3297,14 @@ camelcase@^6.2.0:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-6.3.0.tgz#5685b95eb209ac9c0c177467778c9c84df58ba9a"
   integrity sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==
 
+<<<<<<< HEAD
+caniuse-lite@^1.0.30001332:
+  version "1.0.30001341"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001341.tgz#59590c8ffa8b5939cf4161f00827b8873ad72498"
+  integrity sha512-2SodVrFFtvGENGCv0ChVJIDQ0KPaS1cg7/qtfMaICgeMolDdo/Z2OD32F0Aq9yl6F4YFwGPBS5AaPqNYiW4PoA==
+
+=======
+>>>>>>> feat(web-sockets): configuring socketio instance
 caniuse-lite@^1.0.30001332:
   version "1.0.30001341"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001341.tgz#59590c8ffa8b5939cf4161f00827b8873ad72498"
@@ -2794,16 +3404,29 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 cli-boxes@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/cli-boxes/-/cli-boxes-1.0.0.tgz#4fa917c3e59c94a004cd61f8ee509da651687143"
   integrity sha512-3Fo5wu8Ytle8q9iCzS4D2MWVL2X7JVWRiS1BnXbTFDhS9c/REkM9vd1AmabsoZoY5/dGi5TT9iKL8Kb6DeBRQg==
+=======
+cli-boxes@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/cli-boxes/-/cli-boxes-1.0.0.tgz#4fa917c3e59c94a004cd61f8ee509da651687143"
+<<<<<<< HEAD
+  integrity sha1-T6kXw+WclKAEzWH47lCdplFocUM=
+>>>>>>> feat(web-sockets): enable connection to redis
+=======
+  integrity sha512-3Fo5wu8Ytle8q9iCzS4D2MWVL2X7JVWRiS1BnXbTFDhS9c/REkM9vd1AmabsoZoY5/dGi5TT9iKL8Kb6DeBRQg==
+>>>>>>> feat(web-sockets): configuring socketio instance
 
 cli-boxes@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/cli-boxes/-/cli-boxes-2.2.1.tgz#ddd5035d25094fce220e9cab40a45840a440318f"
   integrity sha512-y4coMcylgSCdVinjiDBuR8PCC2bLjyGTwEmPb9NHR/QaNU6EUOXcTY/s6VjGMD6ENSEaeQYHCY0GNGS5jfMwPw==
 
+<<<<<<< HEAD
 cli-color@^2.0.1:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/cli-color/-/cli-color-2.0.2.tgz#e295addbae470800def0254183c648531cdf4e3f"
@@ -2819,10 +3442,25 @@ cli-columns@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/cli-columns/-/cli-columns-3.1.2.tgz#6732d972979efc2ae444a1f08e08fa139c96a18e"
   integrity sha512-iQYpDgpPPmCjn534ikQOhi+ydP6uMar+DtJ6a0In4aGL/PKqWfao75s6eF81quQQaz7isGz+goNECLARRZswdg==
+=======
+cli-columns@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/cli-columns/-/cli-columns-3.1.2.tgz#6732d972979efc2ae444a1f08e08fa139c96a18e"
+<<<<<<< HEAD
+  integrity sha1-ZzLZcpee/CrkRKHwjgj6E5yWoY4=
+>>>>>>> feat(web-sockets): enable connection to redis
+=======
+  integrity sha512-iQYpDgpPPmCjn534ikQOhi+ydP6uMar+DtJ6a0In4aGL/PKqWfao75s6eF81quQQaz7isGz+goNECLARRZswdg==
+>>>>>>> feat(web-sockets): configuring socketio instance
   dependencies:
     string-width "^2.0.0"
     strip-ansi "^3.0.1"
 
+<<<<<<< HEAD
+=======
+>>>>>>> feat(web-sockets): implementing repo pattern
+=======
+>>>>>>> feat(web-sockets): enable connection to redis
 cli-cursor@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/cli-cursor/-/cli-cursor-2.1.0.tgz#b35dac376479facc3e94747d41d0d0f5238ffcb5"
@@ -2897,6 +3535,11 @@ clone@^1.0.2:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/clone/-/clone-1.0.4.tgz#da309cc263df15994c688ca902179ca3c7cd7c7e"
   integrity sha1-2jCcwmPfFZlMaIypAheco8fNfH4=
+
+cluster-key-slot@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/cluster-key-slot/-/cluster-key-slot-1.1.0.tgz#30474b2a981fb12172695833052bc0d01336d10d"
+  integrity sha512-2Nii8p3RwAPiFwsnZvukotvow2rIHM+yQ6ZcBXGHdniadkYGZYiGmkHJIbZPIV9nfv7m/U1IPMVVcAhoWFeklw==
 
 cmd-shim@^3.0.0, cmd-shim@^3.0.3:
   version "3.0.3"
@@ -3018,7 +3661,7 @@ compare-func@^2.0.0:
     array-ify "^1.0.0"
     dot-prop "^5.1.0"
 
-component-emitter@^1.2.1:
+component-emitter@^1.2.1, component-emitter@~1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/component-emitter/-/component-emitter-1.3.0.tgz#16e4070fba8ae29b679f2215853ee181ab2eabc0"
   integrity sha512-Rd3se6QB+sO1TwqZjscQrurpEPIfO0/yYnSin6Q/rD3mOutHvUrCAhJub3r90uNb+SESBuE0QYoB90YdfatsRg==
@@ -3048,7 +3691,15 @@ concat-stream@^2.0.0:
     readable-stream "^3.0.2"
     typedarray "^0.0.6"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 config-chain@^1.1.11, config-chain@^1.1.12, config-chain@^1.1.13:
+=======
+config-chain@^1.1.11:
+>>>>>>> feat(web-sockets): implementing repo pattern
+=======
+config-chain@^1.1.11, config-chain@^1.1.12:
+>>>>>>> feat(web-sockets): enable connection to redis
   version "1.1.13"
   resolved "https://registry.yarnpkg.com/config-chain/-/config-chain-1.1.13.tgz#fad0795aa6a6cdaff9ed1b68e9dff94372c232f4"
   integrity sha512-qj+f8APARXHrM0hraqXYb2/bOVSV4PvJQlNZ/DVj0QrmNM2q2euizkeuVckQ57J+W0mRH6Hvi+k50M4Jul2VRQ==
@@ -3200,10 +3851,30 @@ cookie-signature@^1.1.0:
   resolved "https://registry.yarnpkg.com/cookie-signature/-/cookie-signature-1.2.0.tgz#4deed303f5f095e7a02c979e3fcb19157f5eaeea"
   integrity sha512-R0BOPfLGTitaKhgKROKZQN6iyq2iDQcH1DOF8nJoaWapguX5bC2w+Q/I9NmmM5lfcvEarnLZr+cCvmEYYSXvYA==
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 cookie@^0.5.0:
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.5.0.tgz#d1f5d71adec6558c58f389987c366aa47e994f8b"
   integrity sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==
+=======
+cookie@^0.4.0:
+=======
+cookie@^0.4.0, cookie@~0.4.1:
+>>>>>>> feat(web-sockets): implementing repo pattern
+=======
+=======
+>>>>>>> build(web-sockets): changing dependencies in api-gateway to be able to use socketio there
+cookie@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.5.0.tgz#d1f5d71adec6558c58f389987c366aa47e994f8b"
+  integrity sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==
+
+cookie@~0.4.1:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.4.2.tgz#0e41f24de5ecf317947c82fc789e06a884824432"
+  integrity sha512-aSWTXFzaKWkvHO1Ny/s+ePFpvKsPnjc551iI41v3ny/ow6tBG5Vd+FuqGNhh1LxOmVzOlGUriIlOaokOvhaStA==
+>>>>>>> feat(web-sockets): implementing repo pattern
 
 copy-concurrently@^1.0.0:
   version "1.0.5"
@@ -3232,10 +3903,32 @@ core-util-is@~1.0.0:
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.3.tgz#a6042d3634c2b27e9328f837b965fac83808db85"
   integrity sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==
 
+<<<<<<< HEAD
 cosmiconfig-typescript-loader@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/cosmiconfig-typescript-loader/-/cosmiconfig-typescript-loader-2.0.0.tgz#bc4f5bfcaa11a353714ecdef00c4f2226ef191b8"
   integrity sha512-2NlGul/E3vTQEANqPziqkA01vfiuUU8vT0jZAuUIjEW8u3eCcnCQWLggapCjhbF76s7KQF0fM0kXSKmzaDaG1g==
+=======
+cors@~2.8.5:
+  version "2.8.5"
+  resolved "https://registry.yarnpkg.com/cors/-/cors-2.8.5.tgz#eac11da51592dd86b9f06f6e7ac293b3df875d29"
+  integrity sha512-KIHbLJqu73RGr/hnbrO9uBeixNGuvSQjul/jdFvS/KFSIH1hWVd1ng7zOHx+YrEfInLG7q4n6GHQ9cDtxv/P6g==
+  dependencies:
+    object-assign "^4"
+    vary "^1"
+
+<<<<<<< HEAD
+cosmiconfig-typescript-loader@^1.0.0:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/cosmiconfig-typescript-loader/-/cosmiconfig-typescript-loader-1.0.9.tgz#69c523f7e8c3d9f27f563d02bbeadaf2f27212d3"
+  integrity sha512-tRuMRhxN4m1Y8hP9SNYfz7jRwt8lZdWxdjg/ohg5esKmsndJIn4yT96oJVcf5x0eA11taXl+sIp+ielu529k6g==
+>>>>>>> feat(web-sockets): implementing repo pattern
+=======
+cosmiconfig-typescript-loader@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/cosmiconfig-typescript-loader/-/cosmiconfig-typescript-loader-2.0.0.tgz#bc4f5bfcaa11a353714ecdef00c4f2226ef191b8"
+  integrity sha512-2NlGul/E3vTQEANqPziqkA01vfiuUU8vT0jZAuUIjEW8u3eCcnCQWLggapCjhbF76s7KQF0fM0kXSKmzaDaG1g==
+>>>>>>> feat(web-sockets): configuring socketio instance
   dependencies:
     cosmiconfig "^7"
     ts-node "^10.7.0"
@@ -3396,7 +4089,7 @@ debug@3.1.0:
   dependencies:
     ms "2.0.0"
 
-debug@4, debug@4.x, debug@^4.0.0, debug@^4.1.0, debug@^4.1.1, debug@^4.3.2, debug@^4.3.3:
+debug@4, debug@4.x, debug@^4.0.0, debug@^4.1.0, debug@^4.1.1, debug@^4.3.2, debug@^4.3.3, debug@^4.3.4, debug@~4.3.1, debug@~4.3.2:
   version "4.3.4"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.4.tgz#1319f6579357f2338d3337d2cdd4914bb5dcc865"
   integrity sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==
@@ -3472,15 +4165,34 @@ defaults@^1.0.3:
   dependencies:
     clone "^1.0.2"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> feat(web-sockets): enable connection to redis
 defer-to-connect@^1.0.1:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/defer-to-connect/-/defer-to-connect-1.1.3.tgz#331ae050c08dcf789f8c83a7b81f0ed94f4ac591"
   integrity sha512-0ISdNousHvZT2EiFlZeZAHBUvSxmKswVCEf8hW7KWgG4a8MVEu/3Vb6uWYozkjylyCxe0JBIiRB1jV45S70WVQ==
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> feat(web-sockets): configuring socketio instance
 define-properties@^1.1.3, define-properties@^1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/define-properties/-/define-properties-1.1.4.tgz#0b14d7bd7fbeb2f3572c3a7eda80ea5d57fb05b1"
   integrity sha512-uckOqKcfaVvtBdsVkdPv3XjveQJsNQqmhXgRi8uhvWWuPYZCNlzT8qAyblUgNoXdHdjMTzAqeGjAoli8f+bzPA==
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> feat(web-sockets): enable connection to redis
+define-properties@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/define-properties/-/define-properties-1.1.3.tgz#cf88da6cbee26fe6db7094f61d870cbd84cee9f1"
+  integrity sha512-3MqfYKj2lLzdMSf8ZIZE/V+Zuy+BgD6f164e8K2w7dgnpKArBDerGYpM46IYYcjnkdPNMjPk9A6VFB8+3SKlXQ==
+>>>>>>> feat(web-sockets): implementing repo pattern
+=======
+>>>>>>> feat(web-sockets): configuring socketio instance
   dependencies:
     has-property-descriptors "^1.0.0"
     object-keys "^1.1.1"
@@ -3569,6 +4281,11 @@ diff-sequences@^27.5.1:
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/diff-sequences/-/diff-sequences-27.5.1.tgz#eaecc0d327fd68c8d9672a1e64ab8dccb2ef5327"
   integrity sha512-k1gCAXAsNgLwEL+Y8Wvl+M6oEFj5bgazfZULpS5CneoPPXRaCCW7dm+q21Ky2VEE5X+VeRDBVg1Pcvvsr4TtNQ==
+
+diff-sequences@^28.0.2:
+  version "28.0.2"
+  resolved "https://registry.yarnpkg.com/diff-sequences/-/diff-sequences-28.0.2.tgz#40f8d4ffa081acbd8902ba35c798458d0ff1af41"
+  integrity sha512-YtEoNynLDFCRznv/XDalsKGSZDoj0U5kLnXvY0JSq3nBboRrZXjD81+eSiwi+nzcZDwedMmcowcxNwwgFW23mQ==
 
 diff@^4.0.1:
   version "4.0.2"
@@ -3672,6 +4389,9 @@ editor@~1.0.0:
   resolved "https://registry.yarnpkg.com/editor/-/editor-1.0.0.tgz#60c7f87bd62bcc6a894fa8ccd6afb7823a24f742"
   integrity sha1-YMf4e9YrzGqJT6jM1q+3gjok90I=
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 editorconfig@^0.15.3:
   version "0.15.3"
   resolved "https://registry.yarnpkg.com/editorconfig/-/editorconfig-0.15.3.tgz#bef84c4e75fb8dcb0ce5cee8efd51c15999befc5"
@@ -3682,15 +4402,49 @@ editorconfig@^0.15.3:
     semver "^5.6.0"
     sigmund "^1.0.1"
 
+=======
+=======
+>>>>>>> feat(web-sockets): implementing repo pattern
+>>>>>>> feat(web-sockets): implementing repo pattern
+=======
+=======
+>>>>>>> feat(web-sockets): implementing repo pattern
+=======
+>>>>>>> feat(web-sockets): enable connection to redis
+>>>>>>> feat(web-sockets): enable connection to redis
+=======
+>>>>>>> build(web-sockets): changing dependencies in api-gateway to be able to use socketio there
 ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.4.118:
+<<<<<<< HEAD
+<<<<<<< HEAD
   version "1.4.137"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.137.tgz#186180a45617283f1c012284458510cd99d6787f"
   integrity sha512-0Rcpald12O11BUogJagX3HsCN3FE83DSqWjgXoHo5a72KUKMSfI39XBgJpgNNxS9fuGzytaFjE06kZkiVFy2qA==
+=======
+  version "1.4.129"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.129.tgz#c675793885721beefff99da50f57c6525c2cd238"
+  integrity sha512-GgtN6bsDtHdtXJtlMYZWGB/uOyjZWjmRDumXTas7dGBaB9zUyCjzHet1DY2KhyHN8R0GLbzZWqm4efeddqqyRQ==
+
+electron-to-chromium@^1.4.84:
+  version "1.4.104"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.104.tgz#60973b0a7d398efa877196e8ccb0c93d48b918d8"
+  integrity sha512-2kjoAyiG7uMyGRM9mx25s3HAzmQG2ayuYXxsFmYugHSDcwxREgLtscZvbL1JcW9S/OemeQ3f/SG6JhDwpnCclQ==
+>>>>>>> feat(web-sockets): implementing repo pattern
+=======
+  version "1.4.137"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.137.tgz#186180a45617283f1c012284458510cd99d6787f"
+  integrity sha512-0Rcpald12O11BUogJagX3HsCN3FE83DSqWjgXoHo5a72KUKMSfI39XBgJpgNNxS9fuGzytaFjE06kZkiVFy2qA==
+>>>>>>> feat(web-sockets): configuring socketio instance
+
+emittery@^0.10.2:
+  version "0.10.2"
+  resolved "https://registry.yarnpkg.com/emittery/-/emittery-0.10.2.tgz#902eec8aedb8c41938c46e9385e9db7e03182933"
+  integrity sha512-aITqOwnLanpHLNXZJENbOgjUBeHocD+xsSJmNrjovKBW5HbSpW3d1pEls7GFQPUWXiwG9+0P4GtHfEqC/4M0Iw==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -3736,6 +4490,27 @@ end-of-stream@^1.0.0, end-of-stream@^1.1.0:
   dependencies:
     once "^1.4.0"
 
+engine.io-parser@~5.0.3:
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/engine.io-parser/-/engine.io-parser-5.0.4.tgz#0b13f704fa9271b3ec4f33112410d8f3f41d0fc0"
+  integrity sha512-+nVFp+5z1E3HcToEnO7ZIj3g+3k9389DvWtvJZz0T6/eOCPIyyxehFcedoYrZQrp0LgQbD9pPXhpMBKMd5QURg==
+
+engine.io@~6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/engine.io/-/engine.io-6.2.0.tgz#003bec48f6815926f2b1b17873e576acd54f41d0"
+  integrity sha512-4KzwW3F3bk+KlzSOY57fj/Jx6LyRQ1nbcyIadehl+AnXjKT7gDO0ORdRi/84ixvMKTym6ZKuxvbzN62HDDU1Lg==
+  dependencies:
+    "@types/cookie" "^0.4.1"
+    "@types/cors" "^2.8.12"
+    "@types/node" ">=10.0.0"
+    accepts "~1.3.4"
+    base64id "2.0.0"
+    cookie "~0.4.1"
+    cors "~2.8.5"
+    debug "~4.3.1"
+    engine.io-parser "~5.0.3"
+    ws "~8.2.3"
+
 env-paths@^2.2.0:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/env-paths/-/env-paths-2.2.1.tgz#420399d416ce1fbe9bc0a07c62fa68d67fd0f8f2"
@@ -3766,9 +4541,21 @@ error-ex@^1.2.0, error-ex@^1.3.1:
     is-arrayish "^0.2.1"
 
 es-abstract@^1.19.0, es-abstract@^1.19.1, es-abstract@^1.19.2, es-abstract@^1.19.5:
+<<<<<<< HEAD
+<<<<<<< HEAD
   version "1.20.1"
   resolved "https://registry.yarnpkg.com/es-abstract/-/es-abstract-1.20.1.tgz#027292cd6ef44bd12b1913b828116f54787d1814"
   integrity sha512-WEm2oBhfoI2sImeM4OF2zE2V3BYdSF+KnSi9Sidz51fQHd7+JuF8Xgcj9/0o+OWeIeIS/MiuNnlruQrJf16GQA==
+=======
+  version "1.20.0"
+  resolved "https://registry.yarnpkg.com/es-abstract/-/es-abstract-1.20.0.tgz#b2d526489cceca004588296334726329e0a6bfb6"
+  integrity sha512-URbD8tgRthKD3YcC39vbvSDrX23upXnPcnGAjQfgxXF5ID75YcENawc9ZX/9iTP9ptUyfCLIxTTuMYoRfiOVKA==
+>>>>>>> feat(web-sockets): configuring socketio instance
+=======
+  version "1.20.1"
+  resolved "https://registry.yarnpkg.com/es-abstract/-/es-abstract-1.20.1.tgz#027292cd6ef44bd12b1913b828116f54787d1814"
+  integrity sha512-WEm2oBhfoI2sImeM4OF2zE2V3BYdSF+KnSi9Sidz51fQHd7+JuF8Xgcj9/0o+OWeIeIS/MiuNnlruQrJf16GQA==
+>>>>>>> build(web-sockets): changing dependencies in api-gateway to be able to use socketio there
   dependencies:
     call-bind "^1.0.2"
     es-to-primitive "^1.2.1"
@@ -3789,7 +4576,15 @@ es-abstract@^1.19.0, es-abstract@^1.19.1, es-abstract@^1.19.2, es-abstract@^1.19
     object-inspect "^1.12.0"
     object-keys "^1.1.1"
     object.assign "^4.1.2"
+<<<<<<< HEAD
+<<<<<<< HEAD
     regexp.prototype.flags "^1.4.3"
+=======
+    regexp.prototype.flags "^1.4.1"
+>>>>>>> feat(web-sockets): configuring socketio instance
+=======
+    regexp.prototype.flags "^1.4.3"
+>>>>>>> build(web-sockets): changing dependencies in api-gateway to be able to use socketio there
     string.prototype.trimend "^1.0.5"
     string.prototype.trimstart "^1.0.5"
     unbox-primitive "^1.0.2"
@@ -4001,12 +4796,30 @@ eslint-visitor-keys@^3.3.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.3.0.tgz#f6480fa6b1f30efe2d1968aa8ac745b862469826"
   integrity sha512-mQ+suqKJVyeuwGYHAdjMFqjCyfl8+Ldnxuyp3ldiMBFKkvytrXUZWaiPCEav8qDHKty44bD+qV1IP4T+w+xXRA==
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> feat(web-sockets): configuring socketio instance
 eslint@^8.10.0, eslint@^8.11.0, eslint@^8.12.0, eslint@^8.13.0, eslint@^8.2.0:
   version "8.15.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.15.0.tgz#fea1d55a7062da48d82600d2e0974c55612a11e9"
   integrity sha512-GG5USZ1jhCu8HJkzGgeK8/+RGnHaNYZGrGDzUtigK3BsGESW/rs2az23XqE0WVwDxy1VRvvjSSGu5nB0Bu+6SA==
+<<<<<<< HEAD
   dependencies:
     "@eslint/eslintrc" "^1.2.3"
+=======
+eslint@^8.10.0, eslint@^8.12.0, eslint@^8.13.0, eslint@^8.2.0:
+  version "8.14.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.14.0.tgz#62741f159d9eb4a79695b28ec4989fcdec623239"
+  integrity sha512-3/CE4aJX7LNEiE3i6FeodHmI/38GZtWCsAtsymScmzYapx8q1nVVb+eLcLSzATmCPXw5pT4TqVs1E0OmxAd9tw==
+  dependencies:
+    "@eslint/eslintrc" "^1.2.2"
+>>>>>>> feat(web-sockets): enable connection to redis
+=======
+  dependencies:
+    "@eslint/eslintrc" "^1.2.3"
+>>>>>>> feat(web-sockets): configuring socketio instance
     "@humanwhocodes/config-array" "^0.9.2"
     ajv "^6.10.0"
     chalk "^4.0.0"
@@ -4017,7 +4830,15 @@ eslint@^8.10.0, eslint@^8.11.0, eslint@^8.12.0, eslint@^8.13.0, eslint@^8.2.0:
     eslint-scope "^7.1.1"
     eslint-utils "^3.0.0"
     eslint-visitor-keys "^3.3.0"
+<<<<<<< HEAD
+<<<<<<< HEAD
     espree "^9.3.2"
+=======
+    espree "^9.3.1"
+>>>>>>> feat(web-sockets): enable connection to redis
+=======
+    espree "^9.3.2"
+>>>>>>> feat(web-sockets): configuring socketio instance
     esquery "^1.4.0"
     esutils "^2.0.2"
     fast-deep-equal "^3.1.3"
@@ -4033,7 +4854,15 @@ eslint@^8.10.0, eslint@^8.11.0, eslint@^8.12.0, eslint@^8.13.0, eslint@^8.2.0:
     json-stable-stringify-without-jsonify "^1.0.1"
     levn "^0.4.1"
     lodash.merge "^4.6.2"
+<<<<<<< HEAD
+<<<<<<< HEAD
     minimatch "^3.1.2"
+=======
+    minimatch "^3.0.4"
+>>>>>>> feat(web-sockets): enable connection to redis
+=======
+    minimatch "^3.1.2"
+>>>>>>> feat(web-sockets): configuring socketio instance
     natural-compare "^1.4.0"
     optionator "^0.9.1"
     regexpp "^3.2.0"
@@ -4042,7 +4871,18 @@ eslint@^8.10.0, eslint@^8.11.0, eslint@^8.12.0, eslint@^8.13.0, eslint@^8.2.0:
     text-table "^0.2.0"
     v8-compile-cache "^2.0.3"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 eslint@~8.12.0:
+=======
+eslint@^8.11.0:
+>>>>>>> feat(web-sockets): implementing repo pattern
+=======
+eslint@^8.11.0, eslint@~8.12.0:
+>>>>>>> feat(web-sockets): enable connection to redis
+=======
+eslint@~8.12.0:
+>>>>>>> feat(web-sockets): configuring socketio instance
   version "8.12.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.12.0.tgz#c7a5bd1cfa09079aae64c9076c07eada66a46e8e"
   integrity sha512-it1oBL9alZg1S8UycLm5YDMAkIhtH6FtAzuZs6YvoGVldWjbS08BkAdb/ymP9LlAyq8koANu32U7Ib/w+UNh8Q==
@@ -4208,12 +5048,38 @@ expect@^27.5.1:
     jest-matcher-utils "^27.5.1"
     jest-message-util "^27.5.1"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 ext@^1.1.2:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/ext/-/ext-1.6.0.tgz#3871d50641e874cc172e2b53f919842d19db4c52"
   integrity sha512-sdBImtzkq2HpkdRLtlLWDa6w4DX22ijZLKx8BMPUuKe1c5lbN6xwQDQCxSfxBQnHZ13ls/FH0MQZx/q/gr6FQg==
   dependencies:
     type "^2.5.0"
+=======
+expect@^28.0.2:
+  version "28.0.2"
+  resolved "https://registry.yarnpkg.com/expect/-/expect-28.0.2.tgz#86f0d6fa971bc533faf68d4d103d00f343d6a4b3"
+  integrity sha512-X0qIuI/zKv98k34tM+uGeOgAC73lhs4vROF9MkPk94C1zujtwv4Cla8SxhWn0G1OwvG9gLLL7RjFBkwGVaZ83w==
+=======
+expect@^28.1.0:
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/expect/-/expect-28.1.0.tgz#10e8da64c0850eb8c39a480199f14537f46e8360"
+  integrity sha512-qFXKl8Pmxk8TBGfaFKRtcQjfXEnKAs+dmlxdwvukJZorwrAabT7M3h8oLOG01I2utEhkmUTi17CHaPBovZsKdw==
+>>>>>>> feat(web-sockets): configuring socketio instance
+  dependencies:
+    "@jest/expect-utils" "^28.1.0"
+    jest-get-type "^28.0.2"
+<<<<<<< HEAD
+    jest-matcher-utils "^28.0.2"
+    jest-message-util "^28.0.2"
+    jest-util "^28.0.2"
+>>>>>>> feat(web-sockets): implementing repo pattern
+=======
+    jest-matcher-utils "^28.1.0"
+    jest-message-util "^28.1.0"
+    jest-util "^28.1.0"
+>>>>>>> feat(web-sockets): configuring socketio instance
 
 extend-shallow@^2.0.1:
   version "2.0.1"
@@ -4353,6 +5219,44 @@ fastify-auth0-verify@^0.7.3:
     node-cache "^5.0.1"
     node-fetch "^2.6.1"
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+fastify-autoload@^3.11.0:
+  version "3.11.0"
+  resolved "https://registry.yarnpkg.com/fastify-autoload/-/fastify-autoload-3.11.0.tgz#7c2547366ea65229b5d0c72f60004ff46cc1a200"
+  integrity sha512-vxinYqk5hc1drINce1/c5kRHWMH4Rj8GzR2Ka40yg8qCasqyRTyt4lXl1WvgR4WDrOTtkr1d6R/Sd4s3k6zy9w==
+=======
+>>>>>>> feat(web-sockets): configuring socketio instance
+"fastify-autoload-deprecated@npm:fastify-autoload@3.12.0":
+  version "3.12.0"
+  resolved "https://registry.yarnpkg.com/fastify-autoload/-/fastify-autoload-3.12.0.tgz#912c7c48c83e732cc76919b4f3713ee884fc8557"
+  integrity sha512-qm8HG8V24A0AdcIjGMMTnyKQj6yzEbdcXHbWjzPtYPReGo4D4Ki7oRLDocYQJVpaOxlcLJSbadfMhZTu3+G6oQ==
+<<<<<<< HEAD
+=======
+>>>>>>> feat(web-sockets): configuring socketio instance
+>>>>>>> feat(web-sockets): configuring socketio instance
+  dependencies:
+    pkg-up "^3.1.0"
+    semver "^7.3.5"
+
+<<<<<<< HEAD
+fastify-autoload@^3.11.0:
+  version "3.13.0"
+  resolved "https://registry.yarnpkg.com/fastify-autoload/-/fastify-autoload-3.13.0.tgz#1de1b45c5ff98a022643140a39cc868b18ff9442"
+  integrity sha512-+Dbsf7wUxf9KLBHnbcdI1MTUGPHAnjWnbbq1bZm4+b2ghX+goK8HBkWOpS4JK1GAiripoDoyUBw18wu8uDZKuA==
+  dependencies:
+    fastify-autoload-deprecated "npm:fastify-autoload@3.12.0"
+    process-warning "^1.0.0"
+
+=======
+<<<<<<< HEAD
+>>>>>>> feat(web-sockets): configuring socketio instance
+=======
+>>>>>>> build(web-sockets): changing dependencies in api-gateway to be able to use socketio there
+>>>>>>> master
 "fastify-cookie-deprecated@npm:fastify-cookie@5.6.1":
   version "5.6.1"
   resolved "https://registry.yarnpkg.com/fastify-cookie/-/fastify-cookie-5.6.1.tgz#885a15bd7cf459158a6df12a898075cf5e2a3733"
@@ -4369,6 +5273,29 @@ fastify-cookie@^5.3.1:
     fastify-cookie-deprecated "npm:fastify-cookie@5.6.1"
     process-warning "^1.0.0"
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+fastify-error@^0.3.0:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/fastify-error/-/fastify-error-0.3.1.tgz#8eb993e15e3cf57f0357fc452af9290f1c1278d2"
+  integrity sha512-oCfpcsDndgnDVgiI7bwFKAun2dO+4h84vBlkWsWnz/OUK9Reff5UFoFl241xTiLeHWX/vU9zkDVXqYUxjOwHcQ==
+=======
+fastify-autoload@^3.11.0:
+  version "3.13.0"
+  resolved "https://registry.yarnpkg.com/fastify-autoload/-/fastify-autoload-3.13.0.tgz#1de1b45c5ff98a022643140a39cc868b18ff9442"
+  integrity sha512-+Dbsf7wUxf9KLBHnbcdI1MTUGPHAnjWnbbq1bZm4+b2ghX+goK8HBkWOpS4JK1GAiripoDoyUBw18wu8uDZKuA==
+  dependencies:
+    fastify-autoload-deprecated "npm:fastify-autoload@3.12.0"
+    process-warning "^1.0.0"
+>>>>>>> feat(web-sockets): configuring socketio instance
+
+>>>>>>> feat(web-sockets): configuring socketio instance
+=======
+>>>>>>> build(web-sockets): changing dependencies in api-gateway to be able to use socketio there
+>>>>>>> master
 fastify-plugin@^3.0.0, fastify-plugin@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/fastify-plugin/-/fastify-plugin-3.0.1.tgz#79e84c29f401020f38b524f59f2402103fd21ed2"
@@ -4929,10 +5856,27 @@ glob-to-regexp@^0.3.0:
   resolved "https://registry.yarnpkg.com/glob-to-regexp/-/glob-to-regexp-0.3.0.tgz#8c5a1494d2066c570cc3bfe4496175acc4d502ab"
   integrity sha1-jFoUlNIGbFcMw7/kSWF1rMTVAqs=
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4, glob@^7.1.6:
   version "7.2.3"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.2.3.tgz#b8df0fb802bbfa8e89bd1d938b4e16578ed44f2b"
   integrity sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==
+=======
+glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4:
+=======
+glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4, glob@^7.1.6:
+<<<<<<< HEAD
+>>>>>>> feat(web-sockets): enable connection to redis
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-7.2.0.tgz#d15535af7732e02e948f4c41628bd910293f6023"
+  integrity sha512-lmLf6gtyrPq8tTjSmrO94wBeQbFR3HbLHbuyD69wuyQkImp2hWqMGB47OX65FBkPffO641IP9jWa1z4ivqG26Q==
+>>>>>>> feat(web-sockets): implementing repo pattern
+=======
+  version "7.2.3"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-7.2.3.tgz#b8df0fb802bbfa8e89bd1d938b4e16578ed44f2b"
+  integrity sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==
+>>>>>>> feat(web-sockets): configuring socketio instance
   dependencies:
     fs.realpath "^1.0.0"
     inflight "^1.0.4"
@@ -5437,17 +6381,46 @@ internal-slot@^1.0.3:
     has "^1.0.3"
     side-channel "^1.0.4"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> feat(web-sockets): enable connection to redis
 invert-kv@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/invert-kv/-/invert-kv-1.0.0.tgz#104a8e4aaca6d3d8cd157a8ef8bfab2d7a3ffdb6"
   integrity sha1-EEqOSqym09jNFXqO+L+rLXo//bY=
+
+ioredis@^5.0.4:
+  version "5.0.5"
+  resolved "https://registry.yarnpkg.com/ioredis/-/ioredis-5.0.5.tgz#94e51284631b30e15b359cd17de59c48945230fb"
+  integrity sha512-H+u9YB/cBckDO5lt5+S34gGN1EuIBjjaXk31LivQWfX3G1cqZPYCiwF9qCOkqK2NsKVk+saoUN+fLBz5tc2gFw==
+  dependencies:
+    "@ioredis/commands" "^1.1.1"
+    cluster-key-slot "^1.1.0"
+    debug "^4.3.4"
+    denque "^2.0.1"
+    lodash.defaults "^4.2.0"
+    lodash.isarguments "^3.1.0"
+    redis-errors "^1.2.0"
+    redis-parser "^3.0.0"
+    standard-as-callback "^2.1.0"
 
 ip-regex@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/ip-regex/-/ip-regex-2.1.0.tgz#fa78bf5d2e6913c911ce9f819ee5146bb6d844e9"
   integrity sha1-+ni/XS5pE8kRzp+BnuUUa7bYROk=
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 ip@1.1.5:
+=======
+=======
+>>>>>>> feat(web-sockets): enable connection to redis
+ip@1.1.5, ip@^1.1.5:
+>>>>>>> feat(web-sockets): implementing repo pattern
+=======
+ip@1.1.5:
+>>>>>>> feat(web-sockets): configuring socketio instance
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/ip/-/ip-1.1.5.tgz#bdded70114290828c0a039e72ef25f5aaec4354a"
   integrity sha1-vd7XARQpCCjAoDnnLvJfWq7ENUo=
@@ -5546,6 +6519,23 @@ is-core-module@^2.5.0, is-core-module@^2.8.0, is-core-module@^2.8.1:
   dependencies:
     has "^1.0.3"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+is-core-module@^2.5.0, is-core-module@^2.8.0, is-core-module@^2.8.1:
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/is-core-module/-/is-core-module-2.9.0.tgz#e1c34429cd51c6dd9e09e0799e396e27b19a9c69"
+  integrity sha512-+5FPy5PnwmO3lvfMb0AsoPaBG+5KHUI0wYFXOtYPnVVVspTFUuMZNfNaNVRt3FZadstu2c8x23vykRW/NBoU6A==
+=======
+is-core-module@^2.8.1:
+  version "2.8.1"
+  resolved "https://registry.yarnpkg.com/is-core-module/-/is-core-module-2.8.1.tgz#f59fdfca701d5879d0a6b100a40aa1560ce27211"
+  integrity sha512-SdNCUs284hr40hFTFP6l0IfZ/RSrMXF3qgoRHd3/79unUTvrFO/JoXwkGm+5J/Oe3E/b5GsnG330uUNgRpu1PA==
+>>>>>>> feat(web-sockets): implementing repo pattern
+  dependencies:
+    has "^1.0.3"
+
+=======
+>>>>>>> feat(web-sockets): configuring socketio instance
 is-data-descriptor@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/is-data-descriptor/-/is-data-descriptor-0.1.4.tgz#0b5ee648388e2c860282e793f1856fec3f301b56"
@@ -5765,12 +6755,26 @@ is-regex@^1.1.4:
     call-bind "^1.0.2"
     has-tostringtag "^1.0.0"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> feat(web-sockets): enable connection to redis
 is-retry-allowed@^1.0.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/is-retry-allowed/-/is-retry-allowed-1.2.0.tgz#d778488bd0a4666a3be8a1482b9f2baafedea8b4"
   integrity sha512-RUbUeKwvm3XG2VYamhJL1xFktgjvPzL0Hq8C+6yrWIswDy3BIXGqCxhxkc30N9jqK311gVU137K8Ei55/zVJRg==
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 is-shared-array-buffer@^1.0.2:
+=======
+=======
+>>>>>>> feat(web-sockets): enable connection to redis
+is-shared-array-buffer@^1.0.1:
+>>>>>>> feat(web-sockets): implementing repo pattern
+=======
+is-shared-array-buffer@^1.0.2:
+>>>>>>> feat(web-sockets): configuring socketio instance
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/is-shared-array-buffer/-/is-shared-array-buffer-1.0.2.tgz#8f259c573b60b6a32d4058a1a07430c0a7344c79"
   integrity sha512-sqN2UDu1/0y6uvXyStCOzyhAjCSlHceFoMKJW8W9EU9cvic/QdsZ0kEU93HEy3IUEFZIiH/3w+AH/UQbPHNdhA==
@@ -5925,6 +6929,14 @@ jest-changed-files@^27.5.1:
     execa "^5.0.0"
     throat "^6.0.1"
 
+jest-changed-files@^28.0.2:
+  version "28.0.2"
+  resolved "https://registry.yarnpkg.com/jest-changed-files/-/jest-changed-files-28.0.2.tgz#7d7810660a5bd043af9e9cfbe4d58adb05e91531"
+  integrity sha512-QX9u+5I2s54ZnGoMEjiM2WeBvJR2J7w/8ZUmH2um/WLAuGAYFQcsVXY9+1YL6k0H/AGUdH8pXUAv6erDqEsvIA==
+  dependencies:
+    execa "^5.0.0"
+    throat "^6.0.1"
+
 jest-circus@^27.5.1:
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/jest-circus/-/jest-circus-27.5.1.tgz#37a5a4459b7bf4406e53d637b49d22c65d125ecc"
@@ -5950,6 +6962,31 @@ jest-circus@^27.5.1:
     stack-utils "^2.0.3"
     throat "^6.0.1"
 
+jest-circus@^28.1.0:
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/jest-circus/-/jest-circus-28.1.0.tgz#e229f590911bd54d60efaf076f7acd9360296dae"
+  integrity sha512-rNYfqfLC0L0zQKRKsg4n4J+W1A2fbyGH7Ss/kDIocp9KXD9iaL111glsLu7+Z7FHuZxwzInMDXq+N1ZIBkI/TQ==
+  dependencies:
+    "@jest/environment" "^28.1.0"
+    "@jest/expect" "^28.1.0"
+    "@jest/test-result" "^28.1.0"
+    "@jest/types" "^28.1.0"
+    "@types/node" "*"
+    chalk "^4.0.0"
+    co "^4.6.0"
+    dedent "^0.7.0"
+    is-generator-fn "^2.0.0"
+    jest-each "^28.1.0"
+    jest-matcher-utils "^28.1.0"
+    jest-message-util "^28.1.0"
+    jest-runtime "^28.1.0"
+    jest-snapshot "^28.1.0"
+    jest-util "^28.1.0"
+    pretty-format "^28.1.0"
+    slash "^3.0.0"
+    stack-utils "^2.0.3"
+    throat "^6.0.1"
+
 jest-cli@^27.5.1:
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/jest-cli/-/jest-cli-27.5.1.tgz#278794a6e6458ea8029547e6c6cbf673bd30b145"
@@ -5967,6 +7004,24 @@ jest-cli@^27.5.1:
     jest-validate "^27.5.1"
     prompts "^2.0.1"
     yargs "^16.2.0"
+
+jest-cli@^28.1.0:
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/jest-cli/-/jest-cli-28.1.0.tgz#cd1d8adb9630102d5ba04a22895f63decdd7ac1f"
+  integrity sha512-fDJRt6WPRriHrBsvvgb93OxgajHHsJbk4jZxiPqmZbMDRcHskfJBBfTyjFko0jjfprP544hOktdSi9HVgl4VUQ==
+  dependencies:
+    "@jest/core" "^28.1.0"
+    "@jest/test-result" "^28.1.0"
+    "@jest/types" "^28.1.0"
+    chalk "^4.0.0"
+    exit "^0.1.2"
+    graceful-fs "^4.2.9"
+    import-local "^3.0.2"
+    jest-config "^28.1.0"
+    jest-util "^28.1.0"
+    jest-validate "^28.1.0"
+    prompts "^2.0.1"
+    yargs "^17.3.1"
 
 jest-config@^27.5.1:
   version "27.5.1"
@@ -5998,6 +7053,34 @@ jest-config@^27.5.1:
     slash "^3.0.0"
     strip-json-comments "^3.1.1"
 
+jest-config@^28.1.0:
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/jest-config/-/jest-config-28.1.0.tgz#fca22ca0760e746fe1ce1f9406f6b307ab818501"
+  integrity sha512-aOV80E9LeWrmflp7hfZNn/zGA4QKv/xsn2w8QCBP0t0+YqObuCWTSgNbHJ0j9YsTuCO08ZR/wsvlxqqHX20iUA==
+  dependencies:
+    "@babel/core" "^7.11.6"
+    "@jest/test-sequencer" "^28.1.0"
+    "@jest/types" "^28.1.0"
+    babel-jest "^28.1.0"
+    chalk "^4.0.0"
+    ci-info "^3.2.0"
+    deepmerge "^4.2.2"
+    glob "^7.1.3"
+    graceful-fs "^4.2.9"
+    jest-circus "^28.1.0"
+    jest-environment-node "^28.1.0"
+    jest-get-type "^28.0.2"
+    jest-regex-util "^28.0.2"
+    jest-resolve "^28.1.0"
+    jest-runner "^28.1.0"
+    jest-util "^28.1.0"
+    jest-validate "^28.1.0"
+    micromatch "^4.0.4"
+    parse-json "^5.2.0"
+    pretty-format "^28.1.0"
+    slash "^3.0.0"
+    strip-json-comments "^3.1.1"
+
 jest-diff@^27.5.1:
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/jest-diff/-/jest-diff-27.5.1.tgz#a07f5011ac9e6643cf8a95a462b7b1ecf6680def"
@@ -6008,10 +7091,27 @@ jest-diff@^27.5.1:
     jest-get-type "^27.5.1"
     pretty-format "^27.5.1"
 
+jest-diff@^28.1.0:
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/jest-diff/-/jest-diff-28.1.0.tgz#77686fef899ec1873dbfbf9330e37dd429703269"
+  integrity sha512-8eFd3U3OkIKRtlasXfiAQfbovgFgRDb0Ngcs2E+FMeBZ4rUezqIaGjuyggJBp+llosQXNEWofk/Sz4Hr5gMUhA==
+  dependencies:
+    chalk "^4.0.0"
+    diff-sequences "^28.0.2"
+    jest-get-type "^28.0.2"
+    pretty-format "^28.1.0"
+
 jest-docblock@^27.5.1:
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/jest-docblock/-/jest-docblock-27.5.1.tgz#14092f364a42c6108d42c33c8cf30e058e25f6c0"
   integrity sha512-rl7hlABeTsRYxKiUfpHrQrG4e2obOiTQWfMEH3PxPjOtdsfLQO4ReWSZaQ7DETm4xu07rl4q/h4zcKXyU0/OzQ==
+  dependencies:
+    detect-newline "^3.0.0"
+
+jest-docblock@^28.0.2:
+  version "28.0.2"
+  resolved "https://registry.yarnpkg.com/jest-docblock/-/jest-docblock-28.0.2.tgz#3cab8abea53275c9d670cdca814fc89fba1298c2"
+  integrity sha512-FH10WWw5NxLoeSdQlJwu+MTiv60aXV/t8KEwIRGEv74WARE1cXIqh1vGdy2CraHuWOOrnzTWj/azQKqW4fO7xg==
   dependencies:
     detect-newline "^3.0.0"
 
@@ -6025,6 +7125,17 @@ jest-each@^27.5.1:
     jest-get-type "^27.5.1"
     jest-util "^27.5.1"
     pretty-format "^27.5.1"
+
+jest-each@^28.1.0:
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/jest-each/-/jest-each-28.1.0.tgz#54ae66d6a0a5b1913e9a87588d26c2687c39458b"
+  integrity sha512-a/XX02xF5NTspceMpHujmOexvJ4GftpYXqr6HhhmKmExtMXsyIN/fvanQlt/BcgFoRKN4OCXxLQKth9/n6OPFg==
+  dependencies:
+    "@jest/types" "^28.1.0"
+    chalk "^4.0.0"
+    jest-get-type "^28.0.2"
+    jest-util "^28.1.0"
+    pretty-format "^28.1.0"
 
 jest-environment-jsdom@^27.5.1:
   version "27.5.1"
@@ -6051,10 +7162,27 @@ jest-environment-node@^27.5.1:
     jest-mock "^27.5.1"
     jest-util "^27.5.1"
 
+jest-environment-node@^28.1.0:
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/jest-environment-node/-/jest-environment-node-28.1.0.tgz#6ed2150aa31babba0c488c5b4f4d813a585c68e6"
+  integrity sha512-gBLZNiyrPw9CSMlTXF1yJhaBgWDPVvH0Pq6bOEwGMXaYNzhzhw2kA/OijNF8egbCgDS0/veRv97249x2CX+udQ==
+  dependencies:
+    "@jest/environment" "^28.1.0"
+    "@jest/fake-timers" "^28.1.0"
+    "@jest/types" "^28.1.0"
+    "@types/node" "*"
+    jest-mock "^28.1.0"
+    jest-util "^28.1.0"
+
 jest-get-type@^27.5.1:
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/jest-get-type/-/jest-get-type-27.5.1.tgz#3cd613c507b0f7ace013df407a1c1cd578bcb4f1"
   integrity sha512-2KY95ksYSaK7DMBWQn6dQz3kqAf3BB64y2udeG+hv4KfSOb9qwcYQstTJc1KCbsix+wLZWZYN8t7nwX3GOBLRw==
+
+jest-get-type@^28.0.2:
+  version "28.0.2"
+  resolved "https://registry.yarnpkg.com/jest-get-type/-/jest-get-type-28.0.2.tgz#34622e628e4fdcd793d46db8a242227901fcf203"
+  integrity sha512-ioj2w9/DxSYHfOm5lJKCdcAmPJzQXmbM/Url3rhlghrPvT3tt+7a/+oXc9azkKmLvoiXjtV83bEWqi+vs5nlPA==
 
 jest-haste-map@^27.5.1:
   version "27.5.1"
@@ -6071,6 +7199,25 @@ jest-haste-map@^27.5.1:
     jest-serializer "^27.5.1"
     jest-util "^27.5.1"
     jest-worker "^27.5.1"
+    micromatch "^4.0.4"
+    walker "^1.0.7"
+  optionalDependencies:
+    fsevents "^2.3.2"
+
+jest-haste-map@^28.1.0:
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/jest-haste-map/-/jest-haste-map-28.1.0.tgz#6c1ee2daf1c20a3e03dbd8e5b35c4d73d2349cf0"
+  integrity sha512-xyZ9sXV8PtKi6NCrJlmq53PyNVHzxmcfXNVvIRHpHmh1j/HChC4pwKgyjj7Z9us19JMw8PpQTJsFWOsIfT93Dw==
+  dependencies:
+    "@jest/types" "^28.1.0"
+    "@types/graceful-fs" "^4.1.3"
+    "@types/node" "*"
+    anymatch "^3.0.3"
+    fb-watchman "^2.0.0"
+    graceful-fs "^4.2.9"
+    jest-regex-util "^28.0.2"
+    jest-util "^28.1.0"
+    jest-worker "^28.1.0"
     micromatch "^4.0.4"
     walker "^1.0.7"
   optionalDependencies:
@@ -6107,6 +7254,14 @@ jest-leak-detector@^27.5.1:
     jest-get-type "^27.5.1"
     pretty-format "^27.5.1"
 
+jest-leak-detector@^28.1.0:
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/jest-leak-detector/-/jest-leak-detector-28.1.0.tgz#b65167776a8787443214d6f3f54935a4c73c8a45"
+  integrity sha512-uIJDQbxwEL2AMMs2xjhZl2hw8s77c3wrPaQ9v6tXJLGaaQ+4QrNJH5vuw7hA7w/uGT/iJ42a83opAqxGHeyRIA==
+  dependencies:
+    jest-get-type "^28.0.2"
+    pretty-format "^28.1.0"
+
 jest-matcher-utils@^27.5.1:
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/jest-matcher-utils/-/jest-matcher-utils-27.5.1.tgz#9c0cdbda8245bc22d2331729d1091308b40cf8ab"
@@ -6116,6 +7271,16 @@ jest-matcher-utils@^27.5.1:
     jest-diff "^27.5.1"
     jest-get-type "^27.5.1"
     pretty-format "^27.5.1"
+
+jest-matcher-utils@^28.1.0:
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/jest-matcher-utils/-/jest-matcher-utils-28.1.0.tgz#2ae398806668eeabd293c61712227cb94b250ccf"
+  integrity sha512-onnax0n2uTLRQFKAjC7TuaxibrPSvZgKTcSCnNUz/tOjJ9UhxNm7ZmPpoQavmTDUjXvUQ8KesWk2/VdrxIFzTQ==
+  dependencies:
+    chalk "^4.0.0"
+    jest-diff "^28.1.0"
+    jest-get-type "^28.0.2"
+    pretty-format "^28.1.0"
 
 jest-message-util@^27.5.1:
   version "27.5.1"
@@ -6132,12 +7297,35 @@ jest-message-util@^27.5.1:
     slash "^3.0.0"
     stack-utils "^2.0.3"
 
+jest-message-util@^28.1.0:
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/jest-message-util/-/jest-message-util-28.1.0.tgz#7e8f0b9049e948e7b94c2a52731166774ba7d0af"
+  integrity sha512-RpA8mpaJ/B2HphDMiDlrAZdDytkmwFqgjDZovM21F35lHGeUeCvYmm6W+sbQ0ydaLpg5bFAUuWG1cjqOl8vqrw==
+  dependencies:
+    "@babel/code-frame" "^7.12.13"
+    "@jest/types" "^28.1.0"
+    "@types/stack-utils" "^2.0.0"
+    chalk "^4.0.0"
+    graceful-fs "^4.2.9"
+    micromatch "^4.0.4"
+    pretty-format "^28.1.0"
+    slash "^3.0.0"
+    stack-utils "^2.0.3"
+
 jest-mock@^27.5.1:
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/jest-mock/-/jest-mock-27.5.1.tgz#19948336d49ef4d9c52021d34ac7b5f36ff967d6"
   integrity sha512-K4jKbY1d4ENhbrG2zuPWaQBvDly+iZ2yAW+T1fATN78hc0sInwn7wZB8XtlNnvHug5RMwV897Xm4LqmPM4e2Og==
   dependencies:
     "@jest/types" "^27.5.1"
+    "@types/node" "*"
+
+jest-mock@^28.1.0:
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/jest-mock/-/jest-mock-28.1.0.tgz#ccc7cc12a9b330b3182db0c651edc90d163ff73e"
+  integrity sha512-H7BrhggNn77WhdL7O1apG0Q/iwl0Bdd5E1ydhCJzL3oBLh/UYxAwR3EJLsBZ9XA3ZU4PA3UNw4tQjduBTCTmLw==
+  dependencies:
+    "@jest/types" "^28.1.0"
     "@types/node" "*"
 
 jest-mongoose-mock@^1.2.0:
@@ -6159,6 +7347,11 @@ jest-regex-util@^27.5.1:
   resolved "https://registry.yarnpkg.com/jest-regex-util/-/jest-regex-util-27.5.1.tgz#4da143f7e9fd1e542d4aa69617b38e4a78365b95"
   integrity sha512-4bfKq2zie+x16okqDXjXn9ql2B0dScQu+vcwe4TvFVhkVyuWLqpZrZtXxLLWoXYgn0E87I6r6GRYHF7wFZBUvg==
 
+jest-regex-util@^28.0.2:
+  version "28.0.2"
+  resolved "https://registry.yarnpkg.com/jest-regex-util/-/jest-regex-util-28.0.2.tgz#afdc377a3b25fb6e80825adcf76c854e5bf47ead"
+  integrity sha512-4s0IgyNIy0y9FK+cjoVYoxamT7Zeo7MhzqRGx7YDYmaQn1wucY9rotiGkBzzcMXTtjrCAP/f7f+E0F7+fxPNdw==
+
 jest-resolve-dependencies@^27.5.1:
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/jest-resolve-dependencies/-/jest-resolve-dependencies-27.5.1.tgz#d811ecc8305e731cc86dd79741ee98fed06f1da8"
@@ -6167,6 +7360,14 @@ jest-resolve-dependencies@^27.5.1:
     "@jest/types" "^27.5.1"
     jest-regex-util "^27.5.1"
     jest-snapshot "^27.5.1"
+
+jest-resolve-dependencies@^28.1.0:
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/jest-resolve-dependencies/-/jest-resolve-dependencies-28.1.0.tgz#167becb8bee6e20b5ef4a3a728ec67aef6b0b79b"
+  integrity sha512-Ue1VYoSZquPwEvng7Uefw8RmZR+me/1kr30H2jMINjGeHgeO/JgrR6wxj2ofkJ7KSAA11W3cOrhNCbj5Dqqd9g==
+  dependencies:
+    jest-regex-util "^28.0.2"
+    jest-snapshot "^28.1.0"
 
 jest-resolve@^27.5.1:
   version "27.5.1"
@@ -6180,6 +7381,21 @@ jest-resolve@^27.5.1:
     jest-pnp-resolver "^1.2.2"
     jest-util "^27.5.1"
     jest-validate "^27.5.1"
+    resolve "^1.20.0"
+    resolve.exports "^1.1.0"
+    slash "^3.0.0"
+
+jest-resolve@^28.1.0:
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/jest-resolve/-/jest-resolve-28.1.0.tgz#b1f32748a6cee7d1779c7ef639c0a87078de3d35"
+  integrity sha512-vvfN7+tPNnnhDvISuzD1P+CRVP8cK0FHXRwPAcdDaQv4zgvwvag2n55/h5VjYcM5UJG7L4TwE5tZlzcI0X2Lhw==
+  dependencies:
+    chalk "^4.0.0"
+    graceful-fs "^4.2.9"
+    jest-haste-map "^28.1.0"
+    jest-pnp-resolver "^1.2.2"
+    jest-util "^28.1.0"
+    jest-validate "^28.1.0"
     resolve "^1.20.0"
     resolve.exports "^1.1.0"
     slash "^3.0.0"
@@ -6211,6 +7427,33 @@ jest-runner@^27.5.1:
     source-map-support "^0.5.6"
     throat "^6.0.1"
 
+jest-runner@^28.1.0:
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/jest-runner/-/jest-runner-28.1.0.tgz#aefe2a1e618a69baa0b24a50edc54fdd7e728eaa"
+  integrity sha512-FBpmuh1HB2dsLklAlRdOxNTTHKFR6G1Qmd80pVDvwbZXTriqjWqjei5DKFC1UlM732KjYcE6yuCdiF0WUCOS2w==
+  dependencies:
+    "@jest/console" "^28.1.0"
+    "@jest/environment" "^28.1.0"
+    "@jest/test-result" "^28.1.0"
+    "@jest/transform" "^28.1.0"
+    "@jest/types" "^28.1.0"
+    "@types/node" "*"
+    chalk "^4.0.0"
+    emittery "^0.10.2"
+    graceful-fs "^4.2.9"
+    jest-docblock "^28.0.2"
+    jest-environment-node "^28.1.0"
+    jest-haste-map "^28.1.0"
+    jest-leak-detector "^28.1.0"
+    jest-message-util "^28.1.0"
+    jest-resolve "^28.1.0"
+    jest-runtime "^28.1.0"
+    jest-util "^28.1.0"
+    jest-watcher "^28.1.0"
+    jest-worker "^28.1.0"
+    source-map-support "0.5.13"
+    throat "^6.0.1"
+
 jest-runtime@^27.5.1:
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/jest-runtime/-/jest-runtime-27.5.1.tgz#4896003d7a334f7e8e4a53ba93fb9bcd3db0a1af"
@@ -6236,6 +7479,34 @@ jest-runtime@^27.5.1:
     jest-resolve "^27.5.1"
     jest-snapshot "^27.5.1"
     jest-util "^27.5.1"
+    slash "^3.0.0"
+    strip-bom "^4.0.0"
+
+jest-runtime@^28.1.0:
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/jest-runtime/-/jest-runtime-28.1.0.tgz#4847dcb2a4eb4b0f9eaf41306897e51fb1665631"
+  integrity sha512-wNYDiwhdH/TV3agaIyVF0lsJ33MhyujOe+lNTUiolqKt8pchy1Hq4+tDMGbtD5P/oNLA3zYrpx73T9dMTOCAcg==
+  dependencies:
+    "@jest/environment" "^28.1.0"
+    "@jest/fake-timers" "^28.1.0"
+    "@jest/globals" "^28.1.0"
+    "@jest/source-map" "^28.0.2"
+    "@jest/test-result" "^28.1.0"
+    "@jest/transform" "^28.1.0"
+    "@jest/types" "^28.1.0"
+    chalk "^4.0.0"
+    cjs-module-lexer "^1.0.0"
+    collect-v8-coverage "^1.0.0"
+    execa "^5.0.0"
+    glob "^7.1.3"
+    graceful-fs "^4.2.9"
+    jest-haste-map "^28.1.0"
+    jest-message-util "^28.1.0"
+    jest-mock "^28.1.0"
+    jest-regex-util "^28.0.2"
+    jest-resolve "^28.1.0"
+    jest-snapshot "^28.1.0"
+    jest-util "^28.1.0"
     slash "^3.0.0"
     strip-bom "^4.0.0"
 
@@ -6275,12 +7546,53 @@ jest-snapshot@^27.5.1:
     pretty-format "^27.5.1"
     semver "^7.3.2"
 
+jest-snapshot@^28.1.0:
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/jest-snapshot/-/jest-snapshot-28.1.0.tgz#4b74fa8816707dd10fe9d551c2c258e5a67b53b6"
+  integrity sha512-ex49M2ZrZsUyQLpLGxQtDbahvgBjlLPgklkqGM0hq/F7W/f8DyqZxVHjdy19QKBm4O93eDp+H5S23EiTbbUmHw==
+  dependencies:
+    "@babel/core" "^7.11.6"
+    "@babel/generator" "^7.7.2"
+    "@babel/plugin-syntax-typescript" "^7.7.2"
+    "@babel/traverse" "^7.7.2"
+    "@babel/types" "^7.3.3"
+    "@jest/expect-utils" "^28.1.0"
+    "@jest/transform" "^28.1.0"
+    "@jest/types" "^28.1.0"
+    "@types/babel__traverse" "^7.0.6"
+    "@types/prettier" "^2.1.5"
+    babel-preset-current-node-syntax "^1.0.0"
+    chalk "^4.0.0"
+    expect "^28.1.0"
+    graceful-fs "^4.2.9"
+    jest-diff "^28.1.0"
+    jest-get-type "^28.0.2"
+    jest-haste-map "^28.1.0"
+    jest-matcher-utils "^28.1.0"
+    jest-message-util "^28.1.0"
+    jest-util "^28.1.0"
+    natural-compare "^1.4.0"
+    pretty-format "^28.1.0"
+    semver "^7.3.5"
+
 jest-util@^27.5.1:
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/jest-util/-/jest-util-27.5.1.tgz#3ba9771e8e31a0b85da48fe0b0891fb86c01c2f9"
   integrity sha512-Kv2o/8jNvX1MQ0KGtw480E/w4fBCDOnH6+6DmeKi6LZUIlKA5kwY0YNdlzaWTiVgxqAqik11QyxDOKk543aKXw==
   dependencies:
     "@jest/types" "^27.5.1"
+    "@types/node" "*"
+    chalk "^4.0.0"
+    ci-info "^3.2.0"
+    graceful-fs "^4.2.9"
+    picomatch "^2.2.3"
+
+jest-util@^28.1.0:
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/jest-util/-/jest-util-28.1.0.tgz#d54eb83ad77e1dd441408738c5a5043642823be5"
+  integrity sha512-qYdCKD77k4Hwkose2YBEqQk7PzUf/NSE+rutzceduFveQREeH6b+89Dc9+wjX9dAwHcgdx4yedGA3FQlU/qCTA==
+  dependencies:
+    "@jest/types" "^28.1.0"
     "@types/node" "*"
     chalk "^4.0.0"
     ci-info "^3.2.0"
@@ -6299,6 +7611,18 @@ jest-validate@^27.5.1:
     leven "^3.1.0"
     pretty-format "^27.5.1"
 
+jest-validate@^28.1.0:
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/jest-validate/-/jest-validate-28.1.0.tgz#8a6821f48432aba9f830c26e28226ad77b9a0e18"
+  integrity sha512-Lly7CJYih3vQBfjLeANGgBSBJ7pEa18cxpQfQEq2go2xyEzehnHfQTjoUia8xUv4x4J80XKFIDwJJThXtRFQXQ==
+  dependencies:
+    "@jest/types" "^28.1.0"
+    camelcase "^6.2.0"
+    chalk "^4.0.0"
+    jest-get-type "^28.0.2"
+    leven "^3.1.0"
+    pretty-format "^28.1.0"
+
 jest-watcher@^27.5.1:
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/jest-watcher/-/jest-watcher-27.5.1.tgz#71bd85fb9bde3a2c2ec4dc353437971c43c642a2"
@@ -6312,10 +7636,33 @@ jest-watcher@^27.5.1:
     jest-util "^27.5.1"
     string-length "^4.0.1"
 
+jest-watcher@^28.1.0:
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/jest-watcher/-/jest-watcher-28.1.0.tgz#aaa7b4164a4e77eeb5f7d7b25ede5e7b4e9c9aaf"
+  integrity sha512-tNHMtfLE8Njcr2IRS+5rXYA4BhU90gAOwI9frTGOqd+jX0P/Au/JfRSNqsf5nUTcWdbVYuLxS1KjnzILSoR5hA==
+  dependencies:
+    "@jest/test-result" "^28.1.0"
+    "@jest/types" "^28.1.0"
+    "@types/node" "*"
+    ansi-escapes "^4.2.1"
+    chalk "^4.0.0"
+    emittery "^0.10.2"
+    jest-util "^28.1.0"
+    string-length "^4.0.1"
+
 jest-worker@^27.5.1:
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/jest-worker/-/jest-worker-27.5.1.tgz#8d146f0900e8973b106b6f73cc1e9a8cb86f8db0"
   integrity sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==
+  dependencies:
+    "@types/node" "*"
+    merge-stream "^2.0.0"
+    supports-color "^8.0.0"
+
+jest-worker@^28.1.0:
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/jest-worker/-/jest-worker-28.1.0.tgz#ced54757a035e87591e1208253a6e3aac1a855e5"
+  integrity sha512-ZHwM6mNwaWBR52Snff8ZvsCTqQsvhCxP/bT1I6T6DAnb6ygkshsyLQIMxFwHpYxht0HOoqt23JlC01viI7T03A==
   dependencies:
     "@types/node" "*"
     merge-stream "^2.0.0"
@@ -6329,6 +7676,15 @@ jest@^27.5.1, jest@~27.5.1:
     "@jest/core" "^27.5.1"
     import-local "^3.0.2"
     jest-cli "^27.5.1"
+
+jest@^28.0.3:
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/jest/-/jest-28.1.0.tgz#f420e41c8f2395b9a30445a97189ebb57593d831"
+  integrity sha512-TZR+tHxopPhzw3c3560IJXZWLNHgpcz1Zh0w5A65vynLGNcg/5pZ+VildAd7+XGOu6jd58XMY/HNn0IkZIXVXg==
+  dependencies:
+    "@jest/core" "^28.1.0"
+    import-local "^3.0.2"
+    jest-cli "^28.1.0"
 
 joi@^17.6.0:
   version "17.6.0"
@@ -6888,10 +8244,20 @@ lodash.clonedeep@^4.5.0, lodash.clonedeep@~4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
   integrity sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=
 
+lodash.defaults@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/lodash.defaults/-/lodash.defaults-4.2.0.tgz#d09178716ffea4dde9e5fb7b37f6f0802274580c"
+  integrity sha1-0JF4cW/+pN3p5ft7N/bwgCJ0WAw=
+
 lodash.get@^4.4.2:
   version "4.4.2"
   resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
   integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
+
+lodash.isarguments@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/lodash.isarguments/-/lodash.isarguments-3.1.0.tgz#2f573d85c6a24289ff00663b491c1d338ff3458a"
+  integrity sha1-L1c9hcaiQon/AGY7SRwdM4/zRYo=
 
 lodash.ismatch@^4.4.0:
   version "4.4.0"
@@ -6972,6 +8338,10 @@ loud-rejection@^1.0.0:
     currently-unhandled "^0.4.1"
     signal-exit "^3.0.0"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> feat(web-sockets): enable connection to redis
 lowercase-keys@^1.0.0, lowercase-keys@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/lowercase-keys/-/lowercase-keys-1.0.1.tgz#6f9e30b47084d971a7c820ff15a6c5167b74c26f"
@@ -6982,7 +8352,14 @@ lowercase-keys@^2.0.0:
   resolved "https://registry.yarnpkg.com/lowercase-keys/-/lowercase-keys-2.0.0.tgz#2603e78b7b4b0006cbca2fbcc8a3202558ac9479"
   integrity sha512-tqNXrS78oMOE73NMxK4EMLQsQowWf8jKooH9g7xPavRT706R6bkQJ6DY2Te7QukaZsulxa30wQ7bk0pm4XiHmA==
 
+<<<<<<< HEAD
 lru-cache@^4.0.1, lru-cache@^4.1.3, lru-cache@^4.1.5:
+=======
+lru-cache@^4.1.3:
+>>>>>>> feat(web-sockets): implementing repo pattern
+=======
+lru-cache@^4.0.1, lru-cache@^4.1.3:
+>>>>>>> feat(web-sockets): enable connection to redis
   version "4.1.5"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-4.1.5.tgz#8bbe50ea85bed59bc9e33dcab8235ee9bcf443cd"
   integrity sha512-sWZlbEP2OsHNkXrMl5GYk/jKk70MBng6UU4YI/qGDYbgf6YbP4EvmqISbXCoJiRKs+1bSpFHVgQxvJ17F2li5g==
@@ -7004,6 +8381,7 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
+<<<<<<< HEAD
 lru-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/lru-queue/-/lru-queue-0.1.0.tgz#2738bd9f0d3cf4f84490c5736c48699ac632cda3"
@@ -7011,6 +8389,8 @@ lru-queue@^0.1.0:
   dependencies:
     es5-ext "~0.10.2"
 
+=======
+>>>>>>> feat(web-sockets): configuring socketio instance
 macos-release@^2.2.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/macos-release/-/macos-release-2.5.0.tgz#067c2c88b5f3fb3c56a375b2ec93826220fa1ff2"
@@ -7094,6 +8474,10 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> feat(web-sockets): enable connection to redis
 meant@^1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/meant/-/meant-1.0.3.tgz#67769af9de1d158773e928ae82c456114903554c"
@@ -7106,6 +8490,7 @@ mem@^1.1.0:
   dependencies:
     mimic-fn "^1.0.0"
 
+<<<<<<< HEAD
 memoizee@^0.4.15:
   version "0.4.15"
   resolved "https://registry.yarnpkg.com/memoizee/-/memoizee-0.4.15.tgz#e6f3d2da863f318d02225391829a6c5956555b72"
@@ -7120,6 +8505,10 @@ memoizee@^0.4.15:
     next-tick "^1.1.0"
     timers-ext "^0.1.7"
 
+=======
+>>>>>>> feat(web-sockets): implementing repo pattern
+=======
+>>>>>>> feat(web-sockets): enable connection to redis
 memory-pager@^1.0.2:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/memory-pager/-/memory-pager-1.5.0.tgz#d8751655d22d384682741c972f2c3d6dfa3e66b5"
@@ -7215,7 +8604,7 @@ mime-db@1.52.0:
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.52.0.tgz#bbabcdc02859f4987301c856e3387ce5ec43bf70"
   integrity sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==
 
-mime-types@^2.1.12, mime-types@~2.1.19:
+mime-types@^2.1.12, mime-types@~2.1.19, mime-types@~2.1.34:
   version "2.1.35"
   resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-2.1.35.tgz#381a871b62a734450660ae3deee44813f70d959a"
   integrity sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw==
@@ -7252,7 +8641,18 @@ minimalistic-assert@^1.0.0:
   resolved "https://registry.yarnpkg.com/minimalistic-assert/-/minimalistic-assert-1.0.1.tgz#2e194de044626d4a10e7f7fbc00ce73e83e4d5c7"
   integrity sha512-UtJcAD4yEaGtjPezWuO9wC4nwUnVH/8/Im3yEHQP4b67cXlD/Qr9hdITCU1xDbSEXg2XKNaP8jsReV7vQd00/A==
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 minimatch@^3.0.4, minimatch@^3.1.1, minimatch@^3.1.2:
+=======
+minimatch@^3.0.4, minimatch@^3.1.2:
+=======
+minimatch@^3.0.4, minimatch@^3.1.1, minimatch@^3.1.2:
+>>>>>>> feat(web-sockets): configuring socketio instance
+>>>>>>> feat(web-sockets): configuring socketio instance
+=======
+minimatch@^3.0.4, minimatch@^3.1.1, minimatch@^3.1.2:
+>>>>>>> build(web-sockets): changing dependencies in api-gateway to be able to use socketio there
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.1.2.tgz#19cd194bfd3e428f049a70817c038d89ab4be35b"
   integrity sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==
@@ -7372,6 +8772,8 @@ mongodb-connection-string-url@^2.5.2:
     whatwg-url "^11.0.0"
 
 mongodb@4.5.0:
+<<<<<<< HEAD
+=======
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-4.5.0.tgz#d74c2008567b606dccef220f62a44cd7b934eb92"
   integrity sha512-A2l8MjEpKojnhbCM0MK3+UOGUSGvTNNSv7AkP1fsT7tkambrkkqN/5F2y+PhzsV0Nbv58u04TETpkaSEdI2zKA==
@@ -7383,6 +8785,16 @@ mongodb@4.5.0:
   optionalDependencies:
     saslprep "^1.0.3"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+mongodb@4.5.0, mongodb@^4.4.1:
+>>>>>>> feat(web-sockets): configuring socketio instance
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-4.5.0.tgz#d74c2008567b606dccef220f62a44cd7b934eb92"
+  integrity sha512-A2l8MjEpKojnhbCM0MK3+UOGUSGvTNNSv7AkP1fsT7tkambrkkqN/5F2y+PhzsV0Nbv58u04TETpkaSEdI2zKA==
+=======
+=======
+>>>>>>> build(web-sockets): changing dependencies in api-gateway to be able to use socketio there
 mongodb@^4.4.1:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-4.6.0.tgz#a69216da61f4cb1498d68cb396c52313fa39cef6"
@@ -7395,6 +8807,38 @@ mongodb@^4.4.1:
   optionalDependencies:
     saslprep "^1.0.3"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+mongodb@^4.4.1:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-4.6.0.tgz#a69216da61f4cb1498d68cb396c52313fa39cef6"
+  integrity sha512-1gsxVXmjFTPJ+CkMG9olE4bcVsyY8lBJN9m5B5vj+LZ7wkBqq3PO8RVmNX9GwCBOBz1KV0zM00vPviUearSv7A==
+  dependencies:
+    bson "^4.6.3"
+    denque "^2.0.1"
+    mongodb-connection-string-url "^2.5.2"
+    socks "^2.6.2"
+  optionalDependencies:
+    saslprep "^1.0.3"
+=======
+mongoose@^6.2.4, mongoose@^6.2.7, mongoose@^6.2.8:
+=======
+mongoose@^6.2.4, mongoose@^6.2.7, mongoose@^6.2.8, mongoose@^6.3.2:
+>>>>>>> build(web-sockets): changing dependencies in api-gateway to be able to use socketio there
+  version "6.3.3"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-6.3.3.tgz#1ef1daa016ce5dfe4c905ce297a3770d62764e54"
+  integrity sha512-bAGuf+6mXuVjKReNcOGjdI05y9g0JXnRpZ3/PBN3kVXIn3rbhbFwR/lPbuwtsBsWhlblMK8tieDeFAVzV6yhww==
+  dependencies:
+    bson "^4.6.2"
+    kareem "2.3.5"
+    mongodb "4.5.0"
+    mpath "0.9.0"
+    mquery "4.0.2"
+    ms "2.1.3"
+    sift "16.0.0"
+>>>>>>> feat(web-sockets): configuring socketio instance
+
+<<<<<<< HEAD
 mongoose@^6.2.4, mongoose@^6.2.7, mongoose@^6.2.8, mongoose@^6.3.2:
   version "6.3.3"
   resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-6.3.3.tgz#1ef1daa016ce5dfe4c905ce297a3770d62764e54"
@@ -7408,6 +8852,8 @@ mongoose@^6.2.4, mongoose@^6.2.7, mongoose@^6.2.8, mongoose@^6.3.2:
     ms "2.1.3"
     sift "16.0.0"
 
+=======
+>>>>>>> build(web-sockets): changing dependencies in api-gateway to be able to use socketio there
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/move-concurrently/-/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
@@ -7420,11 +8866,22 @@ move-concurrently@^1.0.1:
     rimraf "^2.5.4"
     run-queue "^1.0.3"
 
+<<<<<<< HEAD
+=======
 mpath@0.9.0:
   version "0.9.0"
   resolved "https://registry.yarnpkg.com/mpath/-/mpath-0.9.0.tgz#0c122fe107846e31fc58c75b09c35514b3871904"
   integrity sha512-ikJRQTk8hw5DEoFVxHG1Gn9T/xcjtdnOKIU1JTmGjZZlg9LST2mBLmcX3/ICIbgJydT2GOc15RnNy5mHmzfSew==
 
+<<<<<<< HEAD
+>>>>>>> feat(web-sockets): configuring socketio instance
+mpath@0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/mpath/-/mpath-0.9.0.tgz#0c122fe107846e31fc58c75b09c35514b3871904"
+  integrity sha512-ikJRQTk8hw5DEoFVxHG1Gn9T/xcjtdnOKIU1JTmGjZZlg9LST2mBLmcX3/ICIbgJydT2GOc15RnNy5mHmzfSew==
+
+=======
+>>>>>>> build(web-sockets): changing dependencies in api-gateway to be able to use socketio there
 mquery@4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/mquery/-/mquery-4.0.2.tgz#a13add5ecd7c2e5a67e0f814b3c7acdfb6772804"
@@ -7519,6 +8976,11 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=
 
+negotiator@0.6.3:
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.3.tgz#58e323a72fedc0d6f9cd4d31fe49f51479590ccd"
+  integrity sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==
+
 neo-async@^2.6.0:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
@@ -7579,6 +9041,14 @@ node-int64@^0.4.0:
   resolved "https://registry.yarnpkg.com/node-int64/-/node-int64-0.4.0.tgz#87a9065cdb355d3182d8f94ce11188b825c68a3b"
   integrity sha1-h6kGXNs1XTGC2PlM4RGIuCXGijs=
 
+<<<<<<< HEAD
+node-releases@^2.0.3:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.4.tgz#f38252370c43854dc48aa431c766c6c398f40476"
+  integrity sha512-gbMzqQtTtDz/00jQzZ21PQzdI9PyLYqUSvD0p3naOhX4odFji0ZxYdnVwPTxmSwkmxhcFImpozceidSG+AgoPQ==
+
+=======
+>>>>>>> feat(web-sockets): configuring socketio instance
 node-releases@^2.0.3:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.4.tgz#f38252370c43854dc48aa431c766c6c398f40476"
@@ -7608,6 +9078,8 @@ nopt@^4.0.1, nopt@^4.0.3:
     abbrev "1"
     osenv "^0.1.4"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 nopt@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/nopt/-/nopt-5.0.0.tgz#530942bb58a512fccafe53fe210f13a25355dc88"
@@ -7615,6 +9087,8 @@ nopt@^5.0.0:
   dependencies:
     abbrev "1"
 
+=======
+>>>>>>> feat(web-sockets): enable connection to redis
 nopt@~1.0.10:
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/nopt/-/nopt-1.0.10.tgz#6ddd21bd2a31417b92727dd585f8a6f37608ebee"
@@ -7622,6 +9096,11 @@ nopt@~1.0.10:
   dependencies:
     abbrev "1"
 
+<<<<<<< HEAD
+=======
+>>>>>>> feat(web-sockets): implementing repo pattern
+=======
+>>>>>>> feat(web-sockets): enable connection to redis
 normalize-package-data@^2.0.0, normalize-package-data@^2.3.0, normalize-package-data@^2.3.2, normalize-package-data@^2.3.4, normalize-package-data@^2.3.5, normalize-package-data@^2.4.0, normalize-package-data@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/normalize-package-data/-/normalize-package-data-2.5.0.tgz#e66db1838b200c1dfc233225d12cb36520e234a8"
@@ -7656,6 +9135,11 @@ normalize-url@^6.1.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-6.1.0.tgz#40d0885b535deffe3f3147bec877d05fe4c5668a"
   integrity sha512-DlL+XwOy3NxAQ8xuC0okPgK46iuVNAK01YN7RueYBqqFeGsBjV9XmCAzAdgt+667bCl5kPh9EqKKDwnaPG1I7A==
+
+notepack.io@~2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/notepack.io/-/notepack.io-2.2.0.tgz#d7ea71d1cb90094f88c6f3c8d84277c2d0cd101c"
+  integrity sha512-9b5w3t5VSH6ZPosoYnyDONnUTF8o0UkBw7JLA6eBlYJWyGT1Q3vQa8Hmuj1/X6RYvHjjygBDgw6fJhe0JEojfw==
 
 npm-audit-report@^1.3.3:
   version "1.3.3"
@@ -7923,7 +9407,7 @@ oauth-sign@~0.9.0:
   resolved "https://registry.yarnpkg.com/oauth-sign/-/oauth-sign-0.9.0.tgz#47a7b016baa68b5fa0ecf3dee08a85c679ac6455"
   integrity sha512-fexhUFFPTGV8ybAtSIGbV6gOkSv8UtRbDBnAyLQw4QPKkgNlsH2ByPGtMUqdWkos6YCRmAqViwgZrJc/mRDzZQ==
 
-object-assign@^4.0.1, object-assign@^4.1.0:
+object-assign@^4, object-assign@^4.0.1, object-assign@^4.1.0:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
   integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
@@ -8641,6 +10125,16 @@ pretty-format@^27.5.1:
     ansi-styles "^5.0.0"
     react-is "^17.0.1"
 
+pretty-format@^28.1.0:
+  version "28.1.0"
+  resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-28.1.0.tgz#8f5836c6a0dfdb834730577ec18029052191af55"
+  integrity sha512-79Z4wWOYCdvQkEoEuSlBhHJqWeZ8D8YRPiPctJFCtvuaClGpiwiQYSCUOE6IEKUbbFukKOTFIUAXE8N4EQTo1Q==
+  dependencies:
+    "@jest/schemas" "^28.0.2"
+    ansi-regex "^5.0.1"
+    ansi-styles "^5.0.0"
+    react-is "^18.0.0"
+
 process-nextick-args@~2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
@@ -8838,6 +10332,11 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
+react-is@^18.0.0:
+  version "18.1.0"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.1.0.tgz#61aaed3096d30eacf2a2127118b5b41387d32a67"
+  integrity sha512-Fl7FuabXsJnV5Q1qIOQwx/sagGF18kogb4gpfcG4gjLBWO0WDiiz1ko/ExayuxE7InyQkBLkxRFG5oxY6Uu3Kg==
+
 read-cmd-shim@^1.0.1, read-cmd-shim@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/read-cmd-shim/-/read-cmd-shim-1.0.5.tgz#87e43eba50098ba5a32d0ceb583ab8e43b961c16"
@@ -9028,6 +10527,18 @@ redent@^3.0.0:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
 
+redis-errors@^1.0.0, redis-errors@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/redis-errors/-/redis-errors-1.2.0.tgz#eb62d2adb15e4eaf4610c04afe1529384250abad"
+  integrity sha1-62LSrbFeTq9GEMBK/hUpOEJQq60=
+
+redis-parser@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/redis-parser/-/redis-parser-3.0.0.tgz#b66d828cdcafe6b4b8a428a7def4c6bcac31c8b4"
+  integrity sha1-tm2CjNyv5rS4pCin3vTGvKwxyLQ=
+  dependencies:
+    redis-errors "^1.0.0"
+
 regex-not@^1.0.0, regex-not@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/regex-not/-/regex-not-1.0.2.tgz#1f4ece27e00b0b65e0247a6810e6a85d83a5752c"
@@ -9036,7 +10547,15 @@ regex-not@^1.0.0, regex-not@^1.0.2:
     extend-shallow "^3.0.2"
     safe-regex "^1.1.0"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 regexp.prototype.flags@^1.4.3:
+=======
+regexp.prototype.flags@^1.4.1:
+>>>>>>> feat(web-sockets): configuring socketio instance
+=======
+regexp.prototype.flags@^1.4.3:
+>>>>>>> build(web-sockets): changing dependencies in api-gateway to be able to use socketio there
   version "1.4.3"
   resolved "https://registry.yarnpkg.com/regexp.prototype.flags/-/regexp.prototype.flags-1.4.3.tgz#87cab30f80f66660181a3bb7bf5981a872b367ac"
   integrity sha512-fjggEOO3slI6Wvgjwflkc4NFRCTZAu5CnNfBd5qOMYhWdn67nJBBu34/TkD++eeFmd8C9r9jfXJ27+nSiRkSUA==
@@ -9357,7 +10876,15 @@ semver-store@^0.3.0:
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.7.1.tgz#a954f931aeba508d307bbf069eff0c01c96116f7"
   integrity sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 semver@7.3.7, semver@^7.3.2, semver@^7.3.4, semver@^7.3.5:
+=======
+semver@7.3.7, semver@^7.3.4:
+>>>>>>> feat(web-sockets): implementing repo pattern
+=======
+semver@7.3.7, semver@^7.3.2, semver@^7.3.4, semver@^7.3.5:
+>>>>>>> feat(web-sockets): configuring socketio instance
   version "7.3.7"
   resolved "https://registry.yarnpkg.com/semver/-/semver-7.3.7.tgz#12c5b649afdbf9049707796e22a4028814ce523f"
   integrity sha512-QlYTucUYOews+WeEujDoEGziz4K6c47V/Bd+LjSSYcA94p+DmINdf7ncaUinThfvZyu13lN9OY1XDxt8C0Tw0g==
@@ -9369,6 +10896,27 @@ semver@^6.0.0, semver@^6.2.0, semver@^6.3.0:
   resolved "https://registry.yarnpkg.com/semver/-/semver-6.3.0.tgz#ee0a64c8af5e8ceea67687b133761e1becbd1d3d"
   integrity sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> feat(web-sockets): configuring socketio instance
+semver@^7.3.2, semver@^7.3.5:
+  version "7.3.6"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-7.3.6.tgz#5d73886fb9c0c6602e79440b97165c29581cbb2b"
+  integrity sha512-HZWqcgwLsjaX1HBD31msI/rXktuIhS+lWvdE4kN9z+8IVT4Itc7vqU2WvYsyD6/sjYCt4dEKH/m1M3dwI9CC5w==
+  dependencies:
+    lru-cache "^7.4.0"
+
+<<<<<<< HEAD
+>>>>>>> feat(web-sockets): implementing repo pattern
+=======
+=======
+>>>>>>> feat(web-sockets): configuring socketio instance
+>>>>>>> feat(web-sockets): configuring socketio instance
+=======
+>>>>>>> build(web-sockets): changing dependencies in api-gateway to be able to use socketio there
 send@^0.17.1:
   version "0.17.2"
   resolved "https://registry.yarnpkg.com/send/-/send-0.17.2.tgz#926622f76601c41808012c8bf1688fe3906f7820"
@@ -9412,9 +10960,21 @@ sequelize-pool@^7.1.0:
   integrity sha512-G9c0qlIWQSK29pR/5U2JF5dDQeqqHRragoyahj/Nx4KOOQ3CPPfzxnfqFPCSB7x5UgjOgnZ61nSxz+fjDpRlJg==
 
 sequelize@^6.17.0:
+<<<<<<< HEAD
+<<<<<<< HEAD
   version "6.19.2"
   resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-6.19.2.tgz#5e8ba39a0572094e51158dc68c6bc8b2b9a7e579"
   integrity sha512-799X+BsyloPzq1ooZQNJgevRYwdAla50+6MchUra28Mdw3xmc0NTj+16pb/cAaKDcQS2pgmyDn1ZePjP2wS0nA==
+=======
+  version "6.19.0"
+  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-6.19.0.tgz#bea0ac091d89cbbc94cabe0797b8c1359734e2e6"
+  integrity sha512-B3oGIdpYBERDjRDm74h7Ky67f6ZLcmBXOA7HscYObiOSo4pD7VBc9mtm44wNV7unc0uk8I1d30nbZBTQCE377A==
+>>>>>>> feat(web-sockets): configuring socketio instance
+=======
+  version "6.19.2"
+  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-6.19.2.tgz#5e8ba39a0572094e51158dc68c6bc8b2b9a7e579"
+  integrity sha512-799X+BsyloPzq1ooZQNJgevRYwdAla50+6MchUra28Mdw3xmc0NTj+16pb/cAaKDcQS2pgmyDn1ZePjP2wS0nA==
+>>>>>>> build(web-sockets): changing dependencies in api-gateway to be able to use socketio there
   dependencies:
     "@types/debug" "^4.1.7"
     "@types/validator" "^13.7.1"
@@ -9510,12 +11070,16 @@ sift@16.0.0:
   resolved "https://registry.yarnpkg.com/sift/-/sift-16.0.0.tgz#447991577db61f1a8fab727a8a98a6db57a23eb8"
   integrity sha512-ILTjdP2Mv9V1kIxWMXeMTIRbOBrqKc4JAXmFMnFq3fKeyQ2Qwa3Dw1ubcye3vR+Y6ofA0b9gNDr/y2t6eUeIzQ==
 
+<<<<<<< HEAD
 sigmund@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/sigmund/-/sigmund-1.0.1.tgz#3ff21f198cad2175f9f3b781853fd94d0d19b590"
   integrity sha1-P/IfGYytIXX587eBhT/ZTQ0ZtZA=
 
 signal-exit@^3.0.0, signal-exit@^3.0.2, signal-exit@^3.0.3:
+=======
+signal-exit@^3.0.0, signal-exit@^3.0.2, signal-exit@^3.0.3, signal-exit@^3.0.7:
+>>>>>>> feat(web-sockets): implementing repo pattern
   version "3.0.7"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.7.tgz#a9a1767f8af84155114eaabd73f99273c8f59ad9"
   integrity sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
@@ -9582,6 +11146,32 @@ snapdragon@^0.8.1:
     source-map-resolve "^0.5.0"
     use "^3.1.0"
 
+socket.io-adapter@^2.4.0, socket.io-adapter@~2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/socket.io-adapter/-/socket.io-adapter-2.4.0.tgz#b50a4a9ecdd00c34d4c8c808224daa1a786152a6"
+  integrity sha512-W4N+o69rkMEGVuk2D/cvca3uYsvGlMwsySWV447y99gUPghxq42BxqLNMndb+a1mm/5/7NeXVQS7RLa2XyXvYg==
+
+socket.io-parser@~4.0.4:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/socket.io-parser/-/socket.io-parser-4.0.4.tgz#9ea21b0d61508d18196ef04a2c6b9ab630f4c2b0"
+  integrity sha512-t+b0SS+IxG7Rxzda2EVvyBZbvFPBCjJoyHuE0P//7OAsN23GItzDRdWa6ALxZI/8R5ygK7jAR6t028/z+7295g==
+  dependencies:
+    "@types/component-emitter" "^1.2.10"
+    component-emitter "~1.3.0"
+    debug "~4.3.1"
+
+socket.io@^4.5.0:
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/socket.io/-/socket.io-4.5.1.tgz#aa7e73f8a6ce20ee3c54b2446d321bbb6b1a9029"
+  integrity sha512-0y9pnIso5a9i+lJmsCdtmTTgJFFSvNQKDnPQRz28mGNnxbmqYg2QPtJTLFxhymFZhAIn50eHAKzJeiNaKr+yUQ==
+  dependencies:
+    accepts "~1.3.4"
+    base64id "~2.0.0"
+    debug "~4.3.2"
+    engine.io "~6.2.0"
+    socket.io-adapter "~2.4.0"
+    socket.io-parser "~4.0.4"
+
 socks-proxy-agent@^4.0.0:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/socks-proxy-agent/-/socks-proxy-agent-4.0.2.tgz#3c8991f3145b2799e70e11bd5fbc8b1963116386"
@@ -9644,6 +11234,14 @@ source-map-resolve@^0.5.0:
     resolve-url "^0.2.1"
     source-map-url "^0.4.0"
     urix "^0.1.0"
+
+source-map-support@0.5.13:
+  version "0.5.13"
+  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.13.tgz#31b24a9c2e73c2de85066c0feb7d44767ed52932"
+  integrity sha512-SHSKFHadjVA5oR4PPqhtAVdcBWwRYVd6g6cAXnIbRiIwc2EhPrTuKUBdSLvlEKyIP3GCf89fltvcZiP9MMFA1w==
+  dependencies:
+    buffer-from "^1.0.0"
+    source-map "^0.6.0"
 
 source-map-support@^0.5.6:
   version "0.5.21"
@@ -9787,6 +11385,11 @@ stack-utils@^2.0.3:
   integrity sha512-xrQcmYhOsn/1kX+Vraq+7j4oE2j/6BFscZ0etmYg81xuM8Gq0022Pxb8+IqgOFUIaxHs0KaSb7T1+OegiNrNFA==
   dependencies:
     escape-string-regexp "^2.0.0"
+
+standard-as-callback@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/standard-as-callback/-/standard-as-callback-2.1.0.tgz#8953fc05359868a77b5b9739a665c5977bb7df45"
+  integrity sha512-qoRRSyROncaz1z0mvYqIE4lCd9p2R90i6GxW3uZv5ucSu8tU7B5HXUP1gG8pVZsYNVaXjk8ClXHPttLyxAL48A==
 
 static-extend@^0.1.1:
   version "0.1.2"
@@ -10181,11 +11784,16 @@ through@2, "through@>=2.2.7 <3", through@^2.3.4, through@^2.3.6:
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
   integrity sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU=
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> feat(web-sockets): enable connection to redis
 timed-out@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/timed-out/-/timed-out-4.0.1.tgz#f32eacac5a175bea25d7fab565ab3ed8741ef56f"
   integrity sha1-8y6srFoXW+ol1/q1Zas+2HQe9W8=
 
+<<<<<<< HEAD
 timers-ext@^0.1.7:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/timers-ext/-/timers-ext-0.1.7.tgz#6f57ad8578e07a3fb9f91d9387d65647555e25c6"
@@ -10194,6 +11802,10 @@ timers-ext@^0.1.7:
     es5-ext "~0.10.46"
     next-tick "1"
 
+=======
+>>>>>>> feat(web-sockets): implementing repo pattern
+=======
+>>>>>>> feat(web-sockets): enable connection to redis
 tiny-lru@^8.0.1:
   version "8.0.2"
   resolved "https://registry.yarnpkg.com/tiny-lru/-/tiny-lru-8.0.2.tgz#812fccbe6e622ded552e3ff8a4c3b5ff34a85e4c"
@@ -10461,20 +12073,38 @@ typescript@^4.4.3:
   integrity sha512-9ia/jWHIEbo49HfjrLGfKbZSuWo9iTMwXO+Ca3pRsSpbsMbc7/IU8NKdCZVRRBafVPGnoJeFL76ZOAA84I9fEg==
 
 uglify-js@^3.1.4:
+<<<<<<< HEAD
+<<<<<<< HEAD
   version "3.15.5"
   resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.15.5.tgz#2b10f9e0bfb3f5c15a8e8404393b6361eaeb33b3"
   integrity sha512-hNM5q5GbBRB5xB+PMqVRcgYe4c8jbyZ1pzZhS6jbq54/4F2gFK869ZheiE5A8/t+W5jtTNpWef/5Q9zk639FNQ==
+=======
+  version "3.15.4"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.15.4.tgz#fa95c257e88f85614915b906204b9623d4fa340d"
+  integrity sha512-vMOPGDuvXecPs34V74qDKk4iJ/SN4vL3Ow/23ixafENYvtrNvtbcgUeugTcUGRGsOF/5fU8/NYSL5Hyb3l1OJA==
+>>>>>>> feat(web-sockets): implementing repo pattern
+=======
+  version "3.15.5"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.15.5.tgz#2b10f9e0bfb3f5c15a8e8404393b6361eaeb33b3"
+  integrity sha512-hNM5q5GbBRB5xB+PMqVRcgYe4c8jbyZ1pzZhS6jbq54/4F2gFK869ZheiE5A8/t+W5jtTNpWef/5Q9zk639FNQ==
+>>>>>>> feat(web-sockets): configuring socketio instance
 
 uid-number@0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/uid-number/-/uid-number-0.0.6.tgz#0ea10e8035e8eb5b8e4449f06da1c730663baa81"
   integrity sha1-DqEOgDXo61uOREnwbaHHMGY7qoE=
 
+uid2@0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/uid2/-/uid2-0.0.3.tgz#483126e11774df2f71b8b639dcd799c376162b82"
+  integrity sha1-SDEm4Rd03y9xuLY53NeZw3YWK4I=
+
 umask@^1.1.0, umask@~1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/umask/-/umask-1.1.0.tgz#f29cebf01df517912bb58ff9c4e50fde8e33320d"
   integrity sha1-8pzr8B31F5ErtY/5xOUP3o4zMg0=
 
+<<<<<<< HEAD
 umzug@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/umzug/-/umzug-2.3.0.tgz#0ef42b62df54e216b05dcaf627830a6a8b84a184"
@@ -10487,21 +12117,41 @@ unbox-primitive@^1.0.2:
   resolved "https://registry.yarnpkg.com/unbox-primitive/-/unbox-primitive-1.0.2.tgz#29032021057d5e6cdbd08c5129c226dff8ed6f9e"
   integrity sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==
   dependencies:
+=======
+unbox-primitive@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/unbox-primitive/-/unbox-primitive-1.0.2.tgz#29032021057d5e6cdbd08c5129c226dff8ed6f9e"
+  integrity sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==
+  dependencies:
+>>>>>>> feat(web-sockets): configuring socketio instance
     call-bind "^1.0.2"
     has-bigints "^1.0.2"
     has-symbols "^1.0.3"
     which-boxed-primitive "^1.0.2"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> feat(web-sockets): enable connection to redis
 undefsafe@^2.0.5:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/undefsafe/-/undefsafe-2.0.5.tgz#38733b9327bdcd226db889fb723a6efd162e6e2c"
   integrity sha512-WxONCrssBM8TSPRqN5EmsjVrsv4A8X12J4ArBiiayv3DyyG3ZlIg6yysuuSYdZsVz3TKcTg2fd//Ujd4CHV1iA==
 
+<<<<<<< HEAD
 underscore@^1.13.1, underscore@^1.9.1:
+=======
+underscore@^1.9.1:
+>>>>>>> feat(web-sockets): enable connection to redis
   version "1.13.3"
   resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.13.3.tgz#54bc95f7648c5557897e5e968d0f76bc062c34ee"
   integrity sha512-QvjkYpiD+dJJraRA8+dGAU4i7aBbb2s0S3jA45TFOvg2VgqvdCDd/3N6CqA8gluk1W91GLoXg5enMUx560QzuA==
 
+<<<<<<< HEAD
+=======
+>>>>>>> feat(web-sockets): implementing repo pattern
+=======
+>>>>>>> feat(web-sockets): enable connection to redis
 union-value@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/union-value/-/union-value-1.0.1.tgz#0b6fe7b835aecda61c6ea4d4f02c14221e109847"
@@ -10698,6 +12348,15 @@ v8-to-istanbul@^8.1.0:
     convert-source-map "^1.6.0"
     source-map "^0.7.3"
 
+v8-to-istanbul@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/v8-to-istanbul/-/v8-to-istanbul-9.0.0.tgz#be0dae58719fc53cb97e5c7ac1d7e6d4f5b19511"
+  integrity sha512-HcvgY/xaRm7isYmyx+lFKA4uQmfUbN0J4M0nNItvzTvH/iQ9kW5j/t4YSR+Ge323/lrgDAWJoF46tzGQHwBHFw==
+  dependencies:
+    "@jridgewell/trace-mapping" "^0.3.7"
+    "@types/istanbul-lib-coverage" "^2.0.1"
+    convert-source-map "^1.6.0"
+
 validate-npm-package-license@^3.0.1, validate-npm-package-license@^3.0.3, validate-npm-package-license@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/validate-npm-package-license/-/validate-npm-package-license-3.0.4.tgz#fc91f6b9c7ba15c857f4cb2c5defeec39d4f410a"
@@ -10717,6 +12376,11 @@ validator@^13.7.0:
   version "13.7.0"
   resolved "https://registry.yarnpkg.com/validator/-/validator-13.7.0.tgz#4f9658ba13ba8f3d82ee881d3516489ea85c0857"
   integrity sha512-nYXQLCBkpJ8X6ltALua9dRrZDHVYxjJ1wgskNt1lH9fzGjs3tgojGSCBjmEPwkWS1y29+DrizMTW19Pr9uB2nw==
+
+vary@^1:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
+  integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
 
 verror@1.10.0:
   version "1.10.0"
@@ -10983,6 +12647,14 @@ write-file-atomic@^3.0.0:
     signal-exit "^3.0.2"
     typedarray-to-buffer "^3.1.5"
 
+write-file-atomic@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/write-file-atomic/-/write-file-atomic-4.0.1.tgz#9faa33a964c1c85ff6f849b80b42a88c2c537c8f"
+  integrity sha512-nSKUxgAbyioruk6hU87QzVbY279oYT6uiwgDoujth2ju4mJ+TZau7SQBhtbTmUyuNYTuXnSyRn66FV0+eCgcrQ==
+  dependencies:
+    imurmurhash "^0.1.4"
+    signal-exit "^3.0.7"
+
 write-json-file@^2.2.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/write-json-file/-/write-json-file-2.3.0.tgz#2b64c8a33004d54b8698c76d585a77ceb61da32f"
@@ -11019,6 +12691,11 @@ ws@^7.4.6:
   version "7.5.7"
   resolved "https://registry.yarnpkg.com/ws/-/ws-7.5.7.tgz#9e0ac77ee50af70d58326ecff7e85eb3fa375e67"
   integrity sha512-KMvVuFzpKBuiIXW3E4u3mySRO2/mCHSyZDJQM5NQ9Q9KHWHWh0NHgfbRMLLrceUK5qAL4ytALJbpRMjixFZh8A==
+
+ws@~8.2.3:
+  version "8.2.3"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-8.2.3.tgz#63a56456db1b04367d0b721a0b80cae6d8becbba"
+  integrity sha512-wBuoj1BDpC6ZQ1B7DWQBYVLphPWkm8i9Y0/3YdHjHKHiohOJ1ws+3OccDWtH+PoC9DZD5WOTrJvNbWvjS6JWaA==
 
 xdg-basedir@^3.0.0:
   version "3.0.0"
@@ -11135,10 +12812,23 @@ yargs@^16.2.0:
     y18n "^5.0.5"
     yargs-parser "^20.2.2"
 
+<<<<<<< HEAD
 yargs@^17.0.0:
   version "17.5.1"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-17.5.1.tgz#e109900cab6fcb7fd44b1d8249166feb0b36e58e"
   integrity sha512-t6YAJcxDkNX7NFYiVtKvWUz8l+PaKTLiL63mJYWR2GnHq2gjEWISzsLp9wg3aY36dY1j+gfIEL3pIF+XlJJfbA==
+=======
+yargs@^17.0.0, yargs@^17.3.1:
+<<<<<<< HEAD
+  version "17.4.1"
+  resolved "https://registry.yarnpkg.com/yargs/-/yargs-17.4.1.tgz#ebe23284207bb75cee7c408c33e722bfb27b5284"
+  integrity sha512-WSZD9jgobAg3ZKuCQZSa3g9QOJeCCqLoLAykiWgmXnDo9EPnn4RPf5qVTtzgOx66o6/oqhcA5tHtJXpG8pMt3g==
+>>>>>>> feat(web-sockets): implementing repo pattern
+=======
+  version "17.5.1"
+  resolved "https://registry.yarnpkg.com/yargs/-/yargs-17.5.1.tgz#e109900cab6fcb7fd44b1d8249166feb0b36e58e"
+  integrity sha512-t6YAJcxDkNX7NFYiVtKvWUz8l+PaKTLiL63mJYWR2GnHq2gjEWISzsLp9wg3aY36dY1j+gfIEL3pIF+XlJJfbA==
+>>>>>>> feat(web-sockets): configuring socketio instance
   dependencies:
     cliui "^7.0.2"
     escalade "^3.1.1"

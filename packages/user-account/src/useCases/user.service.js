@@ -1,8 +1,13 @@
-// const boom = require('@hapi/boom');
+const boom = require('@hapi/boom');
 
 async function createUser(model, data) {
-  const newUser = await model.users.create(data);
-  return newUser;
+  try {
+    const newUser = await model.users.create(data);
+    return newUser;
+    
+  } catch (error) {
+    return boom.badRequest(error);
+  }
 }
 
 function validateUser(model, data) {

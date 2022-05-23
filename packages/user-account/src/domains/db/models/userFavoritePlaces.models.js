@@ -57,7 +57,7 @@ class userFavoritePlaces extends Model {
     return {
       sequelize,
       tableName: USER_FAVORITE_PLACES_TABLE,
-      modelName: 'user_favorite_places',
+      modelName: 'userFavoritePlaces',
       timestamps: false,
     };
   }
