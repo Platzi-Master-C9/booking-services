@@ -1,0 +1,43 @@
+{
+  "name": "@booking-services/web-sockets",
+  "version": "0.0.1",
+  "description": "Configuration to our communication using websockets",
+  "keywords": [
+    "websockets"
+  ],
+  "author": "Hector Esau Macias Javier <hecttoressau@gmail.com>",
+  "homepage": "https://github.com/Platzi-Master-C9/backend-services/tree/main/packages/web-sockets#readme",
+  "license": "ISC",
+  "main": "src/index.js",
+  "directories": {
+    "lib": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hecttoressau/booking-services.git"
+  },
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix"
+  },
+  "bugs": {
+    "url": "https://github.com/hecttoressau/booking-services/issues"
+  },
+  "devDependencies": {
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
+  },
+  "dependencies": {
+    "@booking-services/shared": "^0.0.1",
+    "@socket.io/redis-adapter": "^7.2.0",
+    "ioredis": "^5.0.4",
+    "jest": "^28.0.3",
+    "socket.io": "^4.5.0"
+  }
+}
