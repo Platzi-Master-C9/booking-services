@@ -20,7 +20,7 @@ class places extends Model {
   static associate(models) {
     this.hasMany(models.userFavoritePlaces, {
       as: 'user_favorite_places',
-      foreignKey: 'placesId',
+      foreignKey: 'placeId',
     });
   }
 

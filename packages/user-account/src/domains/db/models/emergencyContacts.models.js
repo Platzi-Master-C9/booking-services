@@ -30,7 +30,7 @@ class emergencyContacts extends Model {
   static associate(models) {
     this.hasOne(models.users, {
       as: 'users',
-      foreignKey: 'emergencyContactId',
+      foreignKey: 'emergencyContactsId',
     });
   }
 
@@ -38,7 +38,7 @@ class emergencyContacts extends Model {
     return {
       sequelize,
       tableName: EMERGENCY_CONTACTS_TABLE,
-      modelName: 'emergency_contacts',
+      modelName: 'emergencyContacts',
       timestamps: false,
     };
   }

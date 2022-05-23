@@ -8,7 +8,7 @@ const citiesSchema = {
   id: {
     allowNull: false,
     autoIncrement: true,
-    primaryLey: true,
+    primaryKey: true,
     unique: true,
     type: DataTypes.INTEGER,
   },
