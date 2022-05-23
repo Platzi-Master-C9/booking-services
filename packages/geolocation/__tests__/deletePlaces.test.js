@@ -15,7 +15,7 @@ describe('[DELETE] deletePlace method to delete in dababase', () => {
       expect(error).toEqual(
         expect.objectContaining(
           boom.notFound(
-            `[geolocation:getPlaces]: No place found with id: ${_id}`
+            `[geolocation:deletePlace]: No place found with id: ${_id}`
           )
         )
       )
@@ -28,7 +28,7 @@ describe('[DELETE] deletePlace method to delete in dababase', () => {
       expect(error).toEqual(
         expect.objectContaining(
           boom.internal(
-            `[geolocation:getPlaces]: Cannot delete the place with id: ${_id}`
+            `[geolocation:deletePlace]: Cannot delete the place with id: ${_id}`
           )
         )
       )

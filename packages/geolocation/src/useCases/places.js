@@ -3,7 +3,9 @@ const boom = require('@hapi/boom');
 
 const getPlaces = (geoNearQuery) => async (lon, lat, maxDistance) => {
   if (!lon && !lat) {
-    throw boom.badRequest('[geolocation:getPlaces]: latitude and longitude are required');
+    throw boom.badRequest(
+      '[geolocation:getPlaces]: latitude and longitude are required'
+    );
   }
   const results = await geoNearQuery(lon, lat, maxDistance);
   if (!results.length) {
@@ -24,22 +26,42 @@ const deletePlace = (deletePlaceQuery) => async (id) => {
       `[geolocation:getPlaces]: Cannot delete the place with id: ${id}`
     );
   }
-  return id
-}
+  return id;
+};
 
 const updatePlace = (updatePlaceQuery) => async (id, streetAddress) => {
   const results = await updatePlaceQuery(id, { street_address: streetAddress });
   if (!results.matchedCount) {
-    throw boom.notFound(`[geolocation:getPlaces]: No place found with id: ${id}`);
+    throw boom.notFound(
+      `[geolocation:getPlaces]: No place found with id: ${id}`
+    );
   }
   if (!results.modifiedCount) {
-    throw boom.internal(`[geolocation:getPlaces]: Cannot update the place with id: ${id}`);
+    throw boom.internal(
+      `[geolocation:getPlaces]: Cannot update the place with id: ${id}`
+    );
   }
   return id;
+};
+
+const getPlace = (getPlaceQuery) => async (id) => {
+  const result = await getPlaceQuery(id);
+  if (!result.matchedCount) {
+    throw boom.notFound(
+      `[geolocation:getPlace]: No place found with id: ${id}`
+    );
+  }
+  if (!result.modifiedCount) {
+    throw boom.internal(
+      `[geolocation:getPlaces]: Cannot get the place with id: ${id}`
+    );
+  }
+  return result;
 };
 
 module.exports = {
   getPlaces,
   deletePlace,
   updatePlace,
+  getPlace,
 };

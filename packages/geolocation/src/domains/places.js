@@ -38,8 +38,17 @@ const deletePlaceQuery = (connection) => async (id) => {
   return results;
 };
 
+const getPlaceQuery = (connection) => async (id) => {
+  const options = [
+    { _id: ObjectId(id) },
+  ];
+  const result = await connection('find', options);
+  return result;
+};
+
 module.exports = {
   geoNearQuery,
   deletePlaceQuery,
   updatePlaceQuery,
+  getPlaceQuery
 };

@@ -1,6 +1,6 @@
 const { faker } = require('@faker-js/faker');
 const Fastify = require('fastify');
-const Autoload = require('fastify-autoload');
+const Autoload = require('@fastify/autoload');
 const pluginLoader = require('fastify-plugin');
 const getApiGatewayDirectory = require('../src/utils/getApiGatewayDirectory');
 
