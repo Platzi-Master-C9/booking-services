@@ -3,7 +3,9 @@
  */
 
 // Services
-const { getPlaces, updatePlace, deletePlace, getPlace } = require('./useCases');
+const {
+  getPlaces, updatePlace, deletePlace, getPlace,
+} = require('./useCases');
 
 // Domains
 const {

@@ -1,10 +1,9 @@
 const { MongoClient } = require('mongodb');
-
+const { Logger } = require('@booking-services/shared');
 const config = require('../../../config/mongodb');
 const { dbOptions } = require('../../utils/constants');
-const { Logger } = require('@booking-services/shared');
 const populate = require('../../utils/populate');
-const placesSchema = require('../schemas/placesSchema');
+const placesSchema = require('../schemas/placesSchema'); // eslint-disable-line
 
 const uri = `mongodb://${config.user}:${config.pass}@${config.uri}`;
 const { dbName, collectionName } = dbOptions;

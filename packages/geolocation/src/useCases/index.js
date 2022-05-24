@@ -1,4 +1,6 @@
-const { getPlaces, updatePlace, deletePlace, getPlace } = require('./places');
+const {
+  getPlaces, updatePlace, deletePlace, getPlace,
+} = require('./places');
 
 module.exports = {
   getPlaces,
