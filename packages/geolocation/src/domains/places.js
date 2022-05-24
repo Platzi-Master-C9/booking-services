@@ -1,24 +1,26 @@
 const { ObjectId } = require('mongodb');
 
-const geoNearQuery = (connection) => async (lon, lat, maxDistance = 1000) => {
-  const options = [
-    {
-      location: {
-        $near: {
-          $geometry: {
-            type: 'Point',
-            coordinates: [lon, lat],
+const geoNearQuery =
+  (connection) =>
+  async (lon, lat, maxDistance = 1000) => {
+    const options = [
+      {
+        location: {
+          $near: {
+            $geometry: {
+              type: 'Point',
+              coordinates: [lon, lat],
+            },
+            $maxDistance: maxDistance,
           },
-          $maxDistance: maxDistance,
         },
+        deleted_at: { $eq: null },
       },
-      deleted_at: { $eq: null },
-    },
-    { projection: { created_at: 0, updated_at: 0, deleted_at: 0 } },
-  ];
-  const results = await connection('find', options);
-  return results;
-};
+      { projection: { created_at: 0, updated_at: 0, deleted_at: 0 } },
+    ];
+    const results = await connection('find', options);
+    return results;
+  };
 
 const updatePlaceQuery = (connection) => async (id, newValues) => {
   const options = [
@@ -39,10 +41,8 @@ const deletePlaceQuery = (connection) => async (id) => {
 };
 
 const getPlaceQuery = (connection) => async (id) => {
-  const options = [
-    { _id: ObjectId(id) },
-  ];
-  const result = await connection('find', options);
+  const options = [{ _id: ObjectId(id), deleted_at: { $eq: null } }];
+  const result = await connection('findOne', options);
   return result;
 };
 
@@ -50,5 +50,5 @@ module.exports = {
   geoNearQuery,
   deletePlaceQuery,
   updatePlaceQuery,
-  getPlaceQuery
+  getPlaceQuery,
 };

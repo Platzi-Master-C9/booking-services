@@ -6,7 +6,12 @@
 const { getPlaces, updatePlace, deletePlace, getPlace } = require('./useCases');
 
 // Domains
-const { geoNearQuery, updatePlaceQuery, deletePlaceQuery, getPlaceQuery } = require('./domains');
+const {
+  geoNearQuery,
+  updatePlaceQuery,
+  deletePlaceQuery,
+  getPlaceQuery,
+} = require('./domains');
 
 module.exports = {
   getPlaces: getPlaces(geoNearQuery),

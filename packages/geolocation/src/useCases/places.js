@@ -46,14 +46,9 @@ const updatePlace = (updatePlaceQuery) => async (id, streetAddress) => {
 
 const getPlace = (getPlaceQuery) => async (id) => {
   const result = await getPlaceQuery(id);
-  if (!result.matchedCount) {
+  if (!result) {
     throw boom.notFound(
       `[geolocation:getPlace]: No place found with id: ${id}`
-    );
-  }
-  if (!result.modifiedCount) {
-    throw boom.internal(
-      `[geolocation:getPlaces]: Cannot get the place with id: ${id}`
     );
   }
   return result;
