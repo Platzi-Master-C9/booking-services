@@ -1,7 +1,8 @@
-const createUser = require('./createUser');
-const validateUser = require('./validateUser');
-const updateUser = require('./updateUser');
-const deleteUser = require('./deleteUser');
+// user services
+const createUser = require('./userServices/createUser');
+const validateUser = require('./userServices/validateUser');
+const updateUser = require('./userServices/updateUser');
+const deleteUser = require('./userServices/deleteUser');
 
 module.exports = {
   createUser,

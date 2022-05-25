@@ -1,5 +1,5 @@
-const errorHandler = require('./errorHandler');
-const { getInfoUserForInfoLog } = require('./getInfoUserForInfoLog');
+const errorHandler = require('../errorHandler');
+const { getInfoUserForInfoLog } = require('../getInfoUserForInfoLog');
 
 async function validateUser(req, reply) {
   try {
