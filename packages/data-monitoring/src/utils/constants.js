@@ -5,7 +5,10 @@ const supportedEnvs = {
 	DEVELOP: 'develop'
 }
 
+const prefix = 'data-monitoring';
+
 module.exports = {
 	supportedEnvs,
+	prefix,
 }
 
