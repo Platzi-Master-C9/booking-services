@@ -4,7 +4,6 @@ async function createUser(model, data) {
   try {
     const newUser = await model.users.create(data);
     return newUser;
-    
   } catch (error) {
     return boom.badRequest(error);
   }

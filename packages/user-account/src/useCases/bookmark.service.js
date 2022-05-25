@@ -1,14 +1,13 @@
-const boom = require("@hapi/boom");
+const boom = require('@hapi/boom');
 
 async function createBookmark(model, data) {
   try {
     const newBookmark = await model.userFavoritePlaces.create(data);
     return newBookmark;
-    
   } catch (error) {
     return boom.badRequest(error);
   }
-};
+}
 
 function getBookmark(model, data) {
   return data;

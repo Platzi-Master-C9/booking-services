@@ -3,5 +3,5 @@ const bookmarkService = require('./bookmark.service');
 
 module.exports = {
   userService,
-  bookmarkService
+  bookmarkService,
 };
