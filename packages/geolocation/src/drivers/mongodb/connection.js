@@ -1,6 +1,5 @@
 const { MongoClient } = require('mongodb');
-const boom = require('@hapi/boom');
-
+const { Logger } = require('@booking-services/shared');
 const { user, pass, uri } = require('../../../config/mongodb');
 const { dbOptions } = require('../../utils/constants');
 
@@ -8,14 +7,6 @@ const URL = `mongodb://${user}:${pass}@${uri}`;
 const { dbName, collectionName } = dbOptions;
 const client = new MongoClient(URL);
 let results;
-
-/**
- * @description return the connection with the db
- * @returns returns the collection to query
- * @example
- * const collection = await connect()
- * const places = collection.find()
- */
 
 async function connect(method, options) {
   try {
@@ -33,7 +24,6 @@ async function connect(method, options) {
     client.close();
   }
 
-  // eslint-disable-next-line
   return results;
 }
 

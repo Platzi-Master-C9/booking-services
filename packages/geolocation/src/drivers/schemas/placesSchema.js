@@ -17,7 +17,7 @@ const placesSchema = {
           bsonType: 'object',
           required: ['type', 'coordinates'],
           properties: {
-            type: { bsonType: 'string', enum: ['Point'] },
+            type: { bsonType: 'string' },
             coordinates: {
               bsonType: ['array'],
               minItems: 2,

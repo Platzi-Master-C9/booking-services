@@ -38,8 +38,15 @@ const deletePlaceQuery = (connection) => async (id) => {
   return results;
 };
 
+const getPlaceQuery = (connection) => async (id) => {
+  const options = [{ _id: ObjectId(id), deleted_at: { $eq: null } }];
+  const result = await connection('findOne', options);
+  return result;
+};
+
 module.exports = {
   geoNearQuery,
   deletePlaceQuery,
   updatePlaceQuery,
+  getPlaceQuery,
 };

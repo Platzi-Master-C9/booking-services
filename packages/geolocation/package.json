@@ -32,6 +32,7 @@
   "dependencies": {
     "@booking-services/shared": "^0.0.1",
     "@hapi/boom": "^9.1.4",
+    "dotenv": "^16.0.1",
     "mongodb": "^4.4.1",
     "winston": "^3.6.0"
   },

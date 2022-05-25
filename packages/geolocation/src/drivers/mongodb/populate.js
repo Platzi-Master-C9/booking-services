@@ -1,9 +1,9 @@
 const { MongoClient } = require('mongodb');
-
+const { Logger } = require('@booking-services/shared');
 const config = require('../../../config/mongodb');
 const { dbOptions } = require('../../utils/constants');
-const { Logger } = require('@booking-services/shared');
-const { placesSchema, populate } = require('../../utils/syncDatabase');
+const populate = require('../../utils/populate');
+const placesSchema = require('../schemas/placesSchema'); // eslint-disable-line
 
 const uri = `mongodb://${config.user}:${config.pass}@${config.uri}`;
 const { dbName, collectionName } = dbOptions;
@@ -18,10 +18,10 @@ async function connect() {
     Logger.info({
       message: '[geolocation:mongodb]: Creating collection',
     });
-    await connection.db(dbName).createCollection(collectionName, placesSchema);
+    /* await connection.db(dbName).createCollection(collectionName, placesSchema);
     Logger.info({
       message: '[geolocation:mongodb]: Populating database',
-    });
+    }); */
     const data = populate();
     await connection.db(dbName).collection(collectionName).insertMany(data);
     Logger.info({
