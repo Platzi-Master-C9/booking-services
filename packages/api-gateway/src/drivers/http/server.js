@@ -33,9 +33,9 @@ fastify.register(FastifyAuth0, {
 fastify.decorate('hasPermissions', authDecorators.hasPermissions);
 fastify.decorate('hasRole', authDecorators.hasRole);
 
-fastify.register(Autoload, { 
+fastify.register(Autoload, {
   dir: path.join(__dirname, 'routes'),
-  ignorePattern: /.*(schema).*/
+  ignorePattern: /.*(schema).*/,
 });
 fastify.register(Autoload, { dir: path.join(__dirname, 'plugins') });
 

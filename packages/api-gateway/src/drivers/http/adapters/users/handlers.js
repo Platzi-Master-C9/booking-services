@@ -12,5 +12,5 @@ module.exports = {
   validateUser,
   updateUser,
   deleteUser,
-  createBookmark
+  createBookmark,
 };

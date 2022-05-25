@@ -1,19 +1,19 @@
 const createBookmarkSchema = {
-  description: "Create new bookmark",
-  tags: ["Users"],
+  description: 'Create new bookmark',
+  tags: ['Users'],
   params: {
-    type: "object",
-    required: ["userId"],
+    type: 'object',
+    required: ['userId'],
     properties: {
-      userId: { type: "string" },
+      userId: { type: 'string' },
     },
   },
   body: {
-    type: "object",
+    type: 'object',
     properties: {
-      nameFavoriteList: { type: "string" },
+      nameFavoriteList: { type: 'string' },
     },
-    required: ["nameFavoriteList"],
+    required: ['nameFavoriteList'],
   },
 };
 

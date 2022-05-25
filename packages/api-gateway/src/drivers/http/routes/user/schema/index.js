@@ -12,5 +12,5 @@ module.exports = {
   validateUserSchema,
   updateUserSchema,
   getUserSchema,
-  createBookmarkSchema
+  createBookmarkSchema,
 };

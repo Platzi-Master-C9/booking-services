@@ -1,11 +1,11 @@
 const getUserSchema = {
-  description: "validate user",
-  tags: ["Users"],
+  description: 'validate user',
+  tags: ['Users'],
   params: {
-    type: "object",
-    required: ["userId"],
+    type: 'object',
+    required: ['userId'],
     properties: {
-      userId: { type: "string" },
+      userId: { type: 'string' },
     },
   },
 };

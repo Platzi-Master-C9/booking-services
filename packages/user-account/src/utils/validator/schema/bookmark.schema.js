@@ -5,7 +5,7 @@ const name = Joi.string().max(50);
 
 const createBookmarkSchema = Joi.object({
     userId: id.required(),
-    bookmarkName: name.required(),
+    nameFavoriteList: name.required(),
     places: Joi.array().items(id)
 });
 
@@ -21,7 +21,7 @@ const getBookmarksListSchema = Joi.object({
 const updateBookmarkSchema = Joi.object({
     userId: id.required(),
     bookmarkId: id.required(),
-    bookmarkName: name,
+    nameFavoriteList: name,
 });
 
 const addItemInBookmarkschema = Joi.object({
