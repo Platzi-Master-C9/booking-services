@@ -1,5 +1,4 @@
 // Internal dependencies
-const welcome = require('./utils/welcomPackage');
 const {
   makeListUserChatsService,
   makeGetChatRoomLastMessage,
@@ -9,7 +8,6 @@ const {
 const { ChatModel, MessageModel } = require('./domains/index');
 
 module.exports = {
-  messagesWelcome: welcome,
   listUserChats: makeListUserChatsService(ChatModel),
   getChatRoomLastMessage: makeGetChatRoomLastMessage(MessageModel),
   listChatMessages: makeListChatMessages(MessageModel),

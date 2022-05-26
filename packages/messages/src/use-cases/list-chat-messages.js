@@ -34,14 +34,12 @@ const listChatMessages = (MessageModel) => {
       throw new Error(errorMessage);
     }
     // Query
-
-    /** @type {{[key: string]: 0 | 1}} */
+    /** @type {Record<string, 0 | 1>} */
     const fields = {
       _id: 1,
       chatId: 1,
       text: 1,
       createdAt: 1,
-      deletedAt: 0,
       createdBy: 1,
     };
 
@@ -54,7 +52,7 @@ const listChatMessages = (MessageModel) => {
     /** @type {import('mongoose').QueryOptions} */
     const queryOptions = {
       sort: { createdAt: -1 },
-      rawResult: true,
+      lean: true,
       skip: (page - 1) * 10,
       limit: 10,
     };

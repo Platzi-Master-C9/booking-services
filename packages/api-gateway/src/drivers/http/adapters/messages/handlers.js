@@ -20,7 +20,10 @@ async function listUserChatRooms(req, reply) {
   const chatsHashMap = {};
   chats.forEach((chat, index) => {
     // eslint-disable-next-line no-underscore-dangle
-    chatsHashMap[chat._id] = index;
+    chatsHashMap[chat._id.toString()] = index;
+    // Set last message to default value
+    // eslint-disable-next-line no-param-reassign
+    chat.lastMessage = null;
   });
 
   req.log.info('[http-server]: Fetching last message of each chat rooms.');
@@ -28,7 +31,7 @@ async function listUserChatRooms(req, reply) {
   // Get the last 10 messages
   chats.forEach((chat) => {
     messagesAsyncQueue.push(
-      this.messageServices.getChatRoomLastMessage({ chatId: chat._id }),
+      this.messageServices.getChatRoomLastMessage({ chatId: chat._id.toString() }),
     );
   });
 
@@ -36,7 +39,10 @@ async function listUserChatRooms(req, reply) {
 
   // Map the messages to the chat rooms
   messages.forEach((message) => {
-    chats[chatsHashMap[message.chatId]].lastMessage = message;
+    // Message can be null if the chat room has no messages
+    if (message) {
+      chats[chatsHashMap[message.chatId.toString()]].lastMessage = message;
+    }
   });
 
   const paginatedResult = makePagination(page, pages, chats);

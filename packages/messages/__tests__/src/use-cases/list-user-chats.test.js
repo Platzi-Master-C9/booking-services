@@ -21,7 +21,7 @@ const MockHostUser = {
 const Chats = [
   {
     _id: faker.datatype.uuid(),
-    bookingId: faker.datatype.uuid(),
+    placeId: faker.datatype.uuid(),
     hostId: MockHostUser._id,
     customerId: MockCustomerUser._id,
     createdAt: faker.datatype.datetime(),
@@ -55,7 +55,7 @@ describe('use-case: listChatUsers', () => {
         const chatRoom = chats[0];
 
         expect(chatRoom._id).toBeDefined();
-        expect(chatRoom.bookingId).toBeDefined();
+        expect(chatRoom.placeId).toBeDefined();
         expect(chatRoom.hostId).toBeDefined();
         expect(chatRoom.customerId).toBeDefined();
         expect(chatRoom.createdAt).toBeDefined();

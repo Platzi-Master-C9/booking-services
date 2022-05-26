@@ -13,7 +13,7 @@ const mockHostId = faker.datatype.uuid();
 const ChatData = [
   {
     _id: faker.datatype.uuid(),
-    bookingId: faker.datatype.uuid(),
+    placeId: faker.datatype.uuid(),
     hostId: mockHostId,
     customerId: mockCustomerId,
     createdAt: faker.datatype.datetime(),
