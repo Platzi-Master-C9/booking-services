@@ -42,7 +42,7 @@ const listChatRoomsSchema = {
       type: 'object',
       properties: {
         _id: { type: 'string' },
-        bookingId: { type: 'string' },
+        placeId: { type: 'string' },
         hostId: { type: 'string' },
         customerId: { type: 'string' },
         lastMessage: {

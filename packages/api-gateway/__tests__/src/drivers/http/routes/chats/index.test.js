@@ -14,12 +14,11 @@ const mockUserChats = {
   chats: [
     {
       _id: faker.datatype.uuid(),
-      bookingId: faker.datatype.uuid(),
+      placeId: faker.datatype.uuid(),
       hostId: hostID,
       customerId: customerID,
       createdAt: faker.datatype.datetime(),
       updatedAt: faker.datatype.datetime(),
-      deletedAt: null,
     },
   ],
 };
@@ -29,7 +28,6 @@ const mockLastMessage = {
   chatId: mockUserChats.chats[0]._id,
   text: faker.lorem.sentence(),
   createdAt: faker.datatype.datetime(),
-  deletedAt: null,
   createdBy: customerID,
 };
 
@@ -76,7 +74,7 @@ describe('GET /chats', () => {
       test('and the element should match schema', () => {
         const item = responseJson.rows[0];
         expect(item._id).toBeDefined();
-        expect(item.bookingId).toBeDefined();
+        expect(item.placeId).toBeDefined();
         expect(item.hostId).toBeDefined();
         expect(item.customerId).toBeDefined();
         expect(item.lastMessage).toBeDefined();

@@ -6,8 +6,9 @@ const connection = require('../drivers/mongodb/connection');
 
 const Message = new Schema({
   chatId: { type: ObjectId, require: true, ref: ChatModel },
-  text: { type: String, lowercase: true, trim: true },
+  text: { type: String, trim: true },
   createdBy: { type: String, required: true },
-});
+  deletedAt: { type: Date, default: null },
+}, { timestamps: true });
 
 module.exports = connection.model('messages', Message);

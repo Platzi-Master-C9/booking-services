@@ -3,7 +3,7 @@ const { Logger } = require('@booking-services/shared');
 
 /**
  * @param {import('mongoose').Model} messageModel Message model
- * @returns {(props: { chatId: string }) => Promise<unknow | null>}
+ * @returns {(props: { chatId: string }) => Promise<unknown | null>}
  */
 const getLastMessageOfChatRoom = (messageModel) => async ({ chatId }) => {
   if (!messageModel) {
@@ -18,13 +18,12 @@ const getLastMessageOfChatRoom = (messageModel) => async ({ chatId }) => {
 
   // Query
 
-  /** @type {{[key: string]: 0 | 1}} */
+  /** @type {Record<string, 0 | 1>} */
   const fields = {
     _id: 1,
     chatId: 1,
     text: 1,
     createdAt: 1,
-    deletedAt: 0,
     createdBy: 1,
   };
 
@@ -37,7 +36,7 @@ const getLastMessageOfChatRoom = (messageModel) => async ({ chatId }) => {
   /** @type {import('mongoose').QueryOptions} */
   const queryOptions = {
     sort: { createdAt: -1 },
-    rawResult: true,
+    lean: true,
   };
 
   let message;

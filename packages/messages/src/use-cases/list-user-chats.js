@@ -46,19 +46,18 @@ const listUserChats = (chatModel) => async ({
     const options = {
       skip: (page - 1) * 10,
       limit: 10,
-      rawResult: true,
       sort: { updatedAt: -1 },
+      lean: true,
     };
 
-    /** @type {{[key: string]: 0 | 1}} */
+    /** @type {Record<string, 0 | 1>} */
     const fields = {
       _id: 1,
-      bookingId: 1,
+      placeId: 1,
       hostId: 1,
       customerId: 1,
       createdAt: 1,
       updatedAt: 1,
-      deletedAt: 0,
     };
 
     // Find with pagination

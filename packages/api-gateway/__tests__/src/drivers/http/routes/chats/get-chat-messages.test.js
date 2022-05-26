@@ -17,7 +17,6 @@ const mockListChatMessages = {
       text: faker.lorem.sentence(),
       createdBy: userID,
       createdAt: faker.datatype.datetime(),
-      deletedAt: null,
     },
   ],
 };
