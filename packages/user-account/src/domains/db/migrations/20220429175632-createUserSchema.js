@@ -31,39 +31,39 @@ module.exports = {
         type: DataTypes.STRING,
         field: 'second_surname',
       },
-      dateOfBirth: {
+      birthDate: {
         allowNull: false,
         type: DataTypes.STRING,
-        field: 'date_of_birth',
+        field: 'birth_date',
       },
       email: {
         allowNull: false,
         type: DataTypes.STRING,
         unique: true,
       },
-      telephoneNumber: {
+      phoneNumber: {
         allowNull: false,
         type: DataTypes.STRING,
-        field: 'telephone_number',
+        field: 'phone_number',
       },
       nationality: {
         allowNull: false,
         type: DataTypes.STRING(3),
       },
-      DNI: {
+      dniId: {
         allowNull: false,
         type: DataTypes.STRING,
-        field: 'DNI',
+        field: 'dni_id',
       },
-      frontImageDNI: {
+      dniFrontImg: {
         allowNull: true,
         type: DataTypes.TEXT,
-        field: 'front_image_DNI',
+        field: 'dni_front_img',
       },
-      backImageDNI: {
+      dniBackImg: {
         allowNull: true,
         type: DataTypes.TEXT,
-        field: 'back_image_DNI',
+        field: 'dni_back_image',
       },
       passport: {
         allowNull: false,
@@ -88,10 +88,10 @@ module.exports = {
         type: DataTypes.ENUM('active', 'deactivated', 'deleted', 'banned'),
         defaultValue: 'active',
       },
-      urlImage: {
+      avatar: {
         allowNull: true,
         type: DataTypes.TEXT,
-        field: 'url_image',
+        field: 'avatar',
       },
       createdAt: {
         allowNull: false,
