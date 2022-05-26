@@ -9,4 +9,4 @@ const Chat = new Schema({
   placeId: { type: String, required: true },
 }, { timestamps: true });
 
-module.exports = connection.model('chat', Chat);
+module.exports = connection.model('chats', Chat);
