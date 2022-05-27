@@ -47,11 +47,11 @@ module.exports = {
         field: 'phone_number',
       },
       nationality: {
-        allowNull: false,
+        allowNull: true,
         type: DataTypes.STRING(3),
       },
       dniId: {
-        allowNull: false,
+        allowNull: true,
         type: DataTypes.STRING,
         field: 'dni_id',
       },
@@ -66,7 +66,7 @@ module.exports = {
         field: 'dni_back_image',
       },
       passport: {
-        allowNull: false,
+        allowNull: true,
         type: DataTypes.STRING,
       },
       gender: {

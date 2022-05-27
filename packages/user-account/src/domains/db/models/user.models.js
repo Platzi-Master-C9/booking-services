@@ -49,11 +49,11 @@ const usersSchema = {
     field: 'phone_number',
   },
   nationality: {
-    allowNull: false,
+    allowNull: true,
     type: DataTypes.STRING(3),
   },
   dniId: {
-    allowNull: false,
+    allowNull: true,
     type: DataTypes.STRING,
     field: 'dni_id',
   },
@@ -68,7 +68,7 @@ const usersSchema = {
     field: 'dni_back_image',
   },
   passport: {
-    allowNull: false,
+    allowNull: true,
     type: DataTypes.STRING,
   },
   gender: {
@@ -103,7 +103,7 @@ const usersSchema = {
   },
   addressId: {
     field: 'address_id',
-    allowNull: false,
+    allowNull: true,
     type: DataTypes.INTEGER,
     references: {
       model: ADDRESS_TABLE,
@@ -114,7 +114,7 @@ const usersSchema = {
   },
   emergencyContactsId: {
     field: 'emergency_contact_id',
-    allowNull: false,
+    allowNull: true,
     type: DataTypes.INTEGER,
     references: {
       model: EMERGENCY_CONTACTS_TABLE,
@@ -125,7 +125,7 @@ const usersSchema = {
   },
   currencyId: {
     field: 'currency_id',
-    allowNull: false,
+    allowNull: true,
     type: DataTypes.INTEGER,
     references: {
       model: CURRENCIES_TABLE,
