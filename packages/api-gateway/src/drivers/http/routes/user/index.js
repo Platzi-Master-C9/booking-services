@@ -1,6 +1,6 @@
 const { userAdapter } = require('../../adapters');
 const {
-  createUserSchema, validateUserSchema, updateUserSchema, getUserSchema, createBookmarkSchema,
+  createUserSchema, validateUserSchema, updateUserSchema, getUserSchema, createBookmarkSchema, getBookmarkSchema
 } = require('./schema');
 
 async function UserRouter(fastify) {
@@ -12,6 +12,7 @@ async function UserRouter(fastify) {
 
   // bookmark endpoints
   await fastify.post('/:userId/bookmark', { schema: createBookmarkSchema }, userAdapter.createBookmark);
+  await fastify.get('/:userId/bookmark/:bookmarkId', { schema: getBookmarkSchema }, userAdapter.getBookmark);
 }
 
 module.exports = UserRouter;
