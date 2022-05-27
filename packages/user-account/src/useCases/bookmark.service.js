@@ -10,7 +10,12 @@ async function createBookmark(model, data) {
 }
 
 function getBookmark(model, data) {
-  return data;
+  const { bookmarkId } = data;
+  const bookmark = model.userFavoritePlaces.findByPk(bookmarkId);
+  if (bookmark === null) {
+    return boom.notFound('Bookmark not found');
+  }
+  return bookmark;
 }
 
 function getBookmarksList(model, data) {
