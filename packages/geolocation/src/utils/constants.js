@@ -10,7 +10,12 @@ const dbOptions = {
   collectionName: 'places',
 };
 
+const nodeGeocoderOptions = {
+  provider: 'openstreetmap',
+};
+
 module.exports = {
   supportedEnvs,
   dbOptions,
+  nodeGeocoderOptions,
 };

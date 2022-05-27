@@ -44,9 +44,21 @@ const getPlaceQuery = (connection) => async (id) => {
   return result;
 };
 
+const geocodingQuery = (geoCoder) => async (address) => {
+  const result = await geoCoder.geocode(address);
+  return result;
+};
+
+const reverseGeocodingQuery = (geoCoder) => async (lon, lat) => {
+  const result = await geoCoder.reverse({ lat, lon });
+  return result;
+};
+
 module.exports = {
   geoNearQuery,
   deletePlaceQuery,
   updatePlaceQuery,
   getPlaceQuery,
+  geocodingQuery,
+  reverseGeocodingQuery,
 };

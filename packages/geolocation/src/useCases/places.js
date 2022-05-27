@@ -53,9 +53,21 @@ const getPlace = (getPlaceQuery) => async (id) => {
   return result;
 };
 
+const geocoding = (geocodingQuery) => async (street, city, state, zipcode, country) => {
+  const result = await geocodingQuery(`${street} ${city} ${state} ${zipcode} ${country}`);
+  return result;
+};
+
+const reverseGeocoding = (reverseGeocodingQuery) => async (lon, lat) => {
+  const result = await reverseGeocodingQuery(lon, lat);
+  return result;
+};
+
 module.exports = {
   getPlaces,
   deletePlace,
   updatePlace,
   getPlace,
+  geocoding,
+  reverseGeocoding,
 };

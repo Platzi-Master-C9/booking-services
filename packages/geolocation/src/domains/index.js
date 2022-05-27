@@ -4,14 +4,19 @@ const {
   deletePlaceQuery,
   updatePlaceQuery,
   getPlaceQuery,
+  geocodingQuery,
+  reverseGeocodingQuery,
 } = require('./places');
 
 // Drivers
-const connection = require('../drivers/mongodb/connection');
+const mongodb = require('../drivers/mongodb/connection');
+const nodeGeocoder = require('../drivers/nodeGeocoder/connections');
 
 module.exports = {
-  geoNearQuery: geoNearQuery(connection),
-  deletePlaceQuery: deletePlaceQuery(connection),
-  updatePlaceQuery: updatePlaceQuery(connection),
-  getPlaceQuery: getPlaceQuery(connection),
+  geoNearQuery: geoNearQuery(mongodb),
+  deletePlaceQuery: deletePlaceQuery(mongodb),
+  updatePlaceQuery: updatePlaceQuery(mongodb),
+  getPlaceQuery: getPlaceQuery(mongodb),
+  geocodingQuery: geocodingQuery(nodeGeocoder),
+  reverseGeocodingQuery: reverseGeocodingQuery(nodeGeocoder),
 };

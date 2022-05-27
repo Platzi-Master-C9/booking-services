@@ -1,5 +1,10 @@
 const {
-  getPlaces, updatePlace, deletePlace, getPlace,
+  getPlaces,
+  updatePlace,
+  deletePlace,
+  getPlace,
+  geocoding,
+  reverseGeocoding,
 } = require('./places');
 
 module.exports = {
@@ -7,4 +12,6 @@ module.exports = {
   deletePlace,
   updatePlace,
   getPlace,
+  geocoding,
+  reverseGeocoding,
 };
