@@ -4,6 +4,8 @@ const {
   makeGetChatRoomLastMessage,
   makeListChatMessages,
   makeIsChatRelatedToUser,
+  makeCreateChatRoom,
+  makeGetChatRoom,
 } = require('./use-cases');
 const { ChatModel, MessageModel } = require('./domains/index');
 
@@ -12,4 +14,6 @@ module.exports = {
   getChatRoomLastMessage: makeGetChatRoomLastMessage(MessageModel),
   listChatMessages: makeListChatMessages(MessageModel),
   isChatRelatedToUser: makeIsChatRelatedToUser(ChatModel),
+  createChatRoom: makeCreateChatRoom(ChatModel),
+  getChatRoom: makeGetChatRoom(ChatModel),
 };
