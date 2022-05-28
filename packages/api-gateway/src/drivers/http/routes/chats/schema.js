@@ -128,8 +128,36 @@ const openChatSchema = {
   },
 };
 
+const createMessageSchema = {
+  description: 'Create a message in a chat room.',
+  tags: ['Messages'],
+  security: [{ Bearer: [] }],
+  params: {
+    type: 'object',
+    properties: {
+      chatId: { type: 'string' },
+    },
+    required: ['chatId'],
+  },
+  body: {
+    type: 'object',
+    properties: {
+      text: { type: 'string' },
+      createdBy: { type: 'string' },
+    },
+    required: ['text', 'createdBy'],
+  },
+  response: {
+    201: {
+      type: 'object',
+      properties: MESSAGE_PROPS,
+    },
+  },
+};
+
 module.exports = {
   listChatRoomsSchema,
   listChatMessagesSchema,
   openChatSchema,
+  createMessageSchema,
 };
