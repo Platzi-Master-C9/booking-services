@@ -1,7 +1,6 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
 
 const { USERS_TABLE } = require('./user.models');
-const { PLACES_TABLE } = require('./places.models');
 
 const USER_FAVORITE_PLACES_TABLE = 'user_favorite_places';
 
@@ -28,17 +27,6 @@ const userFavoritePlacesSchema = {
     onUpdate: 'CASCADE',
     OnDelete: 'SET NULL',
   },
-  placeId: {
-    field: 'place_id',
-    allowNull: false,
-    type: DataTypes.INTEGER,
-    references: {
-      model: PLACES_TABLE,
-      key: 'id',
-    },
-    onUpdate: 'CASCADE',
-    onDelete: 'SET NULL',
-  },
   createdAt: {
     allowNull: false,
     type: DataTypes.DATE,
@@ -50,7 +38,10 @@ const userFavoritePlacesSchema = {
 class userFavoritePlaces extends Model {
   static associate(models) {
     this.belongsTo(models.users, { as: 'users' });
-    this.belongsTo(models.places, { as: 'places' });
+    this.hasMany(models.places, {
+      as: 'places',
+      foreignKey: 'userFavoritePlacesId',
+    });
   }
 
   static config(sequelize) {
