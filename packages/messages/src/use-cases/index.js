@@ -5,6 +5,7 @@ const makeListChatMessages = require('./list-chat-messages');
 const makeIsChatRelatedToUser = require('./is-chat-related-to-user');
 const makeCreateChatRoom = require('./create-chat-room');
 const makeGetChatRoom = require('./get-chat-room');
+const makeCreateMessage = require('./create-message');
 
 module.exports = {
   makeListUserChatsService,
@@ -13,4 +14,5 @@ module.exports = {
   makeIsChatRelatedToUser,
   makeCreateChatRoom,
   makeGetChatRoom,
+  makeCreateMessage,
 };
