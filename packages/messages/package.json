@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@booking-services/shared": "^0.0.1",
-    "mongoose": "^6.2.7"
+    "mongoose": "^6.2.7",
+    "validator": "^13.7.0"
   }
 }

@@ -83,7 +83,57 @@ async function listChatMessages(req, reply) {
   return reply.code(200).send(paginatedResult);
 }
 
+/**
+ * @type {import('fastify').RouteHandler}
+ */
+async function openChatRoom(req, reply) {
+  const { hostId, customerId, placeId } = req.body;
+
+  let isNew = false;
+  let chat;
+
+  try {
+    chat = await this.messageServices.getChatRoom({
+      hostId,
+      customerId,
+      placeId,
+    });
+  } catch (error) {
+    reply.status(400);
+    req.log.error('[http-server]: Error while getting chat room.', error);
+    throw error;
+  }
+
+  // If chat room does not exist, create it
+  if (!chat) {
+    req.log.info('[http-server]: Chat room does not exist.');
+    try {
+      req.log.info(`[http-server]: creating chat room for place ${placeId}`);
+      chat = await this.messageServices.createChatRoom({
+        hostId,
+        customerId,
+        placeId,
+      });
+
+      if (chat === null) {
+        reply.status(500);
+        req.log.error('[http-server]: Chat room creation failed.');
+        throw new Error('Chat room could not be created.');
+      }
+
+      isNew = true;
+    } catch (error) {
+      reply.status(400);
+      req.log.error('[http-server]: Chat room creation failed.', error);
+      throw error;
+    }
+  }
+
+  return reply.code(isNew ? 201 : 200).send(chat);
+}
+
 module.exports = {
   listUserChatRooms,
   listChatMessages,
+  openChatRoom,
 };

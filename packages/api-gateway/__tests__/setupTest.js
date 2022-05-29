@@ -49,3 +49,5 @@ jest.mock('@booking-services/places', () => ({
 }));
 
 jest.mock('@booking-services/messages');
+
+jest.mock('@booking-services/web-sockets');

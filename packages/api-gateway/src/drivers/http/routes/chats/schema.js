@@ -84,7 +84,52 @@ const listChatMessagesSchema = {
   },
 };
 
+/** @type {import('fastify').RouteOptions['schema']} */
+const openChatSchema = {
+  description: 'Open a chat room.',
+  tags: ['Messages'],
+  security: [{ Bearer: [] }],
+  body: {
+    type: 'object',
+    properties: {
+      hostId: { type: 'string' },
+      customerId: { type: 'string' },
+      placeId: { type: 'string' },
+    },
+    required: [
+      'hostId',
+      'customerId',
+      'placeId',
+    ],
+  },
+  response: {
+    200: {
+      type: 'object',
+      properties: {
+        _id: { type: 'string' },
+        placeId: { type: 'string' },
+        hostId: { type: 'string' },
+        customerId: { type: 'string' },
+        createdAt: { type: 'string' },
+        updatedAt: { type: 'string' },
+      },
+    },
+    201: {
+      type: 'object',
+      properties: {
+        _id: { type: 'string' },
+        placeId: { type: 'string' },
+        hostId: { type: 'string' },
+        customerId: { type: 'string' },
+        createdAt: { type: 'string' },
+        updatedAt: { type: 'string' },
+      },
+    },
+  },
+};
+
 module.exports = {
   listChatRoomsSchema,
   listChatMessagesSchema,
+  openChatSchema,
 };

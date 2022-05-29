@@ -13,6 +13,10 @@ const setMockModelData = (mockModel, data = {}) => {
   mockModel.findOne.mockReturnValue(data[0]);
   mockModel.findById.mockReturnValue(data[0]);
   mockModel.countDocuments.mockReturnValue(data.length);
+  mockModel.create.mockImplementation(() => ({
+    ...data[0],
+    toObject: () => data[0],
+  }));
 
   return mockModel;
 };
@@ -27,7 +31,13 @@ const clearModelMocks = (model) => {
 
 /**
  * @param {unknown[]} defaultData
- * @returns {{find: jest.Mock, findOne: jest.Mock, findById: jest.Mock, countDocuments: jest.Mock}}
+ * @returns {{
+ *    find: jest.Mock,
+ *    findOne: jest.Mock,
+ *    findById: jest.Mock,
+ *    countDocuments: jest.Mock,
+ *    create: jest.Mock
+ * }}
  */
 const makeMockModel = (defaultData = []) => {
   const mockModel = {
@@ -36,6 +46,7 @@ const makeMockModel = (defaultData = []) => {
     findById: jest.fn(),
     countDocuments: jest.fn(),
     exists: jest.fn(() => false),
+    create: jest.fn(),
   };
 
   return setMockModelData(mockModel, defaultData);
