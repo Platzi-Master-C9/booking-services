@@ -132,8 +132,51 @@ async function openChatRoom(req, reply) {
   return reply.code(isNew ? 201 : 200).send(chat);
 }
 
+/**
+ * Create message in a chat room.
+ * @type {import('fastify').RouteHandler}
+ */
+async function createMessage(req, reply) {
+  const { chatId } = req.params;
+  const {
+    text,
+    createdBy,
+  } = req.body;
+
+  req.log.info(`[http-server]: validating chat ${chatId} against user ${createdBy}`);
+  const chatIsRelatedToUser = await this.messageServices.isChatRelatedToUser({
+    chatId,
+    userId: createdBy,
+  });
+
+  if (!chatIsRelatedToUser) {
+    req.log.info(`[http-server]: Chat ${chatId} is not related to user ${createdBy}.`);
+    return reply.callNotFound();
+  }
+
+  let message;
+  try {
+    message = await this.messageServices.createMessage({
+      chatId,
+      text,
+      createdBy,
+    });
+
+    if (!message) {
+      return reply.code(500).send(new Error('Could not create message.'));
+    }
+  } catch (error) {
+    req.log.error(`[http-server]: Error creating message: ${error.message}`);
+    reply.code(400);
+    throw error;
+  }
+
+  return reply.code(201).send(message);
+}
+
 module.exports = {
   listUserChatRooms,
   listChatMessages,
   openChatRoom,
+  createMessage,
 };
