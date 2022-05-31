@@ -19,7 +19,12 @@ function getBookmark(model, data) {
 }
 
 function getBookmarksList(model, data) {
-  return data;
+  const { userId } = data;
+  const bookmarks = model.userFavoritePlaces.findAll({ where: { userId } });
+  if (bookmarks === null) {
+    return boom.notFound('Bookmarks not found');
+  }
+  return bookmarks;
 }
 
 function updateBookmark(model, data) {

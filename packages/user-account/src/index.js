@@ -14,6 +14,8 @@ const {
 } = require('./utils/validator/schema/user.schema');
 const {
   createBookmarkSchema,
+  getBookmarkSchema,
+  getBookmarksListSchema,
 } = require('./utils/validator/schema/bookmark.schema');
 
 module.exports = {
@@ -53,6 +55,12 @@ module.exports = {
     null,
     bookmarkService.getBookmark,
     models,
-    getUserSchema,
+    getBookmarkSchema,
+  ),
+  getBookmarksList: validatorHandler.bind(
+    null,
+    bookmarkService.getBookmarksList,
+    models,
+    getBookmarksListSchema,
   ),
 };
