@@ -11,11 +11,6 @@ const placesSchema = {
     primaryKey: true,
     type: DataTypes.INTEGER,
   },
-  name: {
-    allowNull: false,
-    unique: true,
-    type: DataTypes.STRING,
-  },
   placesId: {
     allowNull: false,
     type: DataTypes.INTEGER,

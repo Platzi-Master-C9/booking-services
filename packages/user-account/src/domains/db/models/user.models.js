@@ -113,7 +113,7 @@ const usersSchema = {
     onDelete: 'SET NULL',
   },
   emergencyContactsId: {
-    field: 'emergency_contact_id',
+    field: 'emergency_contacts_id',
     allowNull: true,
     type: DataTypes.INTEGER,
     references: {
