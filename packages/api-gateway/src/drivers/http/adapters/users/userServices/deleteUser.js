@@ -1,5 +1,5 @@
-const errorHandler = require('./errorHandler');
-const { getInfoUserForInfoDeleteLog } = require('./getInfoUserForInfoLog');
+const errorHandler = require('../errorHandler');
+const { getInfoUserForInfoDeleteLog } = require('../getInfoUserForInfoLog');
 
 async function deleteUser(req, reply) {
   try {

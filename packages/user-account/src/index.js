@@ -1,9 +1,8 @@
 // Services
-const { userService } = require('./useCases');
+const { userService, bookmarkService } = require('./useCases');
 
 // Domains
 const { models } = require('./drivers/postgres/sequelizer');
-
 
 // validator
 const validatorHandler = require('./utils/validator/validatorHandler');
@@ -13,10 +12,39 @@ const {
   validateUserSchema,
   getUserSchema,
 } = require('./utils/validator/schema/user.schema');
+const {
+  createBookmarkSchema,
+} = require('./utils/validator/schema/bookmark.schema');
 
 module.exports = {
-  createUser: validatorHandler.bind(null, userService.createUser, models, createUserSchema),
-  validateUser: validatorHandler.bind(null, userService.validateUser, models, validateUserSchema),
-  updateUser: validatorHandler.bind(null, userService.updateUser, models, updateUserSchema),
-  deleteUser: validatorHandler.bind(null, userService.deleteUser, models, getUserSchema),
+  createUser: validatorHandler.bind(
+    null,
+    userService.createUser,
+    models,
+    createUserSchema,
+  ),
+  validateUser: validatorHandler.bind(
+    null,
+    userService.validateUser,
+    models,
+    validateUserSchema,
+  ),
+  updateUser: validatorHandler.bind(
+    null,
+    userService.updateUser,
+    models,
+    updateUserSchema,
+  ),
+  deleteUser: validatorHandler.bind(
+    null,
+    userService.deleteUser,
+    models,
+    getUserSchema,
+  ),
+  createBookmark: validatorHandler.bind(
+    null,
+    bookmarkService.createBookmark,
+    models,
+    createBookmarkSchema,
+  ),
 };
