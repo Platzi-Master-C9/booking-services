@@ -6,6 +6,7 @@ const {
   getUserSchema,
   createBookmarkSchema,
   getBookmarkSchema,
+  getBookmarkListSchema,
 } = require('./schema');
 
 async function UserRouter(fastify) {
@@ -41,6 +42,11 @@ async function UserRouter(fastify) {
     '/:userId/bookmark/:bookmarkId',
     { schema: getBookmarkSchema },
     userAdapter.getBookmark,
+  );
+  await fastify.get(
+    '/:userId/bookmarks',
+    { schema: getBookmarkListSchema },
+    userAdapter.getBookmarkList,
   );
 }
 
