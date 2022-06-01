@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 
-const { USER_FAVORITE_PLACES_TABLE } = require('./userFavoritePlaces.models')
+const { USER_FAVORITE_PLACES_TABLE } = require('./userFavoritePlaces.models');
 
 const PLACES_TABLE = ' places';
 
