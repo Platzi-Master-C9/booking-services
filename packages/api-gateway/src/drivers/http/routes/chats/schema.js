@@ -34,6 +34,7 @@ const listChatRoomsSchema = {
     type: 'object',
     properties: {
       page: PAGE_PARAM_PROPS,
+      userId: { type: 'string' },
     },
     required: ['page'],
   },
@@ -66,6 +67,7 @@ const listChatMessagesSchema = {
     type: 'object',
     properties: {
       page: PAGE_PARAM_PROPS,
+      userId: { type: 'string' },
     },
     required: ['page'],
   },

@@ -6,11 +6,10 @@ const { makePagination } = require('../../utils/pagination');
  * @type {import('fastify').RouteHandler}
  */
 async function listUserChatRooms(req, reply) {
-  // TODO: Replace this when bearer token is implemented.
-  const user = { _id: '1' };
+  const { page, userId } = req.query;
 
-  // Get page
-  const { page } = req.query;
+  // TODO: Replace this when bearer token is implemented.
+  const user = { _id: userId || '1' };
 
   req.log.info('[http-server]: Listing user chat rooms.');
 
@@ -56,10 +55,10 @@ async function listUserChatRooms(req, reply) {
  */
 async function listChatMessages(req, reply) {
   const { chatId } = req.params;
-  const { page } = req.query;
+  const { page, userId } = req.query;
 
   // TODO: Replace this when bearer token is implemented.
-  const user = { _id: '1' };
+  const user = { _id: userId || '1' };
 
   req.log.info(`[http-server]: validating chat ${chatId} against user ${user._id}`);
   const chatIsRelatedToUser = await this.messageServices.isChatRelatedToUser({
