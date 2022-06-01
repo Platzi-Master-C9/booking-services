@@ -33,42 +33,42 @@ const usersSchema = {
     type: DataTypes.STRING,
     field: 'second_surname',
   },
-  dateOfBirth: {
+  birthDate: {
     allowNull: false,
     type: DataTypes.STRING,
-    field: 'date_of_birth',
+    field: 'birth_date',
   },
   email: {
     allowNull: false,
     type: DataTypes.STRING,
     unique: true,
   },
-  telephoneNumber: {
+  phoneNumber: {
     allowNull: false,
     type: DataTypes.STRING,
-    field: 'telephone_number',
+    field: 'phone_number',
   },
   nationality: {
-    allowNull: false,
+    allowNull: true,
     type: DataTypes.STRING(3),
   },
-  DNI: {
-    allowNull: false,
+  dniId: {
+    allowNull: true,
     type: DataTypes.STRING,
-    field: 'DNI',
+    field: 'dni_id',
   },
-  frontImageDNI: {
+  dniFrontImg: {
     allowNull: true,
     type: DataTypes.TEXT,
-    field: 'front_image_DNI',
+    field: 'dni_front_img',
   },
-  backImageDNI: {
+  dniBackImg: {
     allowNull: true,
     type: DataTypes.TEXT,
-    field: 'back_image_DNI',
+    field: 'dni_back_image',
   },
   passport: {
-    allowNull: false,
+    allowNull: true,
     type: DataTypes.STRING,
   },
   gender: {
@@ -90,10 +90,10 @@ const usersSchema = {
     type: DataTypes.ENUM('active', 'deactivated', 'deleted', 'banned'),
     defaultValue: 'active',
   },
-  urlImage: {
+  avatar: {
     allowNull: true,
     type: DataTypes.TEXT,
-    field: 'url_image',
+    field: 'avatar',
   },
   createdAt: {
     allowNull: false,
@@ -103,7 +103,7 @@ const usersSchema = {
   },
   addressId: {
     field: 'address_id',
-    allowNull: false,
+    allowNull: true,
     type: DataTypes.INTEGER,
     references: {
       model: ADDRESS_TABLE,
@@ -113,8 +113,8 @@ const usersSchema = {
     onDelete: 'SET NULL',
   },
   emergencyContactsId: {
-    field: 'emergency_contact_id',
-    allowNull: false,
+    field: 'emergency_contacts_id',
+    allowNull: true,
     type: DataTypes.INTEGER,
     references: {
       model: EMERGENCY_CONTACTS_TABLE,
@@ -125,7 +125,7 @@ const usersSchema = {
   },
   currencyId: {
     field: 'currency_id',
-    allowNull: false,
+    allowNull: true,
     type: DataTypes.INTEGER,
     references: {
       model: CURRENCIES_TABLE,

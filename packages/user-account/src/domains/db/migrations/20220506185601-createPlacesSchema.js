@@ -18,11 +18,11 @@ module.exports = {
         type: DataTypes.STRING,
       },
     });
-    await queryInterface.addColumn(USER_FAVORITE_PLACES_TABLE, 'place_id', {
+    await queryInterface.addColumn(PLACES_TABLE, 'user_favorite_places_id', {
       allowNull: false,
       type: DataTypes.INTEGER,
       references: {
-        model: PLACES_TABLE,
+        model: USER_FAVORITE_PLACES_TABLE,
         key: 'id',
       },
       onUpdate: 'CASCADE',
@@ -30,7 +30,7 @@ module.exports = {
     });
   },
   async down(queryInterface) {
-    await queryInterface.removeColumn(USER_FAVORITE_PLACES_TABLE, 'place_id');
+    await queryInterface.removeColumn(PLACES_TABLE, 'user_favorite_places_id');
     await queryInterface.dropTable(PLACES_TABLE);
   },
 };

@@ -13,7 +13,7 @@ const emergencyContactsSchema = {
     allowNull: false,
     type: DataTypes.STRING,
   },
-  telephone_number: {
+  phoneNumber: {
     allowNull: false,
     type: DataTypes.STRING,
     unique: true,

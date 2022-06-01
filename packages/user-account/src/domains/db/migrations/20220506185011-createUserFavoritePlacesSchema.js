@@ -17,6 +17,10 @@ module.exports = {
         unique: true,
         type: DataTypes.STRING,
       },
+      placesId: {
+        allowNull: false,
+        type: DataTypes.INTEGER,
+      },
       createdAt: {
         allowNull: false,
         type: DataTypes.DATE,
