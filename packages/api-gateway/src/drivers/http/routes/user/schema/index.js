@@ -6,6 +6,7 @@ const getUserSchema = require('./users/getUserSchema');
 
 // bookmark schemas
 const createBookmarkSchema = require('./bookmark/createBookmarkSchema');
+const getBookmarkSchema = require('./bookmark/getBookmarkSchema');
 
 module.exports = {
   createUserSchema,
@@ -13,4 +14,5 @@ module.exports = {
   updateUserSchema,
   getUserSchema,
   createBookmarkSchema,
+  getBookmarkSchema,
 };

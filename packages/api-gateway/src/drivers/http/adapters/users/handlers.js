@@ -6,6 +6,7 @@ const deleteUser = require('./userServices/deleteUser');
 
 // bookmark services
 const createBookmark = require('./bookmarkServices/createBookmark');
+const getBookmark = require('./bookmarkServices/getBookmark');
 
 module.exports = {
   createUser,
@@ -13,4 +14,5 @@ module.exports = {
   updateUser,
   deleteUser,
   createBookmark,
+  getBookmark,
 };
