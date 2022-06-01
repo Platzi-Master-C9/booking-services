@@ -353,6 +353,47 @@ const bookingListSchema = {
   },
 };
 
+const editAdminSchema = {
+  description: 'edit admin information: Giving a admin id the administrator can edit the following fields, first name, second name, first surname, second surname or profile',
+  tags: ['Administration panel'],
+  body: {
+    type: 'object',
+    properties: {
+      first_name: { type: 'string' },
+      second_name: { type: 'string' },
+      first_surname: { type: 'string' },
+      second_surname: { type: 'string' },
+      profile: { type: 'string' },
+    },
+  },
+  params: {
+    type: 'object',
+    properties: {
+      admin_id: { type: 'number' },
+    },
+  },
+  response: {
+    200: {
+      type: 'object',
+      properties: {
+        result: { type: 'string' },
+      },
+    },
+    '4xx': {
+      type: 'object',
+      properties: {
+        message: { type: 'string' },
+      },
+    },
+    '5xx': {
+      type: 'object',
+      properties: {
+        message: { type: 'string' },
+      },
+    },
+  },
+};
+
 module.exports = {
   defaultSchema,
   changeUSerStatusSchema,
@@ -363,4 +404,5 @@ module.exports = {
   placesListSchema,
   editUserSchema,
   bookingListSchema,
+  editAdminSchema,
 };

@@ -15,4 +15,5 @@ module.exports = {
   listPlaces: adminPanelService.places.listPlaces(listPlacesMock),
   editUserInfo: adminPanelService.userEdit.editUserInfo,
   listBookings: adminPanelService.bookings.listBookings(bookingsMock),
+  editAdminInfo: adminPanelService.adminEdit.editAdminInfo,
 };
