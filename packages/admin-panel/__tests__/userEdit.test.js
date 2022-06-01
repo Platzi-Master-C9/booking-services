@@ -10,7 +10,7 @@ describe('Given an request get user detail', () => {
     expect(() => userEdit.editUserInfo(10, 'first_name', 'second_name', 'first_surname', 'second_surname', 'email', 'phone', 'url_image')).toThrow(Error);
   });
 
-  test('When calling userEdit.editUserInfo() userStatus.changeUserStatus() with valid user_id and empty fields to edit"', () => {
+  test('When calling userEdit.editUserInfo() with valid user_id and empty fields to edit"', () => {
     expect(() => userEdit.editUserInfo(1, '', '', '', '', '', '', '')).toThrow(Error);
   });
 });

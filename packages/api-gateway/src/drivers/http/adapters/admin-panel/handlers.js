@@ -122,6 +122,26 @@ async function listBookings(req, reply) {
     .send({ result });
 }
 
+async function editAdminInfo(req, reply) {
+  try {
+    const result = await this.adminPanelService.editAdminInfo(
+      req.params.admin_id,
+      req.body.first_name,
+      req.body.second_name,
+      req.body.first_surname,
+      req.body.second_surname,
+      req.body.profile,
+    );
+    return reply.code(200)
+      .header('Content-Type', 'application/json; charset=utf-8')
+      .send({ result });
+  } catch (e) {
+    return reply.code(400).send({
+      message: e.message,
+    });
+  }
+}
+
 module.exports = {
   sayHello,
   changeUserStatus,
@@ -132,4 +152,5 @@ module.exports = {
   listPlaces,
   editUserInfo,
   listBookings,
+  editAdminInfo,
 };
