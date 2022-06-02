@@ -4,7 +4,12 @@
 
 // Services
 const {
-  getPlaces, updatePlace, deletePlace, getPlace,
+  getPlaces,
+  updatePlace,
+  deletePlace,
+  getPlace,
+  geocoding,
+  reverseGeocoding,
 } = require('./useCases');
 
 // Domains
@@ -13,6 +18,8 @@ const {
   updatePlaceQuery,
   deletePlaceQuery,
   getPlaceQuery,
+  geocodingQuery,
+  reverseGeocodingQuery,
 } = require('./domains');
 
 module.exports = {
@@ -20,4 +27,6 @@ module.exports = {
   deletePlace: deletePlace(deletePlaceQuery),
   updatePlace: updatePlace(updatePlaceQuery),
   getPlace: getPlace(getPlaceQuery),
+  geocoding: geocoding(geocodingQuery),
+  reverseGeocoding: reverseGeocoding(reverseGeocodingQuery),
 };
