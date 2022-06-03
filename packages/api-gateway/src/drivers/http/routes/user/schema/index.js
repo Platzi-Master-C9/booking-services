@@ -8,6 +8,7 @@ const getUserSchema = require('./users/getUserSchema');
 const createBookmarkSchema = require('./bookmark/createBookmarkSchema');
 const getBookmarkSchema = require('./bookmark/getBookmarkSchema');
 const getBookmarkListSchema = require('./bookmark/getBookmarkListSchema');
+const updateBookmarkSchema = require('./bookmark/updateBookmarkSchema');
 
 module.exports = {
   createUserSchema,
@@ -17,4 +18,5 @@ module.exports = {
   createBookmarkSchema,
   getBookmarkSchema,
   getBookmarkListSchema,
+  updateBookmarkSchema,
 };
