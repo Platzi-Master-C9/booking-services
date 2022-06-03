@@ -28,7 +28,12 @@ function getBookmarksList(model, data) {
 }
 
 function updateBookmark(model, data) {
-  return data;
+  data.renameProperty('bookmarkId', 'id');
+  const updateBookmark = model.userFavoritePlaces.update(data);
+  if (updateBookmark === null) {
+    return boom.notFound('Bookmark not found');
+  }
+  return updateBookmark;
 }
 
 function deleteBookmark(model, data) {
