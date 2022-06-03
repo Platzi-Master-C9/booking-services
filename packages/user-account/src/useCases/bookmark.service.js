@@ -19,11 +19,21 @@ function getBookmark(model, data) {
 }
 
 function getBookmarksList(model, data) {
-  return data;
+  const { userId } = data;
+  const bookmarks = model.userFavoritePlaces.findAll({ where: { userId } });
+  if (bookmarks === null) {
+    return boom.notFound('Bookmarks not found');
+  }
+  return bookmarks;
 }
 
 function updateBookmark(model, data) {
-  return data;
+  data.renameProperty('bookmarkId', 'id');
+  const updateBookmarkId = model.userFavoritePlaces.update(data);
+  if (updateBookmarkId === null) {
+    return boom.notFound('Bookmark not found');
+  }
+  return updateBookmarkId;
 }
 
 function deleteBookmark(model, data) {
