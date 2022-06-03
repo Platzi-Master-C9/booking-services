@@ -1,5 +1,5 @@
-const errorHandler = require("../errorHandler");
-const { getInfoUserForInfoDeleteLog } = require("../getInfoUserForInfoLog");
+const errorHandler = require('../errorHandler');
+const { getInfoUserForInfoDeleteLog } = require('../getInfoUserForInfoLog');
 
 async function updateBookmark(req, reply) {
   try {
@@ -7,9 +7,7 @@ async function updateBookmark(req, reply) {
       ...req.params,
       ...req.body,
     };
-    req.log.info(
-      "[http-server]: Updating bookmark of: ", getInfoUserForInfoDeleteLog(data)
-    );
+    req.log.info('[http-server]: Updating bookmark of: ', getInfoUserForInfoDeleteLog(data));
 
     const result = await this.userServices.updateBookmark(data);
 
@@ -19,7 +17,7 @@ async function updateBookmark(req, reply) {
 
     return reply
       .code(200)
-      .header("Content-Type", "application/json; charset=utf-8")
+      .header('Content-Type', 'application/json; charset=utf-8')
       .send({ result });
   } catch (error) {
     return errorHandler(error, reply);

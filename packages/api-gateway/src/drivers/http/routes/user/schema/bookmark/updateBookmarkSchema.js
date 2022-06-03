@@ -1,20 +1,20 @@
 const updateBookmarkSchema = {
-  description: "Update bookmark",
-  tags: ["Users"],
+  description: 'Update bookmark',
+  tags: ['Users'],
   params: {
-    type: "object",
-    required: ["userId", "bookmarkId"],
+    type: 'object',
+    required: ['userId', 'bookmarkId'],
     properties: {
-      userId: { type: "string" },
-      bookmarkId: { type: "string" },
+      userId: { type: 'string' },
+      bookmarkId: { type: 'string' },
     },
   },
   body: {
-    type: "object",
+    type: 'object',
     properties: {
-      nameFavoriteList: { type: "string" },
+      nameFavoriteList: { type: 'string' },
     },
-    required: ["nameFavoriteList"],
+    required: ['nameFavoriteList'],
   },
 };
 

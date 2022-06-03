@@ -8,7 +8,7 @@ const deleteUser = require('./userServices/deleteUser');
 const createBookmark = require('./bookmarkServices/createBookmark');
 const getBookmark = require('./bookmarkServices/getBookmark');
 const getBookmarkList = require('./bookmarkServices/getBookmarkList');
-const updateBookmark = require('./bookmarkServices/updateBookmark')
+const updateBookmark = require('./bookmarkServices/updateBookmark');
 
 module.exports = {
   createUser,
@@ -18,5 +18,5 @@ module.exports = {
   createBookmark,
   getBookmark,
   getBookmarkList,
-  updateBookmark
+  updateBookmark,
 };

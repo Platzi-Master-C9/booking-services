@@ -29,11 +29,11 @@ function getBookmarksList(model, data) {
 
 function updateBookmark(model, data) {
   data.renameProperty('bookmarkId', 'id');
-  const updateBookmark = model.userFavoritePlaces.update(data);
-  if (updateBookmark === null) {
+  const updateBookmarkId = model.userFavoritePlaces.update(data);
+  if (updateBookmarkId === null) {
     return boom.notFound('Bookmark not found');
   }
-  return updateBookmark;
+  return updateBookmarkId;
 }
 
 function deleteBookmark(model, data) {
