@@ -10,6 +10,7 @@ const {
   getPlace,
   geocoding,
   reverseGeocoding,
+  createPlace,
 } = require('./useCases');
 
 // Domains
@@ -20,6 +21,7 @@ const {
   getPlaceQuery,
   geocodingQuery,
   reverseGeocodingQuery,
+  createPlaceQuery,
 } = require('./domains');
 
 module.exports = {
@@ -29,4 +31,5 @@ module.exports = {
   getPlace: getPlace(getPlaceQuery),
   geocoding: geocoding(geocodingQuery),
   reverseGeocoding: reverseGeocoding(reverseGeocodingQuery),
+  createPlace: createPlace(reverseGeocodingQuery, createPlaceQuery),
 };

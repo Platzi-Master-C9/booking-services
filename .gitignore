@@ -8,3 +8,4 @@ coverage
 .vscode
 .DS_Store
 postgres_data
+redis-docker

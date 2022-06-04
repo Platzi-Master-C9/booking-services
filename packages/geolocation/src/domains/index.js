@@ -6,6 +6,7 @@ const {
   getPlaceQuery,
   geocodingQuery,
   reverseGeocodingQuery,
+  createPlaceQuery,
 } = require('./places');
 
 // Drivers
@@ -19,4 +20,5 @@ module.exports = {
   getPlaceQuery: getPlaceQuery(mongodb),
   geocodingQuery: geocodingQuery(nodeGeocoder),
   reverseGeocodingQuery: reverseGeocodingQuery(nodeGeocoder),
+  createPlaceQuery: createPlaceQuery(mongodb, nodeGeocoder),
 };

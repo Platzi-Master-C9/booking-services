@@ -5,6 +5,7 @@ const {
   getPlace,
   geocoding,
   reverseGeocoding,
+  createPlace,
 } = require('./places');
 
 module.exports = {
@@ -14,4 +15,5 @@ module.exports = {
   getPlace,
   geocoding,
   reverseGeocoding,
+  createPlace,
 };
