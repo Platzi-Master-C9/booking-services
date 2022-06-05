@@ -57,7 +57,6 @@ const reverseGeocodingQuery = (geoCoder) => async (lat, lon) => {
 };
 
 const createPlaceQuery = (connection) => async (data) => {
-  console.log(data);
   const options = [data];
 
   const result = await connection('insertOne', options);

@@ -96,9 +96,7 @@ const createPlace =
       deleted_at: null,
     });
 
-    console.log(result);
-
-    if (!result.insertedCount) {
+    if (!result.insertedId) {
       throw boom.notFound(`[geolocation:createPlace]: No place inserted:`);
     }
 
