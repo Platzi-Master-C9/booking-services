@@ -14,36 +14,20 @@ const updatePlaceSchema = {
 
 const createPlaceSchema = {
   description:
-    'Create a place for geolocation services',
+    'Given latitude and longitude when a user select a mark in a map, then insert a place in geolocation database.',
   tags: ['Geolocation'],
   security: [{ Bearer: [] }],
   body: {
     type: 'object',
     properties: {
-      location: {
-        type: 'array',
-        minItems: 2,
-        maxItems: 2,
-        items: { type: 'number' },
-        description: 'lon and lat for the place',
-      },
-      country: { type: 'string', description: 'place country' },
-      state: { type: 'string', description: 'state of the place' },
-      city: { type: 'string', description: 'city of the place' },
-      zipcode: { type: 'string', description: 'zip code of the place' },
-      street_address: { type: 'string', description: 'street address of the place' },
-      place_db_id: { type: 'string', description: 'place ID stored in the places database' },
-      price: { type: 'number', description: 'price of the place' },
+      lat: { type: 'number', description: 'Longitude' },
+      lon: { type: 'number', description: 'Latitude' },
+      price: { type: 'number', description: 'Price'},
+      place_db_id: {type: 'string', description: 'Place id'},
     },
     required: [
-      'location',
-      'country',
-      'state',
-      'city',
-      'zipcode',
-      'street_address',
-      'place_db_id',
-      'price',
+      'lat',
+      'lon',
     ],
   },
 };
