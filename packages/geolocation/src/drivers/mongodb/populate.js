@@ -15,13 +15,17 @@ async function connect() {
       message: '[geolocation:mongodb]: Connecting to DB',
     });
     const connection = await client.connect();
+    // Logger.info({
+    //   message: '[geolocation:mongodb]: Creating collection',
+    // });
+    // await connection.db(dbName).createCollection(collectionName, placesSchema);
     Logger.info({
-      message: '[geolocation:mongodb]: Creating collection',
+      message: '[geolocation:mongodb]: Create index of type location',
     });
-    /* await connection.db(dbName).createCollection(collectionName, placesSchema);
+    await connection.db(dbName).collection(collectionName).createIndex({ location: '2dsphere' });
     Logger.info({
       message: '[geolocation:mongodb]: Populating database',
-    }); */
+    });
     const data = populate();
     await connection.db(dbName).collection(collectionName).insertMany(data);
     Logger.info({

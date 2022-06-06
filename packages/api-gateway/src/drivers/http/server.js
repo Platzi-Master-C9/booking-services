@@ -24,10 +24,10 @@ if (!isTestEnv) {
   fastify.register(Swagger, swaggerOptions);
 }
 
-fastify.register(FastifyAuth0, {
-  domain: configAuth.domain,
-  audience: configAuth.audience,
-});
+// fastify.register(FastifyAuth0, {
+//   domain: configAuth.domain,
+//   audience: configAuth.audience,
+// });
 
 // Decorators for authorization
 fastify.decorate('hasPermissions', authDecorators.hasPermissions);
