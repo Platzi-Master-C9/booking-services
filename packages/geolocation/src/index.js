@@ -31,5 +31,5 @@ module.exports = {
   getPlace: getPlace(getPlaceQuery),
   geocoding: geocoding(geocodingQuery),
   reverseGeocoding: reverseGeocoding(reverseGeocodingQuery),
-  createPlace: createPlace(reverseGeocodingQuery, createPlaceQuery),
+  createPlace: createPlace(createPlaceQuery),
 };

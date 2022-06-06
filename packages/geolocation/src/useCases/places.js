@@ -65,21 +65,21 @@ const reverseGeocoding = (reverseGeocodingQuery) => async (lon, lat) => {
   return result;
 };
 
-const createPlace = (reverseGeocodingQuery, createPlaceQuery) => async (lat, lon, price, place_db_id) => {
-  const address = await reverseGeocodingQuery(lat, lon);
-
-  const {
-    streetName: street_address,
-    city,
-    state,
-    zipcode,
-    country,
-  } = address[0];
-
+const createPlace = (createPlaceQuery) => async (
+  lon,
+  lat,
+  country,
+  state,
+  city,
+  zipcode,
+  street_address,
+  price,
+  place_db_id,
+) => {
   const result = await createPlaceQuery({
     location: {
       type: 'Point',
-      condinates: [lat, lon],
+      coordinates: [lon, lat],
     },
     country,
     state,
@@ -88,15 +88,13 @@ const createPlace = (reverseGeocodingQuery, createPlaceQuery) => async (lat, lon
     street_address,
     price,
     place_db_id,
-    created_at: Date(),
-    updated_at: null,
+    created_at: Date().toString(),
+    updated_at: Date().toString(),
     deleted_at: null,
   });
-
   if (!result.insertedId) {
     throw boom.notFound('[geolocation:createPlace]: No place inserted:');
   }
-
   return result;
 };
 
