@@ -9,6 +9,7 @@
 - [Testing](#testing)
 - [Utils](#utils)
   - [Add a new endpoint](#add-a-new-endpoint)
+  - [Protect an endpoint](#protect-an-endpoint)
 
 ## Features
 - Fastify
@@ -92,5 +93,81 @@ const schema = {
 fastify.get('/messages', {
   schema,
   handler: messagesServices.getMessages,
+});
+```
+### Protect an endpoint
+
+There are three ways to protect an endpoint:
+1) That the user is authenticated
+2) By user permissions
+3) By user roles.
+
+The protections are added to the hooks and, if necessary, the conditions to be met are passed as parameters.
+
+#### Protect the endpoint only for authenticated users.
+Just add the `preValidation` hook in the path you want to protect.
+
+```js
+fastify.get('/', {
+  handler: authAdapters.getPrivate,
+  schema: authEndpointsStatusSchema,
+  preValidation: fastify.authenticate,
+});
+```
+
+#### Protect the endpoint only for users with permissions.
+The `preHandler` hook is sent to the decorator in charge of protection. In this case it is called `hasPermissions`, which receives as parameters a list of those permissions that can access the endpoint, if the user `has at least one` hasPermission from the list it continues with the logic, otherwise it returns a `403 error`.
+
+
+```js
+fastify.get('/', {
+  schema: authEndpointsStatusSchema,
+  handler: authAdapters.getPrivateScoped,
+  preHandler: fastify.hasPermissions([
+    'another:a',
+    'another:b',
+    'place:create',
+  ])
+});
+```
+
+#### Protect the endpoint only for users with the role.
+The `preHandler` hook is sent to the decorator in charge of protection. In this case it is called `hasRole`, which receives as parameters a list of those roles that can access the endpoint, if the user `has at least one` role from the list it continues with the logic, otherwise it returns a `401 error`.
+
+```js
+fastify.get('/', {
+  schema: authEndpointsStatusSchema,
+  handler: authAdapters.getPrivateScoped,
+  preValidation: fastify.authenticate,
+  preHandler: fastify.hasRole([
+    'anfitrion',
+    'another',
+    'host',
+    'tester',
+  ]),
+});
+```
+
+#### Protecting the end point with everything
+The decorators are added to the `preHandler` hook list. The priority is taken in cascade form so that if a decorator marks error the following ones will not be executed.
+
+```js
+fastify.get('/', {
+  schema: authEndpointsStatusSchema,
+  handler: authAdapters.getPrivateScoped,
+  preValidation: fastify.authenticate,
+  preHandler: [
+    fastify.hasPermissions([
+      'another:a',
+      'another:b',
+      'place:create',
+    ]),
+    fastify.hasRole([
+      'anfitrion',
+      'another',
+      'host',
+      'tester',
+    ]),
+  ],
 });
 ```
