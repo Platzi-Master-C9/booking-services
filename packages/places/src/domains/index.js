@@ -1,3 +1,9 @@
-const models = require('./DataSchema');
+// domains
+const { createPlaceQuery } = require('./places');
 
-module.exports = models;
+// drivers
+const mongodb = require('../drivers/mongodb/connection');
+
+module.exports = {
+    createPlaceQuery: createPlaceQuery(mongodb),
+};

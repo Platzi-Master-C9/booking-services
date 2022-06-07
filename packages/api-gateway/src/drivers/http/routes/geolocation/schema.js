@@ -22,12 +22,19 @@ const createPlaceSchema = {
     properties: {
       lat: { type: 'number', description: 'Longitude' },
       lon: { type: 'number', description: 'Latitude' },
-      price: { type: 'number', description: 'Price'},
-      place_db_id: {type: 'string', description: 'Place id'},
+      country: { type: 'string', description: 'Country' },
+      state: { type: 'string', description: 'State' },
+      city: { type: 'string', description: 'City' },
+      zipcode: { type: 'string', description: 'Zipcode' },
+      street: { type: 'string', description: 'street' },
+      price: { type: 'number', description: 'Price' },
+      place_db_id: { type: 'string', description: 'Place id saved in the databese of places' },
     },
     required: [
       'lat',
       'lon',
+      'price',
+      'place_db_id',
     ],
   },
 };

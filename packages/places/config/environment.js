@@ -1,15 +1,11 @@
 const dotenv = require('dotenv');
 const { join } = require('path');
 
-const supportedEnvs = {
-    PRODUCTION: 'production',
-    DEVELOPMENT: 'development',
-};
+const { supportedEnvs } = require('../src/utils/constants');
 
 let environment;
 let path;
 const filename = '.env';
-
 switch (process.env.NODE_ENV) {
 case supportedEnvs.PRODUCTION: {
     environment = '';

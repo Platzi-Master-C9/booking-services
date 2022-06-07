@@ -1,123 +1,153 @@
 function errorHandler(error, reply) {
-	if (error.isBoom) {
-		return reply
-			.code(error.output.payload.statusCode)
-			.send(error.output.payload);
-	}
+  if (error.isBoom) {
+    return reply
+      .code(error.output.payload.statusCode)
+      .send(error.output.payload);
+  }
 
-	return reply.code(500).send({ error: error.message, stack: error.stack });
+  return reply.code(500).send({ error: error.message, stack: error.stack });
 }
 
 async function createPlace(req, reply) {
-	try {
-		const { lat, lon, price, place_db_id } = req.body;
+  try {
+    const {
+      lon,
+      lat,
+      country,
+      state,
+      city,
+      zipcode,
+      street,
+      price,
+      place_db_id,
+    } = req.body;
 
-		req.log.info('[http-server]: Creating place: ', { lat, lon, price, place_db_id });
+    req.log.info('[http-server]: Creating place: ', {
+      lon,
+      lat,
+      country,
+      state,
+      city,
+      zipcode,
+      street,
+      price,
+      place_db_id,
+    });
 
-		const place = await this.geolocationServices.createPlace(lat, lon, price, place_db_id);
+    const place = await this.geolocationServices.createPlace(
+      lon,
+      lat,
+      country,
+      state,
+      city,
+      zipcode,
+      street,
+      price,
+      place_db_id,
+    );
 
-		return reply
-			.code(200)
-			.header('Content-Type', 'application/json; charset=utf-8')
-			.send(place);
-	} catch (error) {
-		return errorHandler(error, reply);
-	}
+    return reply
+      .code(200)
+      .header('Content-Type', 'application/json; charset=utf-8')
+      .send({ response: place });
+  } catch (error) {
+    return errorHandler(error, reply);
+  }
 }
 
 async function getPlace(req, reply) {
-	try {
-		const { id } = req.query;
+  try {
+    const { id } = req.query;
 
-		req.log.info('[http-server]: Getting a place: ', { id });
+    req.log.info('[http-server]: Getting a place: ', { id });
 
-		const place = await this.geolocationServices.getPlace(id);
+    const place = await this.geolocationServices.getPlace(id);
 
-		return reply
-			.code(200)
-			.header('Content-Type', 'application/json; charset=utf-8')
-			.send({ data: place });
-	} catch (error) {
-		return errorHandler(error, reply);
-	}
+    return reply
+      .code(200)
+      .header('Content-Type', 'application/json; charset=utf-8')
+      .send({ data: place });
+  } catch (error) {
+    return errorHandler(error, reply);
+  }
 }
 
 async function getPlaces(req, reply) {
-	try {
-		const { lon, lat, radius } = req.query;
+  try {
+    const { lon, lat, radius } = req.query;
 
-		req.log.info('[http-server]: Getting places: ', { lon, lat, radius });
+    req.log.info('[http-server]: Getting places: ', { lon, lat, radius });
 
-		const places = await this.geolocationServices.getPlaces(lon, lat, radius);
+    const places = await this.geolocationServices.getPlaces(lon, lat, radius);
 
-		return reply
-			.code(200)
-			.header('Content-Type', 'application/json; charset=utf-8')
-			.send(places);
-	} catch (error) {
-		return errorHandler(error, reply);
-	}
+    return reply
+      .code(200)
+      .header('Content-Type', 'application/json; charset=utf-8')
+      .send(places);
+  } catch (error) {
+    return errorHandler(error, reply);
+  }
 }
 
 async function getAddress(req, reply) {
-	try {
-		const { lon, lat } = req.query;
+  try {
+    const { lon, lat } = req.query;
 
-		req.log.info('[http-server]: Getting address: ', { lon, lat });
+    req.log.info('[http-server]: Getting address: ', { lon, lat });
 
-		const address = await this.geolocationServices.getAddress(lat, lon);
+    const address = await this.geolocationServices.getAddress(lat, lon);
 
-		return reply
-			.code(200)
-			.header('Content-Type', 'application/json; charset=utf-8')
-			.send(address);
-	} catch (error) {
-		return errorHandler(error, reply);
-	}
+    return reply
+      .code(200)
+      .header('Content-Type', 'application/json; charset=utf-8')
+      .send(address);
+  } catch (error) {
+    return errorHandler(error, reply);
+  }
 }
 
 async function deletePlace(req, reply) {
-	try {
-		const { placeId } = req.query;
+  try {
+    const { placeId } = req.query;
 
-		req.log.info('[http-server]: Deleting place in Geolocation database: ', {
-			placeId,
-		});
+    req.log.info('[http-server]: Deleting place in Geolocation database: ', {
+      placeId,
+    });
 
-		const placeDeleted = await this.geolocationServices.deletePlace(placeId);
+    const placeDeleted = await this.geolocationServices.deletePlace(placeId);
 
-		return reply
-			.code(200)
-			.header('Content-Type', 'application/json; charset=utf-8')
-			.send({
-				placeId: placeDeleted,
-				message: 'geolocation place deleted successfully',
-			});
-	} catch (error) {
-		return errorHandler(error, reply);
-	}
+    return reply
+      .code(200)
+      .header('Content-Type', 'application/json; charset=utf-8')
+      .send({
+        placeId: placeDeleted,
+        message: 'geolocation place deleted successfully',
+      });
+  } catch (error) {
+    return errorHandler(error, reply);
+  }
 }
 
 async function updatePlace(req, reply) {
-	try {
-		const { id, address } = req.query;
-		req.log.info('[http-server]: Updating place: ', { id });
+  try {
+    const { id, address } = req.query;
+    req.log.info('[http-server]: Updating place: ', { id });
 
-		const placeId = await this.geolocationServices.updatePlace(id, address);
-		return reply
-			.code(200)
-			.header('Content-Type', 'application/json; charset=utf-8')
-			.send({ id: placeId });
-	} catch (error) {
-		return errorHandler(error, reply);
-	}
+    const placeId = await this.geolocationServices.updatePlace(id, address);
+    return reply
+      .code(200)
+      .header('Content-Type', 'application/json; charset=utf-8')
+      .send({ id: placeId });
+  } catch (error) {
+    return errorHandler(error, reply);
+  }
 }
 
 module.exports = {
-	getPlace,
-	createPlace,
-	getPlaces,
-	getAddress,
-	deletePlace,
-	updatePlace,
+  getPlace,
+  createPlace,
+  getPlaces,
+  getAddress,
+  deletePlace,
+  updatePlace,
 };

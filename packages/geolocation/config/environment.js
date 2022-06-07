@@ -14,7 +14,7 @@ switch (process.env.NODE_ENV) {
   }
   default: {
     environment = 'DEV_';
-    path = `${join(__dirname, '..')}/${filename}`;
+    path = `${join(__dirname, '../../..')}/${filename}`;
   }
 }
 

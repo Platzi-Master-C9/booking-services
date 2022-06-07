@@ -1,30 +1,48 @@
-/** @type {import('fastify').RouteOptions['schema']} */
-
 const postPlaceSchema = {
   description: 'This is the route to use for creating a new place',
   tags: ['Places'],
   body: {
     type: 'object',
     properties: {
-      place_name: { type: 'string' },
-      price_per_night_usd: { type: 'number' },
-      host_id: { type: 'number' },
-      type: { type: 'string' },
+      propertyType: { type: 'string', description: 'property type' },
+      amenities: { type: 'array', description: 'amenities' },
+      address: {
+        type: 'object',
+        properties: {
+          country: { type: 'string', description: 'Country' },
+          state: { type: 'string', description: 'State' },
+          city: { type: 'string', description: 'City' },
+          zipcode: { type: 'string', description: 'Zipcode' },
+          street: { type: 'string', description: 'street' },
+          price: { type: 'number', description: 'price' },
+        },
+        required: [
+          'country',
+          'state',
+          'city',
+          'zipcode',
+          'street',
+          'price',
+        ],
+      },
+      floorPlans: { type: 'array', description: 'floor plans' },
+      title: { type: 'string', description: 'place title' },
+      description: { type: 'string', description: 'place description' },
+      houseRules: { type: 'array', description: 'house rules' },
+      healthAndSecurity: { type: 'array', description: 'health and security' },
+      price: { type: 'number', description: 'price' },
     },
     required: [
-      'place_name',
-      'price_per_night_usd',
-      'host_id',
-      'type',
+      'propertyType',
+      'amenities',
+      'address',
+      'floorPlans',
+      'title',
+      'description',
+      'houseRules',
+      'healthAndSecurity',
+      'price',
     ],
-  },
-  response: {
-    201: {
-      type: 'object',
-      properties: {
-        message: { type: 'string' },
-      },
-    },
   },
 };
 

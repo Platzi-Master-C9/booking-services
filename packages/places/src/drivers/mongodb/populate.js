@@ -1,0 +1,43 @@
+const { MongoClient } = require('mongodb');
+const { Logger } = require('@booking-services/shared');
+const config = require('../../../../geolocation/config/mongodb');
+const { dbOptions } = require('../../../../geolocation/src/utils/constants');
+const populate = require('../../../../geolocation/src/utils/populate');
+const placesSchema = require('../../../../geolocation/src/drivers/schemas/placesSchema'); // eslint-disable-line
+
+const uri = `mongodb://${config.user}:${config.pass}@${config.uri}`;
+const { dbName, collectionName } = dbOptions;
+const client = new MongoClient(uri);
+
+async function connect() {
+    try {
+        Logger.info({
+            message: '[geolocation:mongodb]: Connecting to DB',
+        });
+        const connection = await client.connect();
+        // Logger.info({
+        //   message: '[geolocation:mongodb]: Creating collection',
+        // });
+        // await connection.db(dbName).createCollection(collectionName, placesSchema);
+        Logger.info({
+            message: '[geolocation:mongodb]: Create index of type location',
+        });
+        await connection.db(dbName).collection(collectionName).createIndex({ location: '2dsphere' });
+        Logger.info({
+            message: '[geolocation:mongodb]: Populating database',
+        });
+        const data = populate();
+        await connection.db(dbName).collection(collectionName).insertMany(data);
+        Logger.info({
+            message: '[geolocation:mongodb]: Populating database done',
+        });
+        client.close();
+    } catch (error) {
+        Logger.error({
+            message: `[geolocation:mongodb]: ${error}`,
+        });
+        client.close();
+    }
+}
+
+connect();
