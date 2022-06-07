@@ -568,6 +568,14 @@
     pkg-up "^3.1.0"
     semver "^7.3.5"
 
+"@fastify/cors@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@fastify/cors/-/cors-7.0.0.tgz#c67c5a5909498b696bb19578e903f36037ac6f32"
+  integrity sha512-nlo6ScwagBNJacAZD3KX90xjWLIoV0vN9QqoX1wUE9ZeZMdvkVkMZCGlxEtr00NshV0X5wDge4w5rwox7rRzSg==
+  dependencies:
+    fastify-plugin "^3.0.0"
+    vary "^1.1.2"
+
 "@fastify/error@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@fastify/error/-/error-2.0.0.tgz#a9f94af56eb934f0ab1ce4ef9f0ced6ebf2319dc"
@@ -11582,7 +11590,7 @@ validator@^13.7.0:
   resolved "https://registry.yarnpkg.com/validator/-/validator-13.7.0.tgz#4f9658ba13ba8f3d82ee881d3516489ea85c0857"
   integrity sha512-nYXQLCBkpJ8X6ltALua9dRrZDHVYxjJ1wgskNt1lH9fzGjs3tgojGSCBjmEPwkWS1y29+DrizMTW19Pr9uB2nw==
 
-vary@^1:
+vary@^1, vary@^1.1.2:
   version "1.1.2"
   resolved "https://registry.npmjs.org/vary/-/vary-1.1.2.tgz"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=

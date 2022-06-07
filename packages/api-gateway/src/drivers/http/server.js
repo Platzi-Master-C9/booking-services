@@ -4,6 +4,7 @@ const Fastify = require('fastify');
 const FastifyAuth0 = require('fastify-auth0-verify');
 const path = require('path');
 const Swagger = require('@fastify/swagger');
+const cors = require('@fastify/cors');
 
 // Internal dependencies
 const authDecorators = require('./decorators/auth');
@@ -24,6 +25,17 @@ if (!isTestEnv) {
   fastify.register(Swagger, swaggerOptions);
 }
 
+fastify.register(cors, {
+  origin: (origin, cb) => {
+    const { hostname } = new URL(origin);
+    if (hostname === 'localhost') {
+      cb(null, true);
+      return;
+    }
+    cb(new Error('Not allowed'), false);
+  },
+});
+
 // fastify.register(FastifyAuth0, {
 //   domain: configAuth.domain,
 //   audience: configAuth.audience,
@@ -41,7 +53,7 @@ fastify.register(Autoload, { dir: path.join(__dirname, 'plugins') });
 
 async function start() {
   try {
-    await fastify.listen(process.env.SERVER_PORT || 3001, '0.0.0.0');
+    await fastify.listen(process.env.SERVER_PORT || 3001, 'localhost');
   } catch (error) {
     fastify.log.error(
       `[http-server]: Error with message ${error.message} has happened`,

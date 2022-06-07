@@ -43,6 +43,7 @@
     "@booking-services/web-sockets": "^0.0.1",
     "@faker-js/faker": "^6.1.1",
     "@fastify/autoload": "^4.0.1",
+    "@fastify/cors": "^7.0.0",
     "@fastify/static": "^5.0.2",
     "@fastify/swagger": "^6.0.1",
     "dotenv": "^16.0.0",

@@ -65,21 +65,19 @@ const reverseGeocoding = (reverseGeocodingQuery) => async (lon, lat) => {
   return result;
 };
 
-const createPlace = (createPlaceQuery) => async ({
-  lon,
-  lat,
+const createPlace = (createPlaceQuery, geocoder) => async ({
   country,
   state,
   city,
   zipcode,
   street,
   price,
-  place_db_id,
 }) => {
+  const coordinates = await geocoder(street, city, state, zipcode, country);
   const result = await createPlaceQuery({
     location: {
       type: 'Point',
-      coordinates: [lon, lat],
+      coordinates: [coordinates[0].longitude, coordinates[0].latitude],
     },
     country,
     state,
@@ -87,7 +85,6 @@ const createPlace = (createPlaceQuery) => async ({
     zipcode,
     street,
     price,
-    place_db_id,
     created_at: Date().toString(),
     updated_at: Date().toString(),
     deleted_at: null,
