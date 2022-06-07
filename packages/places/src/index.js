@@ -1,13 +1,12 @@
-const models = require('./domains/index');
+// packages
+const geolocation = require('@booking-services/geolocation');
 
-const {
-    dbWriter,
-    getPlaces,
-    dbDeleter,
-} = require('./useCases/index');
+// domains
+const { createPlaceQuery } = require('./domains');
+
+// services
+const { createPlace } = require('./useCases');
 
 module.exports = {
-    postPlace: dbWriter(models.Place),
-    getPlaces: getPlaces(models.Place),
-    deletePlace: dbDeleter(models.Place),
+    createPlace: createPlace(createPlaceQuery, geolocation.createPlace),
 };

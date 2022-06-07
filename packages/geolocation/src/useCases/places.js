@@ -28,8 +28,8 @@ const deletePlace = (deletePlaceQuery) => async (id) => {
   return id;
 };
 
-const updatePlace = (updatePlaceQuery) => async (id, streetAddress) => {
-  const results = await updatePlaceQuery(id, { street_address: streetAddress });
+const updatePlace = (updatePlaceQuery) => async (id, street) => {
+  const results = await updatePlaceQuery(id, { street });
   if (!results.matchedCount) {
     throw boom.notFound(
       `[geolocation:getPlaces]: No place found with id: ${id}`,
@@ -65,17 +65,17 @@ const reverseGeocoding = (reverseGeocodingQuery) => async (lon, lat) => {
   return result;
 };
 
-const createPlace = (createPlaceQuery) => async (
+const createPlace = (createPlaceQuery) => async ({
   lon,
   lat,
   country,
   state,
   city,
   zipcode,
-  street_address,
+  street,
   price,
   place_db_id,
-) => {
+}) => {
   const result = await createPlaceQuery({
     location: {
       type: 'Point',
@@ -85,7 +85,7 @@ const createPlace = (createPlaceQuery) => async (
     state,
     city,
     zipcode,
-    street_address,
+    street,
     price,
     place_db_id,
     created_at: Date().toString(),

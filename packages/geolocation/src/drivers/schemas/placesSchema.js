@@ -54,7 +54,7 @@ const placesSchema = {
           bsonType: 'string',
           description: 'place zipcode, must be a string and is required',
         },
-        street_address: {
+        street: {
           bsonType: 'string',
           description: 'place addres, must be a string and is required',
         },

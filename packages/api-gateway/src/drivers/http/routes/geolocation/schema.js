@@ -26,7 +26,7 @@ const createPlaceSchema = {
       state: { type: 'string', description: 'State' },
       city: { type: 'string', description: 'City' },
       zipcode: { type: 'string', description: 'Zipcode' },
-      street_address: { type: 'string', description: 'street_address' },
+      street: { type: 'string', description: 'street' },
       price: { type: 'number', description: 'Price' },
       place_db_id: { type: 'string', description: 'Place id saved in the databese of places' },
     },

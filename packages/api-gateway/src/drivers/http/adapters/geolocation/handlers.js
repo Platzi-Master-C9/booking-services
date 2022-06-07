@@ -17,7 +17,7 @@ async function createPlace(req, reply) {
       state,
       city,
       zipcode,
-      street_address,
+      street,
       price,
       place_db_id,
     } = req.body;
@@ -29,7 +29,7 @@ async function createPlace(req, reply) {
       state,
       city,
       zipcode,
-      street_address,
+      street,
       price,
       place_db_id,
     });
@@ -41,7 +41,7 @@ async function createPlace(req, reply) {
       state,
       city,
       zipcode,
-      street_address,
+      street,
       price,
       place_db_id,
     );

@@ -1,22 +1,41 @@
+function errorHandler(error, reply) {
+  if (error.isBoom) {
+    return reply
+      .code(error.output.payload.statusCode)
+      .send(error.output.payload);
+  }
+
+  return reply.code(500).send({ error: error.message, stack: error.stack });
+}
+
 async function postPlace(req, reply) {
-  const {
-    place_name: placeName,
-    price_per_night_usd: pricePerNightUsd,
-    host_id: hostId,
-    type,
-  } = req.body;
-
-  req.log.info('[http-server]: posting a place');
-
-  await this.placesService.postPlace({
-    place_name: placeName,
-    price_per_night_usd: pricePerNightUsd,
-    host_id: hostId,
-    type,
-  });
-
-  return reply.code(201)
-    .send({ msg: `${placeName} has been saved correctly.` });
+  try {
+    const {
+      amenities,
+      address,
+      floorPlans,
+      title,
+      description,
+      houseRules,
+      healthAndSecurity,
+      price,
+    } = req.body;
+    req.log.info('[http-server]: posting a place');
+    const result = await this.placesService.createPlace(
+      amenities,
+      address,
+      floorPlans,
+      title,
+      description,
+      houseRules,
+      healthAndSecurity,
+      price,
+    );
+    return reply.code(201)
+      .send({ response: result });
+  } catch (error) {
+    return errorHandler(error, reply);
+  }
 }
 
 async function getPlaces(req, reply) {

@@ -29,7 +29,10 @@
     "jest": "^27.5.1"
   },
   "dependencies": {
+    "@booking-services/geolocation": "^1.0.0",
     "@booking-services/shared": "^0.0.1",
+    "@hapi/boom": "^10.0.0",
+    "mongodb": "^4.7.0",
     "mysql2": "^2.3.3",
     "sequelize": "^6.17.0",
     "winston": "^3.6.0"
